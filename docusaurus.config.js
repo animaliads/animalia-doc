@@ -24,6 +24,9 @@ module.exports = {
   url: "https://doc.animaliads.io/",
   baseUrl: "/",
   themeConfig: {
+    hotjar:{
+      applicationId: 2903615,
+    },
     navbar: {
       logo: {
         alt: "Animalia DS Logo",
@@ -115,7 +118,11 @@ module.exports = {
     [
       "@docusaurus/preset-classic",
       {
-        docs: {
+        googleAnalytics: {
+          trackingID: 'G-TCSRHFEBXF',
+          anonymizeIP: true,
+        },
+          docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
@@ -129,8 +136,13 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
+          
         },
       },
     ],
+  ],
+  plugins:[
+      'docusaurus-plugin-hotjar',
+     
   ],
 };
