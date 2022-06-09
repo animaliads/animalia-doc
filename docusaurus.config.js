@@ -22,7 +22,7 @@ module.exports = {
   organizationName: "animaliads", // Usually your GitHub org/user name.
   projectName: "animalia-doc", // Usually your repo name.
   url: "https://doc.animaliads.io/",
-  baseUrl: "/",
+  baseUrl: "/animalia-doc/",
   themeConfig: {
     hotjar:{
       applicationId: 2903615,
