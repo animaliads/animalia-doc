@@ -1,0 +1,83 @@
+---
+id: calendar
+sidebar_label: Calendar
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Calendar
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+
+## Visão geral
+
+O componente `calendar` é usado para selecionar datas próximas ao tempo presente. Por padrão, os seletores de data em calendário apresentam os dados do mês atual e apenas um mês é apresentado por vez. Em alguns contextos podem apresentar uma data pré estabelecida para o usuário.
+
+Normalmente mostram os dias da semana na parte superior e combinam com a metáfora de calendários de mesa ou de parede.
+
+:::note Componentes relacionados
+
+- [Datepicker](/docs/components/datepicker)
+:::
+
+## Boas práticas
+
+O componente foi estruturado com base em padrões de usabilidade para contribuir com uma boa experiência. Por isso, ao aplicar esse componente, é muito importante que sejam levados em consideração alguns critérios e práticas:
+
+- O  `calendar` é recomendado para casos de datas não muito distantes para que o usuário não precise navegar tanto.  Nesses casos é melhor dar a opção para ele digitar uma data específica.
+- Impedir que os usuários selecionem datas ilógicas. Por exemplo, datas com mais de 130 anos serão improváveis para datas de nascimento, mas bastante aceitáveis para datas de documentos. Os usuários devem ser impedidos de inserir uma data de retorno anterior à data de partida ou que já tenha passado. Torne as escolhas claras desativando e escurecendo as opções que não estão disponíveis ou são pares ilógicos.
+- Em toda página do calendário é recomendado visualizar qual mês e ano o usuário está
+- Para datas que não podem ser selecionadas devido algum contexto específico, por exemplo uma empresa que não atende no feriado, manter as datas inativas por meio de opacidade e desabilitar a opção de clique.
+- Em casos de erro costumam acompanhar outro componente que é o seletor de dia que acompanha e habilita o calendário. Nele é comum apresentar erros na seleção.
+Além de casos como duas datas que não fazem sentido no contexto serem selecionadas.
+- Não use o seletor do componente Calendar para solicitar datas no passado ou futuro distante, como uma data de nascimento. Nesses casos, use um campo de texto. (A pessoa usuária pode dar muitos cliques para chegar em uma data com mais de 40 anos, por exemplo)
+
+
+### Interação por teclado
+
+| Tecla                 | Função                                                                                                                                                                             |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Up Arrow`            | Move o foco para o mesmo dia da semana anterior.                                                                                                                                   |
+| `Down Arrow`          | Move o foco para o mesmo dia da próxima semana.                                                                                                                                    |
+| `Right Arrow`         | Muda o foco para o dia seguinte.                                                                                                                                                   |
+| `Left Arrow`          | Move o foco para o dia anterior.                                                                                                                                                   |
+| `Home`                | Move o foco para o primeiro dia da semana atual.                                                                                                                                   |
+| `End`                 | Move o foco para o último dia da semana atual.                                                                                                                                     |
+| `Page Up`             | Altera para o mês anterior. Define o foco no mesmo dia da mesma semana. Se esse dia não existir, o foco será movido para o mesmo dia da semana anterior ou seguinte.               |
+| `Shift` + `Page Up`   | Altera para o ano anterior. Define o foco no mesmo dia da mesma semana. Se esse dia não existir, o foco será movido para o mesmo dia da semana anterior ou seguinte.               |
+| `Page Down`           | Muda a grade de datas para o próximo mês. Define o foco no mesmo dia da mesma semana. Se esse dia não existir, o foco será movido para o mesmo dia da semana anterior ou seguinte. |
+| `Shift` + `Page Down` | Muda a grade de datas para o próximo ano. Define o foco no mesmo dia da mesma semana. Se esse dia não existir, o foco será movido para o mesmo dia da semana anterior ou seguinte. |
+| `Tab`                 | Navega entre as partes interativas, até fechar o componente.                                                                                                                       |
+
+
+</TabItem>
+
+ <TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+
+ <TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+</Tabs>

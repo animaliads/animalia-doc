@@ -1,0 +1,87 @@
+---
+id: timepicker
+sidebar_label: Timepicker
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Timepicker
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+
+## Visão geral
+
+O componente `timepicker` (selecionador de tempo) ajuda a pessoa usuária a selecionar ou definir um horário específico.
+
+Permite que a pessoa usuária insira um valor de tempo específico ou faça uma escolha entre um horário ou espaço de tempo pré-determinado e pode ser usado para uma ampla variedade de cenários.
+
+
+**Casos de uso comuns incluem:**
+
+- Agendamentos diversos
+- Configurando um alarme
+
+
+Na maioria das vezes, se apresenta como uma interface de calendário, tornando mais fácil para os usuários selecionar datas e horas.
+
+### Quando usar
+
+Use seletores de hora quando solicitar ao usuário uma hora ou para agendamento de tarefas.
+Use ao pedir ao usuário para inserir um horário específico.
+
+
+## Boas práticas
+
+O componente foi estruturado com base em padrões de usabilidade para contribuir com uma boa experiência. Por isso, ao aplicar esse componente, é muito importante que sejam levados em consideração alguns critérios e boas práticas:
+
+- Se usar o formato de 12 horas, deve ser acompanhado por uma seleção AM / PM;
+- Use letras maiúsculas e nenhum ponto para as abreviações AM e PM;
+- Permita a digitação do horário desejado;
+- Formatos de hora devem sempre seguir, preferencialmente o formato hh:mm (hora, minuto);
+- Sempre serão necessários dois dígitos para horas, minutos e segundos. (Exemplo: 04:30);
+- Pode-se adotar o intervalo de tempo para minutos, contanto que seja mantida uma divisão uniformemente em 60 (Exemplo: 00, 15, 30 e 45).
+
+
+### Faça
+
+- Mantenha o campo vazio ou com próximo horário disponível;
+- Horários específicos devem especificar um fuso horário.
+- Durante a digitação do valor de hora, ao se colocar um número entre 1 e 9, o ideal é que automaticamente seja adicionado um 0 antes (apenas no campo hora). Por exemplo: usuário digitou 9, deve-se ajustar para 09;
+
+### Não faça
+
+- Não disponibilize somente valores de minutos.
+- Não use o timepicker para durações, como para um cronômetro.
+
+
+</TabItem>
+
+ <TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+
+ <TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+</Tabs>

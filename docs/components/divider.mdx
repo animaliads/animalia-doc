@@ -1,0 +1,76 @@
+---
+id: divider
+sidebar_label: Divider
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import dividerSize from './img/divider/divider-sizes.jpg';
+
+
+# Divider
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+
+## Visão geral
+
+O componente `divider` tem como objetivo criar agrupamentos de forma a separar um conteúdo denso quando o mesmo não puder ser separado apenas por espaço ou outro tipo de quebra. 
+
+Sua finalidade é apenas decorativa, para explicar a separação de conteúdos de forma visual e deve possuir aspecto de estado “componente inativo".
+
+### Tamanhos
+
+O componente divider possui três variações de tamanhos: *small*, *medium* e *large*. O tamanho padrão é o *small.* 
+
+<img
+  src={dividerSize}
+  alt="3 variações de divider, sendo small o mais fino, medium intermediário e large com maior espessura"
+/>
+
+O divider é composto basicamente por uma barra (linha) na horizontal, que ocupa o espaço inteiro do bloco em que estiver definido.
+
+
+## Boas práticas
+
+-  O `divider` deve ser usado como elemento estético representando uma quebra visual entre seções e grupos de conteúdo;
+- São estruturas flexíveis e se adaptam perfeitamente à largura da tela;
+- Manter o componente perceptível;
+- Deve ser usado com moderação.
+
+
+## Acessibilidade tratada no componente
+
+- **1.4.11 - Contraste Não-Textual [AA]** - Possui uma relação de contraste entre primeiro e segundo plano de ao menos 3:1 ([WCAG](https://guia-wcag.com/?))
+
+
+</TabItem>
+
+ <TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+
+ <TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+</Tabs>

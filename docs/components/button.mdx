@@ -10,7 +10,7 @@ import LiveDemoComponent from './helpers/components/live-demo.tsx';
 
 import buttonTypes from './img/button/button-types.jpg';
 import buttonAnatomy from './img/button/button-anatomy.jpg';
-import buttonSize from './img/button/button-size.jpg';
+import buttonSize from './img/button/button-size-1.jpg';
 import buttonWidth from './img/button/button-width.jpg';
 import buttonPrimary from './img/button/button-primary.jpg';
 import buttonSecondary from './img/button/button-secondary.jpg';
@@ -21,12 +21,10 @@ import buttonDo1 from './img/button/button-do-1.jpg';
 import buttonDo2 from './img/button/button-do-2.jpg';
 import buttonDo3 from './img/button/button-do-3.jpg';
 import buttonDo4 from './img/button/button-do-4.jpg';
-import buttonDo5 from './img/button/button-do-5.jpg';
 import buttonDont1 from './img/button/button-dont-1.jpg';
 import buttonDont2 from './img/button/button-dont-2.jpg';
 import buttonDont3 from './img/button/button-dont-3.jpg';
 import buttonDont4 from './img/button/button-dont-4.jpg';
-import buttonDont5 from './img/button/button-dont-5.jpg';
 
 
 import WebComponentReact from './../../src/components/WebComponent.js';
@@ -83,18 +81,16 @@ Os componentes são formados por tokens, sendo estes propriedades de estilo que 
 
 ### Tamanhos
 
-Todos os tipos de botões podem ser utilizados em três tamanhos diferentes: Small, Medium e Large. O tamanho medium é o tamanho padrão do botão e deve ser o mais aplicado. Utilize as outras variações para criar uma hierarquia na página, alinhada aos tipos de botões .
+Todos os tipos de botões podem ser utilizados em dois tamanhos diferentes: Medium e Large. O tamanho medium é o tamanho padrão do botão e deve ser o mais aplicado. Utilize as outras variações para criar uma hierarquia na página, alinhada aos tipos de botões .
 
 <img
   src={buttonSize}
   alt="Três variações de tamanho para o botão dispostas lado a lado, sendo 1 o tamanho small, 2 o tamanho medium e 3 o tamanho large"
 />
 
-**1.** Small
+**1.** Medium
 
-**2.** Medium
-
-**3.** Large
+**2.** Large
 
 Por padrão, a largura do botão se adequa de acordo com o tamanho do texto. Mas caso seja necessário, é possível redefinir a largura para se ajustar ao tamanho do componente no qual o botão está inserido.
 
@@ -167,17 +163,8 @@ O componente do botão foi projetado para atender os requisitos das Diretrizes d
 ### Interação
 
 - A interação de foco deve compor os botões, sendo navegação por mouse ou teclado, e em sequência lógica. Consultar lista de exemplos em ([W3C WAI-ARIA 3.5 Button](https://www.w3.org/TR/wai-aria-practices-1.1/#button))
-- Ao alterar as propriedades customizadas de espaçamento no botão, é necessário atenção porque o botão precisa ter uma área de interação de no mínimo 44 x 44px, ou seja, nem toda a área precisa ser clicável, mas a distância entre os elementos interativos precisa ser de pelo menos 44px. ([WGAG 2.5.8: Target Size (Minimum](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum))
-- O mesmo cuidado é necessário para a utilização do botão no tamanho small.
 
-<BestPracticesComponent
-  doImg={buttonDo5}
-  doAlt="Botões small primário e secundário alinhados verticalmente com um espaçamento de 12px entre eles, totalizando 44px de área segura."
-  doDescription="Incluir um espaçamento adequado entre os componentes para atingir uma área segura mínima de 44px."
-  dontImg={buttonDont5}
-  dontAlt="botões small primário e secundário alinhados verticalmente com um espaçamento de 8px entre eles, não atingindo 44px de área segura."
-  dontDescription="Não alinhe os componentes muito próximos um dos outros, pois a área de interação pode ser comprometida."
-/>
+
 
 ### Acessibilidade tratada no componente
 

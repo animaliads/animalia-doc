@@ -1,0 +1,63 @@
+---
+id: datepicker
+sidebar_label: Datepicker
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Datepicker
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+
+## Visão geral
+
+O componente datepicker é utilizado para inclusão de datas onde é possível informar apenas a data inicial ou a data final via texto, ou através de um acionador de calendário. 
+
+:::note Componentes relacionados
+
+- [Calendar](/docs/components/calendar)
+:::
+
+## Boas práticas
+
+Foram estruturadas padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência para os usuários. Por isso, é muito importante que, ao aplicar esse componente, o proprietário do conteúdo leve em consideração alguns critérios e práticas:
+
+- O usuário deve estar ciente da data que foi selecionada ou digitada dentro do input, acompanhando o status em tempo real por meio de feedbacks dos componentes, e diferenciando visualmente a data ou período selecionado.
+- A seleção de uma data diretamente no calendário substitui o valor inputado no campo de entrada.
+- O placeholder mais utilizado é o com letras para indicar o que deve ser preenchido, e o modelo de divisão com barras é o mais recorrido.
+- A forma de identificar o componente é com label como um título indicativo, placeholder com exemplo do que deve ser inputado e o contexto em que aquele componente está inserido, como por exemplo uma tela de "agendamentos".
+- Caso algumas datas estejam indisponíveis, torna-las não clicáveis, todas as datas que não forem úteis para o usuário naquele momento, como um período pode iniciar a partir da data de hoje, e todas as datas anteriores estão bloqueadas. Há a opção de campos individuais para cada atribuição, 1 para início e 1 para fim, por exemplo.
+- Marcação no campo e mensagem de erro, dessa forma, indica-se onde editar, qual o erro e qual o aceite daquele campo.
+
+
+</TabItem>
+
+ <TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+
+ <TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+</Tabs>

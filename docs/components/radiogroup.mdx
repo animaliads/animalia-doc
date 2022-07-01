@@ -1,0 +1,151 @@
+---
+id: radiogroup
+sidebar_label: Radio Group
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import radiogroupAnatomy from './img/radiogroup/radiogroup-anatomy.png';
+import radiogroupHover from './img/radiogroup/radiogroup-hover.png';
+import radiogroupSize from './img/radiogroup/radiogroup-size.png';
+import radiogroupOrientation from './img/radiogroup/radiogroup-orientation.png';
+
+
+# Radio Group
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+
+## Visão geral
+
+Um `radio-group` é um agrupamento de `radio` que compõem uma lista de opções. Clicar em uma opção não selecionada, desmarcará qualquer outra previamente selecionada dentro de uma lista. 
+
+### Quando usar
+
+O radio group deve ser usado quando o usuário precisar ver todas as opções disponíveis, apresentando um conjunto de opções onde apenas uma poderá ser selecionada.
+Use quando houver uma lista de duas ou mais opções que são mutuamente exclusivas e o usuário deve selecionar exatamente uma opção.
+Frequentemente são usados em formulários mas também podem ser usados para alterar as configurações em um menu ou selecionar um único item em uma tabela de dados, por exemplo.
+
+:::note Componentes relacionados
+
+- [Radio](/docs/components/radio)
+- [Label](/docs/components/label)
+:::
+
+### Anatomia
+
+<img
+  src={radiogroupAnatomy}
+  alt="Anatomia dos radiogroup, indicando as 4 partes: label-field, label, radio e outline"
+/> 
+
+1. **Label-field**: Descreve o grupo de opções ou fornece orientação para fazer uma seleção.
+2. **Label**: descreve as informações que você deseja selecionar ou desmarcar.
+3. **Radio**: seletor que indica qual das opções está selecionada.
+4. **Outline** *(focus)*: demarca o foco visível quando navega por teclado
+
+### Comportamento
+- Por padrão, quando a página é carregada, uma das opções do grupo deve estar selecionada.
+- Apenas um botão de opção é selecionado por vez. Quando um usuário escolhe um novo item, a escolha anterior é automaticamente desmarcada, limpando qualquer outra seleção anterior.
+- A Label da opção é considerada uma extensão da área do clique. Sendo assim, podemos selecionar o radio clicando na label.
+
+<img
+  src={radiogroupHover}
+  alt="Componente em estado de hover, com o cursor sobre a label"
+/> 
+
+### Variações
+
+#### Tamanho
+Possui tamanho medium e large, sendo o tamanho médio é o padrão e a opção mais usada.
+
+<img
+  src={radiogroupSize}
+  alt="Radio group no tamanho medium e large lado a lado"
+/> 
+
+Há mudança apenas no tamanho do radio, os demais elementos e espaçamento entre os componentes se mantem os mesmos.
+
+#### Orientação
+O `radio-group` possui variação horizontais e vertical, sendo vertical a variação padrão e mais recomendada. Usados dessa forma, a interpretação do conteúdo se torna mais fácil reduzindo a chance de erro** por parte do usuário. 
+Use a variação horizontal apenas quando o espaço vertical for limitado.
+
+<img
+  src={radiogroupOrientation}
+  alt="Exemplo de radio group no vertical e horizontal lado a lado"
+/> 
+
+## Boas práticas
+
+### Fazer
+
+- Utilize quando houver uma lista de duas ou mais opções que são mutuamente exclusivas e o usuário deve selecionar exatamente uma opção;
+- Use quando o usuário precisar selecionar apenas uma opção;
+- Use em listas curtas presentes em elementos como Listas, Formulários e Tabelas;
+- Use letras maiúsculas para inícios de rótulos;
+- Utilize sempre rótulos claros e concisos para cada opção;
+- O grupo deve sempre possuir um rótulo, que pode indicar a categoria do agrupamento ou descrever quais opções executar a seguir;
+- Como o radio group possibilita apenas uma escolha, certifique-se de que as opções sejam abrangentes e claramente distintas.
+
+### Não Fazer
+
+- Evite aninhar grupos de `radio` dentro de outros grupos;
+- Não use este componente quando mais de uma opção puder ser selecionada.
+
+
+## Acessibilidade tratada no componente
+Algumas diretrizes de acessibilidade já são tratadas no componente, internamente, e não podem ser alteradas pelo proprietário do conteúdo.  São elas:
+
+**1.4.4 – Redimensionar (A)** Usar medidas relativas para possibilitar um zoo de até 200% sem perda do conteúdo ou funcionalidade
+
+**2.4.1 – Teclado (A)** Permitir a interação via teclado
+
+**2.4.7 – Foco Visível (A)** Preservar o foco visível na navegação via teclado
+
+**4.1.2 – Nome, Função, Valor (A)** Utilizar nome, função e valor adequadamente, pois estes parâmetros são utilizados por tecnologias assistivas para identificar os elementos da interface.
+
+
+
+### Interação por teclado
+
+| **Tecla**                     | **Função**                                                                                                                                                                                                                  |
+|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Tab ou Shift + Tab`          | Move o foco dentro ou fora do grupo de opções. Se o botão de opção estiver marcado, o foco vai para o botão de opção marcado. Se nenhum botão de opção estiver marcado, o foco vai para o primeiro botão de opção do grupo. |
+| `Space`                       | Marca o radio, caso este não esteja marcado.                                                                                                                                                                                |
+| `Arrow Down` ou `Arrow Right` | Move o foco para o próximo botão de opção do grupo. Se o foco estiver no último botão, se moverá para o primeiro botão.                                                                                                     |
+| `Arrow Left` ou `Arrow Up`    | Move o foco do botão para a opção anterior do grupo. Se o foco estiver no primeiro botão, se moverá para o último botão.                                                                                                    |
+
+
+
+
+
+</TabItem>
+
+ <TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+
+ <TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+</Tabs>

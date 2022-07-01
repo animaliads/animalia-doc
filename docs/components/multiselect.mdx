@@ -1,0 +1,58 @@
+---
+id: multiselect
+sidebar_label: Multiselect
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Multiselect
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+
+## Visão geral
+O componente `multiselect` é utilizado para casos de seleção múltipla, para contextos onde faz sentido selecionar mais de 1 item de uma lista. A lista geralmente contém 5 itens no mínimo ou mais.  Utilizado para quando você pode selecionar várias opções de uma lista ou para filtrar informações. 
+
+### Quando usar
+
+- Utilize quando a lista de opções tiver 10 ou mais itens e for possível selecionar mais de uma opção.
+
+
+## Boas práticas
+
+- Caso a lista apresente menos de 5 itens, considere utilizar outro componente;
+- Não utilize o multiselect caso a pessoa possa selecionar apenas uma opção. Para esse caso, opte por utilizar radion button ou select;
+- Sempre que possível, agrupe as opções e use labels curtas para descrever o conteúdo. Exemplo: em uma combinação de alimentos, as opções podem ser agrupadas por Vegetais, Frutas, etc;
+- Possibilite remover todos os itens de uma vez, assim como um "selecionar todos”, dependendo do contexto.
+
+
+</TabItem>
+
+ <TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+
+ <TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+</Tabs>

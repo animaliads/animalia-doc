@@ -1,0 +1,57 @@
+---
+id: combobox
+sidebar_label: Combobox
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Combobox
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+
+## Visão geral
+
+O `combobox` é a combinação entre uma entrada de texto com uma listagem de opções. É um componente utilizado quando a lista é longa e necessita de um recurso de filtragem das opções. Não permite a entrada de forma livre, ou seja, que a pessoa usuária selecione um valor diferente das opções pré-definidas.
+### Quando usar
+
+- Utilize quando a lista de opções tiver 10 ou mais itens e for possível selecionar apenas uma opção.
+
+## Boas práticas
+
+- Utilize o componente quando houverem mais de 10 itens ou o espaço da tela for limitado;
+- Caso a quantidade de opções seja pequena ou a quantidade de caracteres na lista for muito grande, considere utilizar um componente que apresente as opções de forma visível já para o usuário;
+- Agrupe itens de forma lógica na lista. No caso de ser por nome, que seja em ordem alfabética, por números em ordem numérica, por tipo/tarefa (adicionar, editar e remover) ou por datas, em ordem cronológica;
+- Opte por textos que ocupem uma única linha, mantenho-os curtos e objetivos.
+
+
+</TabItem>
+
+ <TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+
+ <TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+</Tabs>

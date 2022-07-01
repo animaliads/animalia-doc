@@ -1,0 +1,82 @@
+---
+id: tabs
+sidebar_label: Tabs
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Tabs
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+
+## Visão geral
+
+`Tabs` são um conjunto de seções de conteúdo em camadas, que exibem um painel de conteúdo por vez. 
+
+Evitam que a página fique muito longa, permitindo que os usuários naveguem entre as visualizações dentro do mesmo contexto, podendo prever facilmente o que encontrarão ao selecionar uma determinada aba.
+
+
+### Comportamento
+- Quando uma interface com tabs é inicializada, o conteúdo relacionado à guia ativa é exibido e a aba fica com a aparência de ativa;
+- Sempre há uma aba ativa e apenas uma por vez;
+- O padrão de alinhamento das abas é à esquerda. 
+
+## Boas práticas
+
+### Fazer
+
+- A descrição da guia deve ser curta e auto explicativa;
+- Mantenha apenas um item da tab pode ser selecionado por vez;
+- Utilize letra maiúscula somente no início do título.
+
+### Não Fazer
+
+- Evite usar ícone na tabs;
+- Não utilize tabs para tarefas sequenciais. Para esses casos utilize stepper;
+- Não é recomendado que se use mais de duas palavras como label;
+- Não use mais de seis abas;
+- Não use esse componente quando os usuários precisarem ver o conteúdo de várias tabs simultaneamente, como quando é necessário comparar informações.
+
+## Acessibilidade tratada no componente
+
+Todas as tabs devem ter a mesma aparência e funcionar da mesma forma apresentando consistência, reconhecibilidade, previsibilidade, fortalecimento e eficiência no conjunto de ações para atingir um objetivo.
+
+- [Diretriz WCAG 1.4.3:](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum) textos devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 4.5:1 (se peso for regular ou tamanho for menor que 18px) ou 3:1 (se peso for bold ou tamanho for maior ou igual que 18px).
+- [Diretriz WCAG 1.4.1:](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color) alteração entre os estados precisa ser indicada por mais de um elemento além da cor.
+- [Diretriz WCAG 1.4.4](https://www.w3.org/WAI/WCAG21/Understanding/resize-text):Utilizar unidades de medida para o texto que suportem zoom (ex.: utilizar REM ou EM ao invés de PX).
+- [Diretriz WCAG 2.5.5](https://www.w3.org/WAI/WCAG21/Understanding/target-size): possuir área clicável de pelo menos 44px x 44px (mobile e desktop).
+- [Diretriz WCAG 2.4.7](https://www.w3.org/WAI/WCAG21/Understanding/focus-visible): Possuir foco visível ao navegar pelo teclado
+- [Diretriz WCAG 2.1.1](https://www.w3.org/WAI/WCAG21/Understanding/keyboard): Permitir navegação pelo teclado
+- [Diretriz WCAG 4.1.2](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value): Utilizar códigos semânticos para tecnologias assistivas
+
+</TabItem>
+
+ <TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+
+ <TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+</Tabs>
