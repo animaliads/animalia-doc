@@ -19,7 +19,6 @@ export default class BestPracticesComponent extends React.Component {
           display: 'flex',
           fontFamily: 'sans-serif',
           lineHeight: '24px',
-          color: '#333333',
         }}
       >
         <div style={{ width: '50%', marginRight: '4%' }}>

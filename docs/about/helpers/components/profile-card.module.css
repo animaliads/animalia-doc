@@ -1,0 +1,56 @@
+span {
+  font-size: 14px;
+}
+span,
+strong {
+  text-align: center;
+}
+.cardProfile {
+  border: solid 1px #d0d0d7;
+  border-radius: 4px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  height: 250px;
+  padding: 32px 24px 16px 24px;
+  box-sizing: border-box;
+  margin: 8px;
+}
+.imgProfile {
+  position: relative;
+}
+.imgProfile img {
+  height: 125px;
+  width: auto;
+  border: solid 4px #44479b;
+  border-radius: 50%;
+  z-index: 1;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+.imgProfile::before {
+  content: '';
+  position: absolute;
+  right: 3px;
+  bottom: 25px;
+  z-index: -5;
+  width: 30px;
+  height: 30px;
+  background-color: #9ac59b;
+  border-radius: 50%;
+
+  /* estilo das bolinhas */
+}
+
+.decorationProfile {
+  width: 60px;
+  height: 60px;
+  border-radius: 400px;
+  position: absolute;
+  z-index: -10;
+  background-color: #9ac59b;
+  top: 480px;
+  left: 595px;
+}

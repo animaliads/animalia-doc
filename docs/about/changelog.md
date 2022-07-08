@@ -1,5 +1,6 @@
 ---
 id: changelog
+sidebar_label: Componentes
 ---
 
 # Changelog
@@ -18,7 +19,6 @@ id: changelog
 
 - **Global tokens:** ampliação da escala de tokens para line height e spacing squish.
 
-
 ## Versão 1.0.0-next.1 - Calango
 
 28 de abril de 2021
@@ -31,8 +31,6 @@ id: changelog
 - **Documentação (Button)**: Visão geral sobre o componente, com boas práticas, anatomia e estados, listagem das propriedades e acessibilidade
 - [Repositório de design](https://github.com/animaliads/animalia-design) para versionamento dos arquivos Sketch, no Github
 - **Button**: novo componente. Botão do tipo primário.
-
-
 
 :::note
 
