@@ -14,10 +14,10 @@ function HomepageHeader() {
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <div className={styles.intro}>
-        <h1>Bem-vindo ao Animalia Design System</h1>
+        <h1>Boas-vindas ao Animalia Design System</h1>
           <p>Design system open source da TOTVS, que nasceu com o objetivo de melhorar a performance 
             no desenvolvimento de aplicações corporativas, facilitando a 
-            comunicação entre designers e desenvolvedores</p>
+            comunicação entre os times de design e desenvolvimento</p>
            <div className={styles.buttons}>
             <Link
               className="ani-button-secondary"

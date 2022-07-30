@@ -7,7 +7,7 @@ sidebar_label: Portal
 
 ## Versão 1.0.0 - (Peixe)
 
-xx de junho de 2022
+01 de agosto de 2022
 
 #### 🎉 Novidades (New Features)
 
@@ -25,7 +25,7 @@ Release Formulário:
 
 - **Documentação**:
 
-  - **Componentes (Formulário):** Documentação de design de todos os componentes do segundo pacote: Tag, Divider, Calendar, Timepicker, Datepicker, Radio group, Combobox, Multiselect, Tabs
+  - **Componentes (Formulário):** Documentação de design de todos os componentes do segundo pacote: [Tag](https://doc.animaliads.io/docs/components/tag), [Divider](https://doc.animaliads.io/docs/components/divider), [Calendar](https://doc.animaliads.io/docs/components/calendar), [Timepicker](https://doc.animaliads.io/docs/components/timepicker), [Datepicker](https://doc.animaliads.io/docs/components/datepicker), [Radiogroup](https://doc.animaliads.io/docs/components/radiogroup), [Combobox](https://doc.animaliads.io/docs/components/combobox), [Multiselect](https://doc.animaliads.io/docs/components/multiselect), [Tabs](https://doc.animaliads.io/docs/components/tabs)
 
 #### ✨ Melhorias (Enhancements)
 

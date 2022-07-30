@@ -54,10 +54,10 @@ export default function HomepageFeatures() {
         <div className="row">
            <div className={clsx('col col--3')}>
            <div className={styles.presentation}>
-             <p className={styles.tagline}>Principios</p>
-              <h3 className={styles.headline01}>Principios do Animalia
+             <p className={styles.tagline}>Nossos pilares</p>
+              <h3 className={styles.headline01}>Princípios do Animalia
 Design System</h3>
-              <p>Os princípios são nossa direção, são eles que orientam todas as diretrizes e decisões em relação ao design system e a tudo que ele entrega.</p>
+              <p>Os princípios são nossa direção. São eles que orientam todas as diretrizes e decisões em relação ao design system e a tudo que ele entrega.</p>
           </div>
         </div>
           {FeatureList.map((props, idx) => (
