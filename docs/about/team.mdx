@@ -18,6 +18,7 @@ import profileLuiz from './img/team/luiz-mariz.jpeg';
 import profileJorge from './img/team/jorge.png';
 import profileBizon from './img/team/wilson.jpeg';
 import profileMateus from './img/team/mateus.jpeg';
+import profileLucy from './img/team/lucy.jpeg';
 
 import profilePeixe from './img/team/peixe.jpeg';
 import profileTais from './img/team/tais.jpeg';
@@ -58,13 +59,8 @@ O time do Animalia é multidisciplinar e o processo colaborativo, buscando mante
     title="Product Design"
   />
   <ProfileCardComponent
-    avatar={profileEdi}
-    name="Edineide Oliveira"
-    title="Product Design"
-  />
-  <ProfileCardComponent
-    avatar={profileNic}
-    name="Nicole Oliveira"
+    avatar={profileLucy}
+    name="Lucy Brandão"
     title="Software Engineer"
   />
   <ProfileCardComponent
@@ -91,11 +87,13 @@ O time do Animalia é multidisciplinar e o processo colaborativo, buscando mante
     avatar={profileCaio}
     name="Caio Mendonça"
     title="UX Researcher"
-  /> <ProfileCardComponent
+  />{' '}
+  <ProfileCardComponent
     avatar={profileJe}
     name="Jessica"
     title="UX Researcher"
-  /> <ProfileCardComponent
+  />{' '}
+  <ProfileCardComponent
     avatar={profileBia}
     name="Bia Ferrer"
     title="UX Researcher"
@@ -105,7 +103,11 @@ O time do Animalia é multidisciplinar e o processo colaborativo, buscando mante
     name="Wilson Bizon"
     title="Esp. de Usabilidade"
   />
-  <ProfileCardComponent avatar={profileMateus} name="Mateus José" title="Product Design" />
+  <ProfileCardComponent
+    avatar={profileMateus}
+    name="Mateus José"
+    title="Product Design"
+  />
 </div>
 
 ## Colaboração
@@ -120,6 +122,16 @@ Pessoas que contribuíram ao longo da jornada da criação do Animalia Design Sy
     filter: 'grayscale(100%)',
   }}
 >
+  <img
+    style={{ width: '64px', borderRadius: '50%', margin: '8px' }}
+    src={profileEdi}
+    alt="Gabi Cavagliero"
+  />
+  <img
+    style={{ width: '64px', borderRadius: '50%', margin: '8px' }}
+    src={profileNic}
+    alt="Gabi Cavagliero"
+  />
   <img
     style={{ width: '64px', borderRadius: '50%', margin: '8px' }}
     src={profileGabriela}
