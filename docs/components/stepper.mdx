@@ -8,12 +8,10 @@ import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
 
-import StepperAnatomy from './img/stepper/stepper-anatomy.png';
-import StepperVertical from './img/stepper/stepper-vertical.png';
-import StepperOverText from './img/stepper/stepper-overtext.png';
+import StepperHorizontalOrientation from './img/stepper/stepper-horizontal-orientation.png';
+import StepperVerticalOrientation from './img/stepper/stepper-vertical-orientation.png';
+import StepperOverText from './img/stepper/stepper-over-text.png';
 import StepperStatus from './img/stepper/stepper-status.png';
-import StepperHorizontalSpacing from './img/stepper/stepper-horizontal-spacing.png';
-import StepperVerticalSpacing from './img/stepper/stepper-vertical-spacing.png';
 
 # Stepper
 
@@ -53,13 +51,15 @@ O `stepper` é composto por um conjunto de `steps`. Cada `step` apresenta difere
 > 1. Ao retroceder um passo, as informações do passo atual devem ser mantidas.
 > 2. O último passo não é seguido por uma linha, justamente por não haver um próximo **step** para ligar.
 
-O componente preve também duas variações de orientação: `vertical` e `horizontal`. Em ambas, os elementos possuem as mesmas características especificadas anteriormente, mudando apenas o posicionamento dos elementos e espaçamentos.
+O componente prevê também duas variações de orientação: `vertical` e `horizontal`. Em ambas, os elementos possuem as mesmas características especificadas anteriormente, mudando apenas o posicionamento dos elementos e espaçamentos.
+
+### Variações
 
 #### Horizontal
 Na variação **horizontal** os **steps** são alinhados lado a lado seguindo a linha na horizontal, com o **label** abaixo do circulo, conforme imagem à seguir:
 
 <img
-  src={StepperAnatomy}
+  src={StepperHorizontalOrientation}
   alt="Imagem representando o componente stepper na horizontal com quatro passos, sendo eles: 1º done, 2º current, 3º next e 4º next também."
 /> 
 
@@ -73,48 +73,12 @@ Na variação **horizontal** os **steps** são alinhados lado a lado seguindo a 
 Na variação **vertical**, os **steps** são alinhados um abaixo do outro seguindo a linha na vertical, com o **label** à direita do circulo, conforme imagem à seguir:
 
 <img
-  src={StepperVertical}
+  src={StepperVerticalOrientation}
   alt="Imagem representando o componente stepper na vertical com quatro passos, sendo eles: 1º done, 2º current, 3º next e 4º next também."
 /> 
 
 1. **Step** 
 2. **Stepper** 
-
----
-
-### Espaçamento
-
-#### Horizontal
-
-**Label:** contém um `padding` de `2rem` à direita e `0.25rem` ao topo.
-
-**Circle** (`done`, `next`)**:** contém um `padding` de `0.25rem` ao topo e abaixo.
-
-<img
-  src={StepperHorizontalSpacing}
-  alt="Imagem representando o espaçamento do componente stepper na horizontal, apontando os espaços na direita e acima do label, como também do circulo no topo e abaixo."
-/> 
-
-1. **Padding right (label)** 
-2. **Padding top (label)** 
-3. **Padding (circle)** 
-
-#### Vertical
-
-**Label:** contém um `padding` de `1rem` à esquerda e `0.25rem` ao topo e abaixo.
-
-**Circle** (`done`, `next`)**:** contém um `padding` de `0.25rem` em todos os lados.
-
-<img
-  src={StepperVerticalSpacing}
-  alt="Imagem representando o espaçamento do componente stepper na vertical, apontando os espaços na esquerda, acima e abaixo do label, como também em torno do circulo."
-/>
-
-1. **Padding left (label)** 
-2. **Padding top, bottom (label)** 
-3. **Padding (circle)** 
-
----
 
 ### Comportamento
 Em qualquer variação, as validações dos passos devem ocorrer no próprio contexto de preenchimento do formulário.
@@ -144,8 +108,6 @@ Ao atingir este limite, o texto é truncado (inclui reticencias) e também exibe
 
 > **Leitores de tela:** devem ler o texto por completo, sem a necessidade de sinalizar que está truncado em ambas variações.
 
----
-
 ## Boas práticas
 Foram estruturados os padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência aos usuários. 
 Por isso, é muito importante que ao utilizar este componente, as pessoas que o projetarem devem levar em consideração os seguintes critérios:
@@ -164,8 +126,6 @@ Por isso, é muito importante que ao utilizar este componente, as pessoas que o 
 - Quando o fluxo de trabalho contiver menos de 3, ou mais de 7 etapas grandes para serem realizadas;
 - Não utilizar duas instâncias do componente em uma mesma página;
 - Não utilizar o componente incorporado no próprio componente.
-
---- 
 
 ### Acessibilidade tratada no componente
 O componente `search` foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (**WCAG**) 2.1. 
