@@ -1,0 +1,202 @@
+---
+id: stepper
+sidebar_label: Stepper
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import BestPracticesComponent from './helpers/components/best-practices.tsx';
+import LiveDemoComponent from './helpers/components/live-demo.tsx';
+
+import StepperAnatomy from './img/stepper/stepper-anatomy.png';
+import StepperVertical from './img/stepper/stepper-vertical.png';
+import StepperOverText from './img/stepper/stepper-overtext.png';
+import StepperStatus from './img/stepper/stepper-status.png';
+import StepperHorizontalSpacing from './img/stepper/stepper-horizontal-spacing.png';
+import StepperVerticalSpacing from './img/stepper/stepper-vertical-spacing.png';
+
+# Stepper
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+## Visão geral
+O componente `stepper` possibilita que um fluxo seja apresentado em um formato de passo a passo,
+indicando qual passo se encontra e exibindo apenas as informações necessárias para o mesmo.
+
+### Quando usar
+Utilize-o para dar visibilidade e status do sistema com previsibilidade do processo.
+
+### Anatomia
+O `stepper` é composto por um conjunto de `steps`. Cada `step` apresenta diferentes características para indicar o status do passo atual, bem como para os demais passos durante o fluxo, conforme imagem e descriçoes abaixo:
+
+<img
+  src={StepperStatus}
+  alt="Imagem representando as quatro possibilidades de status do componente de stepper, exibido linearmente done, current, next e current respectivamente."
+/> 
+
+1. `Done`: circulo com bordas e um ícone de `check`, seguido por uma linha continua em coloração escura;
+2. `Current`: circulo preenchido e um ícone `edit` (personalizável) em coloração da marca seguido por uma linha pontilhada em coloração neutra;
+3. `Next`: circulo com bordas e o número do passo, seguido por uma linha pontilhada em coloração neutra;
+4. `Current (return)`: circulo preenchido com um ícone `edit` (personalizável) em coloração da marca seguido por uma linha pontilhada em coloração escura.
+
+> **Observações:**
+>
+> 1. Ao retroceder um passo, as informações do passo atual devem ser mantidas.
+> 2. O último passo não é seguido por uma linha, justamente por não haver um próximo **step** para ligar.
+
+O componente preve também duas variações de orientação: `vertical` e `horizontal`. Em ambas, os elementos possuem as mesmas características especificadas anteriormente, mudando apenas o posicionamento dos elementos e espaçamentos.
+
+#### Horizontal
+Na variação **horizontal** os **steps** são alinhados lado a lado seguindo a linha na horizontal, com o **label** abaixo do circulo, conforme imagem à seguir:
+
+<img
+  src={StepperAnatomy}
+  alt="Imagem representando o componente stepper na horizontal com quatro passos, sendo eles: 1º done, 2º current, 3º next e 4º next também."
+/> 
+
+1. **Stepper** 
+2. **Step** 
+3. **Circle** 
+4. **Line** 
+5. **Label** 
+
+#### Vertical
+Na variação **vertical**, os **steps** são alinhados um abaixo do outro seguindo a linha na vertical, com o **label** à direita do circulo, conforme imagem à seguir:
+
+<img
+  src={StepperVertical}
+  alt="Imagem representando o componente stepper na vertical com quatro passos, sendo eles: 1º done, 2º current, 3º next e 4º next também."
+/> 
+
+1. **Step** 
+2. **Stepper** 
+
+---
+
+### Espaçamento
+
+#### Horizontal
+
+**Label:** contém um `padding` de `2rem` à direita e `0.25rem` ao topo.
+
+**Circle** (`done`, `next`)**:** contém um `padding` de `0.25rem` ao topo e abaixo.
+
+<img
+  src={StepperHorizontalSpacing}
+  alt="Imagem representando o espaçamento do componente stepper na horizontal, apontando os espaços na direita e acima do label, como também do circulo no topo e abaixo."
+/> 
+
+1. **Padding right (label)** 
+2. **Padding top (label)** 
+3. **Padding (circle)** 
+
+#### Vertical
+
+**Label:** contém um `padding` de `1rem` à esquerda e `0.25rem` ao topo e abaixo.
+
+**Circle** (`done`, `next`)**:** contém um `padding` de `0.25rem` em todos os lados.
+
+<img
+  src={StepperVerticalSpacing}
+  alt="Imagem representando o espaçamento do componente stepper na vertical, apontando os espaços na esquerda, acima e abaixo do label, como também em torno do circulo."
+/>
+
+1. **Padding left (label)** 
+2. **Padding top, bottom (label)** 
+3. **Padding (circle)** 
+
+---
+
+### Comportamento
+Em qualquer variação, as validações dos passos devem ocorrer no próprio contexto de preenchimento do formulário.
+Em caso de erro, o feedback deve acontecer no campo (para validações em tempo real), ou via [`toaster`](toaster#visão-geral) quando for um retorno do sistema.
+
+#### Horizontal
+
+**Tamanho:** A largura do `stepper` na variação **horizontal** é variável, de acordo com a quantidade de **steps** e espaço disponível. 
+Cada **step** ocupa uma parte, proporcinal à divisão da quantidade de **steps**. 
+
+> **Exemplo:** 4 steps = 100%, 1 step ocupa 25%.
+
+**Label:** O texto se mantém sempre em uma linha única, sem quebras.
+Como o **label** possui uma largura máxima (`15em`), ao atingir esse tamanho o texto é truncado (inclui reticencias) e exibe-o por completo através do componente [`tooltip`](tooltip#visão-geral) ao colocar o cursor sobre o texto.
+
+<img
+  src={StepperOverText}
+  alt="Imagem representando um stepper de 3 passos com o comportamento de exibição do texto truncado através do componente tooltip no segundo passo."
+/> 
+
+#### Vertical
+
+**Tamanho:** A altura do `stepper` na variação **vertical** também é variável, mas além da quantidade de **steps**, se baseia no tamanho do `label`.
+
+**Label**: Por ter mais espaço disponível na vertical, o texto pode ser quebrado em mais linhas, porém com um limite de 100 caracteres.
+Ao atingir este limite, o texto é truncado (inclui reticencias) e também exibe-o por completo com o [`tooltip`](tooltip#visão-geral) ao colocar o cursor sobre o texto.
+
+> **Leitores de tela:** devem ler o texto por completo, sem a necessidade de sinalizar que está truncado em ambas variações.
+
+---
+
+## Boas práticas
+Foram estruturados os padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência aos usuários. 
+Por isso, é muito importante que ao utilizar este componente, as pessoas que o projetarem devem levar em consideração os seguintes critérios:
+
+
+### Fazer
+- Utilizar a indicação dos status de cada passo, conforme definições em [anatomia](stepper#anatomia).
+- Utilizar o componente quando a tarefa for linear e possuir de 3 a 7 etapas grandes para serem concluídas;
+- Apresentar o componente em formulários ou questionários de várias páginas que deve ser preenchido em uma ordem específica;
+- Utilizar em processos complexos que se beneficiam por serem divididos em tarefas menores;
+- Permitir que o usuário volte a uma etapa anterior para revisar o envio de seus dados;
+  - Utilizar um botão primário para avançar e um botão secundário para retroceder as etapas, posicionados na parte inferior do conteúdo da página.
+
+### Não fazer
+- Quando o fluxo de trabalho não for linear;
+- Quando o fluxo de trabalho contiver menos de 3, ou mais de 7 etapas grandes para serem realizadas;
+- Não utilizar duas instâncias do componente em uma mesma página;
+- Não utilizar o componente incorporado no próprio componente.
+
+--- 
+
+### Acessibilidade tratada no componente
+O componente `search` foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (**WCAG**) 2.1. 
+Algumas diretrizes de acessibilidade já são tratadas no componente internamente e não devem ser alteradas por quem utilizar.  São elas:
+
+- A arquitetura de informação deve ser construída de forma que faça sentido tanto para quem vê, quanto para quem ouve o conteúdo ([**1.3.1: Info and Relationships (A)**](https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html));
+- Usar medidas relativas para possibilitar um zoom de até 200%, sem perda do conteúdo ou funcionalidade ([**1.4.4: Resize text (A)**](https://www.w3.org/WAI/WCAG21/Understanding/resize-text)).
+
+> **Leitores de tela:**
+>
+> As etapas não possuem interação, porém, ainda assim pessoas que utilizam leitores de tela devem ser informados sobre:
+> - Status da etapa;
+> - Identificação da etapa (texto do **label**);
+> - Em qual **step** se encontra e quantos são (Exemplo: "1 de 4").
+
+</TabItem>
+
+<TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+<TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+</Tabs>
