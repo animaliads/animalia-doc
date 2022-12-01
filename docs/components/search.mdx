@@ -1,0 +1,204 @@
+---
+id: search
+sidebar_label: Search
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import BestPracticesComponent from './helpers/components/best-practices.tsx';
+import LiveDemoComponent from './helpers/components/live-demo.tsx';
+
+import SearchActiveAnatomy from './img/search/search-active-anatomy.png';
+import SearchActiveSpacing from './img/search/search-active-spacing.png';
+import SearchTriggerAnatomy from './img/search/search-trigger-anatomy.png';
+import SearchTriggerSpacing from './img/search/search-trigger-spacing.png';
+
+# Search
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+## Visão geral
+O componente `search`, também conhecido como **barra de pesquisa**, é utilizado para ajudar os usuários a localizarem um determinado conteúdo.
+
+Normalmente **localizado no canto superior direito** acompanhado do **ícone de lupa**, já que é um ícone amplamente conhecido.
+
+Este componente é um recurso encontrado na maioria das soluções e ferramentas digitais, principalmente quando há grande quantidade de informações.
+
+Também permite que os usuários pesquisem conteúdos específicos se souberem quais termos de pesquisa usar ou quando não conseguirem encontrar o conteúdo desejado na navegação principal. 
+
+O resultado da busca é exibido através do componente [`listbox`](listbox#visão-geral), que pode ser acionado dinâmicamente na variação [`active`](search#comportamento) ou manualmente na variação [`trigger`](search#comportamento).
+
+### Quando usar
+
+Utilize-o para facilitar o encontro de informações nas soluções, como por exemplo, em uma navegação de menu ou listagem de dados.
+
+### Anatomia
+
+#### Search active
+Esta variação é composta por um `input`, `ani icon` (ícone de lupa) e um `clear button` (botão limpar), além de contornos exibidos ao receber foco tanto no próprio `input` como também no **botão limpar**.
+
+Nesta variação, o componente exibe o **ícone de lupa** à esquerda do `input` e o **botão limpar** à direita, conforme imagem à seguir:
+
+<img
+  src={SearchActiveAnatomy}
+  alt="Imagem representando quatro estados do componente search active alinhados em duas linhas e colunas. 
+  O primeiro mostra o estado vazio sem foco e abaixo o oposto. O segundo mostra o estado preenchido e abaixo demonstra o foco no ícone de lupa."
+/> 
+
+1. **Search (Empty)** 
+2. **Ani icon**
+3. **Placeholder**
+4. **Search (Filled)**
+5. **Input text**
+6. **Clear button**
+7. **Outline (Focus)**
+
+#### Search trigger
+Já esta variação, também é composta por um `input`, um `clear button` (botão limpar) e um `button field` (botão pesquisar), além de contornos exibidos ao receber foco tanto no próprio `input`, **botão limpar** e também no **botão pesquisar**.
+
+Nesta variação, o componente exibe o **botão limpar** e o **botão pesquisar** agrupados à direita do `input`, conforme imagem à seguir:
+
+<img
+  src={SearchTriggerAnatomy}
+  alt="Imagem representando quatro estados do componente search trigger alinhados em duas linhas e colunas. 
+  O primeiro mostra o estado vazio sem foco e abaixo o oposto. O segundo mostra o estado preenchido e abaixo demonstra o foco no ícone de lupa."
+/> 
+
+1. **Search (Empty)** 
+2. **Placeholder**
+3. **Button field**
+4. **Search (Filled)**
+5. **Input text**
+6. **Clear button**
+7. **Outline (Focus)**
+
+:::note Input text e Placeholder
+Ambas variações, os textos possuem as mesmas características tipográficas, mudando apenas a cor.
+:::
+
+### Espaçamento 
+
+#### Search active
+Os elementos recebem um espaçamento de `0.5rem` entre si e são alinhados ao centro, tanto vertical quanto horizontalmente.
+
+<img
+  src={SearchActiveSpacing}
+  alt="Imagem indicando a composição da anatomia do componente search active, e indicando o espaçamento em cada elemento conforme descrição de espaçamento."
+/> 
+
+1. **Ani icon**
+2. **Placeholder**
+3. **Input text**
+4. **Clear button**
+
+#### Search trigger
+Os elementos recebem as mesmas definições da variação `active`, porém os ícones uma vez que agrupados à direita, não recebem espaçamento entre si.
+
+<img
+  src={SearchTriggerSpacing}
+  alt="Imagem indicando a composição da anatomia do componente search active, e indicando o espaçamento em cada elemento conforme descrição de espaçamento."
+/> 
+
+1. **Placeholder**
+2. **Ani icon**
+3. **Input text**
+4. **Clear button**
+
+### Comportamento
+O componente tem duas variações de comportamento: `active` e `trigger` (gatilho).
+
+**Active:** ideal para quando a busca é executada nas informações em tela ou numa base de dados em pequena escala, pois ocorre de forma dinâmica, sem a necessidade de acionar após cada digitação.
+
+**Trigger:** neste caso se aplica o inverso da variação `active`, sendo ideal para evitar o consumo de dados e performance da aplicação a cada digitação dos usuários, pois só realizará a busca apenas após acionar um gatilho, como pressionar a tecla `enter` ou clicar no **ícone de lupa**.
+
+#### Modo de pesquisa
+O componente possibilita que a pesquisa pelo texto aconteça de duas formas: `start with` (começa com) e `contains` (contém).
+
+**Starts with:** executa uma busca e retorna o resultado do que inicia com o valor pesquisado.
+
+**Contains:** executa uma busca e retorna o resultado do que contém o valor pesquisado.
+
+:::note Case sensitive
+Não há diferenciação em nenhum dos casos acima quanto ao uso de letras maiúsculas e minúsculas.
+:::
+
+#### Clear button
+O `clear button` fica disponível a partir de um caractere digitado no campo, ficando visível mesmo após o componente perder o foco. Este elemento também recebe foco por teclado.
+
+#### Texto longo
+Quando o texto for longo demais para o espaço horizontal disponível, o comportamento varia de acordo com o estado de interação:
+
+**Normal:** o texto fica truncado, incluindo "**…**” (reticências) ao final.
+
+**Em foco:** as reticências saem, exibindo apenas o que couber no `input`, sendo possível navegar entre o texto com as setas direcionais. 
+
+:::note Leitores de tela
+Deve ler o valor completo, sem a necessidade de truncar texto.
+:::
+
+#### Ordem de foco
+A ordem de foco na navegação através da tecla `tab`, ocorre de acordo com a variação e estado do campo: 
+
+##### Active
+- **Empty (Vazio):** `Input`;
+- **With text (Com texto):** `Input` para `Button clear`.
+
+##### Trigger
+- **Empty (Vazio):** `Input` para `Button field`;
+- **With text (Com texto):** `Input` para `Button clear` para `Button field`.
+
+## Boas práticas
+Foram estruturados os padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência aos usuários. 
+Por isso, é muito importante que ao utilizar este componente, as pessoas que o projetarem devem levar em consideração os seguintes critérios:
+
+- Utilize labels para apresentar resultados que estão sendo exibidos e apresente os resultados mais relevantes primeiro.
+- Exiba uma mensagem clara quando não forem encontrados resultados para busca e sempre que possível ofereça outras sugestões de busca.
+- Mantenha o texto original no campo de input, que facilita a ação do usuário caso queira fazer uma nova busca com alguma modificação na pesquisa.
+- Caso seja possível detectar um erro de digitação, mostre os resultados para a palavra "corrigida", isso evita a frustração de não obter resultados e não força o usuário a realizar uma nova busca.
+- Quando apropriado, destaque os termos da busca nos resultados.
+- A entrada do campo de pesquisa deve caber em uma linha. Não use entradas de pesquisa de várias linhas.
+- Recomenda-se ter apenas uma pesquisa por página. Se você precisar de várias pesquisas, rotule-as claramente para indicar sua finalidade.
+- Se possível, forneça sugestões de pesquisa, seja em um [`helptext`](textfield#anatomia) ou sugestão de pesquisa que é um _autocomplete_. Isso ajuda os usuários a encontrar o que estão procurando, especialmente se os itens pesquisáveis forem complexos.
+
+### Acessibilidade tratada no componente
+O componente `search` foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (**WCAG**) 2.1. 
+Algumas diretrizes de acessibilidade já são tratadas no componente internamente e não devem ser alteradas por quem utilizar.  São elas:
+
+- Permitir a interação via teclado ([**2.1.1: Keyboard (A)**](https://www.w3.org/WAI/WCAG21/Understanding/keyboard));
+- Alteração entre os estados precisa ser indicada por mais de um elemento além da cor ([**1.4.1: Use of Color**](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color));
+- Possuir área clicável de pelo menos `44px` x `44px` para mobile e desktop ([**2.5.5: Target Size**](https://www.w3.org/WAI/WCAG21/Understanding/target-size));
+- Textos devem ter uma relação de contraste entre primeiro e segundo plano de ao menos **4.5:1** se peso for regular ou tamanho for menor que `18px` ou; **3:1** se peso for bold ou tamanho for maior ou igual que `18px` ([**1.4.3: Contrast (Minimum)**](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum));
+- Erros durante e após o preenchimento de dados em formulários, devem ser identificados de forma específica e clara ([**3.3.1: Language of Page**](https://www.w3.org/WAI/WCAG21/Understanding/language-of-page));
+- Forneça sugestões simples para que o usuário consiga corrigir facilmente os erros de preenchimento ([**3.3.3: Error Suggestion**](https://www.w3.org/WAI/WCAG21/Understanding/error-suggestion));
+- Utilizar medidas relativas para possibilitar um zoom de até 200% sem perda do conteúdo ou funcionalidade ([**1.4.4: Redimension (A)**](https://www.w3.org/WAI/WCAG21/Understanding/resize-text));
+- O estado de foco deve ser sempre preservado, inclusive quando o componente estiver desabilitado ([**2.4.7: Focus Visible**](https://www.w3.org/WAI/WCAG21/Understanding/focus-visible));
+- Utilizar nome, função e valor adequadamente, pois estes parâmetros são utilizados por tecnologias assistivas para identificar os elementos da interface ([**4.1.2: Name, Role, Value**](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value)).
+
+</TabItem>
+
+<TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+<TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+</Tabs>

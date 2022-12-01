@@ -1,0 +1,172 @@
+---
+id: loading
+sidebar_label: Loading
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import BestPracticesComponent from './helpers/components/best-practices.tsx';
+import LiveDemoComponent from './helpers/components/live-demo.tsx';
+
+import loadingAnatomy from './img/loading/loading-anatomy.png';
+import loadingOverlayAnatomy from './img/loading/loading-overlay-anatomy.png';
+import loadingSizes from './img/loading/loading-sizes.png';
+import loadingStrokeSize from './img/loading/loading-stroke-size.png';
+import loadingSpinnerAnimation from './img/loading/loading-spinner-animation.png';
+import loadingDotsAnimation from './img/loading/loading-dots-animation.png';
+
+# Loading
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+## Visão geral
+O componente `loading` serve para informar que alguma ação dentro da página está sendo executada, e deve ser evocado assim que houver o disparo desta ação, sendo um feedback sem informações numéricas ou percentual.
+
+### Quando usar
+Seu uso é recomendado para tarefas que levam até 10 segundos para serem concluídas e que não seja necessário exibir o progresso da execução.
+
+## Anatomia
+O componente prevê duas variações em suas respectivas anatomias: `single` e `overlay`.
+
+### Single
+A variação `single` consta apenas o elemento _spinner_ em sua forma, cor e animação, sendo este:
+- Um círculo sem preenchimento;
+- Uma indicação de avanço em cor azul em gradiente;
+- A repetição de movimento (_looping_) enquanto for exibido.
+
+<img
+  src={loadingAnatomy}
+  alt="Três elementos alinhados na horizontal, sendo primeiro destacando o corpo do spinner como um todo. O segundo indicando o shape, que é um circulo com bordas na cor rosa e fundo na mesma cor num tom mais leve. O terceiro elemento indica o fill (preenchimento), aplicado na cor azul em degradê, representando um giro no sentido anti-horário."
+/>
+
+1. **Spinner**
+2. **Shape**
+3. **Fill**
+
+### Overlay
+Na variação `overlay`, a composição consta as seguintes composições:
+- Um `spinner`, com as estilizações seguindo as mesmas definições da variação `single`;
+- Um `loading text` (texto de carregamento), posicionado logo abaixo do `spinner`;
+- Uma `base`, que sustenta o `spinner` e o texto de carregamento;
+- E um `overlay`, que fica abaixo da `base` e encobre todo o conteúdo da página.
+
+<img
+  src={loadingOverlayAnatomy}
+  alt="Imagem ilustrando a composição do componente loading na variação overlay, contendo em seu eixo vertial a parte single e logo abaixo o texto de carregamento, a base na cor branca envelopando ambos e ao fundo o próprio overlay acizentado."
+/>
+
+1. **Spinner**
+2. **Loading text**
+3. **Dots**
+4. **Base**
+5. **Overlay**
+
+
+### Animação
+A animação ocorre nas partes `spinner` e `dots`. 
+
+#### Spinner 
+Nesta parte do componente, a animação ocorre em quatro movimentos de rotações entre 0º e -90º, com um delay de `1ms` cada e duração de `300ms`.
+
+<img
+  src={loadingSpinnerAnimation}
+  alt="Imagem representando as quatro posições de rotação da animação do componente Loading em funcionamento, nos graus 0, 90, 180 e -90 respectivamente."
+/>
+
+1. **0 grau**;
+2. **90 graus**;
+3. **180 graus**;
+4. **-90 graus**;
+
+#### Dots
+Na parte dos `dots`, que fica em anexo ao `loading text`, é utilizado a opacidade para preservar o espaço total e evitar que o texto se movimente conforme os pontos aparecem, independente das palavras definidas. Cada `dot` recebe 100% de opacidade com um delay de `1000ms` cada. 
+
+<img
+  src={loadingDotsAnimation}
+  alt="Imagem representando as quatro exibições dos dots com animação do componente Loading em funcionamento."
+/>
+
+1. **Sem dots**;
+2. **Um dot**;
+3. **Dois dots**;
+4. **Três dots**;
+
+### Tamanhos
+Em todos os tamanhos, a área total da construção do `shape` segue a mesma proporção de 25% de preenchimento e 75% do interior vazado. 
+
+<img
+  src={loadingStrokeSize}
+  alt="Imagem de um circulo bom bordas largas na cor rosa representando o corpo do componente Loading."
+/>
+
+1. **Preenchimento**;
+2. **Interior**;
+
+Além disso, contém os tamanhos `lg` (_large_), `md` (_medium_), `sm` (_small_) e `xs` (_extra small_), sendo `md` por padrão.
+
+<img
+  src={loadingSizes}
+  alt="Imagem representando os quatro tamanhos componente Loading em funcionamento, sendo large, medium, small e extra small, respectivamente."
+/>
+
+1. **Large:** `5rem (80px)`;
+2. **Medium:** `2rem (48px)`;
+3. **Small:** `1.5rem (24px)`;
+4. **Extra small:** `1rem (16px)`.
+
+### Comportamento
+O `spinner` se mantém em looping contínuo até que a ação esteja concluída, estando sua base e conteúdo sempre posicionados no meio da tela, tanto no sentido vertical quanto no horizontal. 
+
+## Boas práticas
+Foram estruturados os padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência aos usuários. 
+Por isso, é muito importante que ao utilizar este componente, as pessoas que o projetarem devem levar em consideração os seguintes critérios:
+
+### Fazer
+- Apresentar feedback imediato ao usuário quando o sistema sofrer alterações;
+- Utilizar em ações que demoram de 2 a 10 segundos;
+- Utilizar indicadores de carregamento animados.
+
+### Não fazer
+- Não deixar o sistema sem feedback quando o usuário executar uma ação;
+- Não utilizar caso a ação tenha mais de 10 segundos de duração;
+- Não utilizar indicadores de carregamento estático;
+- Não utilizar apenas cores para representar algo ou fornecer feedback;
+- Não tirar o foco e/ou contexto da tela em mensagens apresentadas.
+
+### Acessibilidade tratada no componente
+O componente `loading` foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.1. Algumas diretrizes de acessibilidade já são tratadas no componente internamente, e não podem ser alteradas por quem utilizar.  São elas:
+
+- Ser acessível por leitores de tela, deixando o usuário ciente de que algo está acontecendo em segundo plano;
+- Mesmo na variação `single`, deve ser previsto um texto assistivo para identificar a espera, trazendo um pouco mais de informação para os usuários com leitor de tela;
+- Caso não seja definida nenhuma descrição, o conteúdo do `loading text` pode ser assumido como texto assistivo, neste caso, sem o uso de reticências (`dots`).
+- Utilizar medidas relativas para possibilitar um zoom de até 200% sem perda do conteúdo ou funcionalidade ([**1.4.4 – Redimensionar (A)**](https://www.w3.org/WAI/WCAG21/Understanding/resize-text));
+
+</TabItem>
+
+<TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+
+<TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+</Tabs>
