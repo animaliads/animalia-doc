@@ -16,8 +16,6 @@ import TableFirstSort from './img/table/table-first-sort.png';
 import TableSecondSort from './img/table/table-second-sort.png';
 import TableThridSort from './img/table/table-third-sort.png';
 import TableFocusabledElements from './img/table/table-focusabled-elements.png';
-import TableHeadlineStatus from './img/table/table-headline-status.png';
-import TableRowStatus from './img/table/table-row-status.png';
 
 # Table
 
@@ -68,27 +66,6 @@ Além disso, há possibilidade de habilitar ordenação para as colunas de conte
 4. **Text**
 5. **Empty**
 
-#### Headline - Estados
-As células que compõe a estrutura do `headline` também podem receber quatro **estados**: `normal`, `hover`, `focus` e `disabled`.
-
-> Componentes utilizados nesta estrutura que contenham os próprios estados, devem manter as mesmas características e comportamentos intrínsecos,
-> como por exemplo o [`checkbox`](checkbox#visão-geral) de células do tipo **select**.
-
-<img
-  src={TableHeadlineStatus}
-  alt="Imagem representando todos os elementos em linha e as respectivas possibilidades de estados nas colunas. Os elementos Numeral e Text constam apenas em estado normal.
-  Elementos com estado hover recebem uma cor de fundo com maior destaque; com foco recebem além das definições de hover, um contorno preto; e em estado disabled uma cor neutra."
-/> 
-
-* 1.A. **Normal**
-* 1.B. **Hover**
-* 1.C. **Focus**
-* 1.D. **Disabled**
-* 2.A. **Numeral**
-* 2.B. **Text**
-* 2.C. **Select**
-* 2.D. **Sortabled**
-
 #### Row (View) - Tipos
 A **row** na variação do tipo `view` deve ser utilizada apenas para exibir dados. 
 Nesta variação, cada célula pode assumir um dos 3 seguintes formatos de conteúdo: `numeral`, `text` e [`tag`](tag), conforme imagem abaixo:
@@ -119,28 +96,6 @@ Neste caso, além dos formatos disponíveis em `view`, é possível definir cél
 5. **Link**
 6. **Tag**
 7. **More actions**
-
-
-#### Row - Estados
-As células que compõe a estrutura da `row` além do estado `normal`, também podem receber o estado `selected`.
-
-> Assim como no [`headline`](table#headline---estados), componentes utilizados nesta estrutura que contenham os próprios estados, devem manter as mesmas características e comportamentos intrínsecos, como por exemplo células do tipo [`link`](link#visão-geral).
-
-<img
-  src={TableRowStatus}
-  alt="Imagem representando todos os elementos em linha e os respectivos estados em duas colunas.
-  Elementos quando em estado selected recebem uma cor de fundo com mais ênfase."
-/> 
-
-* 1.A. **Normal**
-* 1.B. **Selected**
-* 2.A. **Expand**
-* 2.B. **Link**
-* 2.C. **More actions**
-* 2.D. **Tag**
-* 2.E. **Select**
-* 2.F. **Text**
-* 2.G. **Numeral**
 
 > Além das variações descritas acima, é possível definir também a **estilização** da estrutura de `rows` para exibir linhas no estilo **striped** (zebrada) ou com **line** (uma linha divisora na parte inferior de cada `row`).
 
