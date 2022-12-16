@@ -17,6 +17,7 @@ import TableSecondSort from './img/table/table-second-sort.png';
 import TableThridSort from './img/table/table-third-sort.png';
 import TableFocusabledElements from './img/table/table-focusabled-elements.png';
 import TableHeadlineStatus from './img/table/table-headline-status.png';
+import TableRowStatus from './img/table/table-row-status.png';
 
 # Table
 
@@ -70,8 +71,8 @@ Além disso, há possibilidade de habilitar ordenação para as colunas de conte
 #### Headline - Estados
 As células que compõe a estrutura do `headline` também podem receber quatro **estados**: `normal`, `hover`, `focus` e `disabled`.
 
-Contudo, componentes utilizados nesta estrutura que contém os próprios estados, devem manter as mesmas características e comportamentos intrínsecos,
-como por exemplo o [`checkbox`](checkbox#visão-geral) de células do tipo **select**.
+> Componentes utilizados nesta estrutura que contenham os próprios estados, devem manter as mesmas características e comportamentos intrínsecos,
+> como por exemplo o [`checkbox`](checkbox#visão-geral) de células do tipo **select**.
 
 <img
   src={TableHeadlineStatus}
@@ -118,6 +119,28 @@ Neste caso, além dos formatos disponíveis em `view`, é possível definir cél
 5. **Link**
 6. **Tag**
 7. **More actions**
+
+
+#### Row - Estados
+As células que compõe a estrutura da `row` além do estado `normal`, também podem receber o estado `selected`.
+
+> Assim como no [`headline`](table#headline---estados), componentes utilizados nesta estrutura que contenham os próprios estados, devem manter as mesmas características e comportamentos intrínsecos, como por exemplo células do tipo [`link`](link#visão-geral).
+
+<img
+  src={TableRowStatus}
+  alt="Imagem representando todos os elementos em linha e os respectivos estados em duas colunas.
+  Elementos quando em estado selected recebem uma cor de fundo com mais ênfase."
+/> 
+
+* 1.A. **Normal**
+* 1.B. **Selected**
+* 2.A. **Expand**
+* 2.B. **Link**
+* 2.C. **More actions**
+* 2.D. **Tag**
+* 2.E. **Select**
+* 2.F. **Text**
+* 2.G. **Numeral**
 
 > Além das variações descritas acima, é possível definir também a **estilização** da estrutura de `rows` para exibir linhas no estilo **striped** (zebrada) ou com **line** (uma linha divisora na parte inferior de cada `row`).
 
