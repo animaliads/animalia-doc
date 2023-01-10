@@ -1,0 +1,55 @@
+---
+id: menu
+sidebar_label: Menu
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import MenuAnatomy from './img/menu/menu-anatomy.png';
+import MenuAnatomyMacro from './img/menu/menu-anatomy-macro.png';
+
+# Menu
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+<TabItem value="design">
+
+## Visão geral
+
+O componente `menu` tem como objetivo viabilizar a navegação e orienta a pessoa usuária dentro de uma interface.
+
+## Anatomia
+
+O componente foi estruturado em áreas para facilitar a estruturação das soluções.
+
+### Estrutura macro
+
+Em uma visão macro, o menu é composto pelas seguintes partes:
+No formato Collapsed é composto por: Brand, Submenu e Action-Collapse e no formato extended apresenta Brand, Search, Submenu e Action-Collapse**, conforme imagem:**
+
+<img src={MenuAnatomyMacro} alt="Menu macro" />
+
+<img src={MenuAnatomy} alt="Menu base" />
+
+1. **Brand**: Área reservada para a logo da solução;
+2. **Submenu**: Apresenta elementos de que permite a navegação na interface;
+3. **Action-Collapse**: Região de interação que permite variar entre as forma collapsed ou extended.
+4. **Ani Search**
+5. **Border**: forma que “emoldura” o conteúdo do componente
+6. **Base**: fundo que encobre o conteúdo da página, trazendo a prioridade para o modal
+7. **Ani Divider**
+
+</TabItem>
+
+<TabItem value="dev"> TEste 2</TabItem>
+
+<TabItem value="custom-properties">Teste 3</TabItem>
+</Tabs>
