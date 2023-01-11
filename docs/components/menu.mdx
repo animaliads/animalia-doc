@@ -8,6 +8,10 @@ import TabItem from '@theme/TabItem';
 
 import MenuAnatomy from './img/menu/menu-anatomy.png';
 import MenuAnatomyMacro from './img/menu/menu-anatomy-macro.png';
+import MenuVariations from './img/menu/menu-variations.png';
+import MenuAnimation from './img/menu/menu-animation.png';
+import MenuBehavior from './img/menu/menu-behavior.png';
+import MenuBehavior1 from './img/menu/menu-behavior-1.png';
 
 # Menu
 
@@ -24,16 +28,11 @@ import MenuAnatomyMacro from './img/menu/menu-anatomy-macro.png';
 
 ## Visão geral
 
-O componente `menu` tem como objetivo viabilizar a navegação e orienta a pessoa usuária dentro de uma interface.
+O componente `menu` tem como objetivo viabilizar a navegação e orientar a pessoa usuária dentro de uma interface.
 
 ## Anatomia
 
-O componente foi estruturado em áreas para facilitar a estruturação das soluções.
-
-### Estrutura macro
-
-Em uma visão macro, o menu é composto pelas seguintes partes:
-No formato Collapsed é composto por: Brand, Submenu e Action-Collapse e no formato extended apresenta Brand, Search, Submenu e Action-Collapse**, conforme imagem:**
+Em uma visão macro, o `menu` é composto pelas seguintes partes:
 
 <img src={MenuAnatomyMacro} alt="Menu macro" />
 
@@ -44,44 +43,42 @@ No formato Collapsed é composto por: Brand, Submenu e Action-Collapse e no form
 3. **Action-Collapse**: Região de interação que permite variar entre as forma collapsed ou extended.
 4. **Ani Search**
 5. **Border**: forma que “emoldura” o conteúdo do componente
-6. **Base**: fundo que encobre o conteúdo da página, trazendo a prioridade para o modal
+6. **Base**: fundo que dos itens do conteúdo da navegação
 7. **Ani Divider**
-
-8.
 
 ### Variações
 
 O componente menu pode ser apresentado e/ou variar entres duas formas: Collapsed ou Extended.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/12f655cd-6f65-423f-a426-61f2074de2cd/Untitled.png)
+<img src={MenuVariations} alt="Menu base" />
 
-**Variação 1**
+#### **Variação 1**
 
 O Formato collapsed apresenta-se quando não há uma interação com o menu, proporcionando área de conteúdo maior.
 
-**Variação 2**
+#### **Variação 2**
 
-O Formato extended apresente quando o usuário precisa navegar dentro da solução.
+O formato extended é apresentado quando o usuário precisa navegar dentro da solução.
 
 ## Comportamento
 
-Descrição sobre o comportamento do componente…
+### Hover sobre o menu
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/74c07af4-65f9-4c2e-b700-dc1b3b004107/Untitled.png)
+Quando o mouse estiver sobre o componente ele deve expandir para apresentar os seus itens e sub-níveis
 
-### Estados (\***\*opcional\*\***)
+<img src={MenuBehavior} alt="Menu base" />
 
-Descrição dos estados do componente…
+### Expandir ou Retrair
 
-### Ordem de foco (\***\*opcional\*\***)
+A área action-collapse for acionada o menu deve expandir ou fechar de acordo com seus estado anterior.
 
-Descrição da ordem de foco do componente…
+<img src={MenuBehavior1} alt="Menu base" />
 
 ## Boas práticas
 
 Para navegação aninhada ou hierárquica, respeitando 2 níveis de navegação para navegação vertical;
 
-Faça:
+### Faça:
 
 - Crie grupos lógicos que melhore o acesso ao conteúdo;
 - Escreva rótulos de itens sempre com a primeira palavra maiúscula;
@@ -89,7 +86,7 @@ Faça:
 - Utilize títulos descritivos;
 - Links de navegação devem ser curtos e objetivos;
 
-Não faça:
+### Não faça:
 
 - Em rótulo de ítens, não utilize artigos como: um, uma;
 - Não coloque pontuação ao fim de rótulo de itens;
@@ -97,15 +94,18 @@ Não faça:
 - Não construa menus com mais de 3 níveis de profundidade;
 - Não torne a largura condensada para que não haja confusão do usuário com outros controles;
 
-## Acessibilidade tratada no componente
+### Acessibilidade tratada no componente
 
 O componente `menu` foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (**WCAG**).
 
 Algumas diretrizes de acessibilidade já são tratadas no componente internamente e não devem ser alteradas por quem utilizar. São elas:
 
-- Contraste (melhorado) [1.4.6 -Contrast (Enhanced) (Level AAA)](https://www.google.com.br)**;**
-- Critério de acessibilidade QWERT **[(2.2.2: Description)](https://www.google.com.br);**
-- Critério de acessibilidade XPTO **[(3.3.3: Description)](https://www.google.com.br).**
+- Seja qual for método de interação, a apresentação das informações na tela sempre deverá ter uma sequencia lógica.( [1.3.2 - Sequencia com significado](https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence))
+- Textos devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 7:1( [1.4.6 - Contraste (Melhorado)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced))
+- Preservar o foco visível na navegação via teclado.([WCAG 2.4.7 - Foco visível](https://www.w3.org/WAI/WCAG21/Understanding/focus-visible));
+- Permitir a interação via teclado.([WCAG 2.1.1 - Teclado](https://www.w3.org/WAI/WCAG21/Understanding/target-size));
+- Utilizar nome, função e valor adequadamente, pois estes parâmetros são utilizados por tecnologias assistivas para identificar os elementos da interface.([WCAG 4.1.2 - Nome, Função, Valor](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value));
+- Os elementos interativos possuem área clicável de pelo menos 44px x 44px ([WCAG 2.5.5: Área de clique](https://www.w3.org/WAI/WCAG21/Understanding/target-size));
 
 </TabItem>
 
