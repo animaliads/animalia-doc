@@ -28,19 +28,31 @@ import MenuBehavior1 from './img/menu/menu-behavior-1.png';
 
 ## Visão geral
 
-O componente `menu` tem como objetivo viabilizar a navegação e orientar a pessoa usuária dentro de uma interface.
+O componente `menu` têm como objetivo viabilizar a navegação e orientar a pessoa usuária dentro de uma interface.
+
+:::note Componentes relacionados
+
+- [`Search`](search)
+
+:::
 
 ## Anatomia
 
 Em uma visão macro, o `menu` é composto pelas seguintes partes:
 
-<img src={MenuAnatomyMacro} alt="Menu macro" />
+<img
+  src={MenuAnatomyMacro}
+  alt="Variação de menu com visão macro com as partes sinalizadas, sendo 1 brand, 2 required text, 3 action-collapse e 4 ani search"
+/>
 
-<img src={MenuAnatomy} alt="Menu base" />
+<img
+  src={MenuAnatomy}
+  alt="Variação de menu com visão base com as partes sinalizadas, sendo 4 ani search, 5 border, 6 base e 7 ani divider"
+/>
 
 1. **Brand**: Área reservada para a logo da solução;
 2. **Submenu**: Apresenta elementos de que permite a navegação na interface;
-3. **Action-Collapse**: Região de interação que permite variar entre as forma collapsed ou extended.
+3. **Action-Collapse**: Região de interação que permite variar entre as formas collapsed ou extended.
 4. **Ani Search**
 5. **Border**: forma que “emoldura” o conteúdo do componente
 6. **Base**: fundo que dos itens do conteúdo da navegação
@@ -50,7 +62,10 @@ Em uma visão macro, o `menu` é composto pelas seguintes partes:
 
 O componente menu pode ser apresentado e/ou variar entres duas formas: Collapsed ou Extended.
 
-<img src={MenuVariations} alt="Menu base" />
+<img
+  src={MenuVariations}
+  alt="Imagem apresentando 2 variações do menu, sendo 1 collapsed e 2 extended."
+/>
 
 #### **Variação 1**
 
@@ -66,13 +81,16 @@ O formato extended é apresentado quando o usuário precisa navegar dentro da so
 
 Quando o mouse estiver sobre o componente ele deve expandir para apresentar os seus itens e sub-níveis
 
-<img src={MenuBehavior} alt="Menu base" />
+<img
+  src={MenuBehavior}
+  alt="Imagem do menu na forma collapse mostrando em destaque a área de interação"
+/>
 
 ### Expandir ou Retrair
 
 A área action-collapse for acionada o menu deve expandir ou fechar de acordo com seus estado anterior.
 
-<img src={MenuBehavior1} alt="Menu base" />
+<img src={MenuBehavior1} alt="Imagem do menu na forma collapse e extended" />
 
 ## Boas práticas
 
