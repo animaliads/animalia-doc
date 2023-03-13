@@ -82,6 +82,10 @@ module.exports = {
               label: "Design",
               to: "/docs/about/getting-started-design",
             },
+            {
+              label: "Guia de Contribuição",
+              to: "/docs/about/contribution-guide",
+            },
           ],
         },
         {
