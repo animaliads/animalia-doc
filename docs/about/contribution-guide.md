@@ -5,19 +5,45 @@ sidebar_position: 4
 
 # Guia de Contribuição
 
-Este guia aborda maneiras pelas quais você pode se tornar parte do desenvolvimento contínuo do Animalia DS.
+Obrigado pelo interesse em contribuir para o Animalia DS!
 
-Depois de ler este guia, você saberá:
+## Código de conduta
 
-. Como usar o GitHub para relatar problemas.
-. Como clonar nossa main e rodar o projeto em sua máquina.
-. Como ajudar a resolver problemas existentes.
-. Como contribuir com a documentação do Quasar.
-. Como contribuir para o código Quasar.
+Primeiramente, pedimos para que leiam com atenção nosso [Código de Conduta](https://github.com/animaliads/animalia-web-components/blob/next/CODE_OF_CONDUCT.md) para se inteirarem sobre nossas regras.
 
-O Animalia DS não é "a estrutura de outra pessoa". Muitas pessoas contribuíram para o Animalia, variando de um único personagem a grandes mudanças arquitetônicas ou documentação significativa - tudo com o objetivo de tornar o Animalia melhor para todos. Mesmo que você ainda não se sinta à vontade para escrever código ou documentação, há uma variedade de outras maneiras de contribuir, desde relatar problemas até mandando sujestões.
 
-## Instalação
+## Fluxo
+
+Este guia tem por objetivo definir as regras para criação de *Issues* relacionadas à melhorias ou defeitos na biblioteca, assim como orientar no interesse em colaborar com o Animalia DS, definindo premissas para criação de novas *Branchs*, *Pull Requests* e *Commits* no projeto Animalia.
+
+### Criando uma issue no GitHub
+
+- Antes de tudo, se você possui alguma questão relacionada ao uso do *design system*, bem como dúvidas relacionadas a componentes, por favor pergunte nos nossos canais de comunicação.
+
+- A lista de *issues* do repositório Animalia DS é de uso exclusivo para informe de bugs e requisições de melhorias. *Issues* que não se enquadrarem nisso serão fechadas imediatamente.
+
+- Se você tem uma nova *feature* para nos sugerir ou então deseja reportar um bug, por favor avalie se nas [*Pull Requests* do Animalia DS](https://github.com/animaliads/animalia-web-components/pulls) não tem nenhuma submissão anterior que resolva o problema, eliminando assim a eventual hipótese de duplicidade.
+
+- É requerido que você descreva de maneira clara os passos necessários para reproduzir a *issue* reportada. Entenda que, apesar de sermos sempre solícitos e darmos o pronto-apoio em nossos canais, reproduzir erros sem evidências diretas tomam um grande tempo da equipe.
+
+- As issues que não tiverem uma descrição detalhada e um passo-a-passo para reprodução terão menor prioridade. Se em caso de solicitação do *core team* por maiores evidências, o autor da *issue* terá 30 dias para resposta. Se neste período não houver qualquer resposta, então a *issue* será fechada.
+
+### Criando reprodução de código para nova *issue*
+
+- Crie uma nova aplicação em *TypeScript* incluindo o componente e o comportamento reportado para nossa análise.
+
+- Adicione o mínimo de código necessário para reprodução do *bug*, facilitando assim a verificação da situação.
+
+- Publique a aplicação no GitHub e inclua o link ao criar a *issue*.
+
+- Certifique-se de incluir os passos para reprodução da *issue*. Estes passos devem ser claros e simples de seguir.
+
+### Colaborando com o Animalia DS
+
+Mais uma vez agradecemos por dedicar seu tempo para contribuir com o Animalia DS! Antes de submeter uma *pull request*, pedimos pra que você crie uma *issue* reportando uma eventual sugestão de melhoria, nova funcionalidade ou correção de *bug* e nos deixe ciente de que deseja criar uma *pull request* para isso. Caso se trate de uma *issue* já existente, por favor comente na *issue*. Isso nos ajuda a acompanhar as *pull requests* e também evitar duplicidades.
+
+
+## Setup Inicial
 
 Este projeto usa o gerenciador de pacotes NPM e a ferramenta Lerna para instalar e gerenciar suas dependências. Para começar, siga as instruções abaixo:
 
