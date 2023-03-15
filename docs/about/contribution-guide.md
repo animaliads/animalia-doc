@@ -18,7 +18,7 @@ Este guia tem por objetivo definir as regras para criação de *Issues* relacion
 
 ### Criando uma issue no GitHub
 
-- Antes de tudo, se você possui alguma questão relacionada ao uso do *design system*, bem como dúvidas relacionadas a componentes, por favor pergunte nos nossos canais de comunicação.
+- Antes de tudo, se você possui alguma questão relacionada ao uso do *design system*, bem como dúvidas relacionadas a componentes, por favor pergunte nos nossos [canais de comunicação](https://github.com/animaliads/animalia-web-components/issues/58).
 
 - A lista de *issues* do repositório Animalia DS é de uso exclusivo para informe de bugs e requisições de melhorias. *Issues* que não se enquadrarem nisso serão fechadas imediatamente.
 
