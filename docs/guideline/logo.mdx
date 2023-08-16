@@ -1,0 +1,98 @@
+---
+id: logo
+sidebar_position: 7
+---
+
+import BestPracticesComponent from '../components/helpers/components/best-practices.tsx';
+
+# Introdução
+
+_Logo é uma representação visual composta de símbolos e palavras que tem como objetivo identificar uma marca específica._
+
+---
+
+### Quando usar?
+
+Deve ser usado para identificar a qual empresa/grupo/indivíduo/produto a aplicação ou página da Web pertence,
+ou quando for preciso fazer referência a alguma empresa, grupo, produto ou indivíduo, quando este último possuir um logo.
+
+### Quando não usar?
+
+Considere não incluir ou remover o logo de um layout, quando:
+
+- Quando a versão utilizada viole as especificações de uso apresentadas no manual de marca.
+- Quando não houver consentimento de uso/aplicação por parte da empresa/grupo/indivíduo a qual o logo pertence,
+  pois isso pode trazer consequências legais, caso assim a entidade proprietária da marca deseje.
+
+## Boas práticas no uso
+
+- Verifique se o logo possui o tamanho apropriado para o objetivo em que está sendo aplicado. Exemplo: Logos que são muito grandes fazem com que exista espaço extra acima da barra de navegação principal e com que a aparência da página inicial pareça desordenada ou desequilibrada.
+- Certifique-se de que o logo tenha um fundo transparente pois assim ele vai se adequar em cima de uma seção colorida ou bloco dentro da solução. Atenção para as regras de contraste do logo e fundo de aplicação no manual da marca e acessibilidade.
+- Quando utilizado na barra de navegação e header, fica melhor quando aplicado em sua versão horizontal, pois assim ocupará menos espaço vertical.
+- Utilize o formato do logo em SVG para que a mesma não perca qualidade quando houver mudanças de resolução de tela.
+
+:::note Importante
+No manual de marca existem especificações sobre quais versões utilizar em determinadas situações, é imprescindível seguir tais determinações, pois sua não utilização implicam em mal uso de marca.
+:::
+
+### Recomendações de dimensões
+
+A recomendação de 15,625 x 6,25 em (250 x 100 px) é ideal para aplicação em uma página da Web ou aplicação.
+Os formatos/dimensões indicados abaixo são uma sugestão, ficando a cargo da pessoa designer determinar as dimensões que
+melhor atendem ao seu layout.
+
+**Dimensões paisagem:**
+
+- 15,625 x 6,25 em (250 x 100 px)
+- 21,875 x 9,375 em (350 x 150 px)
+- 25 x 6,25 em (400 x 100 px)
+
+**Dimensões quadrado:**
+
+- 6,25 x 6,25 em (100 x 100 px)
+- 10 x 10 em (160 x 160 px)
+
+:::note Importante
+Verifique no manual de marca se existe direcionamento sobre reduções mínimas viáveis para aplicação em cenários específicos.
+:::
+
+#### Favicon
+
+É um pequeno ícone que representa o logo, pode ser a primeira letra do nome do logotipo (parte textual, normalmente é o nome da marca) ou o símbolo (imagem) que identifica seu negócio ou site.
+
+Consulte a [documentação dos ícones](/docs/foundation/icon) para utilizá-lo.
+
+### Posicionamento
+
+O logo serve como um marco que orienta os usuários quando eles chegam pela primeira vez em uma página e os ajuda a identificar o site que estão visitando. Sendo importante que seja exibida, em uma localização fixa, em todas páginas que fazem parte do site ou aplicação.
+
+#### Faça
+
+- Prefira usar alinhado à esquerda no topo, pois é o padrão de design mais comum (leitura ocidental).
+
+#### Não faça
+
+- Evite utilizar alinhado à direita ou ao centro, pois estes alinhamentos apresentam maior dificuldade para utilizá-lo como recurso para retornar à página inicial. E também pode afetar negativamente o SEO,
+  resultando em uma taxa de rejeição e desistência mais altas, além de levar a uma possível diminuição nos acessos.
+
+## Acessibilidade em logos
+
+O logo é tratado como uma imagem funcional, sendo necessário informar ao leitor de tela na descrição a função desta imagem.
+Atua como um link que direciona para a página principal (Home) do site ou aplicação.
+
+:::note
+Para a utilização de [ícones](/docs/foundation/icon) e [imagem](/docs/foundation/image), consulte as documentações específicas para esses elementos.
+:::
+
+## Desenvolvimento
+
+O logo deverá ser envolvido em um link para fazer redirecionamento para a página inicial do site.
+Também deverá conter no atributo `alt` a informação da função desta imagem, que no caso é um link para a página inicial, como no exemplo abaixo:
+
+```html
+<a href="https://animaliads.io/">
+  <img src="logo.svg" alt="Animalia DS home" />
+</a>
+```
+
+Para mais informações, você pode consultar o [Tutorial de imagens feito pela W3C](https://www.w3.org/WAI/tutorials/images/functional/).
