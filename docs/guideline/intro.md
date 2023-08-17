@@ -6,7 +6,7 @@ sidebar_label: O que é voz?
 
 # Guia de Tom e Voz
 
-## O QUE É VOZ?
+## O que é voz?
 **É a personalidade da marca. Fixa, memorável**
 
 Assim como cada pessoa tem sua voz, usada para falar, escrever e se expressar, as marcas também têm a sua. A voz de uma marca reflete características que não mudam, independente do cenário, contexto ou humor.

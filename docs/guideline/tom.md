@@ -6,7 +6,7 @@ sidebar_label: O que é tom?
 
 # Guia de Tom e Voz
 
-## O QUE É TOM?
+## O que é tom?
 **É o modo de falar.Pode mudar de acordo com o contexto.**
 
 Quando estamos felizes, nos expressamos de uma forma: falamos de uma forma mais espontânea e expansiva. Em situações delicadas, temos um tom de voz mais sério, respeitoso, brando. O mesmo vale para o contato com a pessoa usuária. 
