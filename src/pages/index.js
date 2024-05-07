@@ -11,20 +11,15 @@ import HomepageFeatures from '../components/HomepageFeatures';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero', styles.heroBanner)}>
+    <header className={clsx('hero', styles.hero__banner)}>
       <div className="container">
-        <div className={styles.intro}>
-        <h1>Boas-vindas ao Animalia Design System</h1>
-          <p>Design system open source da TOTVS, que nasceu com o objetivo de melhorar a performance 
-            no desenvolvimento de aplicações corporativas, facilitando a 
-            comunicação entre os times de design e desenvolvimento</p>
-           <div className={styles.buttons}>
-            <Link
-              className="ani-button-secondary"
-             to="/docs/about/getting-started">
-             Começando
-            </Link>
-          </div>
+        <div className={styles.hero__intro}>
+          <h1>Animalia DS</h1>
+          <p>O Design System open source da TOTVS adaptativo para ambientes
+            de negócios complexos</p>
+          <Link className={styles.hero_dropdown} to="/docs/about/getting-started">
+            Primeiros passos
+          </Link>
         </div>
       </div>
     </header>

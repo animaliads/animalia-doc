@@ -4,6 +4,41 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
+ 
+.hero__banner {
+  height: 75vh;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+  background-image: url('animalia_mascot.png');
+  background-size: cover;
+  background-color: var(--hero-backgound-color);
+  color: var(--hero-text-color);
+}
+
+.hero__intro {
+  text-align: center;
+}
+
+.hero__intro h1 {
+  font-size: 48px;
+}
+
+.hero__intro p {
+  font-size: 20px;
+  max-width: 660px;
+  margin: 0 auto 36px auto;
+}
+
+.hero_dropdown {
+  gap: 8px;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #4545a1;
+  border-radius: 4px;
+}
 
 .heroBanner {
   padding: 10rem 1.5rem;
@@ -16,6 +51,7 @@
   background-color: var(--ifm-color-primary-dark);
   color: var(--ifm-color-neutral-light-00);
 }
+
 .intro{
   width: 35%;
 }
@@ -50,3 +86,17 @@ h1{
   justify-content: left;
 }
 
+/* Centralize os itens da navbar */
+.navbar__inner .navbar__items {
+  display: flex;
+  justify-content: center;
+}
+
+/* Remova a margem do lado esquerdo do primeiro item e do lado direito do último item para evitar espaçamento extra */
+.navbar__inner .navbar__items:first-child {
+  margin-left: 0;
+}
+
+.navbar__inner .navbar__items:last-child {
+  margin-right: 0;
+}

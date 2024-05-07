@@ -12,6 +12,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
+  --hero-backgound-color: #ebebf5;
+  --hero-text-color: #1d1d30;
+
+
   --ifm-color-primary: #4545A1;
   --ifm-color-primary-dark: #1F1F7A;
   --ifm-color-primary-darker: #0D0D59;

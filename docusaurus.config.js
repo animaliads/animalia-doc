@@ -37,26 +37,22 @@ module.exports = {
         {
           type: "doc",
           docId: "about/intro",
-          position: "right",
-          label: "Sobre",
+          label: "Página Inicial",
         },
         {
           type: "doc",
           docId: "components/button",
-          position: "right",
           label: "Componentes",
         },
         {
           type: "doc",
           docId: "foundation/intro",
-          position: "right",
-          label: "Fundamentos",
+          label: "Estilos",
         },
         {
           type: "doc",
-          docId: "designtokens/designtokens",
-          position: "right",
-          label: "Design Tokens",
+          docId: "about/intro",
+          label: "Sobre",
         },
         {
           type: "search",
@@ -64,7 +60,6 @@ module.exports = {
         },
 
         //{to: '/blog', label: 'Blog', position: 'left'},
-
         // ... more items
       ],
     },
