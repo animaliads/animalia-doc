@@ -35,9 +35,10 @@ module.exports = {
       },
       items: [
         {
-          type: "doc",
-          docId: "about/intro",
-          label: "Página Inicial",
+          to: '/',
+          label: 'Página Inicial',
+          position: 'left',
+          activeBaseRegex: `^/$`,
         },
         {
           type: "doc",
