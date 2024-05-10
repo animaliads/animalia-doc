@@ -46,7 +46,6 @@
   --ifm-footer: #ffffff;
   ----ifm-footer-title-color-custom: #fff;
 
-  --ifm-heading-color: var(--ifm-color-neutral-dark-90);
   --ifm-color-bg-section: var(--ifm-color-primary-lightest);
   --ifm-dropdown-color: #4545A1;
   --ifm-dropdown-color-hover: #4545A1;
@@ -101,7 +100,6 @@ html[data-theme='dark'] {
 
   --ifm-color-primary-lightest: var(--ifm-color-primary-darkest);
   --ifm-color-bg-section: var(--ifm-color-neutral-dark-95);
-  --ifm-heading-color: #fff;
   --ifm-dropdown-color: #fff;
   --ifm-dropdown-color-hover: var(--ifm-color-primary-darkest);
   --ifm-card-hover: var(--ifm-color-primary);
