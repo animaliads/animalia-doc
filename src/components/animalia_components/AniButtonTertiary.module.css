@@ -1,0 +1,27 @@
+.learnMoreButton {
+    display: flex;
+    height: 44px;
+    padding: 0px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    color: var(--ifm-color-button-tertiary);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    text-decoration: none;
+    background-color: #00000000;
+}
+  
+.learnMoreButton:hover {
+    background-color: var(--ifm-color-primary-lighter);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--ifm-color-neutral-dark-95);
+}
+  

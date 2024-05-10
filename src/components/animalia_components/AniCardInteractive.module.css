@@ -1,0 +1,54 @@
+.card {
+  width: 21rem;
+  border-radius: 4px;
+  border: solid 1px #d0d0d7;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 0 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 1rem;
+  position: relative;
+  margin: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.cardLink:hover {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card:hover {
+  cursor: pointer;
+  border: 1px solid var(--ifm-card-hover);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.10), 0px 16px 24px 0px rgba(0, 0, 0, 0.10);
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    min-width: 21rem;
+  }
+}
+
+.headline02 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.tagline {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.card__atalho {
+  width: 336px;
+  height: 4.5rem;
+  border-radius: 4px;
+  border: solid 1px #d0d0d7;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 0 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 1rem;
+}

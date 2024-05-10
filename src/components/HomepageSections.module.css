@@ -1,0 +1,103 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+.text_bold {
+    font-weight: 700;
+    font-size: 1rem;
+}
+  
+.imageForTheme1 {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+  
+.imageForTheme1[data-theme-image='default'] {
+    content: url('../../static/img/img1.png');
+}
+  
+html[data-theme='dark'] .imageForTheme1[data-theme-image='default'] {
+    content: url('../../static/img/img1_dark.png');
+}
+  
+.imageForTheme2 {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+  
+.imageForTheme2[data-theme-image='default'] {
+    content: url('../../static/img/img2.png');
+}
+  
+html[data-theme='dark'] .imageForTheme2[data-theme-image='default'] {
+    content: url('../../static/img/img2_dark.png');
+}
+  
+.imageForTheme3 {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+  
+.imageForTheme3[data-theme-image='default'] {
+    content: url('../../static/img/img3.png');
+}
+  
+html[data-theme='dark'] .imageForTheme3[data-theme-image='default'] {
+    content: url('../../static/img/img3_dark.png');
+}
+  
+.homepage__section {
+    max-width: 74rem;
+    padding: 14rem 2.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.section__textContent img {
+    max-height: 16rem;
+}
+
+.section2__bg {
+    background-color: var(--ifm-color-bg-section);
+}
+
+@media screen and (max-width: 840px) {
+    .homepage__section1, .homepage__section2, .homepage__section3 {
+        padding: 7rem 0rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .homepage__section {
+        max-width: 768px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0 auto;
+    }
+
+    .imageForTheme1, .imageForTheme2, .imageForTheme3 {
+        display: block;
+        width: auto;
+        height: auto;
+    }
+
+    .section__textContent {
+        padding: 2.5rem 0;
+    }
+}
+  
+.section__textContent {
+    max-width: 24rem;
+}
+  
+.section__textContent__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
