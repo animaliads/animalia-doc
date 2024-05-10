@@ -16,7 +16,7 @@
   width: 100%;
 }
 
-.text__subtitle {
+.featuresTitle {
   display: flex;
   width: 100%;
   min-width: 21rem;
@@ -40,7 +40,7 @@
     align-items: center;
   }
 
-  .text__subtitle {
+  .featuresTitle {
     padding-left: 0rem;
   }
 
@@ -50,7 +50,7 @@
     align-items: center;
   }
 
-  .text__subtitle {
+  .featuresTitle {
     display: flex;
     min-width: 21rem;
     font-size: 1.5rem;

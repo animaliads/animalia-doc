@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -9,7 +9,6 @@ import HomepageSections from '../components/HomepageSections';
 import AniButtonTertiary from '../components/animalia_components/AniButtonTertiary';
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
   const dropdownOptions = [
     { label: 'Para Designers', value: '/docs/about/getting-started-design' },
     { label: 'Para Devs', value: '/docs/about/getting-started' },
