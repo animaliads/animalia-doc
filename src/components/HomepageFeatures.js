@@ -25,8 +25,8 @@ const AcessoRapidoList = [
 
 const MaisAcessadosList = [
   { title: 'Componentes', link: '/docs/components/button' },
-  { title: 'Biblioteca no Figma', link: 'https://www.figma.com/@animaliads' },
-  { title: 'Faça parte', link: '/docs/about/changelog' },
+  { title: 'Fundamentos', link: '/docs/foundation/intro' },
+  { title: 'Design Tokens', link: '/docs/designtokens/designtokens' },
 ];
 
 export default function HomepageFeatures() {

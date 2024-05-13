@@ -43,17 +43,26 @@ module.exports = {
         {
           type: "doc",
           docId: "components/button",
+          position: 'left',
           label: "Componentes",
         },
         {
           type: "doc",
           docId: "foundation/intro",
+          position: 'left',
           label: "Estilos",
         },
         {
           type: "doc",
           docId: "about/intro",
+          position: 'left',
           label: "Sobre",
+        },
+        {
+          type: "doc",
+          docId: "designtokens/designtokens",
+          position: 'left',
+          label: "Tokens",
         },
         {
           type: "search",
