@@ -7,7 +7,7 @@
   
 .sectionImage1 {
     display: block;
-    width: 100%;
+    /* width: 100%; */
     height: auto;
 }
   
@@ -21,7 +21,7 @@ html[data-theme='dark'] .sectionImage1[data-theme-image='default'] {
   
 .sectionImage2 {
     display: block;
-    width: 100%;
+    /* width: 100%; */
     height: auto;
 }
   
@@ -35,7 +35,7 @@ html[data-theme='dark'] .sectionImage2[data-theme-image='default'] {
   
 .sectionImage3 {
     display: block;
-    width: 100%;
+    /* width: 100%; */
     height: auto;
 }
   
