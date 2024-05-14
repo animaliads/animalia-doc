@@ -1,0 +1,15 @@
+.tag {
+    display: inline-flex;
+    height: 24px;
+    padding: 0px 8px;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    background: var(--ifm-tag-bg-color);
+    color: var(--ifm-tag-color);
+    font-size: 0.75rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

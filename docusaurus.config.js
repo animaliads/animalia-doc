@@ -35,28 +35,34 @@ module.exports = {
       },
       items: [
         {
-          type: "doc",
-          docId: "about/intro",
-          position: "right",
-          label: "Sobre",
+          to: '/',
+          label: 'Página Inicial',
+          position: 'left',
+          activeBaseRegex: `^/$`,
         },
         {
           type: "doc",
           docId: "components/button",
-          position: "right",
+          position: 'left',
           label: "Componentes",
         },
         {
           type: "doc",
           docId: "foundation/intro",
-          position: "right",
-          label: "Fundamentos",
+          position: 'left',
+          label: "Estilos",
+        },
+        {
+          type: "doc",
+          docId: "about/intro",
+          position: 'left',
+          label: "Sobre",
         },
         {
           type: "doc",
           docId: "designtokens/designtokens",
-          position: "right",
-          label: "Design Tokens",
+          position: 'left',
+          label: "Tokens",
         },
         {
           type: "search",
@@ -64,7 +70,6 @@ module.exports = {
         },
 
         //{to: '/blog', label: 'Blog', position: 'left'},
-
         // ... more items
       ],
     },
@@ -72,15 +77,15 @@ module.exports = {
       style: "dark",
       links: [
         {
-          title: "Começando",
+          title: "Primeiros passos",
           items: [
             {
-              label: "Desenvolvimento",
-              to: "/docs/about/getting-started",
+              label: "Para Designers",
+              to: "/docs/about/getting-started-design",
             },
             {
-              label: "Design",
-              to: "/docs/about/getting-started-design",
+              label: "Para Devs",
+              to: "/docs/about/getting-started",
             },
             {
               label: "Guia de Contribuição",
@@ -92,15 +97,15 @@ module.exports = {
           title: "Links úteis",
           items: [
             {
-              label: "Github",
+              label: "Repositório no Github",
               href: "https://github.com/animaliads",
             },
             {
-              label: "Storybook (API)",
+              label: "API no Storybook",
               href: "http://animaliads.io/?path=/docs/api-button--sample",
             },
             {
-              label: "Figma Community",
+              label: "Biblioteca no Figma",
               href: "https://www.figma.com/@animaliads",
             },
           ],
@@ -111,6 +116,10 @@ module.exports = {
             {
               label: "Changelog",
               to: "/docs/about/changelog",
+            },
+            {
+              label: "Princípios do Animalia",
+              to: "/docs/about/principles",
             },
           ],
         },

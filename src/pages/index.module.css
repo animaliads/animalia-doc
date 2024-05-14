@@ -5,6 +5,40 @@
  * and scoped locally.
  */
 
+.heroDropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+ 
+.hero__banner {
+  height: 38rem;
+  min-height: 500px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+  background-image: var(--ifm-hero-image);
+  background-size: auto 38rem;
+  background-repeat: no-repeat;
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+
+.hero__intro {
+  text-align: center;
+}
+
+.hero__intro h1 {
+  font-size: 48px;
+}
+
+.hero__intro p {
+  font-size: 20px;
+  max-width: 660px;
+  margin: 0 auto 36px auto;
+}
+
 .heroBanner {
   padding: 10rem 1.5rem;
   text-align: left;
@@ -16,6 +50,7 @@
   background-color: var(--ifm-color-primary-dark);
   color: var(--ifm-color-neutral-light-00);
 }
+
 .intro{
   width: 35%;
 }
@@ -50,3 +85,24 @@ h1{
   justify-content: left;
 }
 
+/* Centralize os itens da navbar */
+.navbar__inner .navbar__items {
+  display: flex;
+  justify-content: center;
+}
+
+/* Remova a margem do lado esquerdo do primeiro item e do lado direito do último item para evitar espaçamento extra */
+.navbar__inner .navbar__items:first-child {
+  margin-left: 0;
+}
+
+.navbar__inner .navbar__items:last-child {
+  margin-right: 0;
+}
+
+.learnMoreContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem;
+}

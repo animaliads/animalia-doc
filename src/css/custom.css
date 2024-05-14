@@ -12,6 +12,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
+  --hero-backgound-color: #ebebf5;
+  --hero-text-color: #1d1d30;
+
+
   --ifm-color-primary: #4545A1;
   --ifm-color-primary-dark: #1F1F7A;
   --ifm-color-primary-darker: #0D0D59;
@@ -36,6 +40,22 @@
   --ifm-code-font-size: 95%;
   --ifm-alert-color: black;
   --ifm-font-family-base: 'Inter', sans-serif;
+
+  --ifm-footer-background-color: #030330;
+  --ifm-footer-bg: #030330;
+  --ifm-footer: #ffffff;
+  ----ifm-footer-title-color-custom: #fff;
+
+  --ifm-color-bg-section: var(--ifm-color-primary-lightest);
+  --ifm-dropdown-color: #4545A1;
+  --ifm-dropdown-color-hover: #4545A1;
+  --ifm-card-hover: #1F1F7A;
+  --ifm-tag-color: #fff;
+  --ifm-tag-bg-color: #41B483;
+  --ifm-color-button-tertiary: #4545A1;
+
+  --ifm-hero-image: url('hero_image.png');
+
   
   font-size: 1rem;
 }
@@ -75,7 +95,45 @@ html[data-theme='dark'] {
   --ifm-color-neutral-light:var(--ifm-color-neutral-dark);
   --ifm-color-neutral-light-00:var(--ifm-color-neutral-dark);
   --ifm-background-color:var(--ifm-color-neutral-dark-90);
-  --ifm-navbar-background-color:var(--ifm-color-neutral-dark-80);
+  --ifm-navbar-background-color:var(--ifm-color-neutral-dark-95);
   --ifm-navbar-link-hover-color:var(--ifm-color-primary-light);
+
+  --ifm-color-primary-lightest: var(--ifm-color-primary-darkest);
+  --ifm-color-bg-section: var(--ifm-color-neutral-dark-95);
+  --ifm-dropdown-color: #fff;
+  --ifm-dropdown-color-hover: var(--ifm-color-primary-darkest);
+  --ifm-card-hover: var(--ifm-color-primary);
+  --ifm-tag-color: var(--ifm-color-neutral-dark-95);
+  --ifm-tag-bg-color: #8DC897;
+  --ifm-color-button-tertiary: #fff;
+
+  --ifm-footer-bg: #EBEBF5;
+  --ifm-footer: #030330;
+  --ifm-footer-title-color-custom: #030330;
+  
+  --ifm-hero-image: url('hero_image_dark.png');
   /* any other colors you wish to overwrite */
+}
+
+.footer {
+  background-color: var(--ifm-footer-bg); /* Cor de fundo azul */
+  color: var(--ifm-footer); /* Cor do texto */
+}
+
+.footer a {
+  color: var(--ifm-footer); /* Cor dos links */
+}
+
+.footer__title  {
+  color: var(--ifm-footer-title-color-custom);
+  font-size: 1.5rem;
+}
+
+.footer__copyright {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.footer__links {
+  padding-top: 1.5rem;
 }
