@@ -50,6 +50,7 @@ module.exports = {
     'designtokens/tokenstypo',
     'designtokens/tokensborder',
     'designtokens/tokensspacing',
+    'designtokens/tokensmotion',
     'designtokens/tokensshadow',
     //'changelog'
   ],
