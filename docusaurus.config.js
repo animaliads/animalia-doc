@@ -24,7 +24,7 @@ module.exports = {
   url: "https://doc.animaliads.io/",
   baseUrl: "/",
   themeConfig: {
-    hotjar:{
+    hotjar: {
       applicationId: 2903615,
     },
     navbar: {
@@ -35,33 +35,33 @@ module.exports = {
       },
       items: [
         {
-          to: '/',
-          label: 'Página Inicial',
-          position: 'left',
+          to: "/",
+          label: "Página Inicial",
+          position: "left",
           activeBaseRegex: `^/$`,
         },
         {
           type: "doc",
           docId: "components/button",
-          position: 'left',
+          position: "left",
           label: "Componentes",
         },
         {
           type: "doc",
           docId: "foundation/intro",
-          position: 'left',
+          position: "left",
           label: "Estilos",
         },
         {
           type: "doc",
           docId: "about/intro",
-          position: 'left',
+          position: "left",
           label: "Sobre",
         },
         {
           type: "doc",
           docId: "designtokens/designtokens",
-          position: 'left',
+          position: "left",
           label: "Tokens",
         },
         {
@@ -132,10 +132,10 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         googleAnalytics: {
-          trackingID: 'G-TCSRHFEBXF',
+          trackingID: "G-TCSRHFEBXF",
           anonymizeIP: true,
         },
-          docs: {
+        docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
@@ -149,13 +149,10 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
-          
         },
       },
     ],
   ],
-  plugins:[
-      'docusaurus-plugin-hotjar',
-     
-  ],
+  plugins: ["docusaurus-plugin-hotjar"],
+  scripts: [{ src: "/js/mix-script.js", async: false }],
 };
