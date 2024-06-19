@@ -1,0 +1,115 @@
+---
+id: notification
+sidebar_position: 3
+---
+
+import notificationAnatomy from './img/notification/notification-anatomy.png';
+
+# Notification
+
+## Visão geral
+
+`Notification`, ou notificações, são mensagens que oferecem informações e insights para as pessoas usuárias durante a utilização de uma solução,
+possibilitando que decidam ignorar ou dar atenção ao aviso — com maior ou menor liberdade dependendo da variação da notificação. 
+
+### Quando utilizar
+
+A utilização da notificação precisa ocorrer de forma controlada, principalmente quando falamos em notificações que interrompem o fluxo das pessoas usuárias.
+Utilizar o componente que interrompe apenas em momento críticos, que precisam de atenção total da pessoa usuária. A notificação que não interrompe o fluxo,
+pode ser utilizada para passar informações gerais. 
+
+## Anatomia
+
+Estruturalmente, da `notification` é composta por: 
+- Recipiente
+- Título
+- Mensagem
+- Botão para ação
+- Botão para fechar
+
+<img
+  src={notificationAnatomy}
+  alt="Anatomia do componente notification na forma de um retângulo levemente arredondado,
+  tendo um ícone à esquerda, uma mensagem ao lado direito, seguido por um botão do tipo link para ação e um para fechamento."
+/>
+
+> Essa anatomia pode variar de acordo com o componente onde esse comportamento está presente.
+
+### Tipos
+
+Existem dois principais tipos de notificações, **(1)** sendo notificações que interrompem e **(2)** notificações que não
+interrompem o fluxo da tarefa. Porém existem subcategorias que vamos explorar à seguir:
+
+#### Tipo 1 - Com interrupção: Modal
+
+Quando falamos de notificações que interrompem o fluxo da pessoa usuária, temos a [`modal`](docs/components/modal) como
+principal componente que representa este comportamento. A `modal` interrompe a atividade da pessoa usuária com objetivo
+de alertar de algo importante no sistema.
+
+Este comportamento deve ser utilizado em momentos críticos para gerar **fricção** no fluxo da tarefa, como por exemplo em
+ocasiões para confirmar a deleção de dados, pois o ideal é que o fluxo da pessoa usuária não seja interrompido.
+
+#### Tipo 1.1 - Onboarding
+
+Esse tipo de notificação tem como objetivo instruir as pessoas usuárias no primeiro acesso ao sistema ou uma nova etapa. Por meio
+de passo a passos, o componente pode apresentar qual é o objetivo de determinado contexto, o que é esperado, ou o que a pessoa pode
+fazer de maneira geral. 
+
+Esse componente pode ser mais ou menos interativo, podendo apresentar ações como selecionar, simular ações que podem acontecer no
+sistema ou apenas com opções de avançar e/ou pular o _onboarding_.
+
+#### Tipo 2 - Sem interrupção
+
+Quando falamos de notificações que não interrompem a pessoa usuária, temos o [`toaster`](docs/components/toaster) como principal
+componente que representa esse comportamento. Esse comportamento não é agressivo quanto o modal, então é utilizado em momentos
+menos críticos e que não necessitam de tomadas de decisões por parte da pessoa usuária.
+
+Dentro das validações que não interrompem, temos uma série de variações que são utilizadas em momentos diferentes do fluxo das tarefas:
+- Informativo
+- Aviso de erro
+- Lembrete
+
+#### Tipo 2.1 - Sem interrupção: Aviso
+
+Notificação de alerta são apresentadas quando algo tem impacto em todo o sistema, não somente uma página ou processo. Ela surge sem a
+necessidade que a pessoa usuária tenha alguma ação. 
+
+Dentro desse tipo de notificação, existem variações, que representam diferentes tipos de alertas, as mais comuns são:
+- Alerta de erro
+- Alerta de conectividade
+
+#### Tipo 2.2 - Sem interrupção: Alerta
+
+Já notificações de alertas, são notificações relacionadas a ações das pessoas usuárias, que tem impacto na conclusão de uma tarefa ou
+no sistema. Alguns exemplos de avisos são:
+- Avisos de conclusão/falha de uma tarefa
+- Aviso de erro na inclusão de alguma informação
+
+#### Tipo 2.3 - Sem interrupção: Notificação secundária
+
+Normalmente centralizadas em uma barra de navegação, as notificações secundárias são informações que não apresentam tanto impacto para
+a execução da tarefa, são apenas complementares à jornada da pessoa usuária.
+
+#### Tipo 2.4 - Sem interrupção: Popover
+
+_Popovers_ são componentes informativos, que tem como objetivo instruir as pessoas usuárias, apresentando dicas, exemplos e explicações
+sobre os elementos na interface. Este componente pode aparecer acima de todos os outros conteúdos da página, mas apenas um `popover` por vez.
+
+## Boas práticas
+
+Foram estruturados os padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência aos usuários.
+Por isso, é muito importante que ao utilizar este componente, as pessoas que o projetarem devem levar em consideração os seguintes critérios:
+
+### Fazer
+
+- Sempre forneça mensagens de forma clara e que instrua a pessoa usuária a recuperar-se do erro;
+- Sempre dê título para à notificação, isto facilita o entendimento;
+- Permita que a pessoa usuária feche a notificação, isso a torna menos invasiva;
+- Utilize modais com moderação, somente em momentos críticos e extrema importância.
+
+### Não Fazer
+
+- Não fornerça mensagens genéricas para a pessoa usuária, como por exemplo: "**Error 404**";
+- Não utilize notificações que interrompam a tarefas de alto risco, como por exemplo em fluxos de checkout;
+- Não utilize fontes menores do que 12 e garanta um bom contraste entre o elemento e a notificação;
+- Evite o excesso de informações e termos complexos/técnicos fora do entendimento da pessoa usuária.

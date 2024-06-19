@@ -1,0 +1,81 @@
+---
+id: input
+sidebar_position: 2
+---
+
+import textFieldAnatomy from './img/input/textfield-anatomy.png';
+import textAreatype from './img/input/textarea-type.png';
+
+# Input
+
+## Visão geral
+
+`Input` é o comportamento de incluir, ou de uma forma mais geral, interagir com informações durante a utilização da solução. 
+A inclusão de informações podem ser feitas de forma livre e variada, com textos curtos ou longos, de forma alfabética ou numeral, 
+dependendo do contexto e da necessidade da tarefa.
+
+### Quando utilizar
+
+Deve ser utilizada quando for necessário a inclusão de alguma informação em algum momento de jornada dentro da solução. 
+Essa ação pode estar presente em vários componentes distintos, onde o comportamento de inserir informações se faça presente.
+
+## Anatomia
+
+A estrutura do `input` consiste por: 
+- Título
+- Recipiente
+- Texto de apoio/aviso (opcional).
+
+<img
+  src={textFieldAnatomy}
+  alt="Anatomia do componente text field na forma de um retângulo levemente arredondado,
+  tendo um texto acima como rótulo e um abaixo como apoio."
+/>
+
+> Essa anatomia pode variar de acordo com o componente onde esse comportamento está presente.
+
+### Tipos
+
+Podemos destacar dois tipos de `input`, **(1)** sendo o comportamento de incluir informações em um recipiente de forma livre,
+podendo ser de forma alfabética ou numeral, e **(2)** sendo uma subcategoria do `input`, quando a inclusão de informações não é livre,
+e sim com base na seleção de opções preestabelecidas. 
+
+#### Tipo 1 - Entrada de texto livre: Text area
+
+Quando falamos de incluir informações de forma livre, temos como exemplo o componente [`text area`](docs/components/textarea) que permite esse tipo
+de ação. Esse tipo, permite a inclusão de informações curtas ou longas e aceita de forma alfabética ou numeral, dependendo do contexto da jornada.
+Esse comportamento está presente presente na composição de alguns componentes como por exemplo: tabela, modal, etc.
+
+<img
+  src={textAreatype}
+  alt="Anatomia do componente text area na forma de um retângulo levemente arredondado,
+  tendo um texto acima como rótulo e um abaixo como apoio."
+/>
+
+#### Tipo 1.1 - Entrada de texto livre: Hide
+
+Ao incluir a informação no campo, a mesma aparece codificada. Esse tipo de `input` se enquadra como um comportamento e é encontrado em
+campos de senhas, por exemplo.
+
+#### Tipo 2 - Seleção de opções: Select
+
+Como subcategoria para `input` de informações, temos o comportamento de [selecionar](docs/components/select), onde a pessoa usuária precisa incluir
+alguma informação de forma limitada, na qual ocorre por meio da seleção de uma opção em uma lista.
+
+Esse comportamento pode ser encontrados em momentos da jornada, onde já existe o conhecimento de informações, como por exemplo:
+selecionar o país de origem, números de parcelas, e etc.
+
+## Boas práticas
+
+Foram estruturados os padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência aos usuários. Por isso,
+é muito importante que ao utilizar este tipo de componente, as pessoas que o projetarem devem levar em consideração os seguintes critérios:
+
+### Fazer
+
+- Caso necessário, utilize textos de apoio para instruir com o que deve ser preenchido no campo;
+- Utilizar rótulos claros e concisos para que a identificação da finalidade da informação seja de fácil entendimento.
+
+### Não Fazer
+
+- Não utilizar a lista para seleção caso exista menos de três opções;
+- Não utilizar o tipo livre caso exista alguma validação de um parâmetro específico na interface; dê preferência à seleção de opções para evitar erros.

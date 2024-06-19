@@ -48,6 +48,12 @@ module.exports = {
         },
         {
           type: "doc",
+          docId: "patterns/intro",
+          position: "left",
+          label: "Comportamentos",
+        },
+        {
+          type: "doc",
           docId: "foundation/intro",
           position: "left",
           label: "Estilos",
