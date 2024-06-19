@@ -42,9 +42,15 @@ module.exports = {
         },
         {
           type: "doc",
-          docId: "components/button",
+          docId: "components/breadcrumb",
           position: 'left',
           label: "Componentes",
+        },
+        {
+          type: "doc",
+          docId: "patterns/intro",
+          position: 'left',
+          label: "Comportamentos",
         },
         {
           type: "doc",
@@ -156,6 +162,5 @@ module.exports = {
   ],
   plugins:[
       'docusaurus-plugin-hotjar',
-     
   ],
 };
