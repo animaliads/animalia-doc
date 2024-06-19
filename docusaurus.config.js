@@ -42,7 +42,7 @@ module.exports = {
         },
         {
           type: "doc",
-          docId: "components/breadcrumb",
+          docId: "components/button",
           position: "left",
           label: "Componentes",
         },
