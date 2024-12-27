@@ -67,7 +67,7 @@ module.exports = {
         {
           type: "doc",
           docId: "guideline/intro",
-          position: "right",
+          position: "left",
           label: "Guia",
         },
         {
