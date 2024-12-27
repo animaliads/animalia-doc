@@ -66,6 +66,12 @@ module.exports = {
         },
         {
           type: "doc",
+          docId: "guideline/intro",
+          position: "right",
+          label: "Guia",
+        },
+        {
+          type: "doc",
           docId: "designtokens/designtokens",
           position: "left",
           label: "Tokens",
