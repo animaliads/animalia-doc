@@ -27,6 +27,13 @@ module.exports = {
     hotjar: {
       applicationId: 2903615,
     },
+    algolia: {
+      appId: 'TRO2FPXP5H',
+      apiKey: 'f6e791003b5f781c24c1780a985362fe',
+      indexName: 'Homepage',
+      contextualSearch: true,
+      searchPagePath: 'search',
+    },
     navbar: {
       logo: {
         alt: "Animalia DS Logo",
