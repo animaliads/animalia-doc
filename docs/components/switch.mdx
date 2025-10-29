@@ -84,38 +84,39 @@ O componente foi projetado para atender os requisitos das Diretrizes de Acessibi
 ### Uso
 
 - Use o *switch* em cenários cujo resultado da ação aconteça imediatamente após a alternância da chave, como ajustar configurações e preferências corriqueiras do sistema;
-<BestPracticesComponent
-  doImg={switch_do_1}
-  doAlt="Componente switch com um rótulo '“'Biometria'"
-  doDescription="A ação resultante da mudança de chave deve ter um resultado imediato para quem usa o sistema, que no exemplo seria ativar a biometria assim que a chave fosse ligada."
-  dontImg={switch_dont_1}
-  dontAlt="Componente switch com um rótulo '“'Concordo com os termos de uso'"
-  dontDescription="Não use switch apenas para marcar sim ou não, sem efeito no sistema. No exemplo, ao ligar a chave, nada aconteceria. O correto seria o uso de um checkbox nesse caso."
-/>
+
+  <BestPracticesComponent
+    doImg={switch_do_1}
+    doAlt="Componente switch com um rótulo 'Biometria'"
+    doDescription="A ação resultante da mudança de chave deve ter um resultado imediato para quem usa o sistema, que no exemplo seria ativar a biometria assim que a chave fosse ligada."
+    dontImg={switch_dont_1}
+    dontAlt="Componente switch com um rótulo 'Concordo com os termos de uso'"
+    dontDescription="Não use switch apenas para marcar sim ou não, sem efeito no sistema. No exemplo, ao ligar a chave, nada aconteceria. O correto seria o uso de um checkbox nesse caso."
+  />
 
 
 - Ao alternar a chave entre *checked* e *unchecked*, o resultado da alternância deve ter efeito imediato. Não use o switch em situações em que é necessário algum tipo de confirmação para aplicar o estado selecionado;
 
-<BestPracticesComponent
-  doImg={switch_do_2}
-  doAlt="Exemplo de configuração de  como receber atualizações contendo duas opções em checkboxes. Abaixo da lista há um botão para salvar preferências"
-  doDescription="Opte por usar um checkbox ou radio ao invés do switch em situações que necessitem de alguma confirmação para que a mudança seja aplicada."
-  dontImg={switch_dont_2}
-  dontAlt="Mesmo exemplo de configuração das atualizações e o botão para salvar, mas usando switches nas opções'"
-  dontDescription="Não use switch quando o resultado da mudança da chave não puder ter efeito imediato."
-/>
+  <BestPracticesComponent
+    doImg={switch_do_2}
+    doAlt="Exemplo de configuração de  como receber atualizações contendo duas opções em checkboxes. Abaixo da lista há um botão para salvar preferências"
+    doDescription="Opte por usar um checkbox ou radio ao invés do switch em situações que necessitem de alguma confirmação para que a mudança seja aplicada."
+    dontImg={switch_dont_2}
+    dontAlt="Mesmo exemplo de configuração das atualizações e o botão para salvar, mas usando switches nas opções"
+    dontDescription="Não use switch quando o resultado da mudança da chave não puder ter efeito imediato."
+  />
 
 
 - Em um conjunto de itens, use switches apenas quando cada item puder ser controlado de forma individual e independente;
 
-<BestPracticesComponent
-  doImg={switch_do_3}
-  doAlt="Configuração de acesso a um projeto com 3 opções em radio: Todos, Membros da equipe e Somente você"
-  doDescription="Quando as opções forem dependentes entre si, opte por usar radio button ao invés do switch"
-  dontImg={switch_dont_3}
-  dontAlt="Mesmo exemplo de configuração das atualizações e o botão para salvar, mas usando switches nas opções'"
-  dontDescription="Não use switch quando os itens tiverem qualquer dependência entre eles. Cada chave deve funcionar de forma individual, sem relação com outros controles."
-/>
+  <BestPracticesComponent
+    doImg={switch_do_3}
+    doAlt="Configuração de acesso a um projeto com 3 opções em radio: Todos, Membros da equipe e Somente você"
+    doDescription="Quando as opções forem dependentes entre si, opte por usar radio button ao invés do switch"
+    dontImg={switch_dont_3}
+    dontAlt="Mesmo exemplo de configuração das atualizações e o botão para salvar, mas usando switches nas opções"
+    dontDescription="Não use switch quando os itens tiverem qualquer dependência entre eles. Cada chave deve funcionar de forma individual, sem relação com outros controles."
+  />
 
 - Use switch apenas quando for preciso alternar entre dois estados. Quando houver mais de duas opções, ou elas foram dependentes entre si, utilize outro componente, como o [**checkbox**](/docs/components/checkbox) ou [**radio**](/docs/components/radio);
 - Utilize o componente no estado desabilitado (*disabled*) quando for preciso demonstrar que naquela circunstância não está disponível, mas que existe a opção de alternância daquela chave.

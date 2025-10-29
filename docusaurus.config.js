@@ -1,4 +1,4 @@
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
+/** @type {import('@docusaurus/types').Config} */
 module.exports = {
   title: "Animalia DS",
   tagline: "Design System da TOTVS",
@@ -143,10 +143,6 @@ module.exports = {
     [
       "@docusaurus/preset-classic",
       {
-        googleAnalytics: {
-          trackingID: "G-TCSRHFEBXF",
-          anonymizeIP: true,
-        },
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
@@ -165,6 +161,20 @@ module.exports = {
       },
     ],
   ],
-  plugins: ["docusaurus-plugin-hotjar"],
-  scripts: [{ src: "/js/mix-script.js", async: false }],
+  plugins: [
+    [
+      "@docusaurus/plugin-google-gtag",
+      {
+        trackingID: "G-TCSRHFEBXF",
+        anonymizeIP: true,
+      },
+    ],
+  ],
+  scripts: [
+    { src: "/js/mix-script.js", async: false },
+    {
+      src: "https://static.hotjar.com/c/hotjar-2903615.js?sv=6",
+      async: true,
+    },
+  ],
 };

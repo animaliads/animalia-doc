@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from '@docusaurus/Link';
 import AniTag from './AniTag';
 import styles from './AniCardInteractive.module.css';
 
