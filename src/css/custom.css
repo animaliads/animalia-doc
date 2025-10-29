@@ -41,6 +41,14 @@
   --ifm-alert-color: black;
   --ifm-font-family-base: 'Inter', sans-serif;
 
+  /* Heading font sizes - Moderate increase */
+  --ifm-h1-font-size: 2.5rem;
+  --ifm-h2-font-size: 2rem;
+  --ifm-h3-font-size: 1.5rem;
+  --ifm-h4-font-size: 1.25rem;
+  --ifm-h5-font-size: 1rem;
+  --ifm-h6-font-size: 0.875rem;
+
   --ifm-footer-background-color: #030330;
   --ifm-footer-bg: #030330;
   --ifm-footer: #ffffff;
@@ -136,4 +144,32 @@ html[data-theme='dark'] {
 
 .footer__links {
   padding-top: 1.5rem;
+}
+
+/* Documentation page spacing - Large spacing between sections */
+.markdown h2 {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.markdown h3 {
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+}
+
+.markdown h4 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Add spacing to content blocks (paragraphs, lists, tables, etc.) */
+.markdown > * {
+  margin-bottom: 1.5rem;
+}
+
+/* Prevent excessive top spacing on first heading */
+.markdown > h2:first-child,
+.markdown > h3:first-child,
+.markdown > h4:first-child {
+  margin-top: 0;
 }
