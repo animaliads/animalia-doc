@@ -39,6 +39,7 @@
   --ifm-code-font-size: 95%;
   --ifm-alert-color: black;
   --ifm-font-family-base: "Inter", sans-serif;
+  --ifm-container-width-xl: 1600px;
 
   /* Heading font sizes - Moderate increase */
   --ifm-h1-font-size: 3rem; /* 48px to match Figma */
@@ -204,4 +205,28 @@ html[data-theme="dark"] .button-tabs-sticky {
 
 html[data-theme="dark"] .button-tabs-sticky::before {
   background: inherit;
+}
+
+/* Table of Contents heading */
+.toc-heading {
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--ifm-color-neutral-mid-60);
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* Smooth transitions for TOC updates when switching tabs */
+.table-of-contents {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.table-of-contents__link {
+  transition: all 0.15s ease-in-out;
+}
+
+/* Ensure TOC items animate smoothly when appearing/disappearing */
+.table-of-contents li {
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }

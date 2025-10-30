@@ -178,10 +178,15 @@ module.exports = {
     ],
   ],
   scripts: [
-    { src: "/js/mix-script.js", async: false },
+    {
+      src: "/js/mix-script.js",
+      async: true,
+      crossorigin: "anonymous"
+    },
     {
       src: "https://static.hotjar.com/c/hotjar-2903615.js?sv=6",
       async: true,
+      crossorigin: "anonymous"
     },
   ],
 };
