@@ -1,54 +1,70 @@
 import React from 'react';
-import AniCardInteractive from './animalia_components/AniCardInteractive.js';
 import styles from './HomepageFeatures.module.css';
+import AniTag from './animalia_components/AniTag';
 
-const AcessoRapidoList = [
+const FeaturesList = [
   {
-    title: 'Novidades',
-    description: 'Confira as novidades liberadas na nossa última release!',
-    link: '/docs/about/changelog',
-    isNew: true,
+    title: 'Componentes prontos',
+    description: 'Biblioteca completa de componentes React para acelerar seu desenvolvimento.',
+    icon: 'cube',
   },
   {
-    title: 'Biblioteca no Figma',
-    description: 'Acesse o UI Kit de componentes, ícones e fundamentos no Figma.',
-    link: 'https://www.figma.com/@animaliads',
-    isNew: false,
+    title: 'Design Tokens',
+    description: 'Sistema de tokens para manter consistência visual em todos os produtos.',
+    icon: 'code',
   },
   {
-    title: 'Faça parte',
-    description: 'Colabore e tenha seu nome gravado em nossa história!',
-    link: '/docs/about/contribution-guide',
-    isNew: false,
+    title: 'Acessibilidade',
+    description: 'Componentes desenvolvidos seguindo as melhores práticas de acessibilidade.',
+    icon: 'hand-heart',
+  },
+  {
+    title: 'Documentação completa',
+    description: 'Guias detalhados e exemplos práticos para facilitar a implementação.',
+    icon: 'book-open',
+  },
+  {
+    title: 'Open Source',
+    description: 'Código aberto e gratuito para toda a comunidade TOTVS e além.',
+    icon: 'globe',
   },
 ];
 
-const MaisAcessadosList = [
-  { title: 'Componentes', link: '/docs/components/button' },
-  { title: 'Fundamentos', link: '/docs/foundation/intro' },
-  { title: 'Design Tokens', link: '/docs/designtokens/designtokens' },
-];
+function FeatureCard({ title, description, icon }) {
+  return (
+    <div className={styles.featureCard}>
+      <div className={styles.iconContainer}>
+        <i className={`an an-${icon} ${styles.icon}`}></i>
+      </div>
+      <div className={styles.textContainer}>
+        <h3 className={styles.cardTitle}>{title}</h3>
+        <p className={styles.cardDescription}>{description}</p>
+      </div>
+    </div>
+  );
+}
 
 export default function HomepageFeatures() {
   return (
-    <div>
-      <section className={styles.features}>
-        <div className={styles.featuresRow}>
-          {AcessoRapidoList.map((props, idx) => (
-            <AniCardInteractive key={idx} {...props} />
-          ))}
+    <section className={styles.features}>
+      <div className={styles.featuresWrapper}>
+        <div className={styles.featuresHeader}>
+          <AniTag text="Conheça o Animalia DS" variant="primary" />
+          <h2 className={styles.featuresTitle}>
+            Tudo o que você precisa para criar experiências consistentes
+          </h2>
         </div>
-
-        <div className={styles.featuresTitleContainer}>
-          <div className={styles.featuresTitle}>Mais acessados</div>
+        <div className={styles.featuresContent}>
+          <div className={styles.featuresGrid}>
+            {FeaturesList.map((feature, idx) => (
+              <FeatureCard key={idx} {...feature} />
+            ))}
+          </div>
+          <div className={styles.featuresImage}>
+            <img src="/img/leopard-feature.jpg" alt="Animalia Design System" />
+          </div>
         </div>
-
-        <div className={styles.featuresRow}>
-          {MaisAcessadosList.map((props, idx) => (
-            <AniCardInteractive key={idx} {...props} />
-          ))}
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

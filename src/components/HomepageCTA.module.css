@@ -1,0 +1,86 @@
+.ctaSection {
+  width: 100%;
+  padding: 80px 0;
+  background-color: var(--ifm-color-bg-section);
+}
+
+.ctaContainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.ctaContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px 0;
+  background-color: var(--ifm-color-primary-darker);
+  border-radius: 24px;
+  min-height: 350px;
+}
+
+.ctaTitle {
+  font-family: "Rethink Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  color: white;
+  margin: 0;
+  max-width: 511px;
+  white-space: pre-wrap;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1200px) {
+  .ctaContainer {
+    padding: 0 40px;
+  }
+
+  .ctaTitle {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 966px) {
+  .ctaSection {
+    padding: 60px 0;
+  }
+
+  .ctaContainer {
+    padding: 0 24px;
+  }
+
+  .ctaContent {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+
+  .ctaTitle {
+    font-size: 32px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .ctaSection {
+    padding: 40px 0;
+  }
+
+  .ctaContainer {
+    padding: 0 16px;
+  }
+
+  .ctaContent {
+    padding: 32px 20px;
+    gap: 20px;
+    border-radius: 16px;
+  }
+
+  .ctaTitle {
+    font-size: 28px;
+  }
+}

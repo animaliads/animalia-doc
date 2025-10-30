@@ -7,6 +7,8 @@ import AniTag from "../components/animalia_components/AniTag";
 import AniButtonPrimary from "../components/animalia_components/AniButtonPrimary";
 import HomepageFeatures from "../components/HomepageFeatures";
 import HomepageSections from "../components/HomepageSections";
+import HomepagePrincipals from "../components/HomepagePrincipals";
+import HomepageCTA from "../components/HomepageCTA";
 import AniButtonTertiary from "../components/animalia_components/AniButtonTertiary";
 import { faChevronRight, faBook } from "@fortawesome/free-solid-svg-icons";
 
@@ -49,35 +51,18 @@ function HomepageHeader() {
             </div>
           </div>
         </div>
-        <div className={styles.hero__preview__wrapper}>
-          <div className={styles.hero__preview}>
-            <div className={styles.hero__preview__background}></div>
-            <div className={styles.hero__preview__card}>
-              <div className={styles.menu__preview}>
-                <div className={styles.menu__header}>
-                  <div className={styles.menu__logo}></div>
-                  <div className={styles.menu__search}>
-                    <span className={styles.search__icon}>🔍</span>
-                    <span className={styles.search__text}>Buscar</span>
-                  </div>
-                </div>
-                <div className={styles.menu__items}>
-                  <div
-                    className={`${styles.menu__item} ${styles.menu__item__active}`}
-                  >
-                    <span>📋</span> Label
-                  </div>
-                  <div className={styles.menu__item}>
-                    <span>📋</span> Label
-                    <span className={styles.menu__arrow}>▼</span>
-                  </div>
-                  <div className={styles.menu__item}>
-                    <span>📋</span> Label
-                    <span className={styles.menu__arrow}>▼</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className={styles.hero__video__wrapper}>
+          <div className={styles.hero__video__container}>
+            <video
+              className={styles.hero__video}
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src="/video/hero-demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
@@ -95,7 +80,8 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
-        <HomepageSections />
+        <HomepageCTA />
+        <HomepagePrincipals />
         <div className={styles.learnMoreContainer}>
           <AniButtonTertiary
             to="/docs/about/intro"
