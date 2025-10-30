@@ -5,38 +5,214 @@
  * and scoped locally.
  */
 
-.heroDropdown {
+.hero__banner {
+  width: 100%;
+  padding: 124px 0 80px 0;
+  background-color: #f8f8fc;
+  overflow: visible;
+}
+
+.hero__wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 124px;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.hero__title__section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 637px;
+}
+
+.hero__title {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: #000000;
+  margin: 0;
+  max-width: 618px;
+}
+
+.hero__title .hero__title__highlight {
+  color: #4545a1;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.hero__title .hero__title__brand {
+  font-family: 'TOTVS Pro', sans-serif;
+  font-style: normal;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.hero__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.hero__description {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #515162;
+  margin: 0;
+  max-width: 589px;
+  flex: 1;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hero__preview__wrapper {
+  width: 100%;
   position: relative;
-  display: inline-block;
+}
+
+.hero__preview {
+  position: relative;
+  width: 100%;
+  height: 578px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.hero__preview__background {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  height: 578px;
+  background-color: #9898cd;
+  border-radius: 44px;
+}
+
+.hero__preview__card {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 61px 0 0 48.94px;
+  width: calc(100% - 48.94px * 2);
+  height: 534px;
+  background-color: #f9f9fa;
+  border-radius: 44px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Menu preview styles */
+.menu__preview {
+  width: 295px;
+  height: 100%;
+  background-color: #f9f9fa;
+  border-top-left-radius: 54px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.menu__header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu__logo {
+  width: 80px;
+  height: 48px;
+  background-color: #4545a1;
+  border-radius: 4px;
+}
+
+.menu__search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 8px 0 44px;
+  background-color: #f9f9fa;
+  border: 1px solid #515162;
+  border-radius: 4px;
+  position: relative;
+  font-size: 16px;
+  color: #69697c;
+}
+
+.search__icon {
+  position: absolute;
+  left: 12px;
+  font-size: 18px;
+}
+
+.search__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #69697c;
+}
+
+.menu__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 20px;
+}
+
+.menu__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #4545a1;
+  border-radius: 4px;
   cursor: pointer;
 }
- 
-.hero__banner {
-  height: 38rem;
-  min-height: 500px;
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  overflow: hidden;
-  background-image: var(--ifm-hero-image);
-  background-size: auto 38rem;
-  background-repeat: no-repeat;
-  background-color: var(--ifm-color-primary-lightest);
+
+.menu__item__active {
+  background-color: #ebebf5;
+  color: #1f1f7a;
+  border-left: 6px solid #0d0d59;
+  padding-left: 10px;
 }
 
-
-.hero__intro {
-  text-align: center;
-}
-
-.hero__intro h1 {
-  font-size: 48px;
-}
-
-.hero__intro p {
-  font-size: 20px;
-  max-width: 660px;
-  margin: 0 auto 36px auto;
+.menu__arrow {
+  margin-left: auto;
+  font-size: 12px;
 }
 
 .heroBanner {
@@ -105,4 +281,145 @@ h1{
   justify-content: center;
   align-items: center;
   margin: 2.5rem;
+}
+
+/* Responsive styles for hero section */
+@media screen and (max-width: 1200px) {
+  .hero__wrapper {
+    padding: 0 40px;
+    gap: 80px;
+  }
+
+  .hero__banner {
+    padding: 80px 0 60px 0;
+  }
+
+  .hero__title {
+    font-size: 44px;
+  }
+
+  .hero__preview {
+    height: 480px;
+  }
+
+  .hero__preview__background {
+    height: 480px;
+  }
+
+  .hero__preview__card {
+    margin: 50px 0 0 40px;
+    width: calc(100% - 40px * 2);
+    height: 440px;
+  }
+}
+
+@media screen and (max-width: 966px) {
+  .hero__wrapper {
+    padding: 0 24px;
+    gap: 60px;
+  }
+
+  .hero__banner {
+    padding: 60px 0 40px 0;
+  }
+
+  .hero__title__section {
+    max-width: 100%;
+  }
+
+  .hero__title {
+    font-size: 38px;
+  }
+
+  .hero__bottom {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero__description {
+    max-width: 100%;
+  }
+
+  .hero__buttons {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .hero__preview {
+    height: 400px;
+  }
+
+  .hero__preview__background {
+    height: 400px;
+  }
+
+  .hero__preview__card {
+    margin: 40px 0 0 30px;
+    width: calc(100% - 30px * 2);
+    height: 360px;
+  }
+
+  .menu__preview {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .hero__wrapper {
+    padding: 0 16px;
+    gap: 40px;
+  }
+
+  .hero__banner {
+    padding: 40px 0 40px 0;
+  }
+
+  .hero__container {
+    gap: 20px;
+  }
+
+  .hero__content {
+    gap: 20px;
+  }
+
+  .hero__title__section {
+    gap: 16px;
+  }
+
+  .hero__title {
+    font-size: 30px;
+  }
+
+  .hero__description {
+    font-size: 14px;
+  }
+
+  .hero__buttons {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero__preview {
+    height: 320px;
+  }
+
+  .hero__preview__background {
+    height: 320px;
+  }
+
+  .hero__preview__card {
+    margin: 30px 0 0 20px;
+    width: calc(100% - 20px * 2);
+    height: 280px;
+  }
+
+  .menu__preview {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .menu__logo {
+    width: 60px;
+    height: 36px;
+  }
 }

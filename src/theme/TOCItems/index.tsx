@@ -32,7 +32,10 @@ function isHeadingVisible(headingId: string): boolean {
 }
 
 // Recursively filter TOC items based on visibility
-function filterVisibleTOCItems(items: readonly TOCItem[]): TOCItem[] {
+function filterVisibleTOCItems(items: readonly TOCItem[] | undefined): TOCItem[] {
+  if (!items) {
+    return [];
+  }
   return items
     .filter(item => isHeadingVisible(item.id))
     .map(item => ({

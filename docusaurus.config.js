@@ -184,9 +184,8 @@ module.exports = {
       crossorigin: "anonymous"
     },
     {
-      src: "https://static.hotjar.com/c/hotjar-2903615.js?sv=6",
-      async: true,
-      crossorigin: "anonymous"
+      src: "/js/hotjar-init.js",
+      async: false,
     },
   ],
 };
