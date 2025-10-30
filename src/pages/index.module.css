@@ -8,7 +8,7 @@
 .hero__banner {
   width: 100%;
   padding: 124px 0 80px 0;
-  background-color: #f8f8fc;
+  background: linear-gradient(to bottom, rgb(248, 248, 252) 0%, #ffffff 100%);
   overflow: visible;
 }
 
@@ -281,4 +281,9 @@ h1{
   .hero__video__container {
     border-radius: 12px;
   }
+}
+
+/* Dark mode gradient */
+html[data-theme="dark"] .hero__banner {
+  background: linear-gradient(to bottom, #030330 0%, #1d1d30 100%);
 }
