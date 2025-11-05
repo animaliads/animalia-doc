@@ -165,18 +165,14 @@ module.exports = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+        gtag: {
+          trackingID: "G-TCSRHFEBXF",
+          anonymizeIP: true,
+        },
       },
     ],
   ],
-  plugins: [
-    [
-      "@docusaurus/plugin-google-gtag",
-      {
-        trackingID: "G-TCSRHFEBXF",
-        anonymizeIP: true,
-      },
-    ],
-  ],
+  plugins: [],
   scripts: [
     {
       src: "/js/mix-script.js",

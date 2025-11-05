@@ -1,0 +1,98 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  border-radius: 12px;
+  border: 1px solid #e4e4e7;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 140px;
+  position: relative;
+}
+
+.card:hover {
+  border-color: #4545a1;
+  box-shadow: 0 4px 12px rgba(69, 69, 161, 0.12);
+  transform: translateY(-2px);
+}
+
+.card:active {
+  transform: translateY(0);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.icon {
+  font-size: 32px;
+  color: #000000;
+  transition: color 0.2s ease;
+}
+
+.card:hover .icon {
+  color: #4545a1;
+}
+
+.name {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #515162;
+  text-align: center;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.copiedMessage {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #4545a1;
+  color: #ffffff;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.copiedMessage.show {
+  opacity: 1;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .card {
+  background: #1d1d30;
+  border-color: #2d2d45;
+}
+
+html[data-theme="dark"] .card:hover {
+  border-color: #6565c1;
+  box-shadow: 0 4px 12px rgba(101, 101, 193, 0.2);
+}
+
+html[data-theme="dark"] .icon {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .card:hover .icon {
+  color: #8a8ad0;
+}
+
+html[data-theme="dark"] .name {
+  color: #b4b4c8;
+}
+
+html[data-theme="dark"] .copiedMessage {
+  background: #6565c1;
+}

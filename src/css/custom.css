@@ -12,33 +12,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap");
 
-/* Animalia Icons */
-@font-face {
-  font-family: 'Animalia';
-  src: url('/fonts/animalia-icon/Animalia.woff') format('woff'),
-       url('/fonts/animalia-icon/Animalia.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-[class^="an-"], [class*=" an-"] {
-  font-family: 'Animalia' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.an-cube:before { content: "\e1da"; }
-.an-code:before { content: "\e1bc"; }
-.an-hand-heart:before { content: "\e810"; }
-.an-book-open:before { content: "\e0e6"; }
-.an-globe:before { content: "\e288"; }
+/* Import Animalia Icon fonts and classes */
+@import "./animalia-icon-regular.css";
+@import "./animalia-icon-fill.css";
 
 :root {
   --hero-backgound-color: #ebebf5;
