@@ -26,7 +26,7 @@ function HomepageHeader() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.6, 0.01, 0.05, 0.95] }}
             >
-              <AniTag text="Release 2.3.2" variant="release" />
+              <AniTag text="Release 2.0.0" variant="release" />
               <h1 className={styles.hero__title}>
                 Um sistema aberto que{" "}
                 <span className={styles.hero__title__highlight}>
@@ -40,7 +40,11 @@ function HomepageHeader() {
               className={styles.hero__bottom}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.6, 0.01, 0.05, 0.95] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0.6, 0.01, 0.05, 0.95],
+              }}
             >
               <p className={styles.hero__description}>
                 O Animalia DS é o design system open source da TOTVS, feito para
@@ -67,19 +71,18 @@ function HomepageHeader() {
           className={styles.hero__video__wrapper}
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.4, ease: [0.6, 0.01, 0.05, 0.95] }}
+          transition={{
+            duration: 1,
+            delay: 0.4,
+            ease: [0.6, 0.01, 0.05, 0.95],
+          }}
         >
           <div className={styles.hero__video__container}>
-            <video
+            <img
               className={styles.hero__video}
-              autoPlay
-              loop
-              muted
-              playsInline
-            >
-              <source src="/video/hero-demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+              src="/img/hero.png"
+              alt="Animalia Design System Hero"
+            />
           </div>
         </motion.div>
       </div>
