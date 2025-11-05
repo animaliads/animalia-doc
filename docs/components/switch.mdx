@@ -1,12 +1,13 @@
 ---
-id: switch
 sidebar_label: Switch
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import switch_anatomy from './img/switch/switch-anatomy.png';
 import switch_do_1 from './img/switch/switch-do-1.jpg';
@@ -21,10 +22,16 @@ import switch_states from './img/switch/switch-states.png';
 
 import WebComponentReact from './../../src/components/WebComponent.js';
 
+# <h1 style={{ fontSize: "3rem" }}>Switch</h1>
 
-# Switch
+<div style={{ maxWidth: '60%' }}>
+
+O switch é um tipo de controle para ações binárias (ligado/ desligado, verdadeiro/ falso), e é usado para alternar rapidamente entre as duas opções. Ele mostra o status atual de seu controlador e aplica a ação imediatamente após ser alternado, dando aos usuários visibilidade, liberdade e controle sobre suas preferências, não necessitando de um botão para confirmar a ação.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
@@ -35,13 +42,6 @@ import WebComponentReact from './../../src/components/WebComponent.js';
   ]}>
 
   <TabItem value="design">
-
-
-## Visão geral
-
-O switch é um tipo de controle para ações binárias (ligado/ desligado, verdadeiro/ falso), e é usado para alternar rapidamente entre as duas opções.
-
-Ele mostra o status atual de seu controlador e aplica a ação imediatamente após ser alternado, dando aos usuários visibilidade, liberdade e controle sobre suas preferências, não necessitando de um botão para confirmar a ação.
 
 ### Anatomia
 

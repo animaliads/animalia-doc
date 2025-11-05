@@ -1,21 +1,30 @@
 ---
-id: pagination
 sidebar_label: Pagination
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import PaginationAnatomy from './img/pagination/pagination-anatomy.png';
 import PaginationFormatFull from './img/pagination/pagination-format-full.png';
 import PaginationFormatCompact from './img/pagination/pagination-format-compact.png';
 import PaginationFocusOrder from './img/pagination/pagination-focus-order.png';
 
-# Pagination
+# <h1 style={{ fontSize: "3rem" }}>Pagination</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O componente `pagination` é utilizado para segmentar resultados em várias páginas, permitindo interações como: avançar e retroceder entre as páginas,
+ir para uma página específica e também controlar a quantidade de resultados exibidos em tela.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
@@ -26,10 +35,6 @@ import PaginationFocusOrder from './img/pagination/pagination-focus-order.png';
   ]}>
 
   <TabItem value="design">
-
-## Visão geral
-O componente `pagination` é utilizado para segmentar resultados em várias páginas, permitindo interações como: avançar e retroceder entre as páginas,
-ir para uma página específica e também controlar a quantidade de resultados exibidos em tela.
 
 ### Quando usar
 Utilize-o quando existir muitos resultados para serem apresentados, como por exemplo, comumente visto em listagem de tabelas, resultados de pesquisas e diretórios. 

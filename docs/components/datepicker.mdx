@@ -1,14 +1,22 @@
 ---
-id: datepicker
 sidebar_label: Datepicker
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
-# Datepicker
+# <h1 style={{ fontSize: "3rem" }}>Datepicker</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O componente datepicker é utilizado para inclusão de datas onde é possível informar apenas a data inicial ou a data final via texto, ou através de um acionador de calendário.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
@@ -18,12 +26,7 @@ import TabItem from '@theme/TabItem';
     {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
-  <TabItem value="design">
-
-
-## Visão geral
-
-O componente datepicker é utilizado para inclusão de datas onde é possível informar apenas a data inicial ou a data final via texto, ou através de um acionador de calendário. 
+  <TabItem value="design"> 
 
 :::note Componentes relacionados
 

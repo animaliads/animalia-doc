@@ -1,12 +1,13 @@
 ---
-id: breadcrumb
 sidebar_label: Breadcrumb
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import BreadcrumbAnatomy from './img/breadcrumb/breadcrumb-anatomy.jpg';
 import BreadcrumbCollapseLevel from './img/breadcrumb/breadcrumb-collapse-level.jpg';
@@ -15,9 +16,21 @@ import BreadcrumbCurrentPageMouse from './img/breadcrumb/breadcrumb-current-page
 import BreadcrumbLevelHover from './img/breadcrumb/breadcrumb-level-hover.jpg';
 import BreadcrumbLevelClick from './img/breadcrumb/breadcrumb-level-click.jpg';
 
-# Breadcrumb
+# <h1 style={{ fontSize: "3rem" }}>Breadcrumb</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O componente `breadcrumb` é um elemento de navegação secundário, que possibilita aos usuários que interagem com a interface identificar a localização atual na
+aplicação, exibindo os níveis de hierarquias antecessoras conforme avança.
+
+Também é possível utilizá-lo como método de navegação secundário para navegar aos demais níveis da hierarquia.
+
+> Este componente não têm como objetivo mostrar o histórico de acesso das páginas percorridas durante uma sessão na aplicação, como ao pressionar o **botão Voltar nativo dos navegadores**.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
@@ -29,14 +42,6 @@ import BreadcrumbLevelClick from './img/breadcrumb/breadcrumb-level-click.jpg';
 
   <TabItem value="design">
 
-## Visão geral
-O componente `breadcrumb` é um elemento de navegação secundário, que possibilita aos usuários que interagem com a interface identificar a localização atual na 
-aplicação, exibindo os níveis de hierarquias antecessoras conforme avança.
-
-Também é possível utilizá-lo como método de navegação secundário para navegar aos demais níveis da hierarquia.
-
-> Este componente não têm como objetivo mostrar o histórico de acesso das páginas percorridas durante uma sessão na aplicação, como ao pressionar o **botão Voltar nativo dos navegadores**.
-
 ### Quando usar
 Utilize-o para mostrar a estrutura hierárquica da aplicação no decorrer da navegação.
 
@@ -46,6 +51,9 @@ Estruturalmente, o `breadcrumb` pode ser composto pelos seguintes elementos: **l
 <img
   src={BreadcrumbAnatomy}
   alt="Imagem representando o componente breadcrumb contendo 5 níveis, sendo o primeiro e o quarto em formato de link, o último como página atual e os demais colpsados."
+  style={{
+    borderRadius: "16px",
+  }}
 /> 
 
 1. **Level (nível):** é um elemento do tipo [`link`](link), que exibe um ou mais níveis de páginas antecessoras, servindo também como meio de navegação;
@@ -69,8 +77,11 @@ seja pela quantidade e/ou tamanho de texto. Neste cenário, o `breadcrumb` deve 
 
 <img
   src={BreadcrumbCollapseLevel}
-  alt="Imagem representando o componente breadcrumb contendo 6 níveis, sendo o primeiro e o quinto em formato de link, 
+  alt="Imagem representando o componente breadcrumb contendo 6 níveis, sendo o primeiro e o quinto em formato de link,
   o último como página atual e os demais exibidos na listbox suspensa no breadcrumb."
+  style={{
+    borderRadius: "16px",
+  }}
 /> 
 
 > As definições de **comportamento** dos componentes que compõe o `breadcrumb` devem respeitar o tratamento em sua forma **original**.
@@ -83,6 +94,9 @@ Ao clicar no **Collapse level**, exibe o componente [`listbox`](listbox) com `it
 <img
   src={BreadcrumbCollapseLevelClick}
   alt="Imagem representando um breadcrumb com 5 níveis e o collapse level sendo acionado através de mouse."
+  style={{
+    borderRadius: "16px",
+  }}
 /> 
 
 ##### Current page sem interação
@@ -91,6 +105,9 @@ A página atual não deve permitir interação:
 <img
   src={BreadcrumbCurrentPageMouse}
   alt="Imagem representando um breadcrumb com 5 níveis e o ponteiro do mouse sobrepondo o current level, demonstrando que não há interação."
+  style={{
+    borderRadius: "16px",
+  }}
 /> 
 
 ##### Hover no level
@@ -99,6 +116,9 @@ Os comportamentos e estilos são os mesmo tratados no componente [`link`](link):
 <img
   src={BreadcrumbLevelHover}
   alt="Imagem representando um breadcrumb com 5 níveis e o ponteiro do mouse sobrepondo o quinto nível, demonstrando que há interação."
+  style={{
+    borderRadius: "16px",
+  }}
 /> 
 
 ##### Click no level
@@ -107,6 +127,9 @@ Os comportamentos e estilos são os mesmo tratados no componente [`link`](link):
 <img
   src={BreadcrumbLevelClick}
   alt="Imagem representando um breadcrumb com 5 níveis e o quinto nível sendo acionado através do mouse."
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 #### Navegação por teclado

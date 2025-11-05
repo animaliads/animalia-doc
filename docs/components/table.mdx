@@ -7,6 +7,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import TableAnatomy from './img/table/table-anatomy.png';
 import TableHeadlineAnatomy from './img/table/table-headline-anatomy.png';
@@ -17,9 +18,16 @@ import TableSecondSort from './img/table/table-second-sort.png';
 import TableThridSort from './img/table/table-third-sort.png';
 import TableFocusabledElements from './img/table/table-focusabled-elements.png';
 
-# Table
+# <h1 style={{ fontSize: "3rem" }}>Table</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+Componente utilizado para organizar e exibir informações em formato de tabela, com linhas e colunas.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[

@@ -1,13 +1,13 @@
 ---
-id: checkbox
 sidebar_label: Checkbox
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import checkboxSize from './img/checkbox/checkbox-size.jpg';
 import Do1 from './img/checkbox/checkbox-do-1.jpg';
@@ -17,13 +17,18 @@ import Dont2 from './img/checkbox/checkbox-dont-2.jpg';
 import types from './img/checkbox/checkbox-types.jpg';
 import checkboxAnatomy from './img/checkbox/checkboxanatomy.jpg';
 
-
 import WebComponentReact from './../../src/components/WebComponent.js';
 
+# <h1 style={{ fontSize: "3rem" }}>Checkbox</h1>
 
-# Checkbox
+<div style={{ maxWidth: '60%' }}>
+
+O componente checkbox (caixa de seleção) é usado para permitir que o usuário selecione uma ou mais opções de um número limitado de escolhas. As caixas de seleção atuam de forma independente, ou seja, a escolha de uma opção não afeta as outras caixas e seus status.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
@@ -34,31 +39,40 @@ import WebComponentReact from './../../src/components/WebComponent.js';
   ]}>
 
   <TabItem value="design">
-
-## Visão geral
-
-O componente checkbox (caixa de seleção) é usado para permitir que o usuário selecione uma ou mais opções de um número limitado de escolhas.
-As caixas de seleção atuam de forma independente, ou seja, a escolha de uma opção não afeta as outras caixas e seus status.
-
 ### Anatomia
 
-O checkbox é composto por _background_ e _border_. Também contém partes que são específicas de variação do componente ou estados de interação, como _shadow_ no estado hover.
+<TwoColumnLayout
+  variant="image-right"
+  leftContent={
+    <>
+      <p>O checkbox é composto por <em>background</em> e <em>border</em>. Também contém partes que são específicas de variação do componente ou estados de interação, como <em>shadow</em> no estado hover.</p>
 
-<img
-  src={checkboxAnatomy}
-  alt="Anatomia do checkbox disposto lado a lado, sendo 1 border, 2 background, 3 icon, 4 shadow hover e 5 outline"
+      <p>A estrutura do checkbox inclui:</p>
+
+      <ol>
+        <li><strong>Border</strong>: borda que delimita a caixa de seleção;</li>
+        <li><strong>Background</strong>: cor de fundo do checkbox;</li>
+        <li><strong>Icon (checked)</strong>: ícone que indica o estado marcado;</li>
+        <li><strong>Shadow (hover)</strong>: sombra que aparece no estado hover;</li>
+        <li><strong>Outline (focused)</strong>: contorno que aparece no estado de foco.</li>
+      </ol>
+
+      <p>Os componentes são formados por tokens, sendo estes propriedades de estilo que definem como será estruturado e estilizado o checkbox. Os tokens que podem ser alterados pelas marcas, podem ser conferidos na seção de <a href="#propriedades-customizáveis">propriedades customizáveis</a>.</p>
+    </>
+  }
+  rightContent={
+    <img
+      src={checkboxAnatomy}
+      alt="Anatomia do checkbox disposto lado a lado, sendo 1 border, 2 background, 3 icon, 4 shadow hover e 5 outline"
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        borderRadius: "16px",
+      }}
+    />
+  }
 />
-
-
-**1.** Border
-
-**2.** Background
-
-**3.** Icon (checked)
-
-**4.** Shadow (hover)
-
-**5.** Outline (focused)
 
 
 
@@ -76,9 +90,10 @@ O componente possui dois tamanhos diferentes: _Medium_ e _Large_. O tamanho medi
 <img
   src={checkboxSize}
   alt="Duas variações de tamanho para o checkbox dispostas lado a lado"
+  style={{
+    borderRadius: "16px",
+  }}
 />
-
-Os componentes são formados por tokens, sendo estes propriedades de estilo que definem como será estruturado e estilizado. Os tokens que podem ser alterados pelas marcas, podem ser conferidos na seção de [propriedades customizáveis](#propriedades-customizáveis).
 
 
 ## Boas práticas
@@ -142,8 +157,6 @@ Algumas diretrizes de acessibilidade já são tratadas no componente, internamen
 
 ## Desenvolvimento
 
-### Instalação do pacote
-
 Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
 
 Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
@@ -193,11 +206,9 @@ Para saber a lista de propriedades e eventos, acesse o [guia de referência de A
 
   <TabItem value="custom-properties">
 
-
 ## Propriedades customizáveis
 
-O componente possui propriedades customizáveis, que possibilitam fazer alterações, de acordo com a marca ou o tema a ser utilizado. Com isso, garantimos uma consistência ao Design System, sem perder a identidade de cada marca.
-
+O componente de checkbox possui propriedades customizáveis que podem variar de acordo com o tema selecionado. As propriedades customizáveis podem ser alteradas para cada produto, de acordo com os tokens de marca e tokens globais. Com isso, garantimos uma consistência no Design System, sem perder a identidade de cada marca.
 O checkbox possui quatro estados, que se modificam de acordo com a interação do usuário, sendo eles: _Normal_, _Hover_, _Focused_ e _Disabled_.
 
 | Propriedade                  | Descrição                                                                        | Valor padrão            |
@@ -214,6 +225,9 @@ O checkbox possui quatro estados, que se modificam de acordo com a interação d
 <img
   src={types}
   alt="Os estados de interação do checkbox unchecked, com as respectivas versões checked e mixed abaixo"
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 </TabItem>

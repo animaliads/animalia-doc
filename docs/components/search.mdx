@@ -1,21 +1,29 @@
 ---
-id: search
 sidebar_label: Search
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import SearchActiveAnatomy from './img/search/search-active-anatomy.png';
 import SearchActiveSpacing from './img/search/search-active-spacing.png';
 import SearchTriggerAnatomy from './img/search/search-trigger-anatomy.png';
 import SearchTriggerSpacing from './img/search/search-trigger-spacing.png';
 
-# Search
+# <h1 style={{ fontSize: "3rem" }}>Search</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O componente `search`, também conhecido como **barra de pesquisa**, é utilizado para ajudar os usuários a localizarem um determinado conteúdo.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
@@ -26,9 +34,6 @@ import SearchTriggerSpacing from './img/search/search-trigger-spacing.png';
   ]}>
 
   <TabItem value="design">
-
-## Visão geral
-O componente `search`, também conhecido como **barra de pesquisa**, é utilizado para ajudar os usuários a localizarem um determinado conteúdo.
 
 Normalmente **localizado no canto superior direito** acompanhado do **ícone de lupa**, já que é um ícone amplamente conhecido.
 
