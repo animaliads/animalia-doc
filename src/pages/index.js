@@ -11,6 +11,8 @@ import HomepagePrincipals from "../components/HomepagePrincipals";
 import HomepageCTA from "../components/HomepageCTA";
 import AniButtonTertiary from "../components/animalia_components/AniButtonTertiary";
 import { faChevronRight, faBook } from "@fortawesome/free-solid-svg-icons";
+import ScrollFadeIn from "../components/animations/ScrollFadeIn";
+import { motion } from "framer-motion";
 
 function HomepageHeader() {
   return (
@@ -18,7 +20,12 @@ function HomepageHeader() {
       <div className={styles.hero__wrapper}>
         <div className={styles.hero__container}>
           <div className={styles.hero__content}>
-            <div className={styles.hero__title__section}>
+            <motion.div
+              className={styles.hero__title__section}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.6, 0.01, 0.05, 0.95] }}
+            >
               <AniTag text="Release 2.3.2" variant="release" />
               <h1 className={styles.hero__title}>
                 Um sistema aberto que{" "}
@@ -28,8 +35,13 @@ function HomepageHeader() {
                 em toda a{" "}
                 <span className={styles.hero__title__brand}>TOTVS</span>
               </h1>
-            </div>
-            <div className={styles.hero__bottom}>
+            </motion.div>
+            <motion.div
+              className={styles.hero__bottom}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.6, 0.01, 0.05, 0.95] }}
+            >
               <p className={styles.hero__description}>
                 O Animalia DS é o design system open source da TOTVS, feito para
                 unificar experiências, acelerar entregas e escalar a
@@ -48,10 +60,15 @@ function HomepageHeader() {
                   iconPosition="left"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-        <div className={styles.hero__video__wrapper}>
+        <motion.div
+          className={styles.hero__video__wrapper}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.4, ease: [0.6, 0.01, 0.05, 0.95] }}
+        >
           <div className={styles.hero__video__container}>
             <video
               className={styles.hero__video}
@@ -64,7 +81,7 @@ function HomepageHeader() {
               Your browser does not support the video tag.
             </video>
           </div>
-        </div>
+        </motion.div>
       </div>
     </header>
   );
@@ -82,12 +99,12 @@ export default function Home() {
         <HomepageFeatures />
         <HomepageCTA />
         <HomepagePrincipals />
-        <div className={styles.learnMoreContainer}>
+        <ScrollFadeIn className={styles.learnMoreContainer}>
           <AniButtonTertiary
             to="/docs/about/intro"
             label="Saiba mais sobre o Animalia DS"
           />
-        </div>
+        </ScrollFadeIn>
       </main>
     </Layout>
   );
