@@ -9,7 +9,7 @@
   padding: 0 80px;
   display: flex;
   flex-direction: column;
-  gap: 69px;
+  gap: 56px;
   align-items: center;
 }
 
@@ -23,10 +23,10 @@
 
 .principals__title {
   font-family: 'Rethink Sans', sans-serif;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
-  color: #000000;
+  color: #060613;
   margin: 0;
   text-align: center;
   max-width: 618px;
@@ -41,21 +41,20 @@
 
 .principals__card {
   display: flex;
-  flex-direction: column;
-  gap: 44px;
   flex: 1;
   min-width: 0;
+  position: relative;
 }
 
-.card__image {
+.card__imageContainer {
   width: 100%;
-  aspect-ratio: 406 / 595;
+  height: 601px;
   border-radius: 24px;
   overflow: hidden;
   position: relative;
 }
 
-.card__image img {
+.card__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -63,37 +62,118 @@
   display: block;
 }
 
+.card__gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 53.366%);
+  pointer-events: none;
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 24px;
+}
+
+.card__iconContainer {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card__iconContainer i {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.card__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card__textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .card__title {
   font-family: 'Rethink Sans', sans-serif;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
-  color: #000000;
+  color: #ffffff;
   margin: 0;
-  text-align: center;
+}
+
+.card__description {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+}
+
+.card__link {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.card__link:hover {
+  opacity: 0.8;
 }
 
 /* Responsive styles */
 @media screen and (max-width: 1200px) {
   .principals__wrapper {
     padding: 0 40px;
-    gap: 60px;
+    gap: 48px;
   }
 
   .principals__title {
-    font-size: 44px;
-  }
-
-  .card__title {
-    font-size: 28px;
+    font-size: 36px;
   }
 
   .principals__cards {
     gap: 32px;
   }
 
-  .principals__card {
-    gap: 32px;
+  .card__imageContainer {
+    height: 500px;
+  }
+
+  .card__content {
+    padding: 40px 20px;
+  }
+
+  .card__title {
+    font-size: 22px;
+  }
+
+  .card__description {
+    font-size: 13px;
   }
 }
 
@@ -104,26 +184,39 @@
 
   .principals__wrapper {
     padding: 0 24px;
-    gap: 48px;
+    gap: 40px;
   }
 
   .principals__title {
-    font-size: 38px;
-  }
-
-  .card__title {
-    font-size: 24px;
+    font-size: 32px;
   }
 
   .principals__cards {
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
+    align-items: stretch;
   }
 
   .principals__card {
-    gap: 24px;
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .card__imageContainer {
+    height: 450px;
+  }
+
+  .card__content {
+    padding: 36px 24px;
+  }
+
+  .card__title {
+    font-size: 22px;
+  }
+
+  .card__description {
+    font-size: 13px;
   }
 }
 
@@ -134,7 +227,7 @@
 
   .principals__wrapper {
     padding: 0 16px;
-    gap: 40px;
+    gap: 32px;
   }
 
   .principals__header {
@@ -142,18 +235,40 @@
   }
 
   .principals__title {
-    font-size: 30px;
-  }
-
-  .card__title {
-    font-size: 22px;
+    font-size: 26px;
   }
 
   .principals__cards {
-    gap: 32px;
+    gap: 24px;
   }
 
-  .principals__card {
-    gap: 20px;
+  .card__imageContainer {
+    height: 400px;
+  }
+
+  .card__content {
+    padding: 32px 20px;
+  }
+
+  .card__iconContainer {
+    width: 28px;
+    height: 28px;
+  }
+
+  .card__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .card__title {
+    font-size: 20px;
+  }
+
+  .card__description {
+    font-size: 12px;
+  }
+
+  .card__link {
+    font-size: 14px;
   }
 }
