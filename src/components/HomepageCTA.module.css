@@ -33,6 +33,11 @@
   white-space: pre-wrap;
 }
 
+/* Dark mode */
+html[data-theme="dark"] .ctaContent {
+  background-color: var(--ifm-color-primary-darkest);
+}
+
 /* Responsive styles */
 @media screen and (max-width: 1200px) {
   .ctaContainer {

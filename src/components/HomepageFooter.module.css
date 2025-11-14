@@ -32,11 +32,11 @@
 }
 
 .ctaTitle {
-  font-family: 'Rethink Sans', sans-serif;
+  font-family: "Rethink Sans", sans-serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 1.2;
-  color: var(--ifm-color-neutral-light-00);
+  color: #ffffff;
   margin: 0;
   max-width: 406px;
 }
@@ -58,7 +58,7 @@
 }
 
 .columnTitle {
-  font-family: 'Rethink Sans', sans-serif;
+  font-family: "Rethink Sans", sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.2;
@@ -81,7 +81,7 @@
 }
 
 .link {
-  font-family: 'Rethink Sans', sans-serif;
+  font-family: "Rethink Sans", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.2;
@@ -116,13 +116,26 @@
 }
 
 .copyright {
-  font-family: 'Rethink Sans', sans-serif;
+  font-family: "Rethink Sans", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.2;
   color: var(--ifm-color-neutral-light-20);
   margin: 0;
   max-width: 344px;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .footer {
+  background-color: var(--ifm-color-neutral-dark-95);
+}
+
+html[data-theme="dark"] .link {
+  color: var(--ifm-color-neutral-mid-40);
+}
+
+html[data-theme="dark"] .link:hover {
+  color: var(--ifm-color-neutral-light-10);
 }
 
 /* Responsive Design */

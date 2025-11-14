@@ -281,7 +281,23 @@ h1 {
   }
 }
 
-/* Dark mode gradient */
+/* Dark mode */
 html[data-theme="dark"] .hero__banner {
   background: linear-gradient(to bottom, #030330 0%, #1d1d30 100%);
+}
+
+html[data-theme="dark"] .hero__title {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .hero__title .hero__title__highlight {
+  color: var(--ifm-color-primary-light);
+}
+
+html[data-theme="dark"] .hero__description {
+  color: var(--ifm-color-neutral-light-10);
+}
+
+html[data-theme="dark"] .hero__video__container {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }

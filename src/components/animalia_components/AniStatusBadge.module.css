@@ -44,5 +44,17 @@ html[data-theme="dark"] .text {
 }
 
 html[data-theme="dark"] .dot {
-  border-color: var(--ifm-color-neutral-dark-90);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] .dot.positive {
+  background-color: #16a34a;
+}
+
+html[data-theme="dark"] .dot.negative {
+  background-color: #ef4444;
+}
+
+html[data-theme="dark"] .dot.info {
+  background-color: #3b82f6;
 }

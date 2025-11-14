@@ -139,6 +139,37 @@
   margin: 0;
 }
 
+/* Dark mode */
+html[data-theme="dark"] .featuresTitle {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .featureCard {
+  background-color: var(--ifm-color-neutral-dark-90);
+  border-color: var(--ifm-color-neutral-mid-40);
+}
+
+html[data-theme="dark"] .featureCard:hover {
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .iconContainer {
+  border-color: var(--ifm-color-primary-light);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+html[data-theme="dark"] .icon {
+  color: var(--ifm-color-primary-light);
+}
+
+html[data-theme="dark"] .cardTitle {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .cardDescription {
+  color: var(--ifm-color-neutral-light-10);
+}
+
 /* Feature Image */
 .featuresImage {
   grid-column: 3 / 5;

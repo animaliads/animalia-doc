@@ -62,8 +62,14 @@
 }
 
 html[data-theme="dark"] .card {
-  background-color: var(--ifm-color-neutral-dark-80);
+  background-color: var(--ifm-color-neutral-dark-90);
   border-color: var(--ifm-color-neutral-mid-40);
+}
+
+html[data-theme="dark"] .card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.1),
+    0px 6px 12px 0px rgba(0, 0, 0, 0.3);
 }
 
 html[data-theme="dark"] .title {
@@ -74,6 +80,6 @@ html[data-theme="dark"] .iconContainer i {
   color: var(--ifm-color-primary-light);
 }
 
-html[data-theme="dark"] .card:hover {
-  border-color: var(--ifm-color-primary);
+html[data-theme="dark"] .iconContainer {
+  background-color: rgba(255, 255, 255, 0.05);
 }
