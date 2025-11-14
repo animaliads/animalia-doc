@@ -1,0 +1,48 @@
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--ifm-color-neutral-light-00);
+  flex-shrink: 0;
+}
+
+.dot.positive {
+  background-color: #107048;
+}
+
+.dot.negative {
+  background-color: #be3e37;
+}
+
+.dot.info {
+  background-color: #23489f;
+}
+
+.text {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ifm-color-neutral-dark-90);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+}
+
+html[data-theme="dark"] .text {
+  color: var(--ifm-color-neutral-light-00);
+}
+
+html[data-theme="dark"] .dot {
+  border-color: var(--ifm-color-neutral-dark-90);
+}

@@ -29,6 +29,7 @@ import buttonDont3 from "./img/button/button-dont-3.jpg";
 import buttonDont4 from "./img/button/button-dont-4.jpg";
 
 import WebComponentReact from "./../../src/components/WebComponent.js";
+import AniPlatformCard from "./../../src/components/animalia_components/AniPlatformCard.js";
 
 # <h1 style={{ fontSize: "3rem" }}>Button</h1>
 
@@ -239,6 +240,27 @@ Algumas diretrizes de acessibilidade já são tratadas no componente, internamen
 </TabItem>
 
 <TabItem value="dev">
+
+<div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px', alignItems: 'stretch' }}>
+  <AniPlatformCard
+    icon="an-angular-logo"
+    title="Angular"
+    statusType="positive"
+    statusText="Release 19.2.1"
+  />
+  <AniPlatformCard
+    icon="an-apple-logo"
+    title="iOS"
+    statusType="negative"
+    statusText="N/A"
+  />
+  <AniPlatformCard
+    icon="an-cube"
+    title="Web Component"
+    statusType="info"
+    statusText="Planned"
+  />
+</div>
 
 ## Desenvolvimento
 
