@@ -190,10 +190,10 @@ html[data-theme="dark"] {
 
 .button-tabs-sticky {
   position: sticky;
-  top: calc(var(--ifm-navbar-height, 72px) + 16px);
+  top: calc(var(--ifm-navbar-height, 72px));
   z-index: 5;
   background: #fff;
-  padding: 0px 0 16px;
+  padding: 10px 0 26px;
 }
 
 .button-tabs-sticky::before {
