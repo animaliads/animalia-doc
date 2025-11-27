@@ -391,9 +391,77 @@ as propriedades especificadas no botão de forma geral.
 
 <TabItem value="accessibility">
 
-:::note Em construção
-Conteúdo em desenvolvimento
-:::
+Critérios a serem observados no desenvolvimento do componente:
+
+## Perceptível:
+
+### 1.1.1 - Conteúdo Não-Textual (A)
+
+Forneça texto alternativo para ícones ou imagens dentro do componente, como por exemplo, o botão do contentr.
+
+### 1.4.1 - Utilização de cores (A)
+
+Cores não devem ser utilizadas como única maneira de transmitir conteúdo ou distinguir elementos visuais.
+
+### 1.4.3 - Contraste (mínimo) (AA)
+
+Os rótulos (label), ícones e elementos no geral como o Ani Loading, devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 3:1.
+
+### 1.4.6 - Contraste (melhorado) (AAA)
+
+Textos devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 7:1
+
+## Operável:
+
+### 2.1.1 - Teclado (A)
+
+Todo o conteúdo deve ser acessível através de teclado.
+
+**Obs.:** O botão não pode ser navegável quando em estado disabled ou loading.
+
+### 2.4.3 - Ordem do foco (A)
+
+A ordem do foco deve ser lógica e intuitiva.
+
+### 2.2.1 - Ajustável por limite de tempo (A)
+
+Caso seja definida uma funcionalidade que exija tempo para execução e essa não seja essencial (obrigatória do ponto de vista legal), deve-se incluir também uma opção para desligá-lo ou uma opção para ampliá-lo.
+
+### 2.4.7 - Foco visível (AA)
+
+Ao se interagir por teclado, qualquer pessoa deve conseguir identificar qual é a sua localização espacial na tela através de um foco visível/indicador de sua localização.
+
+### 2.4.11 - Aparência do foco (mínimo) (AA)
+
+Deve ter uma área mínima para o foco de pelo menos o dobro do perímetro do elemento sem o foco; ter contraste de pelo menos 4.5:1 entre o estado focado e não focado do componente; e o foco não pode ficar escondido por outros elementos da tela.
+
+### 2.4.12 - Aparência do foco (melhorado) (AAA)
+
+Quando o foco visível for exibido, ele deverá possuir 2px de área, ter o seu contraste melhorado e uma cor sólida.
+
+### 2.5.5 - Tamanho da área clicável (AAA)
+
+O tamanho das áreas acionáveis por clique ou toque devem possuir no mínimo 44x44 pixels de espaçamento, a não ser quando essa área esteja em uma frase localizada em um bloco de texto.
+
+## Compreensível:
+
+### 3.3.1 - Identificação de erro (A)
+
+Sempre que uma mensagem de erro for exibida, ela deve identificar claramente qual é o elemento que gerou o erro de forma visual e audível (exemplo: mudança de cor no elemento + um ícone de alerta + uma mensagem em texto). Nota: ver junto com critério 3.3.3 (AA).
+
+### 3.3.2 - Rótulos e instruções (A)
+
+Todos os rótulos devem descrever claramente e sem ambiguidades a finalidade dos campos de formulário.
+
+## Robusto:
+
+### 4.1.2 - Nome, Função e Valor (A)
+
+Utilizar nome, função e valor adequadamente, pois estes parâmetros são utilizados por tecnologias assistivas para identificar os elementos da interface. Os controles HTML normais já cumprem este critério de sucesso quando utilizados de acordo com a especificação.
+
+### 4.1.3 - Mensagens de status (AA)
+
+Qualquer tipo de mensagem que é resultado de uma ação ou que informa o andamento de um processo e que seja relevante para a pessoa, deve ser transmitida sem que ocorra uma mudança de contexto (foco) na tela.
 
 </TabItem>
 
