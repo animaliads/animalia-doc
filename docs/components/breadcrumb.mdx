@@ -98,13 +98,13 @@ rightContent={
 
 * **Navegação**: Cada nível clicável deve levar à respectiva página pai.
 * **Responsividade (Single Line)**: O componente deve ocupar sempre uma única linha.
-    * No Desktop, exibe-se a trilha completa.
-    * No Mobile, os níveis intermediários são colapsados automaticamente no ícone (`...`) mantendo visíveis apenas o nível raiz e a página atual.
+    * No **Desktop**, exibe-se a trilha completa.
+    * No **Mobile**, os níveis intermediários são colapsados automaticamente no ícone (`...`) mantendo visíveis apenas o nível raiz e a página atual.
 * **Truncamento**: Títulos longos que excedam o espaço disponível devem ser truncados com reticências. O nome completo deve ser revelado via tooltip no hover ou foco.
 * **Interação**:
     * **Hover**: Feedback visual imediato nos links interativos.
     * **Teclado**: Navegação via `Tab` e acionamento por `Enter` / `Space`.
-* **Touch**: Área mínima de toque de 1x1cm (aprox. 44px).
+* **Touch**: Área mínima de toque de **1x1cm** (aprox. 44px).
 
 ## Boas práticas
 > *Importante: O Breadcrumb reflete a hierarquia, não o histórico de cliques (NN/g).*
@@ -146,6 +146,23 @@ rightContent={
 
 <TabItem value="dev">
 
+<div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px', alignItems: 'stretch' }}>
+  <AniPlatformCard
+    icon="an-cube"
+    title="Web Component"
+    statusType="positive"
+    statusText="Disponível"
+  />
+<AniPlatformCard
+    icon="an-angular-logo"
+    title="Angular"
+    statusType="positive"
+    statusText="Disponível"
+    link="https://po-ui.io/documentation/po-breadcrumb"
+    external={true}
+  />
+</div>
+
 ## Desenvolvimento
 
 Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
@@ -157,10 +174,7 @@ npm install @animaliads/ani-breadcrumb
 
 ### Como utilizar
 
-A utilização deste componente requer a importação do seu arquivo principal. O método de importação varia de acordo com o framework ou biblioteca que você está utilizando.
-
-### Web Component
-Após importar o arquivo principal, utilize as tags `ani-breadcrumb` e `ani-breadcrumb-item` para estruturar a navegação:
+A implementação requer a importação do módulo principal, variando conforme a biblioteca ou framework utilizado. Após a configuração, utilize os elementos `ani-breadcrumb` e `ani-breadcrumb-item` no seu código:
 
 ```html
 <ani-breadcrumb>
@@ -169,8 +183,7 @@ Após importar o arquivo principal, utilize as tags `ani-breadcrumb` e `ani-brea
   <ani-breadcrumb-item>Antivírus</ani-breadcrumb-item>
 </ani-breadcrumb>
 ```
-### Uso de Temas
-Para aplicar o tema padrão, é obrigatória a instalação e o uso dos pacotes  `@animaliads/animalia-brand` e `@animaliads/css-tokens`. Você pode conferir exemplos práticos no [Live Demo](#live-demo).
+>Para aplicar o tema padrão, é obrigatória a instalação e o uso dos pacotes  `@animaliads/animalia-brand` e `@animaliads/css-tokens`. Você pode conferir exemplos práticos no [Live Demo](#live-demo).
 
 ### Customização
 Para adaptar visualmente o componente, você pode sobrescrever as propriedades customizáveis via CSS:
@@ -181,29 +194,12 @@ ani-breadcrumb {
   --font-size: 0.875rem;
 }
 ```
+>Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis do breadcrumb](/docs/components/breadcrumb#propriedades-customizáveis).
 
-Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis do breadcrumb](/docs/components/breadcrumb#propriedades-customizáveis).
-
-### Angular (PO-UI)
-Para projetos que utilizam Angular, recomendamos o uso da implementação nativa do PO-UI, que oferece total integração com o ecossistema.
-
-<AniPlatformCard
-    icon="an-angular-logo"
-    title="Angular"
-    statusType="positive"
-    statusText="Disponivel"
-    link="https://po-ui.io/documentation/po-breadcrumb"
-    external={true}
-  />
- 
 ### Live Demo
 
-<LiveDemoComponent react="https://stackblitz.com/edit/react-ani-button?embed=1&file=src/App.js" />
-
-<br/>
-
-:::note API
-Para saber a lista de propriedades e eventos, acesse o [guia de referência de API](http://animaliads.io/?path=/docs/api-breadcrumb--sample).
+:::note **API**
+Live Demo em construção. O link será inserido após a integração com o Stack Blitz.
 :::
 
 </TabItem>
@@ -229,17 +225,15 @@ As variáveis abaixo permitem a customização do componente mantendo a herança
 
 <TabItem value="accessibility">
 
-### Acessibilidade (Padrão AAA)
+## Acessibilidade (Padrão AAA)
 
-* **Identificação Semântica:** O componente deve estar contido em uma tag `<nav>` identificada com o atributo `aria-label="Breadcrumb"`.
-
-* **Página Atual:** O item estático final (Current page) deve obrigatoriamente possuir o atributo `aria-current="page"`.
-
-* **Separadores:** Devem ser puramente decorativos e ignorados por leitores de tela através do uso de `aria-hidden="true"`.
-
-* **Contraste AAA:** Links e textos mantêm uma relação de contraste de pelo menos 7:1 contra o fundo (mínimo de 4.5:1 conforme WCAG).
-
-* **Ordem de Foco:** O foco via teclado deve percorrer sequencialmente os links ativos e o ícone de colapso, ignorando a Current page para otimizar a navegação assistiva.
+* **Identificação:** O componente deve estar contido em uma tag `<nav>` identificada com o atributo `aria-label="Breadcrumb"`.
+* **Página Atual:** O item estático final (**Current page**) deve possuir o atributo `aria-current="page"`.
+* **Separadores:** Devem ser decorativos e ignorados por leitores de tela através do uso de `aria-hidden="true"`.
+* **Contraste (WCAG 2.1):** 
+    * **Nível AA (Mínimo):** Relação de contraste de pelo menos 4.5:1 entre o texto/link e o fundo.
+    * **Nível AAA (Excelência):** Relação de contraste de pelo menos 7:1 entre o texto/link e o fundo.
+* **Ordem de Foco:** O foco via teclado deve percorrer apenas os links ativos e o menu de colapso, ignorando a **Current page** para otimizar a navegação.
 
 <img
   src={breadcrumbFocusLevel}
