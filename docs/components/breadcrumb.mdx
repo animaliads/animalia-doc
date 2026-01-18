@@ -4,29 +4,32 @@ sidebar_label: Breadcrumb
 wrapperClassName: doc-page-left
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import BestPracticesComponent from './helpers/components/best-practices.tsx';
-import LiveDemoComponent from './helpers/components/live-demo.tsx';
-import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import BestPracticesComponent from "./helpers/components/best-practices.tsx";
+import LiveDemoComponent from "./helpers/components/live-demo.tsx";
+import AnatomyLayoutComponent from "./helpers/components/anatomy-layout.tsx";
+import TwoColumnLayout from "./helpers/components/two-column-layout.tsx";
 
-import BreadcrumbAnatomy from './img/breadcrumb/breadcrumb-anatomy.jpg';
-import BreadcrumbCollapseLevel from './img/breadcrumb/breadcrumb-collapse-level.jpg';
-import BreadcrumbCollapseLevelClick from './img/breadcrumb/breadcrumb-collapse-level-click.jpg';
-import BreadcrumbCurrentPageMouse from './img/breadcrumb/breadcrumb-current-page-mouse.jpg';
-import BreadcrumbLevelHover from './img/breadcrumb/breadcrumb-level-hover.jpg';
-import BreadcrumbLevelClick from './img/breadcrumb/breadcrumb-level-click.jpg';
+import WebComponentReact from "./../../src/components/WebComponent.js";
+import AniPlatformCard from "./../../src/components/animalia_components/AniPlatformCard.js";
+
+{/* Placeholder de Imagens - Substitua pelos caminhos reais */}
+import breadcrumbAnatomy from "./img/breadcrumb/breadcrumb-anatomy.jpg";
+import breadcrumbDo1 from "./img/breadcrumb/breadcrumb-do-1.png";
+import breadcrumbDont1 from "./img/breadcrumb/breadcrumb-dont-1.png";
+import breadcrumbDo2 from "./img/breadcrumb/breadcrumb-do-2.png";
+import breadcrumbDont2 from "./img/breadcrumb/breadcrumb-dont-2.png";
+import breadcrumbDo3 from "./img/breadcrumb/breadcrumb-do-3.png";
+import breadcrumbDont3 from "./img/breadcrumb/breadcrumb-dont-3.png";
+import breadcrumbFocusLevel from "./img/breadcrumb/breadcrumb-focus-level.png";
 
 # <h1 style={{ fontSize: "3rem" }}>Breadcrumb</h1>
 
 <div style={{ maxWidth: '60%' }}>
 
-O componente `breadcrumb` é um elemento de navegação secundário, que possibilita aos usuários que interagem com a interface identificar a localização atual na
-aplicação, exibindo os níveis de hierarquias antecessoras conforme avança.
-
-Também é possível utilizá-lo como método de navegação secundário para navegar aos demais níveis da hierarquia.
-
-> Este componente não têm como objetivo mostrar o histórico de acesso das páginas percorridas durante uma sessão na aplicação, como ao pressionar o **botão Voltar nativo dos navegadores**.
+O **Breadcrumb** (trilha de navegação) é um componente secundário que auxilia a pessoa usuária a compreender sua localização atual na hierarquia de um site ou sistema.
+Ele permite o retorno rápido a níveis superiores através de links clicáveis que representam o caminho percorrido.
 
 </div>
 
@@ -44,178 +47,203 @@ Também é possível utilizá-lo como método de navegação secundário para na
   <TabItem value="design">
 
 ### Quando usar
-Utilize-o para mostrar a estrutura hierárquica da aplicação no decorrer da navegação.
+
+* Essencial em sistemas com arquitetura de informação profunda, possuindo mais de 2 níveis.
+* Quando a localização do usuário não é óbvia apenas pelo menu de navegação principal.
+
+### Quando não usar
+
+* Em fluxos lineares e sequenciais, como processos de compra ou cadastros passo a passo (utilize o componente Stepper).
+* Em sites ou aplicações com estruturas simples de apenas um nível.
 
 ### Anatomia
-Estruturalmente, o `breadcrumb` pode ser composto pelos seguintes elementos: **level**, **collapse level**, **icon** e **current page**, conforme imagem abaixo:
 
+<TwoColumnLayout
+  variant="image-right"
+  leftContent={
+    <>
+      <p>Estruturalmente, o componente é composto por quatro elementos principais:</p>
+
+      <ol>
+        <li>
+          <strong>Level</strong>: Elemento do tipo <a href="/docs/components/link">link</a> que exibe níveis de páginas antecessoras e serve como meio de navegação ativa;
+        </li>
+        <li>
+          <strong>Collapse level</strong>: <a href="/docs/components/icon">Ícone</a> (<code>more-vert</code>) que agrupa níveis colapsados em formato de listbox para otimizar o espaço em trilhas longas;
+        </li>
+        <li>
+          <strong>Icon</strong>: Elemento visual (<code>arrow-right</code>) utilizado para separar os níveis e indicar o sentido da hierarquia;
+        </li>
+        <li>
+          <strong>Current page</strong>: O último item da trilha, indicando o local presente da pessoa usuária; este item deve ser estático e não clicável.
+        </li>
+      </ol>
+    </>
+
+}
+rightContent={
 <img
-  src={BreadcrumbAnatomy}
-  alt="Imagem representando o componente breadcrumb contendo 5 níveis, sendo o primeiro e o quarto em formato de link, o último como página atual e os demais colpsados."
+  src={breadcrumbAnatomy}
+  alt="Anatomia do breadcrumb indicando level, collapse level, icon e current page"
   style={{
-    borderRadius: "16px",
-  }}
-/> 
-
-1. **Level (nível):** é um elemento do tipo [`link`](link), que exibe um ou mais níveis de páginas antecessoras, servindo também como meio de navegação;
-2. **Collapse level:** é um elemento do tipo [`icon`](icon) (_more-vert_), que exibe os níveis colpsados na forma de [`listbox`](listbox) (mais detalhes em [**Comportamento**](breadcrumb#comportamento));
-3. **Icon:** é um elemento do tipo [`icon`](icon) (_arrow-right_), que separa e indica o sentido da hierarquia entre os níveis;
-4. **Current page:** é um elemento do tipo texto, que informa a página atual da aplicação.
-
-> As definições de **estilo** dos componentes que compõe o `breadcrumb` devem respeitar o tratamento em sua forma **original**.
-
-### Comportamento
-O principal comportamento mapeado se relaciona a situações em que o espaço em tela é insuficiente para exibir todos os níveis da hierarquia,
-seja pela quantidade e/ou tamanho de texto. Neste cenário, o `breadcrumb` deve funcionar da seguinte maneira:
-
-- Mantem o **primeiro nível** visível (página inicial);
-- Mantem a **página atual** visível:
-  + Este nível é apenas informativo e não deve haver interação;
-- Mantem o **penúltimo nível** visível:
-  + Este nível pode ser colpsado apenas em último casos, veja mais em [**Boas práticas**](breadcrumb#boas-práticas);
-- Colapsa os demais níveis:
-  + Quando acionado, deve exibir os níveis colapsados na forma de [`listbox`](listbox).
-
-<img
-  src={BreadcrumbCollapseLevel}
-  alt="Imagem representando o componente breadcrumb contendo 6 níveis, sendo o primeiro e o quinto em formato de link,
-  o último como página atual e os demais exibidos na listbox suspensa no breadcrumb."
-  style={{
-    borderRadius: "16px",
-  }}
-/> 
-
-> As definições de **comportamento** dos componentes que compõe o `breadcrumb` devem respeitar o tratamento em sua forma **original**.
-
-#### Navegação por mouse
-
-##### Clique no Collapse level
-Ao clicar no **Collapse level**, exibe o componente [`listbox`](listbox) com `item-list` do tipo ação, com os níveis colapsados:
-
-<img
-  src={BreadcrumbCollapseLevelClick}
-  alt="Imagem representando um breadcrumb com 5 níveis e o collapse level sendo acionado através de mouse."
-  style={{
-    borderRadius: "16px",
-  }}
-/> 
-
-##### Current page sem interação
-A página atual não deve permitir interação:
-
-<img
-  src={BreadcrumbCurrentPageMouse}
-  alt="Imagem representando um breadcrumb com 5 níveis e o ponteiro do mouse sobrepondo o current level, demonstrando que não há interação."
-  style={{
-    borderRadius: "16px",
-  }}
-/> 
-
-##### Hover no level
-Os comportamentos e estilos são os mesmo tratados no componente [`link`](link):
-
-<img
-  src={BreadcrumbLevelHover}
-  alt="Imagem representando um breadcrumb com 5 níveis e o ponteiro do mouse sobrepondo o quinto nível, demonstrando que há interação."
-  style={{
-    borderRadius: "16px",
-  }}
-/> 
-
-##### Click no level
-Os comportamentos e estilos são os mesmo tratados no componente [`link`](link):
-
-<img
-  src={BreadcrumbLevelClick}
-  alt="Imagem representando um breadcrumb com 5 níveis e o quinto nível sendo acionado através do mouse."
-  style={{
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
     borderRadius: "16px",
   }}
 />
+} />
 
-#### Navegação por teclado
-A ordem de foco na navegação através da tecla **tab** avança entre todos os níveis, do **primeiro** até a **página atual**.
+### Comportamento e Responsividade
 
-O acionamento ocorre através das teclas **enter** ou **space**, exceto a **página atual** que não deve conter interação.
-
-No caso de haver níveis colapsados, a navegação ocorre da seguinte maneira:
-
-1. O **primeiro nível** recebe foco;
-2. O **collapse level** recebe foco:
-    - Se acionado, exibe o [`listbox`](list), apresentando os níveis colapsados e focando o primeiro `item-list`;
-        - Pressione as setas (**cima** e **baixo**) para navegar entre os itens da lista;
-        - Pressione a tecla **esc** para fechar a lista, ou, **tab** duas vezes seguidas;
-3. O **penúltimo nível** recebe foco;
-4. A **página atual** recebe foco (somente para leitura).
-
-> Ao acionar via **mouse** ou **teclado** um determinado nível, deve redirecionar o contexto para a respectiva página.
+* **Navegação**: Cada nível clicável deve levar à respectiva página pai.
+* **Responsividade (Single Line)**: O componente deve ocupar sempre uma única linha.
+    * No **Desktop**, exibe-se a trilha completa.
+    * No **Mobile**, os níveis intermediários são colapsados automaticamente no ícone (`...`) mantendo visíveis apenas o nível raiz e a página atual.
+* **Truncamento**: Títulos longos que excedam o espaço disponível devem ser truncados com reticências. O nome completo deve ser revelado via tooltip no hover ou foco.
+* **Interação**:
+    * **Hover**: Feedback visual imediato nos links interativos.
+    * **Teclado**: Navegação via `Tab` e acionamento por `Enter` / `Space`.
+* **Touch**: Área mínima de toque de **1x1cm** (aprox. 44px).
 
 ## Boas práticas
-Foram estruturados os padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência aos usuários. 
-Por isso, é muito importante que ao utilizar este componente, as pessoas que o projetarem devem levar em consideração os seguintes critérios:
+> *Importante: O Breadcrumb reflete a hierarquia, não o histórico de cliques (NN/g).*
 
-### Fazer
-- Utilizar para mostrar a hierarquia do site;
-- Em aplicações não hierárquicas, utilize apenas se houver uma maneira de mostrar a relação da página atual com conceitos mais abstratos ou gerais:
-  + Ao permitir filtrar informações na interface de produtos especificando atributos, os níveis de navegação podem listar os atributos que foram selecionados até então:
-  > Por exemplo, em um e-commerce de brinquedos:
-  >
-  > **Início** > **Meninas** > **5-6 anos** > Brincadeiras ao ar livre        
-- Utilizar como navegação secundária e nunca deve substituir a navegação primária ou local dentro de um contexto;
-- Manter a utilização de ícones apenas como **separadores** e **botões de ação** (_collapse level_);
-- Manter os níveis do `breadcrumb` em uma única linha;
-- Expor apenas a quantidade relevante de níveis:
-  + Como boa prática, utilize 4 níveis na hierarquia (incluindo o item raiz), pois facilita a rápida compreensão do contexto.
+### Conteúdo e Visualização
 
-### Não fazer
-- Não utilizar como histórico de navegação;
-- Não utilizar para sites com hierarquias planas, que têm apenas 1 ou 2 níveis de profundidade, ou sites que são lineares em estruturas.
-- Evite textos muito longos que possam dificultar o entendimento e causar quebra de linha no componente;
-- Não utilizar ícones junto ao texto dos níveis:
-  + Como os [links](link) são distribuídos horizontalmente, os ícones interrompem o ritmo e a legibilidade da lista.
-- Não utilizar com quebras de linha, pois interfere na compreensão da hierarquia;
-- Não utilizar textos muito curtos:
-  + A área de toque de **1x1cm** deve ser preservada para dispositivos sensíveis ao toque;
-- Não expor muitos níveis:
-  + Embora ainda tenham acesso fácil a quaisquer níveis colpsados, o excesso de níveis pode oprimir os usuários.
-  
-### Acessibilidade tratada no componente
-O componente `breadcrumb` foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (**WCAG**) 2.1.
+<BestPracticesComponent
+  doImg={breadcrumbDo1}
+  doAlt="Breadcrumb com links contendo apenas texto"
+  doDescription="Manter os links limpos (apenas texto)."
+  dontImg={breadcrumbDont1}
+  dontAlt="Breadcrumb com ícones dentro dos níveis de texto"
+  dontDescription="Não inserir ícones dentro dos níveis, pois prejudicam a leitura horizontal."
+/>
 
-Algumas diretrizes de acessibilidade já são tratadas no componente internamente e não devem ser alteradas por quem utilizar.  São elas:
+### Quantidade de Níveis
 
-- Seja qual for o método de interação, a apresentação das informações na tela sempre deverá ter uma sequência lógica. Conteúdos responsivos não devem impactar o entendimento da informação independentemente do tamanho da tela ([**1.3.2: Meaningful Sequence (A)**](https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence));
-- As cores não devem ser utilizadas como única maneira de distinguir elementos visuais ([**1.4.1: Use of Color (A)**](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color));
-- Uso de medidas relativas, para permitir **zoom de até 200%**, sem perda do conteúdo ou da funcionalidade ([**1.4.4: Resize Text (A)**](https://www.w3.org/WAI/WCAG21/Understanding/resize-text));
-- Relação de contraste de **7:1** entre texto e plano de fundo ([**1.4.6: Contrast (Enhanced) (AAA)**](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced));
-- Outros elementos da interface (não-textuais) devem ter relação de contraste de **3:1** ([**1.4.11: Non-text Contrast (AA)**](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast));
-- Permitir a interação com teclado ([**2.4.1: Keyboard (A)**](https://www.w3.org/WAI/WCAG21/Understanding/keyboard));
-- Os componentes recebem o foco em uma ordem que preserva o significado e a operabilidade ([**2.4.3: Focus Order (A)**](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html));
-- Manter o foco visível na navegação via teclado ([**2.4.7: Focus Visible (A)**](https://www.w3.org/WAI/WCAG21/Understanding/focus-visible)).
+<BestPracticesComponent
+  doImg={breadcrumbDo2}
+  doAlt="Breadcrumb exibindo até 4 níveis de forma clara"
+  doDescription="Expor até 4 níveis visíveis para clareza imediata."
+  dontImg={breadcrumbDont2}
+  dontAlt="Breadcrumb excessivamente longo ocupando muito espaço"
+  dontDescription="Não exibir trilhas excessivamente longas sem colapso intermediário."
+/>
+
+### Layout
+
+<BestPracticesComponent
+  doImg={breadcrumbDo3}
+  doAlt="Breadcrumb utilizando o recurso de collapse em uma linha"
+  doDescription="Usar o recurso de collapse para manter tudo em uma linha."
+  dontImg={breadcrumbDont3}
+  dontAlt="Breadcrumb quebrado em duas linhas"
+  dontDescription="Não usar breadcrumbs com quebra de linhas."
+/>
 
 </TabItem>
 
 <TabItem value="dev">
 
-:::note Em construção  
-Conteúdo em desenvolvimento
+<div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px', alignItems: 'stretch' }}>
+  <AniPlatformCard
+    icon="an-cube"
+    title="Web Component"
+    statusType="positive"
+    statusText="Disponível"
+  />
+<AniPlatformCard
+    icon="an-angular-logo"
+    title="Angular"
+    statusType="positive"
+    statusText="Disponível"
+    link="https://po-ui.io/documentation/po-breadcrumb"
+    external={true}
+  />
+</div>
+
+## Desenvolvimento
+
+Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
+Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
+
+```
+npm install @animaliads/ani-breadcrumb
+```
+
+### Como utilizar
+
+A implementação requer a importação do módulo principal, variando conforme a biblioteca ou framework utilizado. Após a configuração, utilize os elementos `ani-breadcrumb` e `ani-breadcrumb-item` no seu código:
+
+```html
+<ani-breadcrumb>
+  <ani-breadcrumb-item href="/">Home</ani-breadcrumb-item>
+  <ani-breadcrumb-item href="/produtos">Produtos</ani-breadcrumb-item>
+  <ani-breadcrumb-item>Antivírus</ani-breadcrumb-item>
+</ani-breadcrumb>
+```
+>Para aplicar o tema padrão, é obrigatória a instalação e o uso dos pacotes  `@animaliads/animalia-brand` e `@animaliads/css-tokens`. Você pode conferir exemplos práticos no [Live Demo](#live-demo).
+
+### Customização
+Para adaptar visualmente o componente, você pode sobrescrever as propriedades customizáveis via CSS:
+
+```css
+ani-breadcrumb {
+  --color: #4545A1;
+  --font-size: 0.875rem;
+}
+```
+>Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis do breadcrumb](/docs/components/breadcrumb#propriedades-customizáveis).
+
+### Live Demo
+
+:::note **API**
+Live Demo em construção. O link será inserido após a integração com o Stack Blitz.
 :::
 
 </TabItem>
 
 <TabItem value="custom-properties">
 
-:::note Em construção
-Conteúdo em desenvolvimento
-:::
+## Propriedades customizáveis
+
+As variáveis abaixo permitem a customização do componente mantendo a herança dos modos de tema (Light/Dark).
+
+| Propriedade | Descrição | Valor padrão |
+| :--- | :--- | :--- |
+| `--font-family` | família tipográfica | `$font-family-text` |
+| `--font-size` | tamanho da fonte | `$font-size-sm` |
+| `--padding` | espaço entre itens e separadores | `$spacing-xs` |
+| `--color` | cor dos links ativos | `$color-action-default` |
+| `--color-hover` | cor no estado de hover | `$color-action-hover` |
+| `--color-icon` | cor do separador e collapse | `$color-neutral-mid-60` |
+| `--color-current-page` | cor da página atual | `$color-neutral-mid-60` |
+| `--outline-color-focused` | cor do anel de foco | `$color-action-focus` |
 
 </TabItem>
 
 <TabItem value="accessibility">
 
-:::note Em construção
-Conteúdo em desenvolvimento
-:::
+## Acessibilidade (Padrão AAA)
+
+* **Identificação:** O componente deve estar contido em uma tag `<nav>` identificada com o atributo `aria-label="Breadcrumb"`.
+* **Página Atual:** O item estático final (**Current page**) deve possuir o atributo `aria-current="page"`.
+* **Separadores:** Devem ser decorativos e ignorados por leitores de tela através do uso de `aria-hidden="true"`.
+* **Contraste (WCAG 2.1):** 
+    * **Nível AA (Mínimo):** Relação de contraste de pelo menos 4.5:1 entre o texto/link e o fundo.
+    * **Nível AAA (Excelência):** Relação de contraste de pelo menos 7:1 entre o texto/link e o fundo.
+* **Ordem de Foco:** O foco via teclado deve percorrer apenas os links ativos e o menu de colapso, ignorando a **Current page** para otimizar a navegação.
+
+<img
+  src={breadcrumbFocusLevel}
+  alt="Ordem de focus de seguir a ordem lógica do itens em tela."
+  style={{
+    width: "100%",        
+    marginTop: "24px",    
+    borderRadius: "16px",  
+  }}
+/>
 
 </TabItem>
 
