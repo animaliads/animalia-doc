@@ -138,6 +138,10 @@ html[data-theme="dark"] .link:hover {
   color: var(--ifm-color-neutral-light-10);
 }
 
+html[data-theme="dark"] .columnTitle {
+  color: #ffffff;
+}
+
 /* Responsive Design */
 @media (max-width: 996px) {
   .container {

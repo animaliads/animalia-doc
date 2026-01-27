@@ -73,7 +73,7 @@ html[data-theme="dark"] .card:hover {
 }
 
 html[data-theme="dark"] .title {
-  color: var(--ifm-color-neutral-light-00);
+  color: #ffffff;
 }
 
 html[data-theme="dark"] .iconContainer i {
