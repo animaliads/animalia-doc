@@ -1,33 +1,38 @@
 ---
-id: select
+title: Select
 sidebar_label: Select
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 import WebComponentReact from './../../src/components/WebComponent.js';
 
 import select_single_anatomy from './img/select/select-single-anatomy.png';
 
-# Select
+# <h1 style={{ fontSize: "3rem" }}>Select</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O componente *select* permite que as pessoas usuárias escolham uma item em uma lista e, a partir da seleção, apliquem ou continuem ações para esse item selecionado.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
  <TabItem value="design">
-
-## Visão geral
-
-O componente *select* permite que as pessoas usuárias escolham uma item em uma lista e, a partir da seleção, apliquem ou continuem ações para esse item selecionado.
 Para garantir a consistência das informações, o componente select não permite que a pessoa usuária informe um valor diferente dos valores determinados.
 
 
@@ -173,4 +178,13 @@ Possui quatro estados, que se modificam de acordo com a interação do usuário,
 
 
 </TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
 </Tabs>

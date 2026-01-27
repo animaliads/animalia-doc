@@ -1,32 +1,39 @@
 ---
+title: Tooltip
 id: tooltip
 sidebar_label: Tooltip
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import BestPracticesComponent from './helpers/components/best-practices.tsx';
+import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import tooltip_anatomy from './img/tooltip/tooltip-anatomy.png';
 import tooltip_position from './img/tooltip/tooltip-position.png';
 import tooltip_position_example from './img/tooltip/tooltip-position-example.png';
 
-# Tooltip
+# <h1 style={{ fontSize: "3rem" }}>Tooltip</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O componente `tooltip`  tem a função de apresentar ajuda contextual ou informação adicional sobre um elemento em tela.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
-
-
-## Visão geral
-
-O componente `tooltip`  tem a função de apresentar ajuda contextual ou informação adicional sobre um elemento em tela.
 
 ### Anatomia
 
@@ -90,6 +97,14 @@ Conteúdo em desenvolvimento
  <TabItem value="custom-properties">
 
 :::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
 Conteúdo em desenvolvimento
 :::
 

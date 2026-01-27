@@ -1,83 +1,151 @@
 ---
-id: button
+title: Button
 sidebar_label: Button
+wrapperClassName: doc-page-left
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import BestPracticesComponent from './helpers/components/best-practices.tsx';
-import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import BestPracticesComponent from "./helpers/components/best-practices.tsx";
+import LiveDemoComponent from "./helpers/components/live-demo.tsx";
+import AnatomyLayoutComponent from "./helpers/components/anatomy-layout.tsx";
+import TwoColumnLayout from "./helpers/components/two-column-layout.tsx";
 
-import buttonTypes from './img/button/button-types.jpg';
-import buttonAnatomy from './img/button/button-anatomy.jpg';
-import buttonSize from './img/button/button-size-1.jpg';
-import buttonWidth from './img/button/button-width.jpg';
-import buttonPrimary from './img/button/button-primary.jpg';
-import buttonSecondary from './img/button/button-secondary.jpg';
-import buttonTertiary from './img/button/button-tertiary.jpg';
-import buttonPrimaryDanger from './img/button/button-primary-danger.jpg';
-import buttonSecondaryDanger from './img/button/button-secondary-danger.jpg';
-import buttonDo1 from './img/button/button-do-1.jpg';
-import buttonDo2 from './img/button/button-do-2.jpg';
-import buttonDo3 from './img/button/button-do-3.jpg';
-import buttonDo4 from './img/button/button-do-4.jpg';
-import buttonDont1 from './img/button/button-dont-1.jpg';
-import buttonDont2 from './img/button/button-dont-2.jpg';
-import buttonDont3 from './img/button/button-dont-3.jpg';
-import buttonDont4 from './img/button/button-dont-4.jpg';
+import buttonTypes from "./img/button/button-types.jpg";
+import buttonAnatomy from "./img/button/button-anatomy.jpg";
+import buttonSize from "./img/button/button-size-1.jpg";
+import buttonWidth from "./img/button/button-width.jpg";
+import buttonPrimary from "./img/button/button-primary.jpg";
+import buttonSecondary from "./img/button/button-secondary.jpg";
+import buttonTertiary from "./img/button/button-tertiary.jpg";
+import buttonPrimaryDanger from "./img/button/button-primary-danger.jpg";
+import buttonSecondaryDanger from "./img/button/button-secondary-danger.jpg";
+import buttonDo1 from "./img/button/button-do-1.jpg";
+import buttonDo2 from "./img/button/button-do-2.jpg";
+import buttonDo3 from "./img/button/button-do-3.jpg";
+import buttonDo4 from "./img/button/button-do-4.jpg";
+import buttonDont1 from "./img/button/button-dont-1.jpg";
+import buttonDont2 from "./img/button/button-dont-2.jpg";
+import buttonDont3 from "./img/button/button-dont-3.jpg";
+import buttonDont4 from "./img/button/button-dont-4.jpg";
 
+import WebComponentReact from "./../../src/components/WebComponent.js";
+import AniPlatformCard from "./../../src/components/animalia_components/AniPlatformCard.js";
 
-import WebComponentReact from './../../src/components/WebComponent.js';
+# <h1 style={{ fontSize: "3rem" }}>Button</h1>
 
+<div style={{ maxWidth: '60%' }}>
 
-# Button
+Os botões são utilizados para realizar ações e para tomada de decisões. Podem ser utilizado em páginas e também dentro de outros componentes.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
-
-## Visão geral
-Os botões são utilizados para realizar ações e para tomada de decisões. Podem ser utilizado em páginas e também dentro de outros componentes.
-
-:::note Componente relacionado
-- [`File Uploader`](file-uploader)
-:::
-
-### Tipos
-Cada tipo de botão representa uma prioridade na interface e é recomendado que sejam utilizados de acordo com a importância das ações que o usuário deve realizar. Outro fator importante, é manter a consistência dentro dos produtos para que os usuários identifiquem facilmente as ações.
-
-<img
-  src={buttonTypes}
-  alt="Os cinco tipos de botões dispostos lado a lado, sendo 1 o Primary, 2 o Secondary, 3 o Tertiary, 4 o Primary Button e 5 o Secondary Danger"
-/>
-
-1. **Primary**: Os botões primários devem ser usados para a ação principal da página e preferencialmente apenas um botão deste tipo por página, para direcionar o usuário para a ação principal de forma clara.
-2. **Secondary**: Devem ser utilizados para ações secundárias na página. Os botões secundários podem ser utilizado ao lado dos botões primários, como segunda ação, e também isolados na página quando não forem a ação principal e já houver um botão primário.
-3. **Tertiary**: Os botões terciários chamam menos atenção que os outros botões e devem ser utilizados para ações menos importantes. Ao inserir o botão de forma isolada, utilize preferencialmente acompanhado de um ícone que represente a ação, para aumentar o entendimento do usuário de que há uma ação a ser realizada. Também podem ser utilizados como terceira ação junto a um botão secundário e primário.
-4. **Primary Danger**: Utilizar quando a ação principal trouxer grande impacto para o usuário, como excluir conta ou apagar um grande volume de dados, são situações difíceis de reverter e que precisam de mais atenção ao executar. Neste botão, também é recomendado a utilização de um ícone de alerta junto a label, para que os usuários consigam diferenciar facilmente do botão primário. Não deve ser inserido mais de um botão de perigo por página.
-5. **Secondary Danger**: Quando a segunda ação for de grande impacto, como cancelar um processo muito importante, deverá ser utilizado este botão. Assim como no botão primário de perigo, é recomendado o uso do ícone de alerta junto a label e somente um botão por página.
-
 ### Anatomia
 
-O botão é composto por um background ou border que recebe uma cor de marca e uma label que descreve a ação que será realizada.
+<TwoColumnLayout
+  variant="image-right"
+  leftContent={
+    <>
+      <p>O botão é composto por um background ou border que recebe uma cor de marca e uma label que descreve a ação que será realizada.</p>
+
+      <p>A estrutura do botão inclui:</p>
+
+      <ol>
+        <li><strong>Label (rótulo)</strong>: texto que descreve a ação;</li>
+        <li><strong>Background</strong>: cor de fundo do botão;</li>
+        <li><strong>Border</strong>: borda que delimita o botão;</li>
+        <li><strong>Ícones (opcional)</strong>: elementos visuais que podem ser posicionados à esquerda ou à direita da label.</li>
+      </ol>
+
+      <p>Os componentes são formados por tokens, sendo estes propriedades de estilo que definem como será estruturado e estilizado o botão. Os tokens que podem ser alterados pelas marcas, podem ser conferidos na seção de <a href="#propriedades-customizáveis">propriedades customizáveis</a>.</p>
+    </>
+
+}
+rightContent={
 
 <img
   src={buttonAnatomy}
   alt="Anatomia dos cinco tipos de botões disposto lado a lado, sendo 1 a label, 2 o background e 3 o border"
+  style={{
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    borderRadius: "16px",
+  }}
 />
+} />
 
-1. **Label (rótulo)**;
-2. **Background**;
-3. **Border**.
+### Tipos
 
-Os componentes são formados por tokens, sendo estes propriedades de estilo que definem como será estruturado e estilizado o botão. Os tokens que podem ser alterados pelas marcas, podem ser conferidos na seção de [propriedades customizáveis](#propriedades-customizáveis).
+Cada tipo de botão representa uma prioridade na interface e é recomendado que sejam utilizados de acordo com a importância das ações que o usuário deve realizar. Outro fator importante, é manter a consistência dentro dos produtos para que os usuários identifiquem facilmente as ações.
+
+<TwoColumnLayout
+  variant="image-right"
+  rightContent={
+    <img
+      src={buttonTypes}
+      alt="Os cinco tipos de botões dispostos lado a lado, sendo 1 o Primary, 2 o Secondary, 3 o Tertiary, 4 o Primary Button e 5 o Secondary Danger"
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        borderRadius: "16px",
+      }}
+    />
+  }
+  leftContent={
+    <ol>
+      <li>
+        <strong>Primary</strong>: Os botões primários devem ser usados para a
+        ação principal da página e preferencialmente apenas um botão deste tipo
+        por página, para direcionar o usuário para a ação principal de forma
+        clara.
+      </li>
+      <li>
+        <strong>Secondary</strong>: Devem ser utilizados para ações secundárias
+        na página. Os botões secundários podem ser utilizado ao lado dos botões
+        primários, como segunda ação, e também isolados na página quando não
+        forem a ação principal e já houver um botão primário.
+      </li>
+      <li>
+        <strong>Tertiary</strong>: Os botões terciários chamam menos atenção que
+        os outros botões e devem ser utilizados para ações menos importantes. Ao
+        inserir o botão de forma isolada, utilize preferencialmente acompanhado
+        de um ícone que represente a ação, para aumentar o entendimento do
+        usuário de que há uma ação a ser realizada. Também podem ser utilizados
+        como terceira ação junto a um botão secundário e primário.
+      </li>
+      <li>
+        <strong>Primary Danger</strong>: Utilizar quando a ação principal
+        trouxer grande impacto para o usuário, como excluir conta ou apagar um
+        grande volume de dados, são situações difíceis de reverter e que
+        precisam de mais atenção ao executar. Neste botão, também é recomendado
+        a utilização de um ícone de alerta junto a label, para que os usuários
+        consigam diferenciar facilmente do botão primário. Não deve ser inserido
+        mais de um botão de perigo por página.
+      </li>
+      <li>
+        <strong>Secondary Danger</strong>: Quando a segunda ação for de grande
+        impacto, como cancelar um processo muito importante, deverá ser
+        utilizado este botão. Assim como no botão primário de perigo, é
+        recomendado o uso do ícone de alerta junto a label e somente um botão
+        por página.
+      </li>
+    </ol>
+  }
+/>
 
 ### Tamanhos
 
@@ -97,7 +165,6 @@ Por padrão, a largura do botão se adequa de acordo com o tamanho do texto. Mas
   src={buttonWidth}
   alt="Dois botões demonstrando como a largura do botão aumenta conforme o a label que é inserida"
 />
-
 
 ## Boas práticas
 
@@ -160,9 +227,11 @@ O componente do botão foi projetado para atender os requisitos das Diretrizes d
 />
 
 ### Interação
+
 - A interação de foco deve compor os botões, sendo navegação por mouse ou teclado, e em sequência lógica. Consultar lista de exemplos em ([W3C WAI-ARIA 3.5 Button](https://www.w3.org/TR/wai-aria-practices-1.1/#button)).
 
 ### Acessibilidade tratada no componente
+
 Algumas diretrizes de acessibilidade já são tratadas no componente, internamente, e não podem ser alteradas pelo proprietário do conteúdo. São elas:
 
 - Quando em foco, o botão é ativado usando as teclas de _Espaço_ e _Enter_ do teclado. ([W3C WAI-ARIA 3.5 Button - Keyboard Interaction](https://www.w3.org/TR/wai-aria-practices-1.1/#keyboard-interaction-3))
@@ -172,6 +241,24 @@ Algumas diretrizes de acessibilidade já são tratadas no componente, internamen
 </TabItem>
 
 <TabItem value="dev">
+
+<div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px', alignItems: 'stretch' }}>
+  <AniPlatformCard
+    icon="an-cube"
+    title="Web Component"
+    statusType="positive"
+    statusText="Disponivel"
+  />
+  <AniPlatformCard
+    icon="an-angular-logo"
+    title="Angular"
+    statusType="positive"
+    statusText="Disponivel"
+    link="https://po-ui.io/documentation/po-button"
+    external={true}
+  />
+
+</div>
 
 ## Desenvolvimento
 
@@ -202,7 +289,7 @@ Para customizar o tema do componente, você pode estar utilizando as propriedade
 da seguinte forma:
 
 ```css
-ani-button[kind='secondary'] {
+ani-button[kind="secondary"] {
   --border-color: purple;
   --line-height: 100%;
   --border-radius: 3px;
@@ -229,6 +316,7 @@ O componente de botão possui propriedades customizáveis que podem variar de ac
 O botão possui estados e se modifica de acordo com a interação do usuário. São eles: Default, Hover, Focus e Disabled.
 
 ### Button
+
 Estas são propriedades gerais do componente button, independente do tipo
 
 | Propriedade               | Descrição                                                                                                   | Valor padrão                  |
@@ -300,4 +388,13 @@ as propriedades especificadas no botão de forma geral.
 />
 
 </TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
 </Tabs>

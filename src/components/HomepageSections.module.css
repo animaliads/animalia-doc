@@ -101,3 +101,16 @@ html[data-theme='dark'] .sectionImage3[data-theme-image='default'] {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+/* Dark mode */
+html[data-theme="dark"] .sectionBg {
+    background-color: var(--ifm-color-neutral-dark-80);
+}
+
+html[data-theme="dark"] .sectionContentTitle {
+    color: var(--ifm-color-neutral-light-00);
+}
+
+html[data-theme="dark"] .sectionContent p {
+    color: var(--ifm-color-neutral-light-10);
+}

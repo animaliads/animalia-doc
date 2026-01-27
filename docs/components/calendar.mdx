@@ -1,30 +1,35 @@
 ---
-id: calendar
+title: Calendar
 sidebar_label: Calendar
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
-# Calendar
+# <h1 style={{ fontSize: "3rem" }}>Calendar</h1>
 
-<Tabs
-  defaultValue="design"
-  lazy
-  values={[
-    {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
-  ]}>
-
-  <TabItem value="design">
-
-
-## Visão geral
+<div style={{ maxWidth: '60%' }}>
 
 O componente `calendar` é usado para selecionar datas próximas ao tempo presente. Por padrão, os seletores de data em calendário apresentam os dados do mês atual e apenas um mês é apresentado por vez. Em alguns contextos podem apresentar uma data pré estabelecida para o usuário.
 
 Normalmente mostram os dias da semana na parte superior e combinam com a metáfora de calendários de mesa ou de parede.
+
+</div>
+
+<Tabs
+  className="button-tabs-sticky"
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
+  ]}>
+
+  <TabItem value="design">
 
 :::note Componentes relacionados
 
@@ -75,6 +80,14 @@ Conteúdo em desenvolvimento
  <TabItem value="custom-properties">
 
 :::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
 Conteúdo em desenvolvimento
 :::
 
