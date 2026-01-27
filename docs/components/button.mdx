@@ -37,7 +37,9 @@ import AniPlatformCard from "./../../src/components/animalia_components/AniPlatf
 # <h1 style={{ fontSize: "3rem" }}>Button</h1>
 
 <div style={{ maxWidth: '60%' }}>
-  Os **botões** são utilizados para realizar ações e para tomada de decisões. Podem ser utilizados em páginas e também dentro de outros componentes. Cada tipo de botão representa uma prioridade na interface e é recomendado que sejam utilizados de acordo com a importância das ações que o usuário deve realizar, mantendo a consistência dentro dos produtos para que os usuários identifiquem facilmente as ações.
+
+  O `Button` é utilizado para executar ações e confirmar decisões, seja em páginas ou dentro de outros componentes. A escolha do tipo de botão deve refletir a hierarquia da ação. Essa consistência ajuda o usuário a identificar prioridades e navegar com mais facilidade.
+
 </div>
 
 <Tabs
@@ -51,14 +53,14 @@ import AniPlatformCard from "./../../src/components/animalia_components/AniPlatf
     {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
-<TabItem value="design">
+  <TabItem value="design">
 
   ### Quando usar
   * Para realizar ações e para a tomada de decisões no sistema.
   * Em páginas ou dentro de outros componentes para disparar funções específicas.
 
   ### Quando não usar
-  * Para navegação simples entre páginas (nestes casos, prefira o componente **Link**).
+  * Para navegação simples entre páginas (nestes casos, prefira o componente [`Link`](/docs/components/link)).
   * Para ações de navegação global em menus principais.
 
   ### Anatomia
@@ -111,7 +113,7 @@ import AniPlatformCard from "./../../src/components/animalia_components/AniPlatf
   style={{ 
     display: 'block',      
     margin: '0 auto',      
-    maxWidth: '50%',       
+    maxWidth: '60%',       
     marginBottom: '2rem',  
     backgroundColor: '#f9f9fa',
     padding: '1rem',
@@ -219,10 +221,12 @@ import AniPlatformCard from "./../../src/components/animalia_components/AniPlatf
   dontDescription="Não alinhe os componentes muito próximos, pois a área de interação pode ser comprometida."
   />
 
-</TabItem>
+  </TabItem>
 
-<TabItem value="dev">
-  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px', alignItems: 'stretch' }}>
+  <TabItem value="dev">
+    
+    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px', alignItems: 'stretch' }}>
+
     <AniPlatformCard
       icon="an-cube"
       title="Web Component"
@@ -237,185 +241,186 @@ import AniPlatformCard from "./../../src/components/animalia_components/AniPlatf
       link="https://po-ui.io/documentation/po-button"
       external={true}
     />
-  </div>
 
-  ## Desenvolvimento
+    </div>
 
-  Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
-  Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
+    ## Desenvolvimento
 
-  ```
-  npm install @animaliads/ani-button
-  ```
+    Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
+    Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
 
-  ### Como utilizar
+    ```
+    npm install @animaliads/ani-button
+    ```
 
-  A implementação requer a importação do módulo principal, variando conforme a biblioteca ou framework utilizado. Após a configuração, utilize o elemento `ani-button` no seu código:
+    ### Como utilizar
 
-  ```html
-  <ani-button>Salvar cadastro</ani-button>
-  ```
-  >Para aplicar o tema padrão, é obrigatória a instalação e o uso dos pacotes  `@animaliads/animalia-brand` e `@animaliads/css-tokens`. Você pode conferir exemplos práticos no [Live Demo](#live-demo).
+    A implementação requer a importação do módulo principal, variando conforme a biblioteca ou framework utilizado. Após a configuração, utilize o elemento `ani-button` no seu código:
 
-  ### Customização
-  Para adaptar visualmente o componente, você pode sobrescrever as propriedades customizáveis via CSS:
+    ```html
+    <ani-button>Salvar cadastro</ani-button>
+    ```
+    >Para aplicar o tema padrão, é obrigatória a instalação e o uso dos pacotes  `@animaliads/animalia-brand` e `@animaliads/css-tokens`. Você pode conferir exemplos práticos no [Live Demo](#live-demo).
 
-  ```css
-  ani-button[kind="secondary"]{
-    --border-color: purple;
-    --line-height: 100%;
-    --border-radius: 3px;
-  }
-  ```
-  >Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis do button](/docs/components/button#propriedades-customizáveis).
+    ### Customização
+    Para adaptar visualmente o componente, você pode sobrescrever as propriedades customizáveis via CSS:
 
-  ### Live Demo
+    ```css
+    ani-button[kind="secondary"]{
+      --border-color: purple;
+      --line-height: 100%;
+      --border-radius: 3px;
+    }
+    ```
+    >Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis do button](/docs/components/button#propriedades-customizáveis).
 
-  <LiveDemoComponent react="https://stackblitz.com/edit/react-ani-button?embed=1&file=src/App.js" />
+    ### Live Demo
 
-  <br/>
+    <LiveDemoComponent react="https://stackblitz.com/edit/react-ani-button?embed=1&file=src/App.js" />
 
-  :::note **API**
-  Para saber a lista de propriedades e eventos, acesse o [guia de referência de API](http://animaliads.io/?path=/docs/api-button--sample).
-  :::
+    <br/>
 
-</TabItem>
+    :::note **API**
+    Para saber a lista de propriedades e eventos, acesse o [guia de referência de API](http://animaliads.io/?path=/docs/api-button--sample).
+    :::
 
-<TabItem value="custom-properties">
+  </TabItem>
 
-  ## Propriedades Customizáveis (Tokens)
+  <TabItem value="custom-properties">
 
-  O componente possui os estados: **Default**, **Hover**, **Focus** e **Disabled**.
+    ## Propriedades Customizáveis (Tokens)
 
-  ### Button (Geral)
+    O componente possui os estados: **Default**, **Hover**, **Focus** e **Disabled**.
 
-  Propriedades gerais aplicadas ao componente, independente do tipo.
+    ### Button (Geral)
 
-  | **Propriedade** | **Descrição** | **Valor padrão** |
-  | --- | --- | --- |
-  | `--font-family` | família tipográfica usada na label | `$font-family-text` |
-  | `--font-size` | tamanho da fonte na label | `$font-size-default` |
-  | `--font-weight` | peso da fonte na label | `$font-weight-bold` |
-  | `--line-height` | altura da linha da label | `$line-height-none` |
-  | `--border-radius` | arredondamento da borda | `$border-radius-md` |
-  | `--border-width` | espessura da borda | `$border-width-md` |
-  | `--padding` | espaço interno entre a label e a borda | `0,1em` |
-  | `--outline-color-focused` | cor do outline do focus | `$color-action-focus` |
-  | `--color-disabled` | cor principal no estado disabled | `$color-action-disabled` |
-  | `--color-pressed` | cor principal no estado pressed | `$color-action-pressed` |
+    Propriedades gerais aplicadas ao componente, independente do tipo.
 
-  ## Primary
+    | **Propriedade** | **Descrição** | **Valor padrão** |
+    | --- | --- | --- |
+    | `--font-family` | família tipográfica usada na label | `$font-family-text` |
+    | `--font-size` | tamanho da fonte na label | `$font-size-default` |
+    | `--font-weight` | peso da fonte na label | `$font-weight-bold` |
+    | `--line-height` | altura da linha da label | `$line-height-none` |
+    | `--border-radius` | arredondamento da borda | `$border-radius-md` |
+    | `--border-width` | espessura da borda | `$border-width-md` |
+    | `--padding` | espaço interno entre a label e a borda | `0,1em` |
+    | `--outline-color-focused` | cor do outline do focus | `$color-action-focus` |
+    | `--color-disabled` | cor principal no estado disabled | `$color-action-disabled` |
+    | `--color-pressed` | cor principal no estado pressed | `$color-action-pressed` |
 
-  | **Propriedade** | **Descrição** | **Valor padrão** |
-  | --- | --- | --- |
-  | `--text-color` | cor da label | `$color-neutral-light-00` |
-  | `--color-hover` | cor do background estado hover | `$color-action-hover` |
-  | `--text-color-disabled` | cor da label no estado disabled | `$color-neutral-dark-70` |
+    ## Primary
 
-  <img 
-    src={buttonPrimary} 
-    style={{ 
-      display: 'block',      
-      margin: '0',      
-      maxWidth: '70%',       
-      backgroundColor: '#f9f9fa',
-      padding: '1rem',
-      borderRadius: '8px'  
-    }} 
-  />
+    | **Propriedade** | **Descrição** | **Valor padrão** |
+    | --- | --- | --- |
+    | `--text-color` | cor da label | `$color-neutral-light-00` |
+    | `--color-hover` | cor do background estado hover | `$color-action-hover` |
+    | `--text-color-disabled` | cor da label no estado disabled | `$color-neutral-dark-70` |
 
-  ### Primary Danger
-
-  | **Propriedade** | **Descrição** | **Valor padrão** |
-  | --- | --- | --- |
-  | `--text-color-danger` | cor da label no modo danger | `$color-neutral-light-00` |
-  | `--color-danger-hover` | cor do background (hover) em danger | `$color-feedback-negative-darker` |
-  | `--color-danger-pressed` | cor do background (pressed) em danger | `$color-feedback-negative-darkest` |
-
-  <img 
-    src={buttonPrimaryDanger} 
-    style={{ 
-      display: 'block',      
-      margin: '0',      
-      maxWidth: '70%',       
-      backgroundColor: '#f9f9fa',
-      padding: '1rem',
-      borderRadius: '8px'  
-    }} 
-  />
-
-  ## Secondary
-
-  | **Propriedade** | **Descrição** | **Valor padrão** |
-  | --- | --- | --- |
-  | `--background-hover` | cor do background no estado hover | `$color-brand-01-lighter` |
-  | `--border-color-hover` | cor do border no estado hover | `$color-brand-01-darkest` |
-  | `--background-pressed` | cor do background no estado pressed | `$color-brand-01-light` |
-
-  <img 
-      src={buttonSecondary} 
+    <img 
+      src={buttonPrimary} 
       style={{ 
         display: 'block',      
         margin: '0',      
-        maxWidth: '70%',       
+        maxWidth: '90%',       
         backgroundColor: '#f9f9fa',
         padding: '1rem',
         borderRadius: '8px'  
       }} 
-  />
+    />
 
-  ### Secondary Danger
+    ### Primary Danger
 
-  | **Propriedade** | **Descrição** | **Valor padrão** |
-  | --- | --- | --- |
-  | `--border-color-danger-hover` | cor do border (hover) em danger | `$color-feedback-negative-darkest` |
-  | `--background-danger-hover` | cor do background (hover) em danger | `$color-feedback-negative-lighter` |
-  | `--background-danger-pressed` | cor do background (pressed) em danger | `$color-feedback-negative-light` |
+    | **Propriedade** | **Descrição** | **Valor padrão** |
+    | --- | --- | --- |
+    | `--text-color-danger` | cor da label no modo danger | `$color-neutral-light-00` |
+    | `--color-danger-hover` | cor do background (hover) em danger | `$color-feedback-negative-darker` |
+    | `--color-danger-pressed` | cor do background (pressed) em danger | `$color-feedback-negative-darkest` |
 
-  <img 
-      src={buttonSecondaryDanger} 
+    <img 
+      src={buttonPrimaryDanger} 
       style={{ 
         display: 'block',      
         margin: '0',      
-        maxWidth: '70%',       
+        maxWidth: '90%',       
         backgroundColor: '#f9f9fa',
         padding: '1rem',
         borderRadius: '8px'  
       }} 
-  />
+    />
 
-  ## Tertiary
+    ## Secondary
 
-  O botão terciário não possui propriedades específicas; ele se adapta às propriedades especificadas no botão de forma geral.
+    | **Propriedade** | **Descrição** | **Valor padrão** |
+    | --- | --- | --- |
+    | `--background-hover` | cor do background no estado hover | `$color-brand-01-lighter` |
+    | `--border-color-hover` | cor do border no estado hover | `$color-brand-01-darkest` |
+    | `--background-pressed` | cor do background no estado pressed | `$color-brand-01-light` |
 
-  <img 
-      src={buttonTertiary} 
-      style={{ 
-        display: 'block',      
-        margin: '0',      
-        maxWidth: '70%',       
-        backgroundColor: '#f9f9fa',
-        padding: '1rem',
-        borderRadius: '8px'  
-      }} 
-  />
+    <img 
+        src={buttonSecondary} 
+        style={{ 
+          display: 'block',      
+          margin: '0',      
+          maxWidth: '90%',       
+          backgroundColor: '#f9f9fa',
+          padding: '1rem',
+          borderRadius: '8px'  
+        }} 
+    />
 
-</TabItem>
+    ### Secondary Danger
 
-<TabItem value="accessibility">
+    | **Propriedade** | **Descrição** | **Valor padrão** |
+    | --- | --- | --- |
+    | `--border-color-danger-hover` | cor do border (hover) em danger | `$color-feedback-negative-darkest` |
+    | `--background-danger-hover` | cor do background (hover) em danger | `$color-feedback-negative-lighter` |
+    | `--background-danger-pressed` | cor do background (pressed) em danger | `$color-feedback-negative-light` |
 
-  ## Acessibilidade (Padrão AAA)
+    <img 
+        src={buttonSecondaryDanger} 
+        style={{ 
+          display: 'block',      
+          margin: '0',      
+          maxWidth: '90%',       
+          backgroundColor: '#f9f9fa',
+          padding: '1rem',
+          borderRadius: '8px'  
+        }} 
+    />
 
-  As seguintes diretrizes são tratadas internamente pelo componente:
+    ## Tertiary
 
-  - **Interação de Teclado:** Ativação via teclas `Espaço` e `Enter` quando em foco.
-  - **Aparência do Foco:** Espessura mínima de **2 pixels** CSS, visível e nunca escondido por outros elementos.
-  - **Preservação de Estado:** O estado de foco é sempre preservado, inclusive quando o botão estiver desabilitado.
-  - **Nome Acessível:** O nome lido por leitores de tela deve ser o mesmo nome definido na label visual ([WCAG 2.5.3](https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html)).
-  - **Contraste (WCAG 2.1):**
-      - **Nível AA (Mínimo):** Relação de contraste de pelo menos **4.5:1** entre o texto e o fundo.
-      - **Nível AAA (Excelência):** Relação de contraste de pelo menos **7:1** entre o texto e o fundo.
+    O botão terciário não possui propriedades específicas; ele se adapta às propriedades especificadas no botão de forma geral.
 
-</TabItem>
+    <img 
+        src={buttonTertiary} 
+        style={{ 
+          display: 'block',      
+          margin: '0',      
+          maxWidth: '90%',       
+          backgroundColor: '#f9f9fa',
+          padding: '1rem',
+          borderRadius: '8px'  
+        }} 
+    />
 
+  </TabItem>
+
+  <TabItem value="accessibility">
+
+    ## Acessibilidade (Padrão AAA)
+
+    As seguintes diretrizes são tratadas internamente pelo componente:
+
+    - **Interação de Teclado:** Ativação via teclas `Espaço` e `Enter` quando em foco.
+    - **Aparência do Foco:** Espessura mínima de **2 pixels** CSS, visível e nunca escondido por outros elementos.
+    - **Preservação de Estado:** O estado de foco é sempre preservado, inclusive quando o botão estiver desabilitado.
+    - **Nome Acessível:** O nome lido por leitores de tela deve ser o mesmo nome definido na label visual ([WCAG 2.5.3](https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html)).
+    - **Contraste (WCAG 2.1):**
+        - **Nível AA (Mínimo):** Relação de contraste de pelo menos **4.5:1** entre o texto e o fundo.
+        - **Nível AAA (Excelência):** Relação de contraste de pelo menos **7:1** entre o texto e o fundo.
+
+  </TabItem>
+  
 </Tabs>
