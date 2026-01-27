@@ -1,10 +1,14 @@
 ---
-id: radiogroup
+title: Radio Group
 sidebar_label: Radio Group
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import BestPracticesComponent from './helpers/components/best-practices.tsx';
+import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import radiogroupAnatomy from './img/radiogroup/radiogroup-anatomy.png';
 import radiogroupHover from './img/radiogroup/radiogroup-hover.png';
@@ -12,23 +16,26 @@ import radiogroupSize from './img/radiogroup/radiogroup-size.png';
 import radiogroupOrientation from './img/radiogroup/radiogroup-orientation.png';
 
 
-# Radio Group
+# <h1 style={{ fontSize: "3rem" }}>Radio Group</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+Um `radio-group` é um agrupamento de `radio` que compõem uma lista de opções. Clicar em uma opção não selecionada, desmarcará qualquer outra previamente selecionada dentro de uma lista.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
-  <TabItem value="design">
-
-
-## Visão geral
-
-Um `radio-group` é um agrupamento de `radio` que compõem uma lista de opções. Clicar em uma opção não selecionada, desmarcará qualquer outra previamente selecionada dentro de uma lista. 
+  <TabItem value="design"> 
 
 ### Quando usar
 
@@ -143,6 +150,14 @@ Conteúdo em desenvolvimento
  <TabItem value="custom-properties">
 
 :::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
 Conteúdo em desenvolvimento
 :::
 

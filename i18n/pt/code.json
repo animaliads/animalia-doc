@@ -158,5 +158,9 @@
   "theme.common.skipToMainContent": {
     "message": "Pular para o conteúdo principal",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.TOC.title": {
+    "message": "Nesta página",
+    "description": "The title for the table of contents"
   }
 }

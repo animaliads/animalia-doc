@@ -1,12 +1,14 @@
 ---
-id: file-uploader
+title: File Uploader
 sidebar_label: File Uploader
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import FileUploaderAnatomy from './img/file-uploader/file-uploader-anatomy.png';
 import UploadContentAnatomy from './img/file-uploader/upload-content-anatomy.png';
@@ -17,22 +19,27 @@ import UploadContentUploaded from './img/file-uploader/upload-content-uploaded.p
 import FileUploaderButtonFocus from './img/file-uploader/file-uploader-button-focus.png';
 import FileUploaderCloseFocus from './img/file-uploader/file-uploader-close-focus.png';
 
-# File Uploader
+# <h1 style={{ fontSize: "3rem" }}>File Uploader</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O componente `file uploader` permite que os usuários importem arquivos e acompanhem o seu progresso de carregamento.
+Para isto, é possível especificar a quantidade, formato e tamanho aceitos.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
-
-## Visão geral
-O componente `file uploader` permite que os usuários importem arquivos e acompanhem o seu progresso de carregamento.
-Para isto, é possível especificar a quantidade, formato e tamanho aceitos. 
 
 ### Quando usar
 Utilize-o para viabilizar o envio de arquivos, como por exemplo, um documento no preenchimento de um formulário.
@@ -45,7 +52,10 @@ e **upload content**, conforme imagem abaixo:
   src={FileUploaderAnatomy}
   alt="Imagem representando o componente file uploader contendo os elementos citados acima um abaixo do outro, tendo o info bar com o valor de 33
   por cento e o componente progress bar com um terço preenchido."
-/> 
+  style={{
+    borderRadius: "16px",
+  }}
+/>
 
 1. **Label:** elemento do tipo texto para informar sobre o contexto de importação do arquivo;
 2. **Text support:**  elemento do tipo texto para auxiliar nas especificações aceitas do arquivo;
@@ -61,7 +71,10 @@ conforme imagem abaixo:
 <img
   src={UploadContentAnatomy}
   alt="Imagem representando a estrutura do upload content com os elementos citados acima circundados por um container com plano de fundo preenchido na cor cinza claro e bordas levemente arredondadas."
-/> 
+  style={{
+    borderRadius: "16px",
+  }}
+/>
 
 1. **File name:** elemento do tipo texto, que assume o nome e a extensão do arquivo selecionado;
 2. **Close:** elemento do tipo [`icon`](icon), que funciona como botão para acionar o fechamento do arquivo selecionado ou carregado;
@@ -70,7 +83,7 @@ que informam sobre o status de importação;
 4. **Progress bar:** elemento do tipo [`progress bar`](progress-bar) que informa visualmente o status de importação.
 
 > A estrutura do **upload content** pode variar de acordo com o estado do componente `file uploader`. Saiba mais na [**seção de estados**](file-upload.html#estados).
- 
+
 ### Comportamento
 Quando a utilização do componente permitir importar vários arquivos, o componente [`button`](button) deve alterar seu rótulo para o plural.
 
@@ -90,7 +103,10 @@ conforme imagem abaixo:
 <img
   src={UploadContentNormal}
   alt="Imagem representando a estrutura do uploader content conforme descrição acima."
-/> 
+  style={{
+    borderRadius: "16px",
+  }}
+/>
 
 ##### Success
 A estrutura contém todos os elementos de sua [anatomia](file-uploader#upload-content), tendo o elemento **info bar** com o texto "Concluído" e o
@@ -99,6 +115,9 @@ valor percentual em 100%, além do componente [`progress bar`](progress-bar#esta
 <img
   src={UploadContentSuccess}
   alt="Imagem representando a estrutura do uploader content conforme descrição acima."
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 ##### Error
@@ -108,6 +127,9 @@ tendo o elemento **info bar** acrescido de um ícone de exclamação, com a mens
 <img
   src={UploadContentError}
   alt="Imagem representando a estrutura do uploader content conforme descrição acima."
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 ##### Uploaded
@@ -116,10 +138,13 @@ A estrutura contém apenas os elementos **info bar** e **close** com seu contain
 <img
   src={UploadContentUploaded}
   alt="Imagem representando a estrutura do uploader content conforme descrição acima."
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 ## Boas práticas
-Foram estruturados os padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência aos usuários. 
+Foram estruturados os padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência aos usuários.
 Por isso, é muito importante que ao utilizar este componente, as pessoas que o projetarem devem levar em consideração os seguintes critérios:
 
 ### Fazer
@@ -140,6 +165,9 @@ Ao pressionar a tecla **Tab**, o primeiro elemento é focado:
 <img
   src={FileUploaderButtonFocus}
   alt="Imagem representando o componente file uploader com foco no elemento button."
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 Quando em foco, os elementos interativos pode ser acionados usando as teclas de **Space** ou **Enter**. ([**Keyboard Interaction**](https://www.w3.org/TR/wai-aria-practices-1.1/#keyboard-interaction-3)).
@@ -147,6 +175,9 @@ Quando em foco, os elementos interativos pode ser acionados usando as teclas de 
 <img
   src={FileUploaderCloseFocus}
   alt="Imagem representando o componente file uploader com foco no elemento close."
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 > **Sequência de foco:**
@@ -174,7 +205,7 @@ O comportamento _Drag and Drop_ será contemplado na próxima onda do componente
 
 <TabItem value="dev">
 
-:::note Em construção  
+:::note Em construção
 Conteúdo em desenvolvimento
 :::
 
@@ -182,7 +213,15 @@ Conteúdo em desenvolvimento
 
 <TabItem value="custom-properties">
 
-:::note Em construção 
+:::note Em construção
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
 Conteúdo em desenvolvimento
 :::
 

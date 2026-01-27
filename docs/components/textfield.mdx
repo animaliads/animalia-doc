@@ -1,12 +1,14 @@
 ---
-id: textfield
+title: Textfield
 sidebar_label: Textfield
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import textfield_types from './img/textfield/textfield-type.png';
 import textfield_anatomy from './img/textfield/textfield-anatomy.png';
@@ -21,24 +23,26 @@ import textfield_states from './img/textfield/textfield-states.png';
 
 import WebComponentReact from './../../src/components/WebComponent.js';
 
+# <h1 style={{ fontSize: "3rem" }}>Text field</h1>
 
-# Text field
+<div style={{ maxWidth: '60%' }}>
+
+O Text field é um componente de entrada de dados que possibilita à pessoa que está interagindo com a interface insira e edite informações. Esse tipo de campo possui uma única linha e é bastante comum em formulários.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
-
-## Visão geral
-
-O *Text field* é um componente de entrada de dados que possibilita à pessoa que está interagindo com a interface insira e edite informações. Esse tipo de campo possui uma única linha e é bastante comum em formulários.
-
 ### Tipos
 
 Pensando na modularidade do Design system, o text field possui duas composições distintas:
@@ -48,7 +52,10 @@ Pensando na modularidade do Design system, o text field possui duas composiçõe
 
 <img
   src={textfield_types}
-  alt="Dois tipos de text field: padrão e unitário."  
+  alt="Dois tipos de text field: padrão e unitário."
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 
@@ -60,7 +67,10 @@ Estruturalmente, o text field pode conter *label*, *field*, *help text* e *text 
 
 <img
   src={textfield_anatomy}
-  alt="Demonstrativo das 4 partes do text field completo"  
+  alt="Demonstrativo das 4 partes do text field completo"
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 **1.** Label (ani-label)
@@ -70,15 +80,15 @@ Estruturalmente, o text field pode conter *label*, *field*, *help text* e *text 
 **3.** Help text
 
 **4.** Text error (*error*)
-  
-
-
 
 #### Text Field (Single)
 
 <img
   src={textfield_single_anatomy}
-  alt="Text field na versão single, indicando as 5 partes"  
+  alt="Text field na versão single, indicando as 5 partes"
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 **1.** Placeholder
@@ -90,7 +100,6 @@ Estruturalmente, o text field pode conter *label*, *field*, *help text* e *text 
 **4**. Input text
 
 **5.** Outline (*focus*)
-
 
 O componente é estruturado e estilizado por meio dos design tokens. Os tokens que podem ser alterados pelas marcas estão listados na seção de [propriedades customizáveis](#propriedades-customizáveis).
 
@@ -165,8 +174,6 @@ Algumas diretrizes de acessibilidade já são tratadas no componente, internamen
 
 ## Desenvolvimento
 
-### Instalação do pacote
-
 Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
 
 Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
@@ -216,8 +223,7 @@ Para saber a lista de propriedades e eventos, acesse o [guia de referência de A
 
 ## Propriedades customizáveis
 
-
-O componente de textfield possui propriedades customizáveis, que possibilitam fazer alterações, de acordo com a marca ou o tema a ser utilizado. Com isso, garantimos uma consistência ao Design System, sem perder a identidade de cada marca.
+O componente de textfield possui propriedades customizáveis que podem variar de acordo com o tema selecionado. As propriedades customizáveis podem ser alteradas para cada produto, de acordo com os tokens de marca e tokens globais. Com isso, garantimos uma consistência no Design System, sem perder a identidade de cada marca.
 
 
 | Propriedade                | Descrição                                                              | Valor padrão              |
@@ -241,7 +247,19 @@ O componente de textfield possui propriedades customizáveis, que possibilitam f
 <img
   src={textfield_states}
   alt="Estados de interação do text field dispostos lado a lado"
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 </TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
 </Tabs>

@@ -1,13 +1,14 @@
 ---
-id: radio
+title: Radio
 sidebar_label: Radio
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import radioDo1 from './img/radio/radio-do-1.jpg';
 import radioDont1 from './img/radio/radio-dont-1.jpg';
@@ -21,22 +22,26 @@ import radioTypes from './img/radio/radio-types.jpg';
 import WebComponentReact from './../../src/components/WebComponent.js';
 
 
-# Radio
+# <h1 style={{ fontSize: "3rem" }}>Radio</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O componente radio button é utilizado para escolher uma opção dentre outras, ou seja, apenas um item pode ser selecionado por vez. Quando um usuário seleciona um novo item, a escolha anterior é automaticamente desmarcada.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
-
-## Visão geral
-
-O componente radio button é utilizado para escolher uma opção dentre outras, ou seja, apenas um item pode ser selecionado por vez. Quando um usuário seleciona um novo item, a escolha anterior é automaticamente desmarcada.
 
 :::note Componentes relacionados
 
@@ -210,4 +215,13 @@ Possui quatro estados, que se modificam de acordo com a interação do usuário,
 />
 
 </TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
 </Tabs>

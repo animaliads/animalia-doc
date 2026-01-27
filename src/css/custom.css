@@ -7,59 +7,89 @@
 
 /* You can override the default Infima variables here. */
 
-@import '@animaliads/css-tokens/global-tokens.css';
-@import '@animaliads/po-ui-brand/theme.css';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import "@animaliads/css-tokens/global-tokens.css";
+@import "@animaliads/po-ui-brand/theme.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap");
+
+/* Import Animalia Icon fonts and classes */
+@import "./animalia-icon-regular.css";
+@import "./animalia-icon-fill.css";
 
 :root {
-  --ifm-color-primary: #4545A1;
-  --ifm-color-primary-dark: #1F1F7A;
-  --ifm-color-primary-darker: #0D0D59;
+  --hero-backgound-color: #ebebf5;
+  --hero-text-color: #1d1d30;
+
+  --ifm-color-primary: #4545a1;
+  --ifm-color-primary-dark: #1f1f7a;
+  --ifm-color-primary-darker: #0d0d59;
   --ifm-color-primary-darkest: #030330;
-  --ifm-color-primary-light: #9898CD;
-  --ifm-color-primary-lighter: #C2C2E5;
-  --ifm-color-primary-lightest: #EBEBF5;
-  --ifm-color-neutral-light-00:#ffffff;
-  --ifm-color-neutral-light-05:#f9f9fa;
-  --ifm-color-neutral-light-10:#ececee;
-  --ifm-color-neutral-light-20:#d0d0d7;
-  --ifm-color-neutral-light-30:#b4b4c0;
-  --ifm-color-neutral-mid-40:#9191a1;
-  --ifm-color-neutral-mid-60:#69697c;
-  --ifm-color-neutral-dark-70:#515162;
-  --ifm-color-neutral-dark-80:#36364A;
-  --ifm-color-neutral-dark-90:#1D1D30;
-  --ifm-color-neutral-dark-95:#060613;
-  --ifm-color-neutral-light:var(--ifm-color-neutral-light-20);
-  --ifm-color-neutral-dark:var(--ifm-color-neutral-dark-80);
+  --ifm-color-primary-light: #9898cd;
+  --ifm-color-primary-lighter: #c2c2e5;
+  --ifm-color-primary-lightest: #ebebf5;
+  --ifm-color-neutral-light-00: #ffffff;
+  --ifm-color-neutral-light-05: #f9f9fa;
+  --ifm-color-neutral-light-10: #ececee;
+  --ifm-color-neutral-light-20: #d0d0d7;
+  --ifm-color-neutral-light-30: #b4b4c0;
+  --ifm-color-neutral-mid-40: #9191a1;
+  --ifm-color-neutral-mid-60: #69697c;
+  --ifm-color-neutral-dark-70: #515162;
+  --ifm-color-neutral-dark-80: #36364a;
+  --ifm-color-neutral-dark-90: #1d1d30;
+  --ifm-color-neutral-dark-95: #060613;
+  --ifm-color-neutral-light: var(--ifm-color-neutral-light-20);
+  --ifm-color-neutral-dark: var(--ifm-color-neutral-dark-80);
   --ifm-color-danger: rgb(251, 251, 157);
   --ifm-code-font-size: 95%;
   --ifm-alert-color: black;
-  --ifm-font-family-base: 'Inter', sans-serif;
-  
+  --ifm-font-family-base: "Inter", sans-serif;
+  --ifm-container-width-xl: 1600px;
+
+  /* Heading font sizes - Moderate increase */
+  --ifm-h1-font-size: 3rem; /* 48px to match Figma */
+  --ifm-h2-font-size: 2rem;
+  --ifm-h3-font-size: 1.5rem;
+  --ifm-h4-font-size: 1.25rem;
+  --ifm-h5-font-size: 1rem;
+  --ifm-h6-font-size: 0.875rem;
+
+  --ifm-footer-background-color: #030330;
+  --ifm-footer-bg: #030330;
+  --ifm-footer: #ffffff;
+  ----ifm-footer-title-color-custom: #fff;
+
+  --ifm-color-bg-section: var(--ifm-color-primary-lightest);
+  --ifm-dropdown-color: #4545a1;
+  --ifm-dropdown-color-hover: #4545a1;
+  --ifm-card-hover: #1f1f7a;
+  --ifm-tag-color: #fff;
+  --ifm-tag-bg-color: #41b483;
+  --ifm-color-button-tertiary: #4545a1;
+
+  --ifm-hero-image: url("hero_image.png");
+
   font-size: 1rem;
 }
 
-.ani-button-primary{
-  background-color:var(--ifm-color-primary);
+.ani-button-primary {
+  background-color: var(--ifm-color-primary);
   min-height: 44px;
-  padding:8px;
+  padding: 8px;
   stroke-width: 0;
-  color:var(--ifm-color-neutral-light-00);
+  color: var(--ifm-color-neutral-light-00);
   border-radius: 4px;
 }
-.ani-button-secondary{
+.ani-button-secondary {
   min-height: 44px;
-  padding:8px;
+  padding: 8px;
   border: 1px var(--ifm-color-neutral-light-00) solid;
-  color:var(--ifm-color-neutral-light);
+  color: var(--ifm-color-neutral-light);
   border-radius: 4px;
 }
-.ani-button-secondary:hover{
-  
-  color:var(--ifm-color-neutral-light);
+.ani-button-secondary:hover {
+  color: var(--ifm-color-neutral-light);
   text-decoration: none;
-
 }
 
 .docusaurus-highlight-code-line {
@@ -69,13 +99,139 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --ifm-color-primary: var(--ifm-color-primary-light);
   --ifm-color-primary-dark: var(--ifm-color-primary-lighter);
-  --ifm-color-neutral-light:var(--ifm-color-neutral-dark);
-  --ifm-color-neutral-light-00:var(--ifm-color-neutral-dark);
-  --ifm-background-color:var(--ifm-color-neutral-dark-90);
-  --ifm-navbar-background-color:var(--ifm-color-neutral-dark-80);
-  --ifm-navbar-link-hover-color:var(--ifm-color-primary-light);
+  --ifm-color-neutral-light: var(--ifm-color-neutral-dark);
+  --ifm-color-neutral-light-00: var(--ifm-color-neutral-dark);
+  --ifm-background-color: var(--ifm-color-neutral-dark-90);
+  --ifm-navbar-background-color: var(--ifm-color-neutral-dark-95);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary-light);
+
+  --ifm-color-primary-lightest: var(--ifm-color-primary-darkest);
+  --ifm-color-bg-section: var(--ifm-color-neutral-dark-95);
+  --ifm-dropdown-color: #fff;
+  --ifm-dropdown-color-hover: var(--ifm-color-primary-darkest);
+  --ifm-card-hover: var(--ifm-color-primary);
+  --ifm-tag-color: var(--ifm-color-neutral-dark-95);
+  --ifm-tag-bg-color: #8dc897;
+  --ifm-color-button-tertiary: #fff;
+
+  --ifm-footer-bg: #ebebf5;
+  --ifm-footer: #030330;
+  --ifm-footer-title-color-custom: #030330;
+
+  --ifm-hero-image: url("hero_image_dark.png");
   /* any other colors you wish to overwrite */
+}
+
+.footer {
+  background-color: var(--ifm-footer-bg); /* Cor de fundo azul */
+  color: var(--ifm-footer); /* Cor do texto */
+}
+
+.footer a {
+  color: var(--ifm-footer); /* Cor dos links */
+}
+
+.footer__title {
+  color: var(--ifm-footer-title-color-custom);
+  font-size: 1.5rem;
+}
+
+.footer__copyright {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.footer__links {
+  padding-top: 1.5rem;
+}
+
+/* Documentation page spacing - Large spacing between sections */
+.markdown h1 {
+  font-weight: 600; /* Semi Bold as per Figma */
+  letter-spacing: -0.96px;
+}
+
+.markdown h2 {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.markdown h3 {
+  margin-top: 3rem;
+  margin-bottom: 1rem; /* 16px to match Figma */
+  font-weight: 600; /* Semi Bold as per Figma */
+  letter-spacing: -0.96px;
+}
+
+.markdown h4 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Add spacing to content blocks (paragraphs, lists, tables, etc.) */
+.markdown > * {
+  margin-bottom: 1.5rem;
+}
+
+/* Prevent excessive top spacing on first heading */
+.markdown > h2:first-child,
+.markdown > h3:first-child,
+.markdown > h4:first-child {
+  margin-top: 0;
+}
+
+/* Description text after H1 should be Semi Bold (600) to match Figma */
+.markdown h1 + p {
+  font-weight: 600;
+}
+
+.button-tabs-sticky {
+  position: sticky;
+  top: calc(var(--ifm-navbar-height, 72px));
+  z-index: 5;
+  background: #fff;
+  padding: 10px 0 26px;
+}
+
+.button-tabs-sticky::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  z-index: -1;
+}
+
+html[data-theme="dark"] .button-tabs-sticky {
+  background: var(--ifm-background-color);
+}
+
+html[data-theme="dark"] .button-tabs-sticky::before {
+  background: inherit;
+}
+
+/* Table of Contents heading */
+.toc-heading {
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--ifm-color-neutral-mid-60);
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* Smooth transitions for TOC updates when switching tabs */
+.table-of-contents {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.table-of-contents__link {
+  transition: all 0.15s ease-in-out;
+}
+
+/* Ensure TOC items animate smoothly when appearing/disappearing */
+.table-of-contents li {
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }

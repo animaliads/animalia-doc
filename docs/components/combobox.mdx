@@ -1,28 +1,34 @@
 ---
-id: combobox
+title: Combobox
 sidebar_label: Combobox
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
-# Combobox
+# <h1 style={{ fontSize: "3rem" }}>Combobox</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O `combobox` é a combinação entre uma entrada de texto com uma listagem de opções. É um componente utilizado quando a lista é longa e necessita de um recurso de filtragem das opções. Não permite a entrada de forma livre, ou seja, que a pessoa usuária selecione um valor diferente das opções pré-definidas.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
 
-
-## Visão geral
-
-O `combobox` é a combinação entre uma entrada de texto com uma listagem de opções. É um componente utilizado quando a lista é longa e necessita de um recurso de filtragem das opções. Não permite a entrada de forma livre, ou seja, que a pessoa usuária selecione um valor diferente das opções pré-definidas.
 ### Quando usar
 
 - Utilize quando a lista de opções tiver 10 ou mais itens e for possível selecionar apenas uma opção.
@@ -49,6 +55,14 @@ Conteúdo em desenvolvimento
  <TabItem value="custom-properties">
 
 :::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
 Conteúdo em desenvolvimento
 :::
 

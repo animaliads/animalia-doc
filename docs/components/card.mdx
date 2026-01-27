@@ -1,13 +1,14 @@
 ---
-id: card
+title: Card
 sidebar_label: Card
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import WebComponentReact from './../../src/components/WebComponent.js';
 
@@ -19,31 +20,32 @@ import cardDo2 from './img/card/card-do-2.jpg';
 import cardDont1 from './img/card/card-dont-1.jpg';
 import cardDont2 from './img/card/card-dont-2.jpg';
 
-# Card
+# <h1 style={{ fontSize: "3rem" }}>Card</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O card é um recipiente (*container*) flexível que tem como objetivo agrupar informações e ações sobre um mesmo assunto. Pode ter diversos tipos de conteúdo, como título, textos, botões, imagem, entre outros.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
-
-## Visão geral
-
-O card é um recipiente (*container*) flexível que tem como objetivo agrupar informações e ações sobre um mesmo assunto.
-
-Pode ter diversos tipos de conteúdo, como título, textos, botões, imagem, entre outros.
-
 ### Tipos
 
 O componente prevê duas variações:
 
 - **Read-only**
-Quando o card é apenas um “agrupador” das informações. Pode conter elementos interativos dentro dele, como por exemplo um link ou botão, mas não há nenhum tipo de interação no card propriamente dito.
+Quando o card é apenas um "agrupador" das informações. Pode conter elementos interativos dentro dele, como por exemplo um link ou botão, mas não há nenhum tipo de interação no card propriamente dito.
 - **Interactive**
 Quando o card em si é o elemento interativo, podendo assumir as características de:
   * Link: direciona a pessoa para outra página;
@@ -52,28 +54,45 @@ Quando o card em si é o elemento interativo, podendo assumir as característica
 <img
   src={cardTypes}
   alt="Tipos de cards lado a lado: read only, interactive e interactive selected"
+  style={{
+    borderRadius: "16px",
+  }}
 /> 
     
 
 ### Anatomia
 
-O card é composto basicamente por *border* e *background*. Porém, sua variação ***interactive*** possui também *shadow* e *outline*.
+<TwoColumnLayout
+  variant="image-right"
+  leftContent={
+    <>
+      <p>O card é composto basicamente por <em>border</em> e <em>background</em>. Porém, sua variação <strong><em>interactive</em></strong> possui também <em>shadow</em> e <em>outline</em>.</p>
 
-<img
-  src={cardAnatomy}
-  alt="Anatomia dos dois tipos de cards, com 1 border e 2 background em ambos. Apenas no card interativo, 3 shadow e 4 outline
-"
-/> 
+      <p>A estrutura do card inclui:</p>
 
-**1.** Border
+      <ol>
+        <li><strong>Border</strong>: borda que delimita o card;</li>
+        <li><strong>Background</strong>: cor de fundo do card;</li>
+        <li><strong>Shadow</strong>: sombra presente na variação interactive;</li>
+        <li><strong>Outline (focused)</strong>: contorno que aparece no estado de foco.</li>
+      </ol>
 
-**2.** Background
-
-**3.** Shadow
-
-**4.** Outline (*focused*)
-
-O card é estruturado e estilizado por meio dos design tokens. Os tokens que podem ser alterados pelas marcas estão listados na seção de [propriedades customizáveis](#propriedades-customizáveis).
+      <p>O card é estruturado e estilizado por meio dos design tokens. Os tokens que podem ser alterados pelas marcas estão listados na seção de <a href="#propriedades-customizáveis">propriedades customizáveis</a>.</p>
+    </>
+  }
+  rightContent={
+    <img
+      src={cardAnatomy}
+      alt="Anatomia dos dois tipos de cards, com 1 border e 2 background em ambos. Apenas no card interativo, 3 shadow e 4 outline"
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        borderRadius: "16px",
+      }}
+    />
+  }
+/>
 
 ## Boas práticas
 
@@ -138,10 +157,7 @@ Algumas diretrizes de acessibilidade já são tratadas no componente, internamen
 
 <TabItem value="dev">
 
-
 ## Desenvolvimento
-
-### Instalação do pacote
 
 Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
 
@@ -192,11 +208,9 @@ Para saber a lista de propriedades e eventos, acesse o [guia de referência de A
 
   <TabItem value="custom-properties">
 
-
 ## Propriedades customizáveis
 
-O componente possui propriedades customizáveis, que possibilitam fazer alterações, de acordo com a marca ou o tema a ser utilizado. Com isso, garantimos uma consistência ao Design System, sem perder a identidade de cada marca.
-
+O componente de card possui propriedades customizáveis que podem variar de acordo com o tema selecionado. As propriedades customizáveis podem ser alteradas para cada produto, de acordo com os tokens de marca e tokens globais. Com isso, garantimos uma consistência no Design System, sem perder a identidade de cada marca.
 O card possui estados e se modifica de acordo com o tipo do card. Os seus estados são: _Normal_, _Hover_, _Focused_ e _Selected_.
 
 | Propriedade                  | Descrição                                                                        | Valor padrão            |
@@ -221,4 +235,13 @@ O card possui estados e se modifica de acordo com o tipo do card. Os seus estado
 
 
 </TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
 </Tabs>

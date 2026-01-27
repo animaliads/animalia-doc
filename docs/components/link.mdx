@@ -1,12 +1,14 @@
 ---
-id: link
+title: Link
 sidebar_label: Link
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import link_anatomy from './img/link/link-anatomy.jpg';
 import link_do_1 from './img/link/link-do-1.jpg';
@@ -22,23 +24,27 @@ import link_states from './img/link/link-states.jpg';
 import WebComponentReact from './../../src/components/WebComponent.js';
 
 
-# Link
+# <h1 style={{ fontSize: "3rem" }}>Link</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+Os links são utilizados como rota. O destino dessa rota pode ser externo ou interno à aplicação.
+Eles podem ser usados dentro de texto ou isoladamente.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properies'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
-
-## Visão geral
-
-Os links são utilizados como rota. O destino dessa rota pode ser externo ou interno à aplicação.
-Eles podem ser usados dentro de texto ou isoladamente.
 
 
 
@@ -49,7 +55,8 @@ O link é composto por uma label que descreve a sua finalidade, comunicando ao q
 
 <img
   src={link_anatomy}
-  alt="Anatomia do link apresentada na imagem. Texto link text representado a label do link."  
+  alt="Anatomia do link apresentada na imagem. Texto link text representado a label do link."
+  style={{ borderRadius: "16px" }}
 />
 
 **1.** Label (rótulo).
@@ -137,8 +144,6 @@ Algumas diretrizes de acessibilidade já são tratadas no componente, internamen
 
 ## Desenvolvimento
 
-### Instalação do pacote
-
 Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
 
 Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
@@ -190,11 +195,11 @@ Para saber a lista de propriedades e eventos, acesse o [guia de referência de A
 
 </TabItem>
 
-  <TabItem value="custom-properies">
+  <TabItem value="custom-properties">
 
 ## Propriedades customizáveis
 
-O componente de link possui propriedades customizáveis, que possibilitam fazer alterações, de acordo com a marca ou o tema a ser utilizado. Com isso, garantimos uma consistência ao Design System, sem perder a identidade de cada marca.
+O componente possui propriedades customizáveis que podem variar de acordo com o tema selecionado. As propriedades customizáveis podem ser alteradas para cada produto, de acordo com os tokens de marca e tokens globais. Com isso, garantimos uma consistência no Design System, sem perder a identidade de cada marca.
 
 Possui cinco estados, que se modificam de acordo com a interação do usuário. São eles: Normal, Hover, Focus, Pressed e Visited.
 
@@ -210,7 +215,17 @@ Possui cinco estados, que se modificam de acordo com a interação do usuário. 
 <img
   src={link_states}
   alt="Os cinco estados de interação do link dispostos lado a lado"
+  style={{ borderRadius: "16px" }}
 />
 
 </TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
 </Tabs>

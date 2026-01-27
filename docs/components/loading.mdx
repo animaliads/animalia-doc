@@ -1,12 +1,14 @@
 ---
-id: loading
+title: Loading
 sidebar_label: Loading
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import loadingAnatomy from './img/loading/loading-anatomy.png';
 import loadingOverlayAnatomy from './img/loading/loading-overlay-anatomy.png';
@@ -15,28 +17,33 @@ import loadingStrokeSize from './img/loading/loading-stroke-size.png';
 import loadingSpinnerAnimation from './img/loading/loading-spinner-animation.png';
 import loadingDotsAnimation from './img/loading/loading-dots-animation.png';
 
-# Loading
+# <h1 style={{ fontSize: "3rem" }}>Loading</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O componente `loading` serve para informar que alguma ação dentro da página está sendo executada, e deve ser evocado assim que houver o disparo desta ação, sendo um feedback sem informações numéricas ou percentual.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
-
-## Visão geral
-O componente `loading` serve para informar que alguma ação dentro da página está sendo executada, e deve ser evocado assim que houver o disparo desta ação, sendo um feedback sem informações numéricas ou percentual.
 
 ### Quando usar
 Seu uso é recomendado para tarefas que levam até 10 segundos para serem concluídas e que não seja necessário exibir o progresso da execução.
 
 > Considere utilizar o componente [`progress bar`](progressbar) caso o tempo necessário seja maior do que 10 segundos.
 
-## Anatomia
+### Anatomia
 O componente prevê duas variações em suas respectivas anatomias: `single` e `overlay`.
 
 ### Single
@@ -166,6 +173,14 @@ Conteúdo em desenvolvimento
 <TabItem value="custom-properties">
 
 :::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
 Conteúdo em desenvolvimento
 :::
 

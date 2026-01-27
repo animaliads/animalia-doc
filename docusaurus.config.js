@@ -1,4 +1,4 @@
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
+/** @type {import('@docusaurus/types').Config} */
 module.exports = {
   title: "Animalia DS",
   tagline: "Design System da TOTVS",
@@ -24,8 +24,15 @@ module.exports = {
   url: "https://doc.animaliads.io/",
   baseUrl: "/",
   themeConfig: {
-    hotjar:{
+    hotjar: {
       applicationId: 2903615,
+    },
+    algolia: {
+      appId: 'TRO2FPXP5H',
+      apiKey: 'f6e791003b5f781c24c1780a985362fe',
+      indexName: 'Homepage',
+      contextualSearch: true,
+      searchPagePath: 'search',
     },
     navbar: {
       logo: {
@@ -35,28 +42,46 @@ module.exports = {
       },
       items: [
         {
-          type: "doc",
-          docId: "about/intro",
-          position: "right",
-          label: "Sobre",
+          to: "/",
+          label: "Página Inicial",
+          position: "left",
+          activeBaseRegex: `^/$`,
         },
         {
           type: "doc",
           docId: "components/button",
-          position: "right",
+          position: "left",
           label: "Componentes",
         },
         {
           type: "doc",
+          docId: "patterns/intro",
+          position: "left",
+          label: "Comportamentos",
+        },
+        {
+          type: "doc",
           docId: "foundation/intro",
-          position: "right",
-          label: "Fundamentos",
+          position: "left",
+          label: "Estilos",
+        },
+        {
+          type: "doc",
+          docId: "about/intro",
+          position: "left",
+          label: "Sobre",
+        },
+        {
+          type: "doc",
+          docId: "guideline/intro",
+          position: "left",
+          label: "Guia",
         },
         {
           type: "doc",
           docId: "designtokens/designtokens",
-          position: "right",
-          label: "Design Tokens",
+          position: "left",
+          label: "Tokens",
         },
         {
           type: "search",
@@ -64,7 +89,6 @@ module.exports = {
         },
 
         //{to: '/blog', label: 'Blog', position: 'left'},
-
         // ... more items
       ],
     },
@@ -72,15 +96,19 @@ module.exports = {
       style: "dark",
       links: [
         {
-          title: "Começando",
+          title: "Primeiros passos",
           items: [
             {
-              label: "Desenvolvimento",
+              label: "Para Designers",
+              to: "/docs/about/getting-started-design",
+            },
+            {
+              label: "Para Devs",
               to: "/docs/about/getting-started",
             },
             {
-              label: "Design",
-              to: "/docs/about/getting-started-design",
+              label: "Guia de Contribuição",
+              to: "/docs/about/contribution-guide",
             },
           ],
         },
@@ -88,15 +116,15 @@ module.exports = {
           title: "Links úteis",
           items: [
             {
-              label: "Github",
+              label: "Repositório no Github",
               href: "https://github.com/animaliads",
             },
             {
-              label: "Storybook (API)",
+              label: "API no Storybook",
               href: "http://animaliads.io/?path=/docs/api-button--sample",
             },
             {
-              label: "Figma Community",
+              label: "Biblioteca no Figma",
               href: "https://www.figma.com/@animaliads",
             },
           ],
@@ -108,6 +136,10 @@ module.exports = {
               label: "Changelog",
               to: "/docs/about/changelog",
             },
+            {
+              label: "Princípios do Animalia",
+              to: "/docs/about/principles",
+            },
           ],
         },
       ],
@@ -118,11 +150,7 @@ module.exports = {
     [
       "@docusaurus/preset-classic",
       {
-        googleAnalytics: {
-          trackingID: 'G-TCSRHFEBXF',
-          anonymizeIP: true,
-        },
-          docs: {
+        docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
@@ -136,13 +164,24 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
-          
+        },
+        gtag: {
+          trackingID: "G-TCSRHFEBXF",
+          anonymizeIP: true,
         },
       },
     ],
   ],
-  plugins:[
-      'docusaurus-plugin-hotjar',
-     
+  plugins: [],
+  scripts: [
+    {
+      src: "/js/mix-script.js",
+      async: true,
+      crossorigin: "anonymous"
+    },
+    {
+      src: "/js/hotjar-init.js",
+      async: false,
+    },
   ],
 };

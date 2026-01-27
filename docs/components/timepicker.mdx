@@ -1,28 +1,35 @@
 ---
+title: Timepicker
 id: timepicker
 sidebar_label: Timepicker
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import BestPracticesComponent from './helpers/components/best-practices.tsx';
+import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
-# Timepicker
+# <h1 style={{ fontSize: "3rem" }}>Timepicker</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O componente `timepicker` (selecionador de tempo) ajuda a pessoa usuária a selecionar ou definir um horário específico.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
-
-
-## Visão geral
-
-O componente `timepicker` (selecionador de tempo) ajuda a pessoa usuária a selecionar ou definir um horário específico.
 
 Permite que a pessoa usuária insira um valor de tempo específico ou faça uma escolha entre um horário ou espaço de tempo pré-determinado e pode ser usado para uma ampla variedade de cenários.
 
@@ -79,6 +86,14 @@ Conteúdo em desenvolvimento
  <TabItem value="custom-properties">
 
 :::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
 Conteúdo em desenvolvimento
 :::
 

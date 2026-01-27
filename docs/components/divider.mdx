@@ -1,33 +1,38 @@
 ---
-id: divider
+title: Divider
 sidebar_label: Divider
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import dividerSize from './img/divider/divider-sizes.jpg';
 
 
-# Divider
+# <h1 style={{ fontSize: "3rem" }}>Divider</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O componente `divider` tem como objetivo criar agrupamentos de forma a separar um conteúdo denso quando o mesmo não puder ser separado apenas por espaço ou outro tipo de quebra.
+
+Sua finalidade é apenas decorativa, para explicar a separação de conteúdos de forma visual e deve possuir aspecto de estado "componente inativo".
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
-
-
-## Visão geral
-
-O componente `divider` tem como objetivo criar agrupamentos de forma a separar um conteúdo denso quando o mesmo não puder ser separado apenas por espaço ou outro tipo de quebra. 
-
-Sua finalidade é apenas decorativa, para explicar a separação de conteúdos de forma visual e deve possuir aspecto de estado “componente inativo".
 
 ### Tamanhos
 
@@ -36,6 +41,9 @@ O componente divider possui três variações de tamanhos: *small*, *medium* e *
 <img
   src={dividerSize}
   alt="3 variações de divider, sendo small o mais fino, medium intermediário e large com maior espessura"
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 O divider é composto basicamente por uma barra (linha) na horizontal, que ocupa o espaço inteiro do bloco em que estiver definido.
@@ -68,6 +76,14 @@ Conteúdo em desenvolvimento
  <TabItem value="custom-properties">
 
 :::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
 Conteúdo em desenvolvimento
 :::
 

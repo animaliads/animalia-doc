@@ -1,0 +1,143 @@
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 80px 80px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.title {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000000;
+  margin: 0 0 16px 0;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #515162;
+  margin: 0 0 12px 0;
+}
+
+.stats {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #9191a8;
+  margin: 0;
+}
+
+.content {
+  width: 100%;
+}
+
+.loading {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.loadingSpinner {
+  font-size: 48px;
+  color: #4545a1;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #515162;
+  margin-top: 16px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 40px 40px 60px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 32px 24px 48px;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .stats {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 24px 16px 40px;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+}
+
+/* Dark mode */
+html[data-theme="dark"] .title {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .subtitle {
+  color: #b4b4c8;
+}
+
+html[data-theme="dark"] .stats {
+  color: #7575a8;
+}
+
+html[data-theme="dark"] .loadingSpinner {
+  color: #8a8ad0;
+}
+
+html[data-theme="dark"] .loadingText {
+  color: #b4b4c8;
+}

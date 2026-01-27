@@ -1,68 +1,108 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
+import React from "react";
+import styles from "./HomepageFeatures.module.css";
+import AniTag from "./animalia_components/AniTag";
+import ScrollFadeIn from "./animations/ScrollFadeIn";
+import { motion } from "framer-motion";
 
-const FeatureList = [
+const FeaturesList = [
   {
-    
-    title: 'Acessível e inclusivo',
-    Svg: require('../../static/img/img1.svg').default,
-    description: (
-      <>
-        Acessibilidade
-      </>
-    ),
+    title: "Componentes prontos",
+    description: "Biblioteca de componentes para acelerar seu desenvolvimento.",
+    icon: "cube",
   },
   {
-    title: 'Colaborativo',
-    Svg: require('../../static/img/img2.svg').default,
-    description: (
-      <>
-        Colaboração
-      </>
-    ),
+    title: "Design Tokens",
+    description:
+      "Sistema de tokens para manter consistência visual em todos os produtos.",
+    icon: "code",
   },
-  { 
-    title: 'Impulsionar negócios',
-    Svg: require('../../static/img/img3.svg').default,
-    description: (
-      <>
-       Negócio
-      </>
-    ),
+  {
+    title: "Acessibilidade",
+    description:
+      "Componentes desenvolvidos seguindo as melhores práticas de acessibilidade.",
+    icon: "hand-heart",
+  },
+  {
+    title: "Documentação completa",
+    description:
+      "Guias detalhados e exemplos práticos para facilitar a implementação.",
+    icon: "book-open",
+  },
+  {
+    title: "Open Source",
+    description:
+      "Código aberto e gratuito para toda a comunidade TOTVS e além.",
+    icon: "globe",
   },
 ];
 
-function Feature({Svg, title, description}) {
+function FeatureCard({ title, description, icon }) {
   return (
-    <div className={clsx('col col--3')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
+    <div className={styles.featureCard}>
+      <div className={styles.iconContainer}>
+        <i className={`an an-${icon} ${styles.icon}`}></i>
       </div>
-      <div className="text--left">
-        <p className={styles.tagline}>{description}</p>
-        <h3 className={styles.headline02}>{title}</h3>
+      <div className={styles.textContainer}>
+        <h3 className={styles.cardTitle}>{title}</h3>
+        <p className={styles.cardDescription}>{description}</p>
       </div>
     </div>
   );
 }
 
 export default function HomepageFeatures() {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.6, 0.01, 0.05, 0.95],
+      },
+    },
+  };
+
   return (
     <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-           <div className={clsx('col col--3')}>
-           <div className={styles.presentation}>
-             <p className={styles.tagline}>Nossos pilares</p>
-              <h3 className={styles.headline01}>Princípios do Animalia
-Design System</h3>
-              <p>Os princípios são nossa direção. São eles que orientam todas as diretrizes e decisões em relação ao design system e a tudo que ele entrega.</p>
-          </div>
-        </div>
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+      <div className={styles.featuresWrapper}>
+        <ScrollFadeIn className={styles.featuresHeader} delay={0.1}>
+          <AniTag text="Conheça o Animalia DS" variant="primary" />
+          <h2 className={styles.featuresTitle}>
+            Tudo o que você precisa para criar experiências consistentes
+          </h2>
+        </ScrollFadeIn>
+        <div className={styles.featuresContent}>
+          <motion.div
+            className={styles.featuresGrid}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={containerVariants}
+          >
+            {FeaturesList.map((feature, idx) => (
+              <motion.div key={idx} variants={cardVariants}>
+                <FeatureCard {...feature} />
+              </motion.div>
+            ))}
+          </motion.div>
+          <ScrollFadeIn
+            className={styles.featuresImage}
+            direction="left"
+            distance={50}
+            delay={0.3}
+          >
+            <img src="/img/leopard-feature.jpg" alt="Animalia Design System" />
+          </ScrollFadeIn>
         </div>
       </div>
     </section>
