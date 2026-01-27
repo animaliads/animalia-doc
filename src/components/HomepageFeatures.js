@@ -1,34 +1,38 @@
-import React from 'react';
-import styles from './HomepageFeatures.module.css';
-import AniTag from './animalia_components/AniTag';
-import ScrollFadeIn from './animations/ScrollFadeIn';
-import { motion } from 'framer-motion';
+import React from "react";
+import styles from "./HomepageFeatures.module.css";
+import AniTag from "./animalia_components/AniTag";
+import ScrollFadeIn from "./animations/ScrollFadeIn";
+import { motion } from "framer-motion";
 
 const FeaturesList = [
   {
-    title: 'Componentes prontos',
-    description: 'Biblioteca completa de componentes React para acelerar seu desenvolvimento.',
-    icon: 'cube',
+    title: "Componentes prontos",
+    description: "Biblioteca de componentes para acelerar seu desenvolvimento.",
+    icon: "cube",
   },
   {
-    title: 'Design Tokens',
-    description: 'Sistema de tokens para manter consistência visual em todos os produtos.',
-    icon: 'code',
+    title: "Design Tokens",
+    description:
+      "Sistema de tokens para manter consistência visual em todos os produtos.",
+    icon: "code",
   },
   {
-    title: 'Acessibilidade',
-    description: 'Componentes desenvolvidos seguindo as melhores práticas de acessibilidade.',
-    icon: 'hand-heart',
+    title: "Acessibilidade",
+    description:
+      "Componentes desenvolvidos seguindo as melhores práticas de acessibilidade.",
+    icon: "hand-heart",
   },
   {
-    title: 'Documentação completa',
-    description: 'Guias detalhados e exemplos práticos para facilitar a implementação.',
-    icon: 'book-open',
+    title: "Documentação completa",
+    description:
+      "Guias detalhados e exemplos práticos para facilitar a implementação.",
+    icon: "book-open",
   },
   {
-    title: 'Open Source',
-    description: 'Código aberto e gratuito para toda a comunidade TOTVS e além.',
-    icon: 'globe',
+    title: "Open Source",
+    description:
+      "Código aberto e gratuito para toda a comunidade TOTVS e além.",
+    icon: "globe",
   },
 ];
 
