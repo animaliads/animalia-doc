@@ -1,54 +1,55 @@
 ---
-id: icon
+title: Icon
 sidebar_label: Icon
+wrapperClassName: doc-page-left
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import BestPracticesComponent from "./helpers/components/best-practices.tsx";
+import LiveDemoComponent from "./helpers/components/live-demo.tsx";
+import TwoColumnLayout from "./helpers/components/two-column-layout.tsx";
 
-import BestPracticesComponent from './helpers/components/best-practices.tsx';
-import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import WebComponentReact from "./../../src/components/WebComponent.js";
 
-import WebComponentReact from './../../src/components/WebComponent.js';
+import iconSize from "./img/icon/icon-size.jpg";
+import icon_do_1 from "./img/icon/icon-do-1.jpg";
+import icon_dont_1 from "./img/icon/icon-dont-1.jpg";
 
-import iconSize from './img/icon/icon-size.jpg';
-import icon_do_1 from './img/icon/icon-do-1.jpg';
-import icon_dont_1 from './img/icon/icon-dont-1.jpg';
+# <h1 style={{ fontSize: "3rem" }}>Icon</h1>
 
-# Icon
+<div style={{ maxWidth: '60%' }}>
+
+O componente icon é utilizado para dar suporte a compreensão de uma label, de um título e frase. Pode ser usado também para representar um ação ou transmitir uma informação.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
 
-## Visão geral
-
-O componente icon é utilizado para dar suporte a compreensão de uma label, de um título e frase. Pode ser usado também para representar um ação ou transmitir uma informação.
-
-:::note
-
-Nesta primeira onda do componente foi previsto o uso como apoio, decorativo.
-
-:::
-
 ### Tamanhos
 
-O componente possui três tamanhos diferentes: *Small,* *Medium* e *Large*. O tamanho medium é o tamanho padrão.
+O componente possui três tamanhos diferentes: _Small,_ _Medium_ e _Large_. O tamanho medium é o tamanho padrão.
 
 <img
   src={iconSize}
   alt="Três variações de tamanho para o icon dispostas lado a lado."
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 Os componentes são formados por tokens, sendo estes propriedades de estilo que definem como será estruturado e estilizado. Os tokens que podem ser alterados pelas marcas, podem ser conferidos na seção de [propriedades customizáveis](#propriedades-customizáveis).
-
 
 ## Boas práticas
 
@@ -56,25 +57,21 @@ O componente foi projetado para atender os requisitos das Diretrizes de Acessibi
 
 ### Cor
 
-- Use o componente Icon na mesma cor da label que o acompanha. 
+- Use o componente Icon na mesma cor da label que o acompanha.
 
 <BestPracticesComponent
   doImg={icon_do_1}
-  doAlt="Botão com ícone à esquerda e rótulo “Editar registro” em cores iguais."
+  doAlt="Botão com ícone à esquerda e rótulo 'Editar registro' em cores iguais."
   doDescription="O componente icon deve sempre seguir a mesma cor do rótulo ou cor do contexto inserido."
   dontImg={icon_dont_1}
-  dontAlt="Botão com ícone à esquerda e rótulo “Editar registro” em cores diferentes."
-  dontDescription="Não use o componente icon em cores diferentes do contexto inserido."
-/>
-
+  dontAlt="Botão com ícone à esquerda e rótulo 'Editar registro' em cores diferentes."
+  dontDescription="Não use o componente icon em cores diferentes do contexto inserido."/>
 
 </TabItem>
 
 <TabItem value="dev">
 
 ## Desenvolvimento
-
-### Instalação do pacote
 
 Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
 
@@ -104,7 +101,7 @@ da seguinte forma:
 
 ```css
 ani-icon {
-  --color:green;
+  --color: green;
 }
 ```
 
@@ -112,9 +109,7 @@ Para saber quais são as propriedades disponíveis, consulte [propriedades custo
 
 ### Live Demo
 
-<LiveDemoComponent
-  react="https://stackblitz.com/edit/react-ani-icon?embed=1&file=src/App.js"
-/>
+<LiveDemoComponent react="https://stackblitz.com/edit/react-ani-icon?embed=1&file=src/App.js" />
 
 :::note API
 Para saber a lista de propriedades e eventos, acesse o [guia de referência de API](http://animaliads.io/?path=/docs/api-icon--sample).
@@ -124,16 +119,22 @@ Para saber a lista de propriedades e eventos, acesse o [guia de referência de A
 
 <TabItem value="custom-properties">
 
-
 ## Propriedades customizáveis
 
-O componente de icon possui a propriedade customizável color, que possibilitam fazer a alteração, de acordo com a marca ou o tema a ser utilizado.
+O componente de icon possui propriedades customizáveis que podem variar de acordo com o tema selecionado. As propriedades customizáveis podem ser alteradas para cada produto, de acordo com os tokens de marca e tokens globais. Com isso, garantimos uma consistência no Design System, sem perder a identidade de cada marca.
 
-Com isso, garantimos uma consistência ao Design System, sem perder a identidade de cada marca.
-
-| Propriedade          | Descrição                                     | Valor padrão            |
-| -------------------- | --------------------------------------------- | ----------------------- |
-| `--color `           | cor do ícone                                  | $color-neutral-dark-90  |
+| Propriedade | Descrição    | Valor padrão           |
+| ----------- | ------------ | ---------------------- |
+| `--color `  | cor do ícone | $color-neutral-dark-90 |
 
 </TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
 </Tabs>

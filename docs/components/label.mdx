@@ -1,12 +1,14 @@
 ---
-id: label
+title: Label
 sidebar_label: Label
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import label_types from './img/label/label-type.png';
 import label_anatomy from './img/label/label-anatomy.png';
@@ -18,23 +20,26 @@ import label_do_3 from './img/label/label-do-3.jpg';
 import label_dont_3 from './img/label/label-dont-3.jpg';
 
 
-# Label
+# <h1 style={{ fontSize: "3rem" }}>Label</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O componente `label` tem a função de identificar um campo de entrada de dados e informar às pessoas sobre qual informação precisa ser inserida naquele campo. É sempre usado de forma complementar, ou seja, em conjunto com outros componentes de entrada de dados.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
-
-
-## Visão geral
-
-O componente `label` tem a função de identificar um campo de entrada de dados e informar às pessoas sobre qual informação precisa ser inserida naquele campo. É sempre usado de forma complementar, ou seja, em conjunto com outros componentes de entrada de dados. 
 
 :::note Componentes relacionados
 - [`Checkbox`](checkbox)
@@ -56,6 +61,9 @@ Pensando na modularidade e padronização no uso da label em diferentes componen
 <img
   src={label_types}
   alt="Label basic aplicada com checkbox e radio; e Label field rotulando text field e grupo de checkbox"
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 ### Anatomia
@@ -65,6 +73,9 @@ Estruturalmente, os dois tipos de label possuem o *text*, que é o rótulo em si
 <img
   src={label_anatomy}
   alt="Tipos de label com as partes sinalizadas, sendo 1 text e 2 required text"
+  style={{
+    borderRadius: "16px",
+  }}
 />
 
 **1.** Text
@@ -83,10 +94,10 @@ O componente foi projetado para atender os requisitos das Diretrizes de Acessibi
 
 <BestPracticesComponent
   doImg={label_do_1}
-  doAlt="Campo com rótulo “Email”"
+  doAlt="Campo com rótulo 'Email'"
   doDescription="Mantenha os textos curtos e objetivos, e sem pontuações."
   dontImg={label_dont_1}
-  dontAlt="Campo com rótulo “Insira neste campo seu email:"
+  dontAlt="Campo com rótulo 'Insira neste campo seu email:'"
   dontDescription="O excesso de texto na label dificulta o escaneamento dos campos e a pontuação é desnecessária."
 />
 
@@ -120,7 +131,7 @@ O componente foi projetado para atender os requisitos das Diretrizes de Acessibi
 
  <TabItem value="dev">
 
-:::note Em construção  
+:::note Em construção
 Conteúdo em desenvolvimento
 :::
 
@@ -129,7 +140,15 @@ Conteúdo em desenvolvimento
 
  <TabItem value="custom-properties">
 
-:::note Em construção 
+:::note Em construção
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
 Conteúdo em desenvolvimento
 :::
 

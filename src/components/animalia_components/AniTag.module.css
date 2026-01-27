@@ -8,8 +8,31 @@
     border-radius: 24px;
     background: var(--ifm-tag-bg-color);
     color: var(--ifm-tag-color);
-    font-size: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.4;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+/* Default variant - for cards with absolute positioning */
+.tag.default {
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+/* Release variant - for hero section */
+.tag.release {
+    position: relative;
+    border: 1px solid var(--ifm-color-primary);
+    background: transparent;
+    color: var(--ifm-color-primary);
+    font-size: 14px;
+    padding: 0px 8px;
+    height: 24px;
+    line-height: 1.4;
+    font-weight: 400;
+    width: fit-content;
+    white-space: nowrap;
 }

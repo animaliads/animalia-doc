@@ -158,5 +158,9 @@
   "theme.common.skipToMainContent": {
     "message": "Skip to main content",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.TOC.title": {
+    "message": "On this page",
+    "description": "The title for the table of contents"
   }
 }

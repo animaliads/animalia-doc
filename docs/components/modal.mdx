@@ -1,12 +1,14 @@
 ---
-id: modal
+title: Modal
 sidebar_label: Modal
+wrapperClassName: doc-page-left
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
+import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
 
 import modal_types_header from './img/modal/modal-types-header.png';
 import modal_types_footer from './img/modal/modal-types-footer.png';
@@ -20,27 +22,26 @@ import modal_dont_1 from './img/modal/modal-dont-1.jpg';
 import modal_do_2 from './img/modal/modal-do-2.jpg';
 import modal_dont_2 from './img/modal/modal-dont-2.jpg';
 
+# <h1 style={{ fontSize: "3rem" }}>Modal</h1>
 
+<div style={{ maxWidth: '60%' }}>
 
-# Modal
+O modal é um componente tem a função de exibir informações de alta relevância, que requerem a atenção total da pessoa usuária. É uma exibição de conteúdo que acontece em uma camada acima, ou seja, trazendo o foco para aquela informação/ ação, sem retirar a pessoa da página em que estava. Podem ser usados para visualizar, inserir ou editar informações, confirmar uma ação, etc. Porém, por interromper uma atividade, devem ser usados com moderação e sempre para casos em que auxiliem a conclusão da tarefa principal.
+
+</div>
 
 <Tabs
+  className="button-tabs-sticky"
   defaultValue="design"
   lazy
   values={[
     {label: 'Uso', value: 'design'},
-    {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Customização', value: 'custom-properties'},
+    {label: 'Estilização', value: 'custom-properties'},
+    {label: 'Código', value: 'dev'},
+    {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
   <TabItem value="design">
-
-
-## Visão geral
-
-O modal é um componente tem a função de exibir informações de alta relevância,  que requerem a atenção total da pessoa usuária. É uma exibição de conteúdo que acontece em uma camada acima, ou seja, trazendo o foco para aquela informação/ ação, sem retirar a pessoa da página em que estava.
-
-Podem ser usados para visualizar, inserir ou editar informações, confirmar uma ação, etc. Porém, por interromper uma atividade, devem ser usados com moderação e sempre para casos em que auxiliem a conclusão da tarefa principal.
 
 
 ### Anatomia
@@ -256,6 +257,14 @@ Conteúdo em desenvolvimento
  <TabItem value="custom-properties">
 
 :::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+:::note Em construção
 Conteúdo em desenvolvimento
 :::
 
