@@ -28,11 +28,11 @@ module.exports = {
       applicationId: 2903615,
     },
     algolia: {
-      appId: 'TRO2FPXP5H',
-      apiKey: 'f6e791003b5f781c24c1780a985362fe',
-      indexName: 'Homepage',
+      appId: "5AW9F4DSO5",
+      apiKey: "b302bf62f422ab8c9eb1afc3aba89cff",
+      indexName: "Janeiro",
       contextualSearch: true,
-      searchPagePath: 'search',
+      searchPagePath: "search",
     },
     navbar: {
       logo: {
@@ -177,7 +177,7 @@ module.exports = {
     {
       src: "/js/mix-script.js",
       async: true,
-      crossorigin: "anonymous"
+      crossorigin: "anonymous",
     },
     {
       src: "/js/hotjar-init.js",
