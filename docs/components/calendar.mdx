@@ -4,17 +4,33 @@ sidebar_label: Calendar
 wrapperClassName: doc-page-left
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TwoColumnLayout from './helpers/components/two-column-layout.tsx';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import BestPracticesComponent from "./helpers/components/best-practices.tsx";
+import LiveDemoComponent from "./helpers/components/live-demo.tsx";
+import TwoColumnLayout from "./helpers/components/two-column-layout.tsx";
+
+import WebComponentReact from "./../../src/components/WebComponent.js";
+import AniPlatformCard from "./../../src/components/animalia_components/AniPlatformCard.js";
+
+{/* Placeholder de Imagens - Substitua pelos caminhos reais */}
+import calendarAnatomy from "./img/calendar/calendar-anatomy.png";
+import calendarTypeDate from "./img/calendar/calendar-type-date.png";
+import calendarTypeMonth from "./img/calendar/calendar-type-month.png";
+import calendarTypeYear from "./img/calendar/calendar-type-year.png";
+import calendarDo1 from "./img/calendar/calendar-do-1.png";
+import calendarDont1 from "./img/calendar/calendar-dont-1.png";
+import calendarDo2 from "./img/calendar/calendar-do-2.png";
+import calendarDont2 from "./img/calendar/calendar-dont-2.png";
+import calendarDo3 from "./img/calendar/calendar-do-3.png";
+import calendarDont3 from "./img/calendar/calendar-dont-3.png";
+import calendarFocusOrder from "./img/calendar/calendar-ordem-focus.png";
 
 # <h1 style={{ fontSize: "3rem" }}>Calendar</h1>
 
 <div style={{ maxWidth: '60%' }}>
 
-O componente `calendar` é usado para selecionar datas próximas ao tempo presente. Por padrão, os seletores de data em calendário apresentam os dados do mês atual e apenas um mês é apresentado por vez. Em alguns contextos podem apresentar uma data pré estabelecida para o usuário.
-
-Normalmente mostram os dias da semana na parte superior e combinam com a metáfora de calendários de mesa ou de parede.
+O componente `Calendar` é usado para selecionar datas próximas ao tempo presente. Por padrão, os seletores de data em calendário apresentam os dados do mês atual e apenas um mês é apresentado por vez, podendo, em alguns contextos, exibir uma data pré-estabelecida para a pessoa usuária. Normalmente mostram os dias da semana na parte superior e combinam com a metáfora de calendários de mesa ou de parede.
 
 </div>
 
@@ -31,66 +47,296 @@ Normalmente mostram os dias da semana na parte superior e combinam com a metáfo
 
   <TabItem value="design">
 
-:::note Componentes relacionados
+  ### Quando usar
 
-- [Datepicker](/docs/components/datepicker)
-:::
+  - Para selecionar datas próximas ao tempo presente para que a pessoa usuária não precise navegar tanto.
+  - Dentro de um componente [`Datepicker`](/docs/components/datepicker) (acionado pelo clique em um ícone de calendário).
+  - Quando a visualização em grade mensal facilita a compreensão do contexto (ex: dias da semana).
 
-## Boas práticas
+  ### Quando não usar
 
-O componente foi estruturado com base em padrões de usabilidade para contribuir com uma boa experiência. Por isso, ao aplicar esse componente, é muito importante que sejam levados em consideração alguns critérios e práticas:
+  - **Datas distantes:** Não use para solicitar datas no passado ou futuro distante, como data de nascimento. Nesses casos, use um campo de texto para evitar excesso de cliques.
+  - **Seleção de horários:** O calendário é estritamente para datas; para horários, utilize componentes de tempo (Timepicker).
 
-- O  `calendar` é recomendado para casos de datas não muito distantes para que o usuário não precise navegar tanto.  Nesses casos é melhor dar a opção para ele digitar uma data específica.
-- Impedir que os usuários selecionem datas ilógicas. Por exemplo, datas com mais de 130 anos serão improváveis para datas de nascimento, mas bastante aceitáveis para datas de documentos. Os usuários devem ser impedidos de inserir uma data de retorno anterior à data de partida ou que já tenha passado. Torne as escolhas claras desativando e escurecendo as opções que não estão disponíveis ou são pares ilógicos.
-- Em toda página do calendário é recomendado visualizar qual mês e ano o usuário está
-- Para datas que não podem ser selecionadas devido algum contexto específico, por exemplo uma empresa que não atende no feriado, manter as datas inativas por meio de opacidade e desabilitar a opção de clique.
-- Em casos de erro costumam acompanhar outro componente que é o seletor de dia que acompanha e habilita o calendário. Nele é comum apresentar erros na seleção.
-Além de casos como duas datas que não fazem sentido no contexto serem selecionadas.
-- Não use o seletor do componente Calendar para solicitar datas no passado ou futuro distante, como uma data de nascimento. Nesses casos, use um campo de texto. (A pessoa usuária pode dar muitos cliques para chegar em uma data com mais de 40 anos, por exemplo)
+  ### Anatomia
 
+  O calendário diferencia visualmente o dia atual, o dia selecionado e o dia em estado de hover. Essa distinção não se apoia apenas em cores, garantindo a acessibilidade.
 
-### Interação por teclado
+  <TwoColumnLayout
+    variant="image-right"
+    leftContent={
+      <ol>
+        <li><strong>Cabeçalho:</strong> Identificação de Mês e Ano.</li>
+        <li><strong>Controles de Navegação:</strong> Setas para alternar entre meses/anos.</li>
+        <li><strong>Dias da Semana:</strong> Cabeçalhos de Domingo a Sábado.</li>
+        <li><strong>Grade de Dias:</strong> Área de seleção dos dias do mês.</li>
+      </ol>
+    }
+    rightContent={
+      <img
+        src={calendarAnatomy}
+        alt="Anatomia do calendário: cabeçalho, controles de navegação, dias da semana e grade de dias"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          padding: "1rem",
+          borderRadius: "8px",
+        }}
+      />
+    }
+  />
 
-| Tecla                 | Função                                                                                                                                                                             |
-|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Up Arrow`            | Move o foco para o mesmo dia da semana anterior.                                                                                                                                   |
-| `Down Arrow`          | Move o foco para o mesmo dia da próxima semana.                                                                                                                                    |
-| `Right Arrow`         | Muda o foco para o dia seguinte.                                                                                                                                                   |
-| `Left Arrow`          | Move o foco para o dia anterior.                                                                                                                                                   |
-| `Home`                | Move o foco para o primeiro dia da semana atual.                                                                                                                                   |
-| `End`                 | Move o foco para o último dia da semana atual.                                                                                                                                     |
-| `Page Up`             | Altera para o mês anterior. Define o foco no mesmo dia da mesma semana. Se esse dia não existir, o foco será movido para o mesmo dia da semana anterior ou seguinte.               |
-| `Shift` + `Page Up`   | Altera para o ano anterior. Define o foco no mesmo dia da mesma semana. Se esse dia não existir, o foco será movido para o mesmo dia da semana anterior ou seguinte.               |
-| `Page Down`           | Muda a grade de datas para o próximo mês. Define o foco no mesmo dia da mesma semana. Se esse dia não existir, o foco será movido para o mesmo dia da semana anterior ou seguinte. |
-| `Shift` + `Page Down` | Muda a grade de datas para o próximo ano. Define o foco no mesmo dia da mesma semana. Se esse dia não existir, o foco será movido para o mesmo dia da semana anterior ou seguinte. |
-| `Tab`                 | Navega entre as partes interativas, até fechar o componente.                                                                                                                       |
+  ### Variantes (Tipos)
 
+  O componente **Calendar** é flexível e pode ser configurado para diferentes níveis de seleção, dependendo da necessidade do fluxo:
 
-</TabItem>
+  - **Date Selection (Default):** É a visualização principal, onde a pessoa usuária seleciona um dia específico dentro de um mês.
+  
+  <img
+  src={calendarTypeDate}
+  style={{
+    display: "block",
+    maxWidth: "60%",        
+    margin: "0 auto",
+    marginBottom: "2rem",   
+    borderRadius: "8px", 
+    padding: "1rem",
+    backgroundColor: "#f9f9fa"
+  }}
+  />
 
- <TabItem value="dev">
+  - **Month Selection:** Uma variação que permite navegar ou selecionar diretamente os meses do ano. É útil para reduzir cliques quando a data desejada está em outro mês.
 
-:::note Em construção  
-Conteúdo em desenvolvimento
-:::
+  <img
+  src={calendarTypeMonth}
+  style={{
+    display: "block",
+    maxWidth: "50%",        
+    margin: "0 auto",
+    marginBottom: "2rem",   
+    borderRadius: "8px", 
+    padding: "1rem",
+    backgroundColor: "#f9f9fa"
+  }}
+  />
 
-</TabItem>
+  - **Year Selection:** Permite a visualização de uma grade de anos (geralmente uma década). É a forma mais rápida de navegar para datas muito distantes.
+  
+  <img
+  src={calendarTypeYear}
+  style={{
+    display: "block",
+    maxWidth: "40%",        
+    margin: "0 auto",
+    marginBottom: "2rem",   
+    borderRadius: "8px", 
+    padding: "1rem",
+    backgroundColor: "#f9f9fa"
+  }}
+  />
 
+  :::note Atenção  
+  Embora o componente permita a navegação por anos, reforçamos a boa prática de não utilizá-lo para datas superiores a **40 anos** de distância, priorizando o campo de texto nesses casos.
+  :::
 
- <TabItem value="custom-properties">
+  ### Comportamento e Responsividade
 
-:::note Em construção 
-Conteúdo em desenvolvimento
-:::
+  - **Visibilidade:** Mantenha sempre visível qual mês e ano a pessoa usuária está visualizando.
+  - **Datas Ilógicas:** Deve-se impedir a seleção de datas que não fazem sentido no contexto (ex: data de retorno anterior à data de partida).
+  - **Datas Inativas:** Datas indisponíveis (como feriados ou datas passadas em fluxos de agendamento) devem ser mantidas inativas por meio de opacidade e ter o clique desabilitado.
 
-</TabItem>
+  ## Boas Práticas (Diretrizes Visuais)
 
-<TabItem value="accessibility">
+  ### 1. Seleção e Feedback
 
-:::note Em construção
-Conteúdo em desenvolvimento
-:::
+  <BestPracticesComponent
+  doImg={calendarDo1}
+  doDescription="Use os estados de foco e seleção para fornecer feedback visual imediato. O dia atual deve ter um destaque distinto do dia selecionado."
+  dontImg={calendarDont1}
+  dontDescription="Não utilize a mesma estilização para o dia atual e o dia selecionado, pois isso gera confusão cognitiva."
+  />
 
-</TabItem>
+  ### 2. Datas Ilógicas e Restrições
+
+  <BestPracticesComponent
+  doImg={calendarDo2}
+  doDescription="Em fluxos de data única ou intervalos, bloqueie e mude a opacidade de dias que não podem ser selecionados (ex: datas retroativas em agendamentos ou datas de retorno anteriores à de partida)."
+  dontImg={calendarDont2}
+  dontDescription="Deixar todas as datas com a mesma aparência ativa, permitindo que a pessoa selecione um dia inválido para o contexto e só descubra o erro após o clique."
+  />
+
+  ### 3. Clareza de Navegação
+
+  <BestPracticesComponent
+  doImg={calendarDo3}
+  doDescription={
+    <>
+      Garanta que o <strong>Header</strong> (Mês e Ano) e o <strong>Day Grid</strong> (os dias em si) estejam sempre sincronizados. Se a pessoa navegar para outro mês, o título deve atualizar instantaneamente.
+    </>
+  }
+  dontImg={calendarDont3}
+  dontDescription="Não esconda ou deixe de destacar o mês/ano atual durante a navegação, pois isso faz com que a pessoa perca a referência temporal."
+  />
+
+  </TabItem>
+
+  <TabItem value="custom-properties">
+
+  ## Propriedades Customizáveis (Tokens)
+
+  O componente possui os estados: **Default (Normal)**, **Hover**, **Focus**, **Selected (Selecionado)** e **Disabled (Inativo)**.
+
+  ### Calendar (Geral)
+
+  Propriedades de base que definem a estrutura global do componente.
+
+  | **Propriedade** | **Descrição** | **Valor padrão** |
+  | --- | --- | --- |
+  | `--font-family` | Família tipográfica usada em todo o componente | `$font-family-text` |
+  | `--background-color` | Cor de fundo da base do calendário | `$color-neutral-light-00` |
+  | `--border-color` | Cor da borda externa do componente | `$color-neutral-mid-40` |
+  | `--border-width` | Espessura da borda da base | `$border-width-sm`  |
+  | `--border-radius` | Arredondamento dos cantos do componente | `$border-radius-md` |
+  | `--shadow` | Sombra aplicada à base (elevação) | `$shadow-level-1` |
+
+  ### Header (Navegação)
+
+  Tokens para os seletores de mês/ano e botões de navegação lateral.
+
+  | **Propriedade** | **Descrição** | **Valor padrão** |
+  | --- | --- | --- |
+  | `--header-text-color` | Cor do texto do mês e ano no cabeçalho | `$color-neutral-dark-90` |
+  | `--header-icon-color` | Cor dos ícones de seta (anterior/próximo) | `$color-action-default` |
+  | `--header-padding` | Espaçamento interno do cabeçalho | `$spacing-sm` |
+  | `--header-gap` | Espaço entre os seletores e as setas | `$spacing-xs` |
+
+  ### Grade de Dias (Grid)
+
+  Propriedades aplicadas aos nomes dos dias da semana e às células de data.
+
+  | **Propriedade** | **Descrição** | **Valor padrão** |
+  | --- | --- | --- |
+  | `--day-name-color` | Cor do texto dos dias da semana (ex: dom, seg) | `$color-neutral-mid-60` |
+  | `--day-text-color` | Cor padrão do número do dia | `$color-neutral-dark-90` |
+  | `--day-font-size` | Tamanho da fonte dos números | `$font-size-sm` |
+  | `--day-background-hover` | Cor de fundo da célula ao passar o mouse | `$color-brand-01-lighter` |
+  | `--day-background-selected` | Cor de fundo do dia selecionado | `$color-action-default` |
+  | `--day-text-selected` | Cor do texto do dia selecionado | `$color-neutral-light-00` |
+  | `--day-color-today` | Cor de destaque para o dia atual | `$color-action-default`  |
+  | `--day-color-disabled` | Cor do texto para datas inativas/ilógicas | `$color-neutral-mid-40`  |
+
+  ### **Footer (Ações)**
+
+  Tokens para os botões de ação rápida localizados na base do componente.
+
+  | **Propriedade** | **Descrição** | **Valor padrão** |
+  | --- | --- | --- |
+  | `--footer-padding` | Espaçamento interno da área de rodapé | `$spacing-sm` |
+  | `--footer-button-color` | Cor do texto dos botões "Limpar" e "Hoje" | `$color-action-default` |
+  | `--footer-border-top` | Linha divisória entre a grade e o rodapé | `$border-width-sm` |
+
+  </TabItem>
+
+  <TabItem value="dev">
+
+  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px', alignItems: 'stretch' }}>
+  <AniPlatformCard
+    icon="an-cube"
+    title="Web Component"
+    statusType="positive"
+    statusText="Disponivel"
+  />
+  <AniPlatformCard
+    icon="an-angular-logo"
+    title="Angular"
+    statusType="positive"
+    statusText="Disponivel"
+    link="https://po-ui.io/documentation/po-calendar"
+    external={true}
+  />
+  </div>
+
+  ## Desenvolvimento
+
+  Caso você já tenha seguido o passo a passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar). Para instalar o componente de forma isolada em seu projeto, utilize o comando abaixo: 
+  
+  ```
+  npm install @animaliads/ani-calendar
+  ```
+
+  ### Como utilizar
+
+  A implementação requer a importação do módulo principal, variando conforme a biblioteca ou framework utilizado. Após a configuração, utilize o elemento `ani-calendar` no seu código:
+
+  ```html
+  <ani-calendar></ani-calendar>
+  ```
+
+  >Para aplicar o tema padrão, é obrigatória a instalação e o uso dos pacotes `@animaliads/animalia-brand` e `@animaliads/css-tokens`. Você pode conferir exemplos práticos no [Live Demo](#live-demo).
+  
+
+  ### Customização
+
+  Para adaptar visualmente o componente, você pode sobrescrever as propriedades customizáveis via CSS:
+
+  ```css
+  ani-calendar {
+    --color-selected: #7000FF;
+    --font-family: 'Roboto', sans-serif;
+    --opacity-disabled: 0.4;
+  }
+  ```
+
+  >Para saber quais são as propriedades disponíveis, consulte a aba de [Estilização](/docs/components/calendar/#propriedades-customizáveis-tokens).
+
+  ### Live Demo
+  
+  :::note API  
+  Live Demo em construção. O link será inserido após a integração com o Stack Blitz.
+  :::
+
+  </TabItem>
+
+  <TabItem value="accessibility">
+
+  ## Acessibilidade (Padrão AAA)
+  
+  As diretrizes abaixo foram implementadas para garantir que o componente seja compreensível e operável por todas as pessoas, conforme os critérios da [WCAG 2.1](https://www.w3.org/TR/WCAG21/).
+
+  ### Interação por Teclado
+
+  A navegação deve ser lógica e permitir o controle total sem o uso de mouse:
+
+  | **Tecla** | **Função** |
+  | --- | --- |
+  | `Up Arrow` / `Down Arrow` | Movem o foco para o mesmo dia da semana anterior ou da próxima semana. |
+  | `Left Arrow` / `Right Arrow` | Movem o foco para o dia anterior ou para o dia seguinte. |
+  | `Home` / `End` | Movem o foco para o primeiro ou o último dia da semana atual. |
+  | `Page Up` / `Page Down` | Alteram a visualização para o mês anterior ou para o próximo mês. |
+  | `Shift + Page Up` / `Shift + Page Down` | Alteram a visualização para o ano anterior ou para o próximo ano. |
+  | `Tab` | Percorre sequencialmente as partes interativas (Setas de navegação, Seletores e Grade). |
+  | `Esc` | Fecha o componente sem realizar alterações indesejadas. |
+
+  ### Operável e Compreensível
+
+  - **Navegação Lógica:** Ao usar a tecla `Tab`, o foco percorre o calendário em uma sequência intuitiva: começa pelos controles de navegação e seletores de mês e ano no topo (**Header**), avança para a grade de seleção de datas (**Day Grid**) e termina nos botões de ação rápida na parte inferior (**Footer**). ([WCAG 2.4.3](https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html)).
+  - **Leitura por Voz:** O componente utiliza etiquetas internas que explicam para quem usa leitores de tela qual a função de cada botão e qual o estado de cada data (por exemplo: se o dia está disponível, se já foi selecionado ou se é o dia atual). ([WCAG 4.1.2](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html))
+  - **Ações Previsíveis:** Navegar ou colocar o foco sobre uma data não causa mudanças bruscas na página (como enviar um formulário sozinho). As ações só acontecem quando a pessoa usuária confirma a escolha. ([WCAG 3.2.1](https://www.w3.org/WAI/WCAG21/Understanding/on-focus.html))
+
+  <img 
+    src={calendarFocusOrder} 
+    alt="Diagrama demonstrando a ordem de foco numérica: 1 no Header, 2 no Day Grid e 3 no Footer" 
+    style={{ 
+      display: 'block',
+      margin: '2rem auto',
+      maxWidth: '80%',
+      backgroundColor: '#F4F6F8',
+      padding: '2rem',
+      borderRadius: '8px'
+    }} 
+  />
+
+  </TabItem>
 
 </Tabs>
