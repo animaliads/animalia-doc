@@ -11,23 +11,25 @@ import LiveDemoComponent from "./helpers/components/live-demo.tsx";
 import AnatomyLayoutComponent from "./helpers/components/anatomy-layout.tsx";
 import TwoColumnLayout from "./helpers/components/two-column-layout.tsx";
 
-import buttonTypes from "./img/button/button-types.jpg";
-import buttonAnatomy from "./img/button/button-anatomy.jpg";
-import buttonSize from "./img/button/button-size-1.jpg";
-import buttonWidth from "./img/button/button-width.jpg";
-import buttonPrimary from "./img/button/button-primary.jpg";
-import buttonSecondary from "./img/button/button-secondary.jpg";
-import buttonTertiary from "./img/button/button-tertiary.jpg";
-import buttonPrimaryDanger from "./img/button/button-primary-danger.jpg";
-import buttonSecondaryDanger from "./img/button/button-secondary-danger.jpg";
-import buttonDo1 from "./img/button/button-do-1.jpg";
-import buttonDo2 from "./img/button/button-do-2.jpg";
-import buttonDo3 from "./img/button/button-do-3.jpg";
-import buttonDo4 from "./img/button/button-do-4.jpg";
-import buttonDont1 from "./img/button/button-dont-1.jpg";
-import buttonDont2 from "./img/button/button-dont-2.jpg";
-import buttonDont3 from "./img/button/button-dont-3.jpg";
-import buttonDont4 from "./img/button/button-dont-4.jpg";
+import buttonAnatomy from "./img/button/button-anatomy.png";
+import buttonTypes from "./img/button/button-types.png";
+import buttonDo1 from "./img/button/button-do-1.png";
+import buttonDo2 from "./img/button/button-do-2.png";
+import buttonDo3 from "./img/button/button-do-3.png";
+import buttonDo4 from "./img/button/button-do-4.png";
+import buttonDo5 from "./img/button/button-do-5.png";
+import buttonDont1 from "./img/button/button-dont-1.png";
+import buttonDont2 from "./img/button/button-dont-2.png";
+import buttonDont3 from "./img/button/button-dont-3.png";
+import buttonDont4 from "./img/button/button-dont-4.png";
+import buttonDont5 from "./img/button/button-dont-5.png";
+import buttonSize from "./img/button/button-size.png";
+import buttonWidth from "./img/button/button-width.png";
+import buttonPrimary from "./img/button/button-states-primary.png";
+import buttonSecondary from "./img/button/button-states-secondary.png";
+import buttonTertiary from "./img/button/button-states-tertiary.png";
+import buttonPrimaryDanger from "./img/button/button-states-primary-danger.png";
+import buttonSecondaryDanger from "./img/button/button-states-secondary-danger.png";
 
 import WebComponentReact from "./../../src/components/WebComponent.js";
 import AniPlatformCard from "./../../src/components/animalia_components/AniPlatformCard.js";
@@ -36,7 +38,7 @@ import AniPlatformCard from "./../../src/components/animalia_components/AniPlatf
 
 <div style={{ maxWidth: '60%' }}>
 
-Os botões são utilizados para realizar ações e para tomada de decisões. Podem ser utilizado em páginas e também dentro de outros componentes.
+  O `Button` é utilizado para executar ações e confirmar decisões, seja em páginas ou dentro de outros componentes. A escolha do tipo de botão deve refletir a hierarquia da ação. Essa consistência ajuda o usuário a identificar prioridades e navegar com mais facilidade.
 
 </div>
 
@@ -52,417 +54,373 @@ Os botões são utilizados para realizar ações e para tomada de decisões. Pod
   ]}>
 
   <TabItem value="design">
-### Anatomia
 
-<TwoColumnLayout
-  variant="image-right"
-  leftContent={
-    <>
-      <p>O botão é composto por um background ou border que recebe uma cor de marca e uma label que descreve a ação que será realizada.</p>
+  ### Quando usar
+  * Para realizar ações e para a tomada de decisões no sistema.
+  * Em páginas ou dentro de outros componentes para disparar funções específicas.
 
-      <p>A estrutura do botão inclui:</p>
+  ### Quando não usar
+  * Para navegação simples entre páginas (nestes casos, prefira o componente [`Link`](/docs/components/link)).
+  * Para ações de navegação global em menus principais.
 
-      <ol>
-        <li><strong>Label (rótulo)</strong>: texto que descreve a ação;</li>
-        <li><strong>Background</strong>: cor de fundo do botão;</li>
-        <li><strong>Border</strong>: borda que delimita o botão;</li>
-        <li><strong>Ícones (opcional)</strong>: elementos visuais que podem ser posicionados à esquerda ou à direita da label.</li>
-      </ol>
+  ### Anatomia
 
-      <p>Os componentes são formados por tokens, sendo estes propriedades de estilo que definem como será estruturado e estilizado o botão. Os tokens que podem ser alterados pelas marcas, podem ser conferidos na seção de <a href="#propriedades-customizáveis">propriedades customizáveis</a>.</p>
-    </>
-
-}
-rightContent={
-
-<img
-  src={buttonAnatomy}
-  alt="Anatomia dos cinco tipos de botões disposto lado a lado, sendo 1 a label, 2 o background e 3 o border"
-  style={{
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    borderRadius: "16px",
-  }}
-/>
-} />
-
-### Tipos
-
-Cada tipo de botão representa uma prioridade na interface e é recomendado que sejam utilizados de acordo com a importância das ações que o usuário deve realizar. Outro fator importante, é manter a consistência dentro dos produtos para que os usuários identifiquem facilmente as ações.
-
-<TwoColumnLayout
-  variant="image-right"
-  rightContent={
+  <TwoColumnLayout
+    variant="image-right"
+    leftContent={
+      <>
+        <p>O botão é composto por um background ou border que recebe uma cor de marca e uma label que descreve a ação que será realizada.</p>
+        <ol>
+          <li>
+            <strong>Label (rótulo)</strong>: texto que descreve a ação;
+          </li>
+          <li>
+            <strong>Background</strong>: cor de fundo do botão;
+          </li>
+          <li>
+            <strong>Border</strong>: borda que delimita o botão;
+          </li>
+          <li>
+            <strong>Ícones (opcional)</strong>: elementos visuais que podem ser posicionados à esquerda ou à direita da label.
+          </li>
+        </ol>
+      </>
+    }
+    rightContent={
     <img
-      src={buttonTypes}
-      alt="Os cinco tipos de botões dispostos lado a lado, sendo 1 o Primary, 2 o Secondary, 3 o Tertiary, 4 o Primary Button e 5 o Secondary Danger"
+      src={buttonAnatomy}
+      alt="Anatomia do botão indicando label, background, border e ícones"
       style={{
         width: "100%",
         height: "100%",
         objectFit: "cover",
-        borderRadius: "16px",
+        padding: '1rem',
+        borderRadius: "8px",
       }}
     />
-  }
-  leftContent={
-    <ol>
-      <li>
-        <strong>Primary</strong>: Os botões primários devem ser usados para a
-        ação principal da página e preferencialmente apenas um botão deste tipo
-        por página, para direcionar o usuário para a ação principal de forma
-        clara.
-      </li>
-      <li>
-        <strong>Secondary</strong>: Devem ser utilizados para ações secundárias
-        na página. Os botões secundários podem ser utilizado ao lado dos botões
-        primários, como segunda ação, e também isolados na página quando não
-        forem a ação principal e já houver um botão primário.
-      </li>
-      <li>
-        <strong>Tertiary</strong>: Os botões terciários chamam menos atenção que
-        os outros botões e devem ser utilizados para ações menos importantes. Ao
-        inserir o botão de forma isolada, utilize preferencialmente acompanhado
-        de um ícone que represente a ação, para aumentar o entendimento do
-        usuário de que há uma ação a ser realizada. Também podem ser utilizados
-        como terceira ação junto a um botão secundário e primário.
-      </li>
-      <li>
-        <strong>Primary Danger</strong>: Utilizar quando a ação principal
-        trouxer grande impacto para o usuário, como excluir conta ou apagar um
-        grande volume de dados, são situações difíceis de reverter e que
-        precisam de mais atenção ao executar. Neste botão, também é recomendado
-        a utilização de um ícone de alerta junto a label, para que os usuários
-        consigam diferenciar facilmente do botão primário. Não deve ser inserido
-        mais de um botão de perigo por página.
-      </li>
-      <li>
-        <strong>Secondary Danger</strong>: Quando a segunda ação for de grande
-        impacto, como cancelar um processo muito importante, deverá ser
-        utilizado este botão. Assim como no botão primário de perigo, é
-        recomendado o uso do ícone de alerta junto a label e somente um botão
-        por página.
-      </li>
-    </ol>
-  }
-/>
+    }
+  />
 
-### Tamanhos
+  ## **Comportamento e Responsividade**
 
-Todos os tipos de botões podem ser utilizados em dois tamanhos diferentes: Medium e Large. O tamanho medium é o tamanho padrão do botão e deve ser o mais aplicado. Utilize as outras variações para criar uma hierarquia na página, alinhada aos tipos de botões .
+  ### Variantes
 
-<img
-  src={buttonSize}
-  alt="Três variações de tamanho para o botão dispostas lado a lado, sendo 1 o tamanho small, 2 o tamanho medium e 3 o tamanho large"
-/>
+  Cada tipo de botão representa uma prioridade na interface:
 
-1. **Medium**;
-2. **Large**.
+  <img 
+  src={buttonTypes} 
+  alt="Os cinco tipos de botões dispostos lado a lado: Primary, Secondary, Tertiary, Primary Danger e Secondary Danger" 
+  style={{ 
+    display: 'block',      
+    margin: '0 auto',      
+    maxWidth: '60%',       
+    marginBottom: '2rem',  
+    backgroundColor: '#f9f9fa',
+    padding: '1rem',
+    borderRadius: '8px'  
+  }} 
+  />
 
-Por padrão, a largura do botão se adequa de acordo com o tamanho do texto. Mas caso seja necessário, é possível redefinir a largura para se ajustar ao tamanho do componente no qual o botão está inserido.
+  - **Primary:** Usado para a ação principal da página (preferencialmente apenas um por página).
+  - **Secondary:** Usado para ações secundárias, ao lado de botões primários ou isolados.
+  - **Tertiary:** Para ações menos importantes; se isolado, use com ícone para facilitar o entendimento.
+  - **Primary Danger:** Para ações principais de grande impacto e difícil reversão (ex: excluir conta). Recomenda-se ícone de alerta junto à label.
+  - **Secondary Danger:** Para a segunda ação de grande impacto (ex: cancelar processos importantes).
 
-<img
-  src={buttonWidth}
-  alt="Dois botões demonstrando como a largura do botão aumenta conforme o a label que é inserida"
-/>
+  ### Tamanhos e Largura
 
-## Boas práticas
+  - **Escalabilidade:** Disponível em **Small**, **Medium (padrão)** e **Large**.
+  
+  <img 
+  src={buttonSize} 
+  style={{ 
+    display: 'block',      
+    margin: '0 auto',      
+    maxWidth: '50%',       
+    marginBottom: '2rem',  
+    backgroundColor: '#f9f9fa',
+    padding: '1rem',
+    borderRadius: '8px'  
+  }} 
+  />
 
-O componente do botão foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.1. Também foram estruturadas padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência para os usuários. Por isso, é muito importante que, ao aplicar esse componente, o proprietário do conteúdo leve em consideração alguns critérios e práticas:
+  - **Largura:** A largura adequa-se ao texto por padrão, mas pode ser redefinida para se ajustar ao componente pai.
 
-### Uso
+  <img 
+  src={buttonWidth} 
+  style={{ 
+    display: 'block',      
+    margin: '0 auto',      
+    maxWidth: '50%',         
+    backgroundColor: '#f9f9fa',
+    padding: '1rem',
+    borderRadius: '8px'  
+  }} 
+  />
 
-- Evite utilizar muitos botões em uma única tela, pois isso aumenta a carga cognitiva do usuário e vai aumentar seu tempo de decisão;
-- Utilize sempre a ação principal do lado direito da página, e os demais botões à esquerda, respeitando a hierarquia.
+  ## Boas Práticas (Diretrizes Visuais)
 
-<BestPracticesComponent
+  ### 1. Posicionamento
+
+  <BestPracticesComponent
   doImg={buttonDo1}
-  doAlt="Três botões dispostos à direita, terciário, secundário e primário, respectivamente"
-  doDescription="Alinhe os botões sempre à direita da página, sendo primeiro o botão primário, depois secundário e terciário."
+  doDescription="Alinhe os botões sempre à direita da página, seguindo a hierarquia: Primário, Secundário e Terciário."
   dontImg={buttonDont1}
-  dontAlt="Três botões dispostos a esquerda, primário, secundário e terciário, respectivamente"
   dontDescription="Não insira os botões fora da hierarquia e alinhado à esquerda da página."
-/>
+  />
 
-### Label em botões
+  ### 2. Label (Rótulo)
 
-- Use labels (rótulos) diretas, curtas e intuitivas, que direcionem o usuário para o que será realizado. Para isso, prefira utilizar verbos, por exemplo: "Salvar" e "Adicionar". Quando necessária maior especificação, pode ser utilizado um complemento junto ao verbo, como por exemplo: "Salvar rascunho". ([WCAG 2.4.6: Headings and Labels](https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels))
-- O nome acessível do botão, que será lido por leitores de tela, deve ser o mesmo nome definido na label do botão, para garantir que os usuários tenham as mesmas experiências. ([WCAG 2.5.3: Label in Name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name))
-
-<BestPracticesComponent
+  <BestPracticesComponent
   doImg={buttonDo2}
-  doAlt="Botão secundário com a label Salvar rascunho e botão primário com a label Publicar"
-  doDescription="Utilize labels diretas e quando necessário acrescente um complemento."
+  doDescription={
+    <>
+      Utilize labels diretas, curtas e intuitivas com verbos (ex: <strong>"Salvar"</strong>, <strong>"Adicionar"</strong>).
+    </>
+  }
   dontImg={buttonDont2}
-  dontAlt="Botão primário com a label Publicar a página Animalia"
-  dontDescription="Não use uma label com muitas palavras, priorize somente o necessário para o entendimento do usuário."
-/>
+  dontDescription="Não use uma label com muitas palavras; priorize o necessário para o entendimento."
+  />
 
-### Ícones
+  ### 3. Ícones
 
-- Adicione um ícone junto a label do botão quando precisar descrever melhor a ação que o usuário irá executar. Utilize ícones claros que possuem relação direta com a label. O ícone à esquerda representa uma ação imediata; e à direita, representa continuidade.
-- Para os botões de perigo e botões terciários, é recomendado preferencialmente a utilização do ícone acompanhando a label.
-- Para a utilização de ícones isolados, use o botão terciário sem label, para que a acessibilidade do componente seja garantida.
-
-<BestPracticesComponent
+  <BestPracticesComponent
   doImg={buttonDo3}
-  doAlt="Botão de perigo secundário com ícone de lixeira a esquerda da label e um botão primário com ícone de seta a direita da label"
-  doDescription="Utilize ícones que possuem associação clara com a label."
+  doDescription="Utilize ícones com associação clara; à esquerda indica ação imediata e à direita, continuidade."
   dontImg={buttonDont3}
-  dontAlt="Botão primário com ícone de lixeira embaixo da label"
   dontDescription="Não alinhe o ícone em cima ou embaixo da label."
-/>
+  />
 
-### Cores
+  ### 4. Cores e Contraste
 
-- Não use cores para label e background com baixo contraste entre si, pois isso dificulta o entendimento do conteúdo do botão. É possível conferir se o contraste está adequado e atingindo o valor de 7:1 em um [Contrast Checker](https://webaim.org/resources/contrastchecker/). ([WCAG 1.4.6: Contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html))
-
-<BestPracticesComponent
+  <BestPracticesComponent
   doImg={buttonDo4}
-  doAlt="Botão primário e secundário com cores com contraste de 8.01:1"
-  doDescription="Contraste alto entre o background e a label. Confira também o contraste com o fundo."
+  doDescription={
+    <>
+      Mantenha contraste alto <strong>7:1</strong> entre background e label. 
+    </>
+  }
   dontImg={buttonDont4}
-  dontAlt="Botão primário e secundário com cores com contraste de 1.93:1"
-  dontDescription="Contraste inferior a 7:1 entre o background e a label"
-/>
-
-### Interação
-
-- A interação de foco deve compor os botões, sendo navegação por mouse ou teclado, e em sequência lógica. Consultar lista de exemplos em ([W3C WAI-ARIA 3.5 Button](https://www.w3.org/TR/wai-aria-practices-1.1/#button)).
-
-### Acessibilidade tratada no componente
-
-Algumas diretrizes de acessibilidade já são tratadas no componente, internamente, e não podem ser alteradas pelo proprietário do conteúdo. São elas:
-
-- Quando em foco, o botão é ativado usando as teclas de _Espaço_ e _Enter_ do teclado. ([W3C WAI-ARIA 3.5 Button - Keyboard Interaction](https://www.w3.org/TR/wai-aria-practices-1.1/#keyboard-interaction-3))
-- A área do foco precisar ter uma espessura de pelo menos 2 pixels CSS e o foco não pode ficar escondido por outros elementos da tela. ([WCAG 2.4.12: Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-enhanced))
-- O estado de foco deve ser sempre preservado, inclusive quando o botão estiver desabilitado. ([WCAG 2.4.7: Focus Visible](https://www.w3.org/WAI/WCAG21/Understanding/focus-visible))
-
-</TabItem>
-
-<TabItem value="dev">
-
-<div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px', alignItems: 'stretch' }}>
-  <AniPlatformCard
-    icon="an-cube"
-    title="Web Component"
-    statusType="positive"
-    statusText="Disponivel"
-  />
-  <AniPlatformCard
-    icon="an-angular-logo"
-    title="Angular"
-    statusType="positive"
-    statusText="Disponivel"
-    link="https://po-ui.io/documentation/po-button"
-    external={true}
+  dontDescription={
+    <>
+      Não utilize contraste inferior a <strong>7:1</strong> entre a label e o fundo.    
+    </>
+  }
   />
 
-</div>
+  ### 5. Interação (Área de Toque)
 
-## Desenvolvimento
+  <BestPracticesComponent
+  doImg={buttonDo5}
+  doDescription={
+    <>
+      Garanta uma área de interação de no mínimo <strong>44 x 44px</strong>, incluindo espaçamentos adequados.
+    </>
+  }
+  dontImg={buttonDont5}
+  dontDescription="Não alinhe os componentes muito próximos, pois a área de interação pode ser comprometida."
+  />
 
-Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
+  </TabItem>
 
-Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
+  <TabItem value="dev">
+    
+    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px', alignItems: 'stretch' }}>
 
-```
-npm install @animaliads/ani-button
-```
+    <AniPlatformCard
+      icon="an-cube"
+      title="Web Component"
+      statusType="positive"
+      statusText="Disponível"
+    />
+    <AniPlatformCard
+      icon="an-angular-logo"
+      title="Angular"
+      statusType="positive"
+      statusText="Disponível"
+      link="https://po-ui.io/documentation/po-button"
+      external={true}
+    />
 
-### Como utilizar
+    </div>
 
-Para utilizar este componente na sua aplicação você precisa importar o arquivo principal.
-Essa importação irá variar conforme o tipo de aplicação que você está utilizando, por exemplo: angular, react ou
-somente javascript.
+    ## Desenvolvimento
 
-Depois de importar o arquivo principal, basta adicionar a tag `ani-button` no seu código:
+    Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
+    Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
 
-```html
-<ani-button>Salvar cadastro</ani-button>
-```
+    ```
+    npm install @animaliads/ani-button
+    ```
 
-> Para utilizar com o tema padrão, é necessário instalar e utilizar os pacotes `@animaliads/animalia-brand`
-> e `@animaliads/css-tokens`. Você pode ver um exemplo de utilização no [Live Demo](#live-demo).
+    ### Como utilizar
 
-Para customizar o tema do componente, você pode estar utilizando as propriedades customizáveis
-da seguinte forma:
+    A implementação requer a importação do módulo principal, variando conforme a biblioteca ou framework utilizado. Após a configuração, utilize o elemento `ani-button` no seu código:
 
-```css
-ani-button[kind="secondary"] {
-  --border-color: purple;
-  --line-height: 100%;
-  --border-radius: 3px;
-}
-```
+    ```html
+    <ani-button>Salvar cadastro</ani-button>
+    ```
+    >Para aplicar o tema padrão, é obrigatória a instalação e o uso dos pacotes  `@animaliads/animalia-brand` e `@animaliads/css-tokens`. Você pode conferir exemplos práticos no [Live Demo](#live-demo).
 
-Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis do botão](#propriedades-customizáveis).
+    ### Customização
+    Para adaptar visualmente o componente, você pode sobrescrever as propriedades customizáveis via CSS:
 
-### Live Demo
+    ```css
+    ani-button[kind="secondary"]{
+      --border-color: purple;
+      --line-height: 100%;
+      --border-radius: 3px;
+    }
+    ```
+    >Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis do button](/docs/components/button#propriedades-customizáveis).
 
-<LiveDemoComponent react="https://stackblitz.com/edit/react-ani-button?embed=1&file=src/App.js" />
+    ### Live Demo
 
-:::note API
-Para saber a lista de propriedades e eventos, acesse o [guia de referência de API](http://animaliads.io/?path=/docs/api-button--sample).
-:::
+    <LiveDemoComponent react="https://stackblitz.com/edit/react-ani-button?embed=1&file=src/App.js" />
 
-</TabItem>
+    <br/>
+
+    :::note **API**
+    Para saber a lista de propriedades e eventos, acesse o [guia de referência de API](http://animaliads.io/?path=/docs/api-button--sample).
+    :::
+
+  </TabItem>
 
   <TabItem value="custom-properties">
 
-## Propriedades customizáveis
+    ## Propriedades Customizáveis (Tokens)
 
-O componente de botão possui propriedades customizáveis que podem variar de acordo com o tema selecionado. As propriedades customizáveis podem ser alteradas para cada produto, de acordo com os tokens de marca e tokens globais. Com isso, garantimos uma consistência no Design System, sem perder a identidade de cada marca.
-O botão possui estados e se modifica de acordo com a interação do usuário. São eles: Default, Hover, Focus e Disabled.
+    O componente possui os estados: **Default**, **Hover**, **Focus** e **Disabled**.
 
-### Button
+    ### Button (Geral)
 
-Estas são propriedades gerais do componente button, independente do tipo
+    Propriedades gerais aplicadas ao componente, independente do tipo.
 
-| Propriedade               | Descrição                                                                                                   | Valor padrão                  |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| `--font-family`           | família tipográfica usada na label                                                                          | $font-family-text             |
-| `--font-size`             | tamanho da fonte na label                                                                                   | $font-size-default            |
-| `--font-weight`           | peso da fonte na label                                                                                      | $font-weight-bold             |
-| `--line-height`           | altura da linha da label                                                                                    | $line-height-none             |
-| `--border-radius`         | arredondamento da borda                                                                                     | $border-radius-md             |
-| `--border-width`          | espessura da borda                                                                                          | $border-width-md              |
-| `--padding`               | espaço interno entre a label e a borda do background (padding)                                              | 0, 1em                        |
-| `--outline-color-focused` | cor do outline do focus                                                                                     | $color-action-focus           |
-| `--color`                 | cor principal que será aplicado internamento no botão de acordo com o tipo (primary, secondary ou tertiray) | $color-action-default         |
-| `--color-disabled`        | cor principal no estado disabled                                                                            | $color-action-disabled        |
-| `--color-pressed`         | cor principal no estado pressed                                                                             | $color-action-pressed         |
-| `--color-danger`          | cor principal quando o componente estiver danger                                                            | $color-feedback-negative-dark |
+    | **Propriedade** | **Descrição** | **Valor padrão** |
+    | --- | --- | --- |
+    | `--font-family` | família tipográfica usada na label | `$font-family-text` |
+    | `--font-size` | tamanho da fonte na label | `$font-size-default` |
+    | `--font-weight` | peso da fonte na label | `$font-weight-bold` |
+    | `--line-height` | altura da linha da label | `$line-height-none` |
+    | `--border-radius` | arredondamento da borda | `$border-radius-md` |
+    | `--border-width` | espessura da borda | `$border-width-md` |
+    | `--padding` | espaço interno entre a label e a borda | `0,1em` |
+    | `--outline-color-focused` | cor do outline do focus | `$color-action-focus` |
+    | `--color-disabled` | cor principal no estado disabled | `$color-action-disabled` |
+    | `--color-pressed` | cor principal no estado pressed | `$color-action-pressed` |
 
-### Primary
+    ## Primary
 
-| Propriedade              | Descrição                                                           | Valor padrão                     |
-| ------------------------ | ------------------------------------------------------------------- | -------------------------------- |
-| `--text-color`           | cor da label                                                        | $color-neutral-light-00          |
-| `--shadow`               | sombra do background                                                | $shadow-none                     |
-| `--color-hover`          | cor do background estado hover                                      | $color-action-hover              |
-| `--text-color-disabled`  | cor da label no estado disabled                                     | $color-neutral-dark-70           |
-| `--text-color-danger`    | cor da label quando o componente estiver danger                     | $color-neutral-light-00          |
-| `--color-danger-hover`   | cor do background estado hover quando o componente estiver danger   | $color-feedback-negative-darker  |
-| `--color-danger-pressed` | cor do background estado pressed quando o componente estiver danger | $color-feedback-negative-darkest |
+    | **Propriedade** | **Descrição** | **Valor padrão** |
+    | --- | --- | --- |
+    | `--text-color` | cor da label | `$color-neutral-light-00` |
+    | `--color-hover` | cor do background estado hover | `$color-action-hover` |
+    | `--text-color-disabled` | cor da label no estado disabled | `$color-neutral-dark-70` |
 
-<img
-  src={buttonPrimary}
-  alt="Os cinco estado de interação do botão primário dispostos lado a lado."
-/>
+    <img 
+      src={buttonPrimary} 
+      style={{ 
+        display: 'block',      
+        margin: '0',      
+        maxWidth: '90%',       
+        backgroundColor: '#f9f9fa',
+        padding: '1rem',
+        borderRadius: '8px'  
+      }} 
+    />
 
-<img
-  src={buttonPrimaryDanger}
-  alt="Os cinco estado de interação do botão de perigo primário dispostos lado a lado."
-/>
+    ### Primary Danger
 
-### Secondary
+    | **Propriedade** | **Descrição** | **Valor padrão** |
+    | --- | --- | --- |
+    | `--text-color-danger` | cor da label no modo danger | `$color-neutral-light-00` |
+    | `--color-danger-hover` | cor do background (hover) em danger | `$color-feedback-negative-darker` |
+    | `--color-danger-pressed` | cor do background (pressed) em danger | `$color-feedback-negative-darkest` |
 
-| Propriedade                   | Descrição                                                 | Valor padrão                     |
-| ----------------------------- | --------------------------------------------------------- | -------------------------------- |
-| `--background-hover`          | cor do background no estado hover                         | $color-brand-01-lighter          |
-| `--border-color-hover`        | cor do border no estado hover                             | $color-brand-01-darkest          |
-| `--background-pressed`        | cor do background no estado pressed                       | $color-brand-01-light            |
-| `--border-color-danger-hover` | cor do border no estado hover quando estiver danger       | $color-feedback-negative-darkest |
-| `--background-danger-hover`   | cor do background no estado hover quando estiver danger   | $color-feedback-negative-lighter |
-| `--background-danger-pressed` | cor do background no estado pressed quando estiver danger | $color-feedback-negative-light   |
+    <img 
+      src={buttonPrimaryDanger} 
+      style={{ 
+        display: 'block',      
+        margin: '0',      
+        maxWidth: '90%',       
+        backgroundColor: '#f9f9fa',
+        padding: '1rem',
+        borderRadius: '8px'  
+      }} 
+    />
 
-<img
-  src={buttonSecondary}
-  alt="Os cinco estado de interação do botão secundário dispostos lado a lado."
-/>
+    ## Secondary
 
-<img
-  src={buttonSecondaryDanger}
-  alt="Os cinco estado de interação do botão de perigo secundário dispostos lado a lado."
-/>
+    | **Propriedade** | **Descrição** | **Valor padrão** |
+    | --- | --- | --- |
+    | `--background-hover` | cor do background no estado hover | `$color-brand-01-lighter` |
+    | `--border-color-hover` | cor do border no estado hover | `$color-brand-01-darkest` |
+    | `--background-pressed` | cor do background no estado pressed | `$color-brand-01-light` |
 
-### Tertiary
+    <img 
+        src={buttonSecondary} 
+        style={{ 
+          display: 'block',      
+          margin: '0',      
+          maxWidth: '90%',       
+          backgroundColor: '#f9f9fa',
+          padding: '1rem',
+          borderRadius: '8px'  
+        }} 
+    />
 
-O botão terciário não tem propriedades específicas de customização, ele irá se adaptar conforme
-as propriedades especificadas no botão de forma geral.
+    ### Secondary Danger
 
-<img
-  src={buttonTertiary}
-  alt="Os cinco estado de interação do botão terciário dispostos lado a lado."
-/>
+    | **Propriedade** | **Descrição** | **Valor padrão** |
+    | --- | --- | --- |
+    | `--border-color-danger-hover` | cor do border (hover) em danger | `$color-feedback-negative-darkest` |
+    | `--background-danger-hover` | cor do background (hover) em danger | `$color-feedback-negative-lighter` |
+    | `--background-danger-pressed` | cor do background (pressed) em danger | `$color-feedback-negative-light` |
 
-</TabItem>
+    <img 
+        src={buttonSecondaryDanger} 
+        style={{ 
+          display: 'block',      
+          margin: '0',      
+          maxWidth: '90%',       
+          backgroundColor: '#f9f9fa',
+          padding: '1rem',
+          borderRadius: '8px'  
+        }} 
+    />
 
-<TabItem value="accessibility">
+    ## Tertiary
 
-Critérios a serem observados no desenvolvimento do componente:
+    O botão terciário não possui propriedades específicas; ele se adapta às propriedades especificadas no botão de forma geral.
 
-**Perceptível:**
+    <img 
+        src={buttonTertiary} 
+        style={{ 
+          display: 'block',      
+          margin: '0',      
+          maxWidth: '90%',       
+          backgroundColor: '#f9f9fa',
+          padding: '1rem',
+          borderRadius: '8px'  
+        }} 
+    />
 
-**1.1.1 - Conteúdo Não-Textual (A)**
+  </TabItem>
 
-Forneça texto alternativo para ícones ou imagens dentro do componente, como por exemplo, o botão do contentr.
+  <TabItem value="accessibility">
 
-**1.4.1 - Utilização de cores (A)**
+    ## Acessibilidade (Padrão AAA)
 
-Cores não devem ser utilizadas como única maneira de transmitir conteúdo ou distinguir elementos visuais.
+    As seguintes diretrizes são tratadas internamente pelo componente:
 
-**1.4.3 - Contraste (mínimo) (AA)**
+    - **Interação de Teclado:** Ativação via teclas `Espaço` e `Enter` quando em foco.
+    - **Aparência do Foco:** Espessura mínima de **2 pixels** CSS, visível e nunca escondido por outros elementos.
+    - **Preservação de Estado:** O estado de foco é sempre preservado, inclusive quando o botão estiver desabilitado.
+    - **Nome Acessível:** O nome lido por leitores de tela deve ser o mesmo nome definido na label visual ([WCAG 2.5.3](https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html)).
+    - **Contraste (WCAG 2.1):**
+        - **Nível AA (Mínimo):** Relação de contraste de pelo menos **4.5:1** entre o texto e o fundo.
+        - **Nível AAA (Excelência):** Relação de contraste de pelo menos **7:1** entre o texto e o fundo.
 
-Os rótulos (label), ícones e elementos no geral como o Ani Loading, devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 3:1.
-
-**1.4.6 - Contraste (melhorado) (AAA)**
-
-Textos devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 7:1
-
-## Operável:
-
-### 2.1.1 - Teclado (A)
-
-Todo o conteúdo deve ser acessível através de teclado.
-
-Obs.: O botão não pode ser navegável quando em estado disabled ou loading.
-
-**2.4.3 - Ordem do foco (A)**
-
-A ordem do foco deve ser lógica e intuitiva.
-
-**2.2.1 - Ajustável por limite de tempo (A)**
-
-Caso seja definida uma funcionalidade que exija tempo para execução e essa não seja essencial (obrigatória do ponto de vista legal), deve-se incluir também uma opção para desligá-lo ou uma opção para ampliá-lo.
-
-**2.4.7 - Foco visível (AA)**
-
-Ao se interagir por teclado, qualquer pessoa deve conseguir identificar qual é a sua localização espacial na tela através de um foco visível/indicador de sua localização.
-
-**2.4.11 - Aparência do foco (mínimo) (AA)**
-
-Deve ter uma área mínima para o foco de pelo menos o dobro do perímetro do elemento sem o foco; ter contraste de pelo menos 4.5:1 entre o estado focado e não focado do componente; e o foco não pode ficar escondido por outros elementos da tela.
-
-**2.4.12 - Aparência do foco (melhorado) (AAA)**
-
-Quando o foco visível for exibido, ele deverá possuir 2px de área, ter o seu contraste melhorado e uma cor sólida.
-
-**2.5.5 - Tamanho da área clicável (AAA)**
-
-O tamanho das áreas acionáveis por clique ou toque devem possuir no mínimo 44x44 pixels de espaçamento, a não ser quando essa área esteja em uma frase localizada em um bloco de texto.
-
-**Compreensível:**
-
-**3.3.1 - Identificação de erro (A)**
-
-Sempre que uma mensagem de erro for exibida, ela deve identificar claramente qual é o elemento que gerou o erro de forma visual e audível (exemplo: mudança de cor no elemento + um ícone de alerta + uma mensagem em texto). Nota: ver junto com critério 3.3.3 (AA).
-
-**3.3.2 - Rótulos e instruções (A)**
-
-Todos os rótulos devem descrever claramente e sem ambiguidades a finalidade dos campos de formulário.
-
-**Robusto:**
-
-**4.1.2 - Nome, Função e Valor (A)**
-
-Utilizar nome, função e valor adequadamente, pois estes parâmetros são utilizados por tecnologias assistivas para identificar os elementos da interface. Os controles HTML normais já cumprem este critério de sucesso quando utilizados de acordo com a especificação.
-
-**4.1.3 - Mensagens de status (AA)**
-
-Qualquer tipo de mensagem que é resultado de uma ação ou que informa o andamento de um processo e que seja relevante para a pessoa, deve ser transmitida sem que ocorra uma mudança de contexto (foco) na tela.
-
-</TabItem>
-
+  </TabItem>
+  
 </Tabs>
