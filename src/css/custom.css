@@ -205,7 +205,7 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="dark"] .button-tabs-sticky {
-  background: var(--ifm-color-neutral-dark-95, #060613);
+  background: var(--ifm-background-color);
 }
 
 html[data-theme="dark"] .button-tabs-sticky::before {

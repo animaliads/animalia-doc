@@ -36,7 +36,7 @@
   font-weight: 400;
   font-size: 40px;
   line-height: 1.2;
-  color: var(--ifm-color-neutral-light-00);
+  color: #ffffff;
   margin: 0;
   max-width: 406px;
 }
@@ -123,6 +123,15 @@
   color: var(--ifm-color-neutral-light-20);
   margin: 0;
   max-width: 344px;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .columnTitle {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .link:hover {
+  color: #ffffff;
 }
 
 /* Responsive Design */
