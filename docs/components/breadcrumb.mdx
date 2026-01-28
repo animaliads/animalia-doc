@@ -15,7 +15,7 @@ import WebComponentReact from "./../../src/components/WebComponent.js";
 import AniPlatformCard from "./../../src/components/animalia_components/AniPlatformCard.js";
 
 {/* Placeholder de Imagens - Substitua pelos caminhos reais */}
-import breadcrumbAnatomy from "./img/breadcrumb/breadcrumb-anatomy.jpg";
+import breadcrumbAnatomy from "./img/breadcrumb/breadcrumb-anatomy.png";
 import breadcrumbDo1 from "./img/breadcrumb/breadcrumb-do-1.png";
 import breadcrumbDont1 from "./img/breadcrumb/breadcrumb-dont-1.png";
 import breadcrumbDo2 from "./img/breadcrumb/breadcrumb-do-2.png";
@@ -44,206 +44,214 @@ Ele permite o retorno rápido a níveis superiores através de links clicáveis 
     {label: 'Acessibilidade', value: 'accessibility'},
   ]}>
 
-  <TabItem value="design">
+<TabItem value="design">
 
-### Quando usar
+  ### Quando usar
 
-* Essencial em sistemas com arquitetura de informação profunda, possuindo mais de 2 níveis.
-* Quando a localização do usuário não é óbvia apenas pelo menu de navegação principal.
+  - Essencial em sistemas com arquitetura de informação profunda, possuindo mais de 2 níveis.
+  - Quando a localização do usuário não é óbvia apenas pelo menu de navegação principal.
 
-### Quando não usar
+  ### Quando não usar
 
-* Em fluxos lineares e sequenciais, como processos de compra ou cadastros passo a passo (utilize o componente Stepper).
-* Em sites ou aplicações com estruturas simples de apenas um nível.
+  - Em fluxos lineares e sequenciais, como processos de compra ou cadastros passo a passo (utilize o componente Stepper).
+  - Em sites ou aplicações com estruturas simples de apenas um nível.
 
-### Anatomia
+  ### Anatomia
 
-<TwoColumnLayout
-  variant="image-right"
-  leftContent={
-    <>
-      <p>Estruturalmente, o componente é composto por quatro elementos principais:</p>
+  <TwoColumnLayout
+    variant="image-right"
+    leftContent={
+      <>
+        <p>Estruturalmente, o componente é composto por quatro elementos principais:</p>
+        <ol>
+          <li>
+            <strong>Level</strong>: Elemento do tipo <a href="/docs/components/link">link</a> que exibe níveis de páginas antecessoras e serve como meio de navegação ativa;
+          </li>
+          <li>
+            <strong>Collapse level</strong>: <a href="/docs/components/icon">Ícone</a> (<code>more-vert</code>) que agrupa níveis colapsados em formato de listbox para otimizar o espaço em trilhas longas;
+          </li>
+          <li>
+            <strong>Icon</strong>: Elemento visual (<code>arrow-right</code>) utilizado para separar os níveis e indicar o sentido da hierarquia;
+          </li>
+          <li>
+            <strong>Current page</strong>: O último item da trilha, indicando o local presente da pessoa usuária; este item deve ser estático e não clicável.
+          </li>
+        </ol>
+      </>
+    }
+  rightContent={
+  <img
+    src={breadcrumbAnatomy}
+    alt="Anatomia do breadcrumb indicando level, collapse level, icon e current page"
+    style={{
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      padding: "1rem",
+      borderRadius: "8px",
+    }}
+  />
+  } 
+  />
 
-      <ol>
-        <li>
-          <strong>Level</strong>: Elemento do tipo <a href="/docs/components/link">link</a> que exibe níveis de páginas antecessoras e serve como meio de navegação ativa;
-        </li>
-        <li>
-          <strong>Collapse level</strong>: <a href="/docs/components/icon">Ícone</a> (<code>more-vert</code>) que agrupa níveis colapsados em formato de listbox para otimizar o espaço em trilhas longas;
-        </li>
-        <li>
-          <strong>Icon</strong>: Elemento visual (<code>arrow-right</code>) utilizado para separar os níveis e indicar o sentido da hierarquia;
-        </li>
-        <li>
-          <strong>Current page</strong>: O último item da trilha, indicando o local presente da pessoa usuária; este item deve ser estático e não clicável.
-        </li>
-      </ol>
-    </>
+  ### Comportamento e Responsividade
 
-}
-rightContent={
-<img
-  src={breadcrumbAnatomy}
-  alt="Anatomia do breadcrumb indicando level, collapse level, icon e current page"
-  style={{
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    borderRadius: "16px",
-  }}
-/>
-} />
+  - **Navegação**: Cada nível clicável deve levar à respectiva página pai.
+  - **Responsividade (Single Line)**: O componente deve ocupar sempre uma única linha.
+    - No **Desktop**, exibe-se a trilha completa.
+    - No **Mobile**, os níveis intermediários são colapsados automaticamente no ícone (`...`) mantendo visíveis apenas o nível raiz e a página atual.
+  - **Truncamento**: Títulos longos que excedam o espaço disponível devem ser truncados com reticências. O nome completo deve ser revelado via tooltip no hover ou foco.
+  - **Interação**:
+    - **Hover**: Feedback visual imediato nos links interativos.
+    - **Teclado**: Navegação via `Tab` e acionamento por `Enter` / `Space`.
+  - **Touch**: Área mínima de toque de **1x1cm** (aprox. 44px).
 
-### Comportamento e Responsividade
+  ## Boas práticas
 
-* **Navegação**: Cada nível clicável deve levar à respectiva página pai.
-* **Responsividade (Single Line)**: O componente deve ocupar sempre uma única linha.
-    * No **Desktop**, exibe-se a trilha completa.
-    * No **Mobile**, os níveis intermediários são colapsados automaticamente no ícone (`...`) mantendo visíveis apenas o nível raiz e a página atual.
-* **Truncamento**: Títulos longos que excedam o espaço disponível devem ser truncados com reticências. O nome completo deve ser revelado via tooltip no hover ou foco.
-* **Interação**:
-    * **Hover**: Feedback visual imediato nos links interativos.
-    * **Teclado**: Navegação via `Tab` e acionamento por `Enter` / `Space`.
-* **Touch**: Área mínima de toque de **1x1cm** (aprox. 44px).
+  > **Importante:** O Breadcrumb reflete a hierarquia, não o histórico de cliques (NN/g).
 
-## Boas práticas
-> *Importante: O Breadcrumb reflete a hierarquia, não o histórico de cliques (NN/g).*
+  ### Conteúdo e Visualização
 
-### Conteúdo e Visualização
+  <BestPracticesComponent
+    doImg={breadcrumbDo1}
+    doAlt="Breadcrumb com links contendo apenas texto"
+    doDescription="Manter os links limpos (apenas texto)."
+    dontImg={breadcrumbDont1}
+    dontAlt="Breadcrumb com ícones dentro dos níveis de texto"
+    dontDescription="Não inserir ícones dentro dos níveis, pois prejudicam a leitura horizontal."
+  />
 
-<BestPracticesComponent
-  doImg={breadcrumbDo1}
-  doAlt="Breadcrumb com links contendo apenas texto"
-  doDescription="Manter os links limpos (apenas texto)."
-  dontImg={breadcrumbDont1}
-  dontAlt="Breadcrumb com ícones dentro dos níveis de texto"
-  dontDescription="Não inserir ícones dentro dos níveis, pois prejudicam a leitura horizontal."
-/>
+  ### Quantidade de Níveis
 
-### Quantidade de Níveis
+  <BestPracticesComponent
+    doImg={breadcrumbDo2}
+    doAlt="Breadcrumb exibindo até 4 níveis de forma clara"
+    doDescription="Expor até 4 níveis visíveis para clareza imediata."
+    dontImg={breadcrumbDont2}
+    dontAlt="Breadcrumb excessivamente longo ocupando muito espaço"
+    dontDescription="Não exibir trilhas excessivamente longas sem colapso intermediário."
+  />
 
-<BestPracticesComponent
-  doImg={breadcrumbDo2}
-  doAlt="Breadcrumb exibindo até 4 níveis de forma clara"
-  doDescription="Expor até 4 níveis visíveis para clareza imediata."
-  dontImg={breadcrumbDont2}
-  dontAlt="Breadcrumb excessivamente longo ocupando muito espaço"
-  dontDescription="Não exibir trilhas excessivamente longas sem colapso intermediário."
-/>
+  ### Layout
 
-### Layout
-
-<BestPracticesComponent
-  doImg={breadcrumbDo3}
-  doAlt="Breadcrumb utilizando o recurso de collapse em uma linha"
-  doDescription="Usar o recurso de collapse para manter tudo em uma linha."
-  dontImg={breadcrumbDont3}
-  dontAlt="Breadcrumb quebrado em duas linhas"
-  dontDescription="Não usar breadcrumbs com quebra de linhas."
-/>
+  <BestPracticesComponent
+    doImg={breadcrumbDo3}
+    doAlt="Breadcrumb utilizando o recurso de collapse em uma linha"
+    doDescription="Usar o recurso de collapse para manter tudo em uma linha."
+    dontImg={breadcrumbDont3}
+    dontAlt="Breadcrumb quebrado em duas linhas"
+    dontDescription="Não usar breadcrumbs com quebra de linhas."
+  />
 
 </TabItem>
 
 <TabItem value="dev">
 
-<div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px', alignItems: 'stretch' }}>
-  <AniPlatformCard
-    icon="an-cube"
-    title="Web Component"
-    statusType="positive"
-    statusText="Disponível"
-  />
-<AniPlatformCard
-    icon="an-angular-logo"
-    title="Angular"
-    statusType="positive"
-    statusText="Disponível"
-    link="https://po-ui.io/documentation/po-breadcrumb"
-    external={true}
-  />
-</div>
+  <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "24px", alignItems: "stretch"}}>
+    <AniPlatformCard
+      icon="an-cube"
+      title="Web Component"
+      statusType="positive"
+      statusText="Disponível"
+    />
 
-## Desenvolvimento
+    <AniPlatformCard
+      icon="an-angular-logo"
+      title="Angular"
+      statusType="positive"
+      statusText="Disponível"
+      link="https://po-ui.io/documentation/po-breadcrumb"
+      external={true}
+    />
+  </div>
 
-Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
-Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
+  ## Desenvolvimento
 
-```
-npm install @animaliads/ani-breadcrumb
-```
+  Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
+  Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
 
-### Como utilizar
+  ```
+  npm install @animaliads/ani-breadcrumb
+  ```
 
-A implementação requer a importação do módulo principal, variando conforme a biblioteca ou framework utilizado. Após a configuração, utilize os elementos `ani-breadcrumb` e `ani-breadcrumb-item` no seu código:
+  ### Como utilizar
 
-```html
-<ani-breadcrumb>
-  <ani-breadcrumb-item href="/">Home</ani-breadcrumb-item>
-  <ani-breadcrumb-item href="/produtos">Produtos</ani-breadcrumb-item>
-  <ani-breadcrumb-item>Antivírus</ani-breadcrumb-item>
-</ani-breadcrumb>
-```
->Para aplicar o tema padrão, é obrigatória a instalação e o uso dos pacotes  `@animaliads/animalia-brand` e `@animaliads/css-tokens`. Você pode conferir exemplos práticos no [Live Demo](#live-demo).
+  A implementação requer a importação do módulo principal, variando conforme a biblioteca ou framework utilizado. Após a configuração, utilize os elementos `ani-breadcrumb` e `ani-breadcrumb-item` no seu código:
 
-### Customização
-Para adaptar visualmente o componente, você pode sobrescrever as propriedades customizáveis via CSS:
+  ```html
+  <ani-breadcrumb>
+    <ani-breadcrumb-item href="/">Home</ani-breadcrumb-item>
+    <ani-breadcrumb-item href="/produtos">Produtos</ani-breadcrumb-item>
+    <ani-breadcrumb-item>Antivírus</ani-breadcrumb-item>
+  </ani-breadcrumb>
+  ```
 
-```css
-ani-breadcrumb {
-  --color: #4545A1;
-  --font-size: 0.875rem;
-}
-```
->Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis do breadcrumb](/docs/components/breadcrumb#propriedades-customizáveis).
+  > Para aplicar o tema padrão, é obrigatória a instalação e o uso dos pacotes `@animaliads/animalia-brand` e `@animaliads/css-tokens`. Você pode conferir exemplos práticos no [Live Demo](#live-demo).
 
-### Live Demo
+  ### Customização
 
-:::note **API**
-Live Demo em construção. O link será inserido após a integração com o Stack Blitz.
-:::
+  Para adaptar visualmente o componente, você pode sobrescrever as propriedades customizáveis via CSS:
+
+  ```css
+  ani-breadcrumb {
+    --color: #4545a1;
+    --font-size: 0.875rem;
+  }
+  ```
+
+  > Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis do breadcrumb](/docs/components/breadcrumb#propriedades-customizáveis).
+
+  ### Live Demo
+
+  :::note **API**
+  Live Demo em construção. O link será inserido após a integração com o Stack Blitz.
+  :::
 
 </TabItem>
 
 <TabItem value="custom-properties">
 
-## Propriedades customizáveis
+  ## Propriedades customizáveis
 
-As variáveis abaixo permitem a customização do componente mantendo a herança dos modos de tema (Light/Dark).
+  As variáveis abaixo permitem a customização do componente mantendo a herança dos modos de tema (Light/Dark).
 
-| Propriedade | Descrição | Valor padrão |
-| :--- | :--- | :--- |
-| `--font-family` | família tipográfica | `$font-family-text` |
-| `--font-size` | tamanho da fonte | `$font-size-sm` |
-| `--padding` | espaço entre itens e separadores | `$spacing-xs` |
-| `--color` | cor dos links ativos | `$color-action-default` |
-| `--color-hover` | cor no estado de hover | `$color-action-hover` |
-| `--color-icon` | cor do separador e collapse | `$color-neutral-mid-60` |
-| `--color-current-page` | cor da página atual | `$color-neutral-mid-60` |
-| `--outline-color-focused` | cor do anel de foco | `$color-action-focus` |
+  | Propriedade               | Descrição                        | Valor padrão            |
+  | :------------------------ | :------------------------------- | :---------------------- |
+  | `--font-family`           | família tipográfica              | `$font-family-text`     |
+  | `--font-size`             | tamanho da fonte                 | `$font-size-sm`         |
+  | `--padding`               | espaço entre itens e separadores | `$spacing-xs`           |
+  | `--color`                 | cor dos links ativos             | `$color-action-default` |
+  | `--color-hover`           | cor no estado de hover           | `$color-action-hover`   |
+  | `--color-icon`            | cor do separador e collapse      | `$color-neutral-mid-60` |
+  | `--color-current-page`    | cor da página atual              | `$color-neutral-mid-60` |
+  | `--outline-color-focused` | cor do anel de foco              | `$color-action-focus`   |
 
 </TabItem>
 
 <TabItem value="accessibility">
 
-## Acessibilidade (Padrão AAA)
+  ## Acessibilidade (Padrão AAA)
 
-* **Identificação:** O componente deve estar contido em uma tag `<nav>` identificada com o atributo `aria-label="Breadcrumb"`.
-* **Página Atual:** O item estático final (**Current page**) deve possuir o atributo `aria-current="page"`.
-* **Separadores:** Devem ser decorativos e ignorados por leitores de tela através do uso de `aria-hidden="true"`.
-* **Contraste (WCAG 2.1):** 
-    * **Nível AA (Mínimo):** Relação de contraste de pelo menos 4.5:1 entre o texto/link e o fundo.
-    * **Nível AAA (Excelência):** Relação de contraste de pelo menos 7:1 entre o texto/link e o fundo.
-* **Ordem de Foco:** O foco via teclado deve percorrer apenas os links ativos e o menu de colapso, ignorando a **Current page** para otimizar a navegação.
+  - **Identificação:** O componente deve estar contido em uma tag `<nav>` identificada com o atributo `aria-label="Breadcrumb"`.
+  - **Página Atual:** O item estático final (**Current page**) deve possuir o atributo `aria-current="page"`.
+  - **Separadores:** Devem ser decorativos e ignorados por leitores de tela através do uso de `aria-hidden="true"`.
+  - **Contraste (WCAG 2.1):**
+    - **Nível AA (Mínimo):** Relação de contraste de pelo menos 4.5:1 entre o texto/link e o fundo.
+    - **Nível AAA (Excelência):** Relação de contraste de pelo menos 7:1 entre o texto/link e o fundo.
+  - **Ordem de Foco:** O foco via teclado deve percorrer apenas os links ativos e o menu de colapso, ignorando a **Current page** para otimizar a navegação.
 
-<img
-  src={breadcrumbFocusLevel}
-  alt="Ordem de focus de seguir a ordem lógica do itens em tela."
-  style={{
-    width: "100%",        
-    marginTop: "24px",    
-    borderRadius: "16px",  
-  }}
-/>
+  <img
+    src={breadcrumbFocusLevel}
+    alt="Ordem de focus de seguir a ordem lógica do itens em tela."
+    style={{
+      display: 'block',      
+      margin: '0 auto',      
+      maxWidth: '100%',       
+      backgroundColor: '#f9f9fa',
+      padding: '1rem',
+      borderRadius: '8px'  
+    }}
+  />
 
 </TabItem>
 
