@@ -24,7 +24,7 @@ import cardDont2 from './img/card/card-dont-2.jpg';
 
 <div style={{ maxWidth: '60%' }}>
 
-O card é um recipiente (*container*) flexível que tem como objetivo agrupar informações e ações sobre um mesmo assunto. Pode ter diversos tipos de conteúdo, como título, textos, botões, imagem, entre outros.
+O `card` é um recipiente (container) flexível que tem como objetivo agrupar informações e ações sobre um mesmo assunto. Pode ter diversos tipos de conteúdo, como título, textos, botões, imagem, entre outros.
 
 </div>
 
@@ -40,208 +40,209 @@ O card é um recipiente (*container*) flexível que tem como objetivo agrupar in
   ]}>
 
   <TabItem value="design">
-### Tipos
 
-O componente prevê duas variações:
+  ### Tipos
 
-- **Read-only**
-Quando o card é apenas um "agrupador" das informações. Pode conter elementos interativos dentro dele, como por exemplo um link ou botão, mas não há nenhum tipo de interação no card propriamente dito.
-- **Interactive**
-Quando o card em si é o elemento interativo, podendo assumir as características de:
-  * Link: direciona a pessoa para outra página;
-  * Selectable: o card pode ser selecionado, em um conjunto de cards, por exemplo
+  O componente prevê duas variações:
 
-<img
-  src={cardTypes}
-  alt="Tipos de cards lado a lado: read only, interactive e interactive selected"
-  style={{
-    borderRadius: "16px",
-  }}
-/> 
-    
+  - **Read-only**
+  Quando o card é apenas um "agrupador" das informações. Pode conter elementos interativos dentro dele, como por exemplo um link ou botão, mas não há nenhum tipo de interação no card propriamente dito.
+  - **Interactive**
+  Quando o card em si é o elemento interativo, podendo assumir as características de:
+    * Link: direciona a pessoa para outra página;
+    * Selectable: o card pode ser selecionado, em um conjunto de cards, por exemplo
 
-### Anatomia
+  <img
+    src={cardTypes}
+    alt="Tipos de cards lado a lado: read only, interactive e interactive selected"
+    style={{
+      borderRadius: "16px",
+    }}
+  /> 
+      
 
-<TwoColumnLayout
-  variant="image-right"
-  leftContent={
-    <>
-      <p>O card é composto basicamente por <em>border</em> e <em>background</em>. Porém, sua variação <strong><em>interactive</em></strong> possui também <em>shadow</em> e <em>outline</em>.</p>
+  ### Anatomia
 
-      <p>A estrutura do card inclui:</p>
+  <TwoColumnLayout
+    variant="image-right"
+    leftContent={
+      <>
+        <p>O card é composto basicamente por <em>border</em> e <em>background</em>. Porém, sua variação <strong><em>interactive</em></strong> possui também <em>shadow</em> e <em>outline</em>.</p>
 
-      <ol>
-        <li><strong>Border</strong>: borda que delimita o card;</li>
-        <li><strong>Background</strong>: cor de fundo do card;</li>
-        <li><strong>Shadow</strong>: sombra presente na variação interactive;</li>
-        <li><strong>Outline (focused)</strong>: contorno que aparece no estado de foco.</li>
-      </ol>
+        <p>A estrutura do card inclui:</p>
 
-      <p>O card é estruturado e estilizado por meio dos design tokens. Os tokens que podem ser alterados pelas marcas estão listados na seção de <a href="#propriedades-customizáveis">propriedades customizáveis</a>.</p>
-    </>
+        <ol>
+          <li><strong>Border</strong>: borda que delimita o card;</li>
+          <li><strong>Background</strong>: cor de fundo do card;</li>
+          <li><strong>Shadow</strong>: sombra presente na variação interactive;</li>
+          <li><strong>Outline (focused)</strong>: contorno que aparece no estado de foco.</li>
+        </ol>
+
+        <p>O card é estruturado e estilizado por meio dos design tokens. Os tokens que podem ser alterados pelas marcas estão listados na seção de <a href="#propriedades-customizáveis">propriedades customizáveis</a>.</p>
+      </>
+    }
+    rightContent={
+      <img
+        src={cardAnatomy}
+        alt="Anatomia dos dois tipos de cards, com 1 border e 2 background em ambos. Apenas no card interativo, 3 shadow e 4 outline"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          borderRadius: "16px",
+        }}
+      />
+    }
+  />
+
+  ## Boas práticas
+
+  O componente foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (WCAG 2.1). Também foi estruturado com base em padrões de usabilidade para contribuir com uma boa experiência. 
+
+  Por isso, ao aplicar esse componente, é muito importante que sejam levados em consideração alguns critérios e práticas:
+
+  ### Uso
+
+  - Mantenha a simplicidade e objetividade nos cards, evitando sobrecarregá-los com informações. Eles geralmente são uma pequena amostra do conteúdo ao qual estão relacionados. Podem conter conteúdos como imagem de um produto, título, descrição, link, botões, dentre outros;
+  - Forneça contexto sobre o que acontecerá ao interagir com o card e qual o seu destino. Evite usar expressões genéricas como "Clique aqui".
+
+  ### Ações em cards
+
+  - Quando a única ação possível for abrir ou visualizar mais detalhes do card, não inclua um botão para isso. A ação deve acontecer ao clicar em qualquer parte do card. Para esses casos, utilize o card do tipo *interactive;*
+
+  <BestPracticesComponent
+    doImg={cardDo1}
+    doAlt="Exemplo de card com ele inteiro pintado, sinalizando que todo ele é um elemento interativo"
+    doDescription="Ao manter todo o card como clicável, diminuímos a carga de informação, pois muitas vezes o card é usado em conjunto com vários outros com a mesma estrutura."
+    dontImg={cardDont1}
+    dontAlt="Exemplo de card com um botão com o rótulo Visualizar”"
+    dontDescription="Não inclua botão quando a única ação do card for abri-lo."
+  />
+
+
+  - Inclua um botão no card apenas quando a ação for diferente de apenas visualizar o conteúdo ao qual o card está relacionado. Para esses casos, opte por usar o card do tipo *read-only*;
+  - Quando houver duas ou mais ações possíveis no cartão, mesmo que uma delas seja abrir o card, opte por disponibilizar as ações em botões.
+
+
+  <BestPracticesComponent
+    doImg={cardDo2}
+    doAlt="Card com dois botões, sinalizados como as únicas partes interativas daquele conteúdo"
+    doDescription="Usar card do tipo *read-only* em contextos com ações ajuda a evidenciar as interações dos elementos internos do card."
+    dontImg={cardDont2}
+    dontAlt="Card com 2 botões e toda a base do card sinalizados como partes interativas daquele conteúdo"
+    dontDescription="O uso de interação na base do card e em elementos internos pode gerar confusão e diminui a previsibilidade sobre qual ação acontece ao clicar no card."
+  />
+
+  - Quando tiver diferentes elementos interativos dentro do card, mantenha uma sequência lógica para navegação de um elemento para outro.
+
+  ### Conjunto de cards
+
+  - Ao utilizar cards em conjunto, mantenha as larguras padronizadas de um card para o outro;
+  - Organize-os de forma simples, pois a apresentação dos cards tem impacto no modo em como são compreendidos. Geralmente, o primeiro item fica posicionado no canto superior esquerdo e os demais seguem na sequência, da esquerda para a direita, e de cima para baixo.
+
+  ### Acessibilidade tratada no componente
+
+  Algumas diretrizes de acessibilidade já são tratadas no componente, internamente, e não podem ser alteradas. São elas:
+
+  **Card (Read-only e interactive)**
+
+  - Utiliza medidas relativas, para se adequar às preferências e necessidades de quem for utilizar o sistema.
+
+  **Card interative**
+
+  - Desenvolvido com uso de controles padrões HTML, o que permite a identificação na interface por tecnologias assistivas. ([WCAG 4.1.2: Name, Role, Value](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value))
+  - O foco é visível e possui uma espessura superior a 2 pixels CSS, não ficando escondido por outros elementos da tela. ([WCAG 2.4.12: Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-enhanced))
+  - Quando selecionável, prevê interação por teclado, podendo ser selecionado através da tecla *space (*[WCAG 2.4.1 - Keyboard](https://www.w3.org/WAI/WCAG21/Understanding/keyboard))
+
+  </TabItem>
+
+  <TabItem value="dev">
+
+  ## Desenvolvimento
+
+  Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
+
+  Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
+
+  ```
+  npm install @animaliads/ani-card
+  ```
+
+  ### Como utilizar
+
+  Para utilizar este componente na sua aplicação você precisa importar o arquivo principal.
+  Essa importação irá variar conforme o tipo de aplicação que você está utilizando, por exemplo: angular, react ou
+  somente javascript.
+
+  Depois de importar o arquivo principal, basta adicionar a tag `ani-card` no seu código:
+
+  ```html
+  <ani-card>exemplo de label</ani-card>
+  ```
+
+  > Para utilizar com o tema padrão, é necessário instalar e utilizar os pacotes `@animaliads/animalia-brand`
+  > e `@animaliads/css-tokens`. Você pode ver um exemplo de utilização no [Live Demo](#live-demo).
+
+  Para customizar o tema do componente, você pode estar utilizando as propriedades customizáveis
+  da seguinte forma:
+
+  ```css
+  ani-card {
+    --background: blue;
+    --border-color: purple;
   }
-  rightContent={
-    <img
-      src={cardAnatomy}
-      alt="Anatomia dos dois tipos de cards, com 1 border e 2 background em ambos. Apenas no card interativo, 3 shadow e 4 outline"
-      style={{
-        width: "100%",
-        height: "100%",
-        objectFit: "cover",
-        borderRadius: "16px",
-      }}
-    />
-  }
-/>
+  ```
 
-## Boas práticas
+  Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis](#propriedades-customizáveis).
 
-O componente foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (WCAG 2.1). Também foi estruturado com base em padrões de usabilidade para contribuir com uma boa experiência. 
+  ### Live Demo
 
-Por isso, ao aplicar esse componente, é muito importante que sejam levados em consideração alguns critérios e práticas:
+  <LiveDemoComponent
+    react="https://stackblitz.com/edit/react-ani-card?embed=1&file=src/App.js"
+  />
 
-### Uso
+  :::note API
+  Para saber a lista de propriedades e eventos, acesse o [guia de referência de API](http://animaliads.io/?path=/docs/api-card--sample).
+  :::
 
-- Mantenha a simplicidade e objetividade nos cards, evitando sobrecarregá-los com informações. Eles geralmente são uma pequena amostra do conteúdo ao qual estão relacionados. Podem conter conteúdos como imagem de um produto, título, descrição, link, botões, dentre outros;
-- Forneça contexto sobre o que acontecerá ao interagir com o card e qual o seu destino. Evite usar expressões genéricas como "Clique aqui".
-
-### Ações em cards
-
-- Quando a única ação possível for abrir ou visualizar mais detalhes do card, não inclua um botão para isso. A ação deve acontecer ao clicar em qualquer parte do card. Para esses casos, utilize o card do tipo *interactive;*
-
-<BestPracticesComponent
-  doImg={cardDo1}
-  doAlt="Exemplo de card com ele inteiro pintado, sinalizando que todo ele é um elemento interativo"
-  doDescription="Ao manter todo o card como clicável, diminuímos a carga de informação, pois muitas vezes o card é usado em conjunto com vários outros com a mesma estrutura."
-  dontImg={cardDont1}
-  dontAlt="Exemplo de card com um botão com o rótulo Visualizar”"
-  dontDescription="Não inclua botão quando a única ação do card for abri-lo."
-/>
-
-
-- Inclua um botão no card apenas quando a ação for diferente de apenas visualizar o conteúdo ao qual o card está relacionado. Para esses casos, opte por usar o card do tipo *read-only*;
-- Quando houver duas ou mais ações possíveis no cartão, mesmo que uma delas seja abrir o card, opte por disponibilizar as ações em botões.
-
-
-<BestPracticesComponent
-  doImg={cardDo2}
-  doAlt="Card com dois botões, sinalizados como as únicas partes interativas daquele conteúdo"
-  doDescription="Usar card do tipo *read-only* em contextos com ações ajuda a evidenciar as interações dos elementos internos do card."
-  dontImg={cardDont2}
-  dontAlt="Card com 2 botões e toda a base do card sinalizados como partes interativas daquele conteúdo"
-  dontDescription="O uso de interação na base do card e em elementos internos pode gerar confusão e diminui a previsibilidade sobre qual ação acontece ao clicar no card."
-/>
-
-- Quando tiver diferentes elementos interativos dentro do card, mantenha uma sequência lógica para navegação de um elemento para outro.
-
-### Conjunto de cards
-
-- Ao utilizar cards em conjunto, mantenha as larguras padronizadas de um card para o outro;
-- Organize-os de forma simples, pois a apresentação dos cards tem impacto no modo em como são compreendidos. Geralmente, o primeiro item fica posicionado no canto superior esquerdo e os demais seguem na sequência, da esquerda para a direita, e de cima para baixo.
-
-### Acessibilidade tratada no componente
-
-Algumas diretrizes de acessibilidade já são tratadas no componente, internamente, e não podem ser alteradas. São elas:
-
-**Card (Read-only e interactive)**
-
-- Utiliza medidas relativas, para se adequar às preferências e necessidades de quem for utilizar o sistema.
-
-**Card interative**
-
-- Desenvolvido com uso de controles padrões HTML, o que permite a identificação na interface por tecnologias assistivas. ([WCAG 4.1.2: Name, Role, Value](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value))
-- O foco é visível e possui uma espessura superior a 2 pixels CSS, não ficando escondido por outros elementos da tela. ([WCAG 2.4.12: Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-enhanced))
-- Quando selecionável, prevê interação por teclado, podendo ser selecionado através da tecla *space (*[WCAG 2.4.1 - Keyboard](https://www.w3.org/WAI/WCAG21/Understanding/keyboard))
-
-</TabItem>
-
-<TabItem value="dev">
-
-## Desenvolvimento
-
-Caso você já tenha feito o passo-a-passo descrito em [Começando](/docs/about/getting-started), você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
-
-Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
-
-```
-npm install @animaliads/ani-card
-```
-
-### Como utilizar
-
-Para utilizar este componente na sua aplicação você precisa importar o arquivo principal.
-Essa importação irá variar conforme o tipo de aplicação que você está utilizando, por exemplo: angular, react ou
-somente javascript.
-
-Depois de importar o arquivo principal, basta adicionar a tag `ani-card` no seu código:
-
-```html
-<ani-card>exemplo de label</ani-card>
-```
-
-> Para utilizar com o tema padrão, é necessário instalar e utilizar os pacotes `@animaliads/animalia-brand`
-> e `@animaliads/css-tokens`. Você pode ver um exemplo de utilização no [Live Demo](#live-demo).
-
-Para customizar o tema do componente, você pode estar utilizando as propriedades customizáveis
-da seguinte forma:
-
-```css
-ani-card {
-  --background: blue;
-  --border-color: purple;
-}
-```
-
-Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis](#propriedades-customizáveis).
-
-### Live Demo
-
-<LiveDemoComponent
-  react="https://stackblitz.com/edit/react-ani-card?embed=1&file=src/App.js"
-/>
-
-:::note API
-Para saber a lista de propriedades e eventos, acesse o [guia de referência de API](http://animaliads.io/?path=/docs/api-card--sample).
-:::
-
-</TabItem>
+  </TabItem>
 
   <TabItem value="custom-properties">
 
-## Propriedades customizáveis
+  ## Propriedades customizáveis
 
-O componente de card possui propriedades customizáveis que podem variar de acordo com o tema selecionado. As propriedades customizáveis podem ser alteradas para cada produto, de acordo com os tokens de marca e tokens globais. Com isso, garantimos uma consistência no Design System, sem perder a identidade de cada marca.
-O card possui estados e se modifica de acordo com o tipo do card. Os seus estados são: _Normal_, _Hover_, _Focused_ e _Selected_.
+  O componente de card possui propriedades customizáveis que podem variar de acordo com o tema selecionado. As propriedades customizáveis podem ser alteradas para cada produto, de acordo com os tokens de marca e tokens globais. Com isso, garantimos uma consistência no Design System, sem perder a identidade de cada marca.
+  O card possui estados e se modifica de acordo com o tipo do card. Os seus estados são: _Normal_, _Hover_, _Focused_ e _Selected_.
 
-| Propriedade                  | Descrição                                                                        | Valor padrão            |
-| ---------------------------- | -------------------------------------------------------------------------------- | ----------------------- |
-| `--border-radius `           | arredondamento da borda                                                          | $border-radius-md       |
-| `--background`               | cor de fundo do card                                                             | $color-neutral-light-00 |
-| `--border-color`             | cor da borda                                                                     | $color-neutral-light-20 |
-| `--border-width`             | espessura da borda                                                               | $border-width-sm        |
-| `--padding`                  | espaço interno entre a texto e a borda do card                                   | 1em (16px)              |
-| `--shadow	`                  | sombra do background                                                             | $shadow-md              |
-| `--border-color-hover`       | cor da borda do hover                                                            | $color-action-hover     |
-| `--shadow-hover`             | sombra do background do hover                                                    | $shadow-lg              |
-| `--color-focused`            | cor principal no estado focus                                                    | $color-action-default   |
-| `--outline-color-focused`    | cor do outline do focus                                                          | $color-action-focus     |
+  | Propriedade                  | Descrição                                                                        | Valor padrão            |
+  | ---------------------------- | -------------------------------------------------------------------------------- | ----------------------- |
+  | `--border-radius `           | arredondamento da borda                                                          | $border-radius-md       |
+  | `--background`               | cor de fundo do card                                                             | $color-neutral-light-00 |
+  | `--border-color`             | cor da borda                                                                     | $color-neutral-light-20 |
+  | `--border-width`             | espessura da borda                                                               | $border-width-sm        |
+  | `--padding`                  | espaço interno entre a texto e a borda do card                                   | 1em (16px)              |
+  | `--shadow	`                  | sombra do background                                                             | $shadow-md              |
+  | `--border-color-hover`       | cor da borda do hover                                                            | $color-action-hover     |
+  | `--shadow-hover`             | sombra do background do hover                                                    | $shadow-lg              |
+  | `--color-focused`            | cor principal no estado focus                                                    | $color-action-default   |
+  | `--outline-color-focused`    | cor do outline do focus                                                          | $color-action-focus     |
 
-### Selectable
+  ### Selectable
 
-| Propriedade                  | Descrição                                                                        | Valor padrão             |
-| ---------------------------- | -------------------------------------------------------------------------------- | ------------------------ |
-| `--background-selected`      | cor de fundo quando estiver selecionado	                                        | $color-brand-01-lightest |
-| `--border-color-selected`    | cor da borda quando estiver selecionado                                          | $color-action-default    |
+  | Propriedade                  | Descrição                                                                        | Valor padrão             |
+  | ---------------------------- | -------------------------------------------------------------------------------- | ------------------------ |
+  | `--background-selected`      | cor de fundo quando estiver selecionado	                                        | $color-brand-01-lightest |
+  | `--border-color-selected`    | cor da borda quando estiver selecionado                                          | $color-action-default    |
 
 
-</TabItem>
+  </TabItem>
 
-<TabItem value="accessibility">
+  <TabItem value="accessibility">
 
-:::note Em construção
-Conteúdo em desenvolvimento
-:::
+  :::note Em construção
+  Conteúdo em desenvolvimento
+  :::
 
-</TabItem>
+  </TabItem>
 
 </Tabs>
