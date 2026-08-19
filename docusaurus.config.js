@@ -23,6 +23,15 @@ module.exports = {
   projectName: "animalia-doc", // Usually your repo name.
   url: "https://doc.animaliads.io/",
   baseUrl: "/",
+  headTags: [
+    {
+      tagName: "meta",
+      attributes: {
+        name: "algolia-site-verification",
+        content: "37E28CC9085B9E16",
+      },
+    },
+  ],
   themeConfig: {
     hotjar: {
       applicationId: 2903615,
