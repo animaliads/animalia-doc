@@ -85,14 +85,6 @@ lerna run buid
 
 Este comando compilará o código em todos os pacotes do projeto.
 
-7. Por fim, execute o seguinte comando para iniciar o Storybook:
-
-```
-npm run storybook
-```
-
-Este comando iniciará o Storybook em seu navegador para visualizar e testar os componentes do projeto.
-
 Com esses passos, você terá instalado todas as dependências e configurado o ambiente de desenvolvimento para trabalhar no projeto.
 
 ## Estrutura do Repositório
