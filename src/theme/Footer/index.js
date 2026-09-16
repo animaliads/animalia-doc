@@ -18,7 +18,6 @@ export default function Footer() {
       title: "Links úteis",
       items: [
         { label: "Repositório no Github", href: "https://github.com/animaliads" },
-        { label: "API no Storybook", href: "http://animaliads.io/?path=/docs/api-button--sample" },
         { label: "Biblioteca no Figma", href: "https://www.figma.com/@animaliads" },
       ],
     },
