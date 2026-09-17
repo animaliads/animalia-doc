@@ -2,7 +2,13 @@
 module.exports = {
   title: "Animalia DS",
   tagline: "Design System da TOTVS",
-  onBrokenLinks: "log",
+  onBrokenLinks: "throw",
+  onBrokenAnchors: "throw",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "throw",
+    },
+  },
   i18n: {
     defaultLocale: "pt",
     locales: ["en", "pt"],
@@ -17,7 +23,6 @@ module.exports = {
       },
     },
   },
-  onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
   organizationName: "animaliads", // Usually your GitHub org/user name.
   projectName: "animalia-doc", // Usually your repo name.

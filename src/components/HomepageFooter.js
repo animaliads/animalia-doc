@@ -32,7 +32,6 @@ export default function HomepageFooter() {
       title: "Comunidade",
       items: [
         { label: "Contribua", to: "/docs/about/contribution-guide" },
-        { label: "Código de Conduta", to: "/docs/about/code-of-conduct" },
         { label: "Suporte", href: "https://github.com/animaliads/animalia-web-components/issues" },
       ],
     },
