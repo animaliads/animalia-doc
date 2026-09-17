@@ -12,7 +12,7 @@ export default function HomepageCTA() {
             Junte-se a quem cria o futuro do design
           </h2>
           <AniButtonSecondary
-            to="/docs/about/getting-started"
+            to="/docs/about/intro"
             label="Faça parte"
           />
         </ScrollFadeIn>

@@ -2,7 +2,13 @@
 module.exports = {
   title: "Animalia DS",
   tagline: "Design System da TOTVS",
-  onBrokenLinks: "log",
+  onBrokenLinks: "throw",
+  onBrokenAnchors: "throw",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "throw",
+    },
+  },
   i18n: {
     defaultLocale: "pt",
     locales: ["en", "pt"],
@@ -17,7 +23,6 @@ module.exports = {
       },
     },
   },
-  onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
   organizationName: "animaliads", // Usually your GitHub org/user name.
   projectName: "animalia-doc", // Usually your repo name.
@@ -111,14 +116,6 @@ module.exports = {
               label: "Para Designers",
               to: "/docs/about/getting-started-design",
             },
-            {
-              label: "Para Devs",
-              to: "/docs/about/getting-started",
-            },
-            {
-              label: "Guia de Contribuição",
-              to: "/docs/about/contribution-guide",
-            },
           ],
         },
         {
@@ -127,10 +124,6 @@ module.exports = {
             {
               label: "Repositório no Github",
               href: "https://github.com/animaliads",
-            },
-            {
-              label: "API no Storybook",
-              href: "http://animaliads.io/?path=/docs/api-button--sample",
             },
             {
               label: "Biblioteca no Figma",

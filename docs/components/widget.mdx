@@ -1,0 +1,114 @@
+---
+title: Widget
+sidebar_label: Widget
+wrapperClassName: doc-page-left
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# <h1 style={{ fontSize: "3rem" }}>Widget</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O `Widget` é um card reutilizável para organizar conteúdo compacto em dashboards. Ele combina título, contexto, conteúdo substituível e uma ação ou Tag opcional.
+
+</div>
+
+<Tabs className="button-tabs-sticky" defaultValue="design" lazy values={[
+  {label: 'Uso', value: 'design'},
+  {label: 'Estilização', value: 'custom-properties'},
+  {label: 'Código', value: 'dev'},
+  {label: 'Acessibilidade', value: 'accessibility'},
+]}>
+
+<TabItem value="design">
+
+### Quando usar
+
+- Para organizar resumos, indicadores ou conteúdos relacionados em dashboards.
+- Quando cada unidade precisa de título e área de conteúdo claramente delimitada.
+- Para compor uma grade de informações independentes, mas visualmente consistentes.
+
+### Quando não usar
+
+- Para conteúdo editorial extenso ou tarefas completas.
+- Como substituto genérico de qualquer [Card](/docs/components/card).
+- Quando todo o container precisar funcionar como uma ação sem indicação clara.
+
+### Anatomia
+
+1. **Container:** delimita o Widget dentro da composição.
+2. **Título:** identifica o assunto do conteúdo.
+3. **Texto de apoio opcional:** adiciona contexto sem competir com o título.
+4. **Tag opcional:** comunica categoria ou estado.
+5. **Ação opcional:** oferece um comando relacionado ao conteúdo.
+6. **Slot:** recebe gráfico, indicador, lista ou outro conteúdo substituível.
+
+:::note Imagem em preparação
+A anatomia e exemplos de composição em dashboard serão adicionados posteriormente.
+:::
+
+### Variações
+
+As partes disponíveis no Figma contemplam **Title with action**, **Title with tag** e **Tag + Title**. O conteúdo principal é substituível e deve respeitar o propósito do Widget.
+
+### Comportamento e responsividade
+
+- O container cresce conforme o conteúdo previsto pela composição, preservando alinhamento com Widgets vizinhos.
+- Título e texto de apoio podem quebrar linha sem sobrepor ação ou Tag.
+- Em telas pequenas, a grade pode se transformar em uma lista de uma coluna.
+- Se houver atualização assíncrona, o Widget deve prever estados de carregamento, vazio e erro.
+- Apenas o controle de ação recebe foco; o container não deve parecer clicável quando não for interativo.
+
+## Boas práticas
+
+- Mantenha uma única finalidade por Widget.
+- Use títulos curtos e comparáveis entre itens da mesma grade.
+- Escolha conteúdos com densidade semelhante para preservar a leitura do dashboard.
+- Não misture Tag e ação se isso gerar competição visual desnecessária.
+- Não dependa apenas da posição do Widget para explicar seu significado.
+
+</TabItem>
+
+<TabItem value="custom-properties">
+
+## Referência de variáveis do Figma
+
+Não foram identificadas variáveis vinculadas exclusivamente ao `Ani Widget` na inspeção atual do Figma.
+
+:::caution Em validação
+Fundo, borda, raio, espaçamentos, título, texto de apoio e estados devem receber variáveis oficiais antes da publicação da API de estilização. Até essa confirmação, não há custom properties CSS documentadas.
+:::
+
+</TabItem>
+
+<TabItem value="dev">
+
+## Código
+
+:::info Em breve
+A documentação de implementação deste componente estará disponível em breve.
+:::
+
+{/*
+TODO(dev-docs): documentar pacote, slots, título, Tag, ação, estados de conteúdo,
+composição de dashboard, propriedades, eventos e Live Demo do Widget.
+*/}
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+## Acessibilidade
+
+- Use elementos semânticos coerentes com o conteúdo; não atribua um papel interativo ao container sem necessidade.
+- O título deve funcionar como identificação programática da região quando o Widget precisar ser navegável como seção.
+- Ações e links internos precisam de nomes específicos para o contexto do Widget.
+- Atualizações assíncronas relevantes devem ser anunciadas sem deslocar o foco.
+- Gráficos, métricas e outros conteúdos inseridos no slot mantêm seus próprios requisitos de acessibilidade.
+- Preserve a ordem de leitura quando a grade responsiva for reorganizada.
+
+</TabItem>
+
+</Tabs>

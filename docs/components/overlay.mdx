@@ -1,0 +1,107 @@
+---
+title: Overlay
+sidebar_label: Overlay
+wrapperClassName: doc-page-left
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# <h1 style={{ fontSize: "3rem" }}>Overlay</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O `Overlay` é um primitivo visual que reduz a ênfase do conteúdo de fundo enquanto outro componente exige atenção. Ele é usado em conjunto com componentes como [Modal](/docs/components/modal), [Loading](/docs/components/loading) e Page Slide.
+
+</div>
+
+<Tabs className="button-tabs-sticky" defaultValue="design" lazy values={[
+  {label: 'Uso', value: 'design'},
+  {label: 'Estilização', value: 'custom-properties'},
+  {label: 'Código', value: 'dev'},
+  {label: 'Acessibilidade', value: 'accessibility'},
+]}>
+
+<TabItem value="design">
+
+### Quando usar
+
+- Atrás de uma experiência modal que bloqueia temporariamente o conteúdo principal.
+- Para indicar que uma região está indisponível durante um carregamento bloqueante.
+- Quando o componente consumidor precisa estabelecer uma camada visual superior.
+
+### Quando não usar
+
+- Como elemento independente, sem um componente sobreposto.
+- Para esconder conteúdo permanentemente.
+- Em interações não modais nas quais o fundo deve continuar disponível.
+
+### Anatomia
+
+1. **Camada:** superfície que cobre integralmente o contexto bloqueado.
+2. **Cor:** token associado ao tema atual.
+3. **Opacidade:** no Figma, a camada utiliza 70% de opacidade.
+4. **Componente consumidor:** Modal, Loading, Page Slide ou outra experiência posicionada acima da camada.
+
+:::note Imagem em preparação
+O exemplo de empilhamento com componentes consumidores será adicionado posteriormente.
+:::
+
+### Comportamento e responsividade
+
+- O Overlay acompanha os limites da região bloqueada e não deixa áreas interativas descobertas.
+- A camada deve permanecer abaixo do componente consumidor e acima do conteúdo inativo.
+- A rolagem e a interação do fundo são controladas pelo componente consumidor, não pelo Overlay isoladamente.
+- A cobertura deve se atualizar durante redimensionamento, zoom e mudança de orientação.
+- A possibilidade de fechar ao clicar fora depende do componente consumidor e não deve ser presumida.
+
+## Boas práticas
+
+- Use uma única camada por contexto modal ativo.
+- Mantenha opacidade e cor consistentes entre consumidores.
+- Evite empilhar overlays para intensificar o escurecimento.
+- Não atribua ao Overlay a responsabilidade de foco, anúncio ou fechamento.
+- Não permita que o fundo pareça disponível quando estiver inativo.
+
+</TabItem>
+
+<TabItem value="custom-properties">
+
+## Referência de variáveis do Figma
+
+| Variável no Figma | Tipo | Aplicação observada |
+| --- | --- | --- |
+| `Ani Overlay/--overlay-color` | Color | Cor da camada |
+
+Além da variável de cor, o componente no Figma aplica **70% de opacidade**. Essas informações são referências de design e não representam uma custom property CSS pública confirmada.
+
+</TabItem>
+
+<TabItem value="dev">
+
+## Código
+
+:::info Em breve
+A documentação de implementação deste componente estará disponível em breve.
+:::
+
+{/*
+TODO(dev-docs): documentar empilhamento, portal, cobertura, scroll lock,
+integração com consumidores, eventos e testes do Overlay.
+*/}
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+## Acessibilidade
+
+- O Overlay é visual e não deve receber foco nem criar uma parada adicional para tecnologias assistivas.
+- O componente consumidor é responsável por mover e conter o foco quando a interação for modal.
+- O conteúdo visualmente bloqueado também precisa ficar indisponível para interação por teclado e tecnologias assistivas.
+- A camada não substitui `aria-modal`, nome acessível ou descrição do componente sobreposto.
+- Para experiências modais, siga o [padrão Dialog Modal do WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/).
+
+</TabItem>
+
+</Tabs>

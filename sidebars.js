@@ -35,7 +35,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Começando',
-      items: ['about/getting-started', 'about/getting-started-design', 'about/contribution-guide'],
+      items: ['about/getting-started-design'],
     },
     'about/team',
     {

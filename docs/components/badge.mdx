@@ -1,0 +1,118 @@
+---
+title: Badge
+sidebar_label: Badge
+wrapperClassName: doc-page-left
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# <h1 style={{ fontSize: "3rem" }}>Badge</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O `Badge` comunica estados, notificações ou contagens de maneira compacta. Ele complementa outro elemento da interface e não deve substituir uma mensagem necessária para compreender a tarefa.
+
+</div>
+
+<Tabs className="button-tabs-sticky" defaultValue="design" lazy values={[
+  {label: 'Uso', value: 'design'},
+  {label: 'Estilização', value: 'custom-properties'},
+  {label: 'Código', value: 'dev'},
+  {label: 'Acessibilidade', value: 'accessibility'},
+]}>
+
+<TabItem value="design">
+
+### Quando usar
+
+- Para indicar uma quantidade associada a um item, como notificações pendentes.
+- Para comunicar rapidamente um estado positivo, de atenção, negativo ou indisponível.
+- Para chamar atenção a uma mudança sem interromper a tarefa atual.
+
+### Quando não usar
+
+- Como ação isolada ou substituto de botão.
+- Para mensagens extensas ou instruções.
+- Quando o significado depender somente da cor.
+
+### Anatomia
+
+1. **Container:** forma compacta que sustenta o conteúdo.
+2. **Valor ou ícone:** apresenta a contagem ou o significado principal.
+3. **Borda opcional:** aumenta a separação em fundos com pouco contraste.
+4. **Elemento de origem:** item ao qual o Badge está semanticamente associado.
+
+:::note Imagem em preparação
+A ilustração de anatomia será adicionada posteriormente.
+:::
+
+### Tipos e tamanhos
+
+O Figma apresenta os tipos **Negative**, **Warning**, **Positive** e **Disabled**, nos tamanhos **Small**, **Medium** e **Large**. A variação de contagem pode ser exibida com ou sem borda.
+
+### Comportamento
+
+- Contagens acima do limite visual devem usar uma forma abreviada, como `9+` ou `99+`.
+- O Badge acompanha o elemento de origem e não deve cobrir seu rótulo ou área de foco.
+- Mudanças importantes de estado devem ser comunicadas também em texto acessível.
+- O componente se adapta ao conteúdo previsto, mas não deve crescer para acomodar frases.
+
+## Boas práticas
+
+- Defina um limite de contagem consistente no produto.
+- Use o mesmo significado de cor em toda a experiência.
+- Prefira rótulos próximos quando o contexto não for evidente.
+- Não anime continuamente o Badge para chamar atenção.
+- Não utilize o estado Disabled como única explicação para uma indisponibilidade.
+
+</TabItem>
+
+<TabItem value="custom-properties">
+
+## Referência de variáveis do Figma
+
+As variáveis abaixo representam o modelo visual do Figma e não uma API CSS confirmada.
+
+| Variável no Figma | Aplicação observada |
+| --- | --- |
+| `Ani Badge/--circle-negative` | Indicador negativo |
+| `Ani Badge/--circle-warning` | Indicador de atenção |
+| `Ani Badge/--circle-positive` | Indicador positivo |
+| `Ani Badge/--circle-disabled` | Indicador desabilitado |
+| `Ani Badge/--border` | Borda opcional |
+| `Ani Badge/--icon-color` | Cor do ícone |
+| `Ani Badge/--icon-color-reverse` | Ícone sobre fundo contrastante |
+| `Ani Badge/--multiple-square` | Fundo da variação de contagem |
+| `Ani Badge/--text-color` | Texto da contagem |
+
+</TabItem>
+
+<TabItem value="dev">
+
+## Código
+
+:::info Em breve
+A documentação de implementação deste componente estará disponível em breve.
+:::
+
+{/*
+TODO(dev-docs): documentar pacote, instalação, API, limite de contagem,
+anúncios de atualização, frameworks suportados e Live Demo do Badge.
+*/}
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+## Acessibilidade
+
+- Não use apenas cor para diferenciar estados; forneça texto, ícone ou nome acessível equivalente.
+- Garanta contraste suficiente para texto e indicadores visuais relevantes.
+- Quando uma contagem mudar sem mover o foco, a implementação deve avaliar se a atualização precisa ser anunciada como mensagem de status.
+- Se estiver dentro de um controle, o Badge deve complementar o nome desse controle sem criar uma parada de foco separada.
+- Consulte a [WCAG 2.2](https://www.w3.org/TR/WCAG22/), especialmente uso de cor, contraste não textual e mensagens de status.
+
+</TabItem>
+
+</Tabs>

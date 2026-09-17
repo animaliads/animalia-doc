@@ -56,12 +56,12 @@ Estruturalmente, o `progress bar` é composto por: uma **bar indicator**, uma **
   possuindo na parte inferior esquerda um texto informativo sobre o processo e na parte inferior direita, um valor percentual do progresso."
 />
 
-1. **Bar indicator:** é a forma que preenche a barra conforme o carregamento ocorre, de maneira [determinada ou indeterminada](progressbar#comportamento);
+1. **Bar indicator:** é a forma que preenche a barra conforme o carregamento ocorre, de maneira [determinada ou indeterminada](#comportamento);
 2. **Tray:** é a base que define a largura do componente, onde a **bar indicator** poderá percorrer;
 3. **Info bar:** é o texto de apoio posicionado na parte inferior esquerda da barra, que auxilia os usuários a entenderem do que se trata o carregamento,
 junto com a quantidade percentual posicionada na parte inferior direita.
 
-> O estado de **error** modifica a **infor bar**, passando a exibir um ícone de exclamação seguido por uma mensagem de erro. [Saiba mais em Estados](progressbar#estados)
+> O estado de **error** modifica a **infor bar**, passando a exibir um ícone de exclamação seguido por uma mensagem de erro. [Saiba mais em Estados](#estados)
 
 ### Variações
 
@@ -74,7 +74,7 @@ conforme imagem abaixo:
   alt="Apresentação de uma barra de progresso em parte representada pela cor azul indicando o progresso da ação"
 />
 
-1. **Bar indicator:** é a forma que preenche a barra conforme o carregamento ocorre, de maneira [determinada ou indeterminada](progressbar#comportamento);
+1. **Bar indicator:** é a forma que preenche a barra conforme o carregamento ocorre, de maneira [determinada ou indeterminada](#comportamento);
 2. **Tray:** é a base que define a largura do componente, onde a **bar indicator** poderá percorrer.
 
 #### Tamanhos
@@ -102,7 +102,7 @@ O componente possui também os três seguintes estados:
 2. **Success**: o preenchimento completo da barra em cor verde, indicando conclusão do carregamento;
 3. **Error:** o preenchimento da barra e conteúdo da **info bar** em vermelho, indicando falha no carregamento.
 
-> No modo [**single**](progressbar#modo-single), o componente continua respeitando a composição básica, ou seja, sem a **info bar**.
+> No modo [**single**](#modo-single), o componente continua respeitando a composição básica, ou seja, sem a **info bar**.
 
 ### Comportamento
 O componente `progress bar` possui dois tipos de comportamentos, sendo: 

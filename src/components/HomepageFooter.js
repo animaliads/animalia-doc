@@ -10,15 +10,12 @@ export default function HomepageFooter() {
       title: "Primeiros passos",
       items: [
         { label: "Para Designers", to: "/docs/about/getting-started-design" },
-        { label: "Para Devs", to: "/docs/about/getting-started" },
-        { label: "Guia de Contribuição", to: "/docs/about/contribution-guide" },
       ],
     },
     {
       title: "Links úteis",
       items: [
         { label: "Repositório no Github", href: "https://github.com/animaliads" },
-        { label: "API no Storybook", href: "http://animaliads.io/?path=/docs/api-button--sample" },
         { label: "Biblioteca no Figma", href: "https://www.figma.com/@animaliads" },
       ],
     },
@@ -32,8 +29,6 @@ export default function HomepageFooter() {
     {
       title: "Comunidade",
       items: [
-        { label: "Contribua", to: "/docs/about/contribution-guide" },
-        { label: "Código de Conduta", to: "/docs/about/code-of-conduct" },
         { label: "Suporte", href: "https://github.com/animaliads/animalia-web-components/issues" },
       ],
     },

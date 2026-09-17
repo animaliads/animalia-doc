@@ -2,6 +2,9 @@
   "name": "homepage",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=20.0"
+  },
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -18,9 +21,9 @@
     "@animaliads/animalia-icon": "^1.0.5",
     "@animaliads/css-tokens": "^1.0.0-next.1",
     "@animaliads/po-ui-brand": "^1.0.0-next.1",
-    "@docusaurus/core": "3.6.3",
-    "@docusaurus/plugin-google-gtag": "3.6.3",
-    "@docusaurus/preset-classic": "3.6.3",
+    "@docusaurus/core": "3.10.2",
+    "@docusaurus/plugin-google-gtag": "3.10.2",
+    "@docusaurus/preset-classic": "3.10.2",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
@@ -46,9 +49,9 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-react-jsx-self": "^7.12.13",
-    "@docusaurus/module-type-aliases": "3.6.3",
-    "@docusaurus/tsconfig": "3.6.3",
-    "@docusaurus/types": "3.6.3",
+    "@docusaurus/module-type-aliases": "3.10.2",
+    "@docusaurus/tsconfig": "3.10.2",
+    "@docusaurus/types": "3.10.2",
     "@types/react": "^18.2.0",
     "@webcomponents/custom-elements": "^1.4.3",
     "typescript": "^5.3.3"

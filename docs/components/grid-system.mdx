@@ -1,0 +1,125 @@
+---
+title: Grid System
+sidebar_label: Grid System
+wrapperClassName: doc-page-left
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# <h1 style={{ fontSize: "3rem" }}>Grid System</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O `Grid System` é a estrutura responsiva que organiza e alinha os elementos da interface. Ele estabelece limites de conteúdo previsíveis entre diferentes tamanhos de viewport.
+
+</div>
+
+<Tabs className="button-tabs-sticky" defaultValue="design" lazy values={[
+  {label: 'Uso', value: 'design'},
+  {label: 'Estilização', value: 'custom-properties'},
+  {label: 'Código', value: 'dev'},
+  {label: 'Acessibilidade', value: 'accessibility'},
+]}>
+
+<TabItem value="design">
+
+### Quando usar
+
+- Para estruturar páginas, dashboards e formulários responsivos.
+- Para manter alinhamento consistente entre cabeçalhos, conteúdo e ações.
+- Para definir uma largura máxima legível sem impedir a adaptação a telas menores.
+
+### Quando não usar
+
+- Como componente visual dentro do produto final.
+- Para forçar conteúdos complexos a manterem uma disposição inadequada em telas pequenas.
+- Como substituto do espaçamento interno dos componentes.
+
+### Anatomia
+
+1. **Container:** limita e centraliza a área útil.
+2. **Colunas:** unidades verticais usadas para posicionar o conteúdo.
+3. **Gutters:** espaços entre colunas.
+4. **Margens:** afastamentos externos do container.
+5. **Breakpoint:** faixa de viewport que seleciona uma configuração do grid.
+
+:::note Imagem em preparação
+O diagrama de colunas, gutters e margens será adicionado posteriormente.
+:::
+
+### Tamanhos de referência
+
+| Variante no Figma | Largura de referência |
+| --- | ---: |
+| Small | 320 px / 20 em |
+| Medium | 672 px / 42 em |
+| Large | 1064 px / 66,5 em |
+| X-Large | 1328 px / 83 em |
+| Max | 1584 px / 99 em |
+
+### Comportamento e responsividade
+
+- O grid deve selecionar a configuração adequada à largura disponível, não ao tipo de dispositivo presumido.
+- Conteúdos podem mudar de quantidade de colunas ou ordem visual quando a largura diminuir.
+- Margens e gutters devem preservar a separação sem provocar rolagem horizontal na página.
+- A ordem visual responsiva deve permanecer coerente com a ordem de leitura do documento.
+
+## Boas práticas
+
+- Alinhe elementos relacionados às mesmas linhas de coluna.
+- Use uma quantidade reduzida e consistente de padrões de composição.
+- Teste conteúdo real, zoom e textos longos em cada breakpoint.
+- Não altere a ordem semântica apenas para obter uma composição visual.
+- Não trate as larguras do Figma como garantia da API final de implementação.
+
+</TabItem>
+
+<TabItem value="custom-properties">
+
+## Referência de variáveis do Figma
+
+O Figma vincula o componente às variáveis de largura abaixo. Elas são referências de design, não custom properties CSS públicas.
+
+| Variável no Figma | Tipo |
+| --- | --- |
+| `Small` | Float |
+| `Medium` | Float |
+| `Large` | Float |
+| `X-Large` | Float |
+| `Max` | Float |
+
+:::caution Em validação
+Quantidade de colunas, gutters, margens e comportamento entre breakpoints precisam ser alinhados com a implementação.
+:::
+
+</TabItem>
+
+<TabItem value="dev">
+
+## Código
+
+:::info Em breve
+A documentação de implementação deste componente estará disponível em breve.
+:::
+
+{/*
+TODO(dev-docs): documentar breakpoints de código, container, colunas, gutters,
+API responsiva, exemplos de composição e Live Demo do Grid System.
+*/}
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+## Acessibilidade
+
+- Garanta que o conteúdo faça reflow sem perda de informação ou funcionalidade.
+- Preserve uma ordem de leitura lógica no DOM quando a apresentação mudar.
+- Evite rolagem em duas dimensões para conteúdo que pode ser reorganizado.
+- Teste zoom, ampliação de texto, orientação e diferentes dimensões de viewport.
+- Consulte a [WCAG 2.2](https://www.w3.org/TR/WCAG22/), especialmente os critérios de reflow, orientação e redimensionamento de texto.
+
+</TabItem>
+
+</Tabs>

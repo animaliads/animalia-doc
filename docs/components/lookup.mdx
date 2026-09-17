@@ -1,0 +1,127 @@
+---
+title: Lookup
+sidebar_label: Lookup
+wrapperClassName: doc-page-left
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# <h1 style={{ fontSize: "3rem" }}>Lookup</h1>
+
+<div style={{ maxWidth: '60%' }}>
+
+O `Lookup` permite pesquisar e selecionar itens em conjuntos grandes ou remotos. Ele combina entrada de busca, autocomplete, filtros, resultados, histórico e acesso à busca avançada.
+
+</div>
+
+<Tabs className="button-tabs-sticky" defaultValue="design" lazy values={[
+  {label: 'Uso', value: 'design'},
+  {label: 'Estilização', value: 'custom-properties'},
+  {label: 'Código', value: 'dev'},
+  {label: 'Acessibilidade', value: 'accessibility'},
+]}>
+
+<TabItem value="design">
+
+### Quando usar
+
+- Para selecionar uma opção em um conjunto extenso ou carregado remotamente.
+- Quando filtros ou busca avançada ajudam a reduzir resultados.
+- Quando histórico de pesquisas e autocomplete aceleram tarefas recorrentes.
+
+### Quando não usar
+
+- Para listas curtas; utilize [Select](/docs/components/select) ou [Radio Group](/docs/components/radiogroup).
+- Para uma pesquisa que não resulta em seleção.
+- Quando todas as opções precisam permanecer visíveis para comparação.
+
+### Anatomia
+
+1. **Campo de pesquisa:** recebe o termo informado.
+2. **Controle de filtro:** abre opções para refinar a consulta.
+3. **Autocomplete:** completa ou sugere termos durante a digitação.
+4. **Listbox:** apresenta resultados, últimas pesquisas e estados da consulta.
+5. **Item de resultado:** exibe texto principal e suporte opcional.
+6. **Busca avançada:** oferece um fluxo complementar quando os resultados imediatos não forem suficientes.
+
+:::note Imagem em preparação
+A anatomia e os estados do Lookup serão ilustrados posteriormente.
+:::
+
+### Estados
+
+O Figma contempla **Default**, **Focus - filter opened**, **Focus - search**, **Results**, **Loading**, **Result complete**, **Empty state** e **Focus - last search**. O listbox diferencia conteúdo ativo, carregamento, resultados e últimas pesquisas.
+
+### Comportamento e responsividade
+
+- A busca deve informar carregamento antes de apresentar resultados remotos.
+- O autocomplete não deve alterar silenciosamente o valor confirmado.
+- A opção em foco e a opção selecionada precisam ser visual e semanticamente distintas.
+- O estado vazio deve explicar que nenhum resultado foi encontrado e oferecer uma próxima ação útil.
+- Em telas pequenas, o painel de resultados pode ocupar mais espaço, preservando o campo e a opção em foco.
+
+## Boas práticas
+
+- Use rótulo e texto de suporte para explicar o universo pesquisado.
+- Mostre resultados relevantes antes de exigir busca avançada.
+- Preserve o termo digitado durante erros recuperáveis.
+- Não carregue uma lista extensa sem feedback de progresso.
+- Não use o placeholder como único rótulo do campo.
+
+</TabItem>
+
+<TabItem value="custom-properties">
+
+## Referência de variáveis do Figma
+
+As variáveis abaixo representam a composição visual do Figma e não uma API CSS confirmada.
+
+| Grupo no Figma | Aplicação observada |
+| --- | --- |
+| `Ani Lookup/Filter/--background` | Fundo do filtro |
+| `Ani Lookup/Filter/--border-color` | Borda do filtro |
+| `Ani Lookup/Filter/--text-color-placeholder` | Placeholder |
+| `Ani Lookup/Filter/--color-icon` | Ícones do filtro |
+| `Ani Lookup/Filter/--outline-color-focus` | Foco do filtro |
+| `Ani Lookup/Listbox/--background-box` | Fundo dos resultados |
+| `Ani Lookup/Listbox/--border-box` | Borda dos resultados |
+| `Ani Lookup/Results item-list/--text-color` | Texto do resultado |
+| `Ani Lookup/Results item-list/--background-hover` | Resultado em hover |
+| `Ani Lookup/Results item-list/--background-select` | Resultado selecionado |
+
+</TabItem>
+
+<TabItem value="dev">
+
+## Código
+
+:::info Em breve
+A documentação de implementação deste componente estará disponível em breve.
+:::
+
+{/*
+TODO(dev-docs): documentar pacote, consulta remota, debounce, filtros,
+autocomplete, propriedades, eventos, estados assíncronos e Live Demo do Lookup.
+*/}
+
+</TabItem>
+
+<TabItem value="accessibility">
+
+## Acessibilidade
+
+- O campo deve possuir rótulo persistente e nome acessível.
+- A relação entre campo, listbox e opção ativa deve ser exposta semanticamente.
+- Resultados, carregamento, ausência de resultados e erros precisam ser anunciados sem deslocar o foco.
+- Teclas de seta navegam entre opções; `Enter` confirma e `Escape` fecha o painel conforme o contexto.
+- Foco visível e seleção não podem depender apenas de cor.
+- A implementação deve ser validada contra o [padrão Combobox do WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/).
+
+:::caution Validação técnica
+O comportamento de autocomplete, histórico e busca avançada precisa ser confirmado com a API final.
+:::
+
+</TabItem>
+
+</Tabs>
