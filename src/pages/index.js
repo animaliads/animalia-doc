@@ -53,7 +53,7 @@ function HomepageHeader() {
               </p>
               <div className={styles.hero__buttons}>
                 <AniButtonPrimary
-                  to="/docs/about/getting-started"
+                  to="/docs/about/intro"
                   label="Começando"
                   icon={faChevronRight}
                 />

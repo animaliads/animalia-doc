@@ -10,8 +10,6 @@ export default function Footer() {
       title: "Primeiros passos",
       items: [
         { label: "Para Designers", to: "/docs/about/getting-started-design" },
-        { label: "Para Devs", to: "/docs/about/getting-started" },
-        { label: "Guia de Contribuição", to: "/docs/about/contribution-guide" },
       ],
     },
     {
@@ -31,7 +29,6 @@ export default function Footer() {
     {
       title: "Comunidade",
       items: [
-        { label: "Contribua", to: "/docs/about/contribution-guide" },
         { label: "Suporte", href: "https://github.com/animaliads/animalia-web-components/issues" },
       ],
     },

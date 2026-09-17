@@ -107,14 +107,6 @@ module.exports = {
               label: "Para Designers",
               to: "/docs/about/getting-started-design",
             },
-            {
-              label: "Para Devs",
-              to: "/docs/about/getting-started",
-            },
-            {
-              label: "Guia de Contribuição",
-              to: "/docs/about/contribution-guide",
-            },
           ],
         },
         {
