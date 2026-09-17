@@ -91,8 +91,7 @@ export default function HomepagePrincipals() {
                   <h3 className={styles.card__title}>Colaborativo</h3>
                   <p className={styles.card__description}>
                     Trabalhamos como uma família criativa para criar algo
-                    extraordinário. Customize a biblioteca de Web Components com
-                    Javascript e HTML.
+                    extraordinário. Customize a biblioteca de Angular.
                   </p>
                 </div>
                 <a href="#" className={styles.card__link}>
